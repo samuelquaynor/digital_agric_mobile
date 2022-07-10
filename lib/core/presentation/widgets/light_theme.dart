@@ -5,19 +5,29 @@ import 'package:google_fonts/google_fonts.dart';
 ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     fontFamily: 'Poppins',
-    primaryTextTheme: GoogleFonts.ralewayTextTheme(),
+    iconTheme: IconThemeData(color: Colors.green.shade900),
+    primaryTextTheme: GoogleFonts.poppinsTextTheme(),
     bottomSheetTheme: const BottomSheetThemeData(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20)))),
+    textTheme: TextTheme(
+      bodyMedium: TextStyle(color: Colors.green.shade900),
+      titleMedium: TextStyle(color: Colors.green.shade900, fontWeight: FontWeight.w500),
+      headlineSmall:
+          TextStyle(color: Colors.green.shade900, fontWeight: FontWeight.w600),
+    ),
     dialogTheme: DialogTheme(
         elevation: 16,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
     primaryColor: Colors.green,
     colorScheme: ColorScheme.fromSwatch(
         primarySwatch: Colors.green, accentColor: Colors.green),
-    appBarTheme:
-        const AppBarTheme(backgroundColor: Colors.white24, elevation: 0),
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      actionsIconTheme: IconThemeData(color: Colors.green.shade900),
+    ),
     cardTheme: const CardTheme(
         elevation: 3,
         shape: RoundedRectangleBorder(

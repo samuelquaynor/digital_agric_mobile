@@ -1,9 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.digital_agric_mobile">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="DigiFarm"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
+        <!-- <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBgT96iKD-v7uUzfXgoB5tscl0GwN-DBPg" /> -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

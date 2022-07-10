@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
         shrinkWrap: true,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 35 / 100,
+            height: MediaQuery.of(context).size.height * 0.14,
             width: MediaQuery.of(context).size.width,
             padding: const EdgeInsets.only(left: 32),
             decoration: const BoxDecoration(
@@ -29,20 +29,14 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text(
-                  'Open Source\nPresence App',
+                  'DigiFarm',
                   style: TextStyle(
-                    fontSize: 28,
+                    fontSize: 30,
                     color: Colors.white,
-                    fontFamily: 'poppins',
-                    height: 150 / 100,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 SizedBox(height: 10),
-                Text(
-                  'by github.com/mrezkys',
-                  style: TextStyle(color: Colors.white),
-                ),
               ],
             ),
           ),
@@ -57,14 +51,8 @@ class LoginPage extends StatelessWidget {
               children: [
                 Container(
                   margin: const EdgeInsets.only(bottom: 24),
-                  child: const Text(
-                    'Log in',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'poppins',
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
+                  child: Text('Log in',
+                      style: Theme.of(context).textTheme.titleLarge),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
@@ -76,22 +64,18 @@ class LoginPage extends StatelessWidget {
                     border: Border.all(color: const Color(0xFFE9E9E9)),
                   ),
                   child: const TextField(
-                    style: TextStyle(fontSize: 14, fontFamily: 'poppins'),
                     // controller: controller.emailC,
                     decoration: InputDecoration(
                       label: Text(
                         'Email',
                         style: TextStyle(
                           color: Color(0xFF9D9D9D),
-                          fontSize: 14,
                         ),
                       ),
                       floatingLabelBehavior: FloatingLabelBehavior.always,
                       border: InputBorder.none,
                       hintText: 'youremail@email.com',
                       hintStyle: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'poppins',
                         fontWeight: FontWeight.w500,
                         color: Color(0xFF9D9D9D),
                       ),
@@ -116,7 +100,6 @@ class LoginPage extends StatelessWidget {
                           'Password',
                           style: TextStyle(
                             color: Color(0xFF9D9D9D),
-                            fontSize: 14,
                           ),
                         ),
                         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -132,8 +115,6 @@ class LoginPage extends StatelessWidget {
                         //   },
                         // ),
                         hintStyle: TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'poppins',
                           fontWeight: FontWeight.w500,
                           color: Color(0xFF9D9D9D),
                         ),
@@ -146,7 +127,7 @@ class LoginPage extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () async {
                       await Navigator.of(context).push(MaterialPageRoute<void>(
-                          builder: (context) => HomeScreen()));
+                          builder: (context) => const HomeScreen()));
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 18),
@@ -160,7 +141,6 @@ class LoginPage extends StatelessWidget {
                       'Log in',
                       style: TextStyle(
                         fontSize: 16,
-                        fontFamily: 'poppins',
                         fontWeight: FontWeight.w500,
                       ),
                     ),
