@@ -1,13 +1,20 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+
+import '../../../../core/user/domain/usecases/sign_up.dart';
 
 part 'signup_event.dart';
 part 'signup_state.dart';
 
-class SignupBloc extends Bloc<SignupEvent, SignupState> {
-  SignupBloc() : super(SignupInitial()) {
-    on<SignupEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+class SignupBloc {
+  SignupBloc(this.signUp) : super();
+
+  /// Create a user account
+  final SignUp signUp;
+
+  /// Create user
+  Future<String?> signUpUser(
+      {required String email, required String password}) async {
+    final result = await signUp(SignUpParams(email: email, password: password));
+    return result.fold((failure) => failure.toString(), (success) => null);
   }
 }

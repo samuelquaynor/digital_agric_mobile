@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/pages/loading.dart';
-import '../../../../core/user/domain/usecases/sign_up.dart';
 import '../../../../core/util/validator.dart';
 import '../../../../injection_container.dart';
 import '../../../home/presentation/pages/home.dart';
-import '../../../signup/presentation/pages/signup_page.dart';
-import '../bloc/login_bloc.dart';
+import '../../../login/presentation/pages/login_page.dart';
+import '../bloc/signup_bloc.dart';
 
-class LoginPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   /// Constructor
-  const LoginPage({super.key});
+  const SignUpPage({super.key});
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final formKey = GlobalKey<FormState>();
-  late String emailText, passwordText;
+  late String emailText, confirmPasswordText, passwordText;
 
   // ObscureText ternary
   final obscureLoginPasswordText = ValueNotifier<bool>(true);
-  final bloc = sl<LoginBloc>();
+  final obscureConfirmPasswordText = ValueNotifier<bool>(true);
+  final bloc = sl<SignupBloc>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
         shrinkWrap: true,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.14,
+            height: MediaQuery.of(context).size.height * 0.25,
             width: MediaQuery.of(context).size.width,
             padding: const EdgeInsets.only(left: 32),
             decoration: const BoxDecoration(
@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 65 / 100,
+            height: MediaQuery.of(context).size.height * 6,
             width: MediaQuery.of(context).size.width,
             color: Colors.white,
             padding:
@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Container(
                     margin: const EdgeInsets.only(bottom: 24),
-                    child: Text('Log in',
+                    child: Text('Sign up',
                         style: Theme.of(context).textTheme.titleLarge),
                   ),
                   Container(
@@ -150,6 +150,56 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         );
                       }),
+                  ValueListenableBuilder<bool>(
+                      valueListenable: obscureConfirmPasswordText,
+                      builder: (context, result, child) {
+                        return Container(
+                          width: MediaQuery.of(context).size.width,
+                          padding: const EdgeInsets.only(
+                              left: 14, right: 14, top: 4),
+                          margin: const EdgeInsets.only(bottom: 24),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: const Color(0xFFE9E9E9)),
+                          ),
+                          child: TextFormField(
+                            style: const TextStyle(
+                                fontSize: 14, fontFamily: 'poppins'),
+                            keyboardType: TextInputType.visiblePassword,
+                            obscureText: obscureConfirmPasswordText.value,
+                            onSaved: (value) => confirmPasswordText = value!,
+                            validator: (value) {
+                              formKey.currentState!.save();
+                              if (value != passwordText) {
+                                return 'Password does not match!';
+                              }
+                              return null;
+                            },
+                            decoration: InputDecoration(
+                              label: const Text(
+                                'Confirm Password',
+                                style: TextStyle(
+                                  color: Color(0xFF9D9D9D),
+                                ),
+                              ),
+                              suffixIcon: IconButton(
+                                  onPressed: () => obscureConfirmPasswordText
+                                      .value = !obscureConfirmPasswordText.value,
+                                  icon: Icon(obscureConfirmPasswordText.value
+                                      ? Icons.visibility
+                                      : Icons.visibility_off)),
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.always,
+                              border: InputBorder.none,
+                              hintText: '*************',
+                              hintStyle: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xFF9D9D9D),
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: ElevatedButton(
@@ -161,8 +211,8 @@ class _LoginPageState extends State<LoginPage> {
                         return showDialog(
                             context: context,
                             builder: (context) => LoadingPage(
-                                errorText:
-                                    bloc.loginUser(emailText, passwordText),
+                                errorText: bloc.signUpUser(
+                                    email: emailText, password: passwordText),
                                 callback: () => Navigator.of(context).push(
                                     MaterialPageRoute<void>(
                                         builder: (context) =>
@@ -177,7 +227,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       child: const Text(
-                        'Log in',
+                        'Sign up',
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
@@ -189,26 +239,14 @@ class _LoginPageState extends State<LoginPage> {
                     width: MediaQuery.of(context).size.width,
                     margin: const EdgeInsets.only(top: 4),
                     alignment: Alignment.centerLeft,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        TextButton(
-                          onPressed: () => null,
-                          style: TextButton.styleFrom(
-                            primary: const Color(0xFF9D9D9D),
-                          ),
-                          child: const Text('Forgot your password?'),
-                        ),
-                        TextButton(
-                          onPressed: () => Navigator.of(context).push(
-                              MaterialPageRoute<void>(
-                                  builder: (context) => const SignUpPage())),
-                          style: TextButton.styleFrom(
-                            primary: const Color(0xFF9D9D9D),
-                          ),
-                          child: const Text('Sign up.'),
-                        ),
-                      ],
+                    child: TextButton(
+                      onPressed: () => Navigator.of(context).push(
+                          MaterialPageRoute<void>(
+                              builder: (context) => const LoginPage())),
+                      style: TextButton.styleFrom(
+                        primary: const Color(0xFF9D9D9D),
+                      ),
+                      child: const Text('Already have an accoount. Login'),
                     ),
                   ),
                 ],

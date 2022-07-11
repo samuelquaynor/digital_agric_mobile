@@ -25,7 +25,7 @@ Future<void> main() async {
           title: 'DigiFarm',
           // darkTheme: darkTheme,
           theme: lightTheme,
-          home: isLoggedIn ? const HomeScreen() : LoginPage()),
+          home: isLoggedIn ? const HomeScreen() : const LoginPage()),
     ),
   );
 }
