@@ -48,7 +48,7 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  User? get currentUser => FirebaseAuth.instance.currentUser;
+  User get currentUser => FirebaseAuth.instance.currentUser!;
 
   @override
   bool get isLoggedIn =>
