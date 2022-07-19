@@ -4,6 +4,7 @@ import 'core/platform/network_info.dart';
 import 'core/user/user_injection.dart';
 import 'core/weather/weather_injection.dart';
 import 'features/login/login_injection.dart';
+import 'features/news/news_injection.dart';
 import 'features/settings/settings_injection.dart';
 import 'features/signup/sign_up_injection.dart';
 
@@ -40,4 +41,6 @@ void initFeatures() {
   initSignUp();
 
   initSettings();
+
+  initNews();
 }

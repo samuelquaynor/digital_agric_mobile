@@ -7,6 +7,7 @@ import 'core/presentation/widgets/light_theme.dart';
 import 'core/weather/presentation/bloc/weather_bloc.dart';
 import 'features/home/presentation/pages/home.dart';
 import 'features/login/presentation/pages/login_page.dart';
+import 'features/news/presentation/bloc/news_bloc.dart';
 import 'firebase_options.dart';
 import 'injection_container.dart' as di;
 import 'injection_container.dart';
@@ -19,8 +20,15 @@ Future<void> main() async {
   final isLoggedIn = FirebaseAuth.instance.currentUser == null ? false : true;
   // await HiveAdapters.setUp();
   runApp(
-    BlocProvider(
-      create: (context) => sl<WeatherBloc>(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => sl<WeatherBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => sl<NewsBloc>(),
+        ),
+      ],
       child: MaterialApp(
           title: 'DigiFarm',
           // darkTheme: darkTheme,
