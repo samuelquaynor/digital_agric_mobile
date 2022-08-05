@@ -1,8 +1,10 @@
 import 'package:get_it/get_it.dart';
+import 'package:hive/hive.dart';
 
 import 'core/platform/network_info.dart';
 import 'core/user/user_injection.dart';
 import 'core/weather/weather_injection.dart';
+import 'features/farms/farm_injection.dart';
 import 'features/login/login_injection.dart';
 import 'features/news/news_injection.dart';
 import 'features/settings/settings_injection.dart';
@@ -17,8 +19,8 @@ void init() {
   initCore();
   //! Features
   initFeatures();
-// //! External
-//   initExternal();
+//! External
+  initExternal();
 }
 
 /// Core files
@@ -43,4 +45,11 @@ void initFeatures() {
   initSettings();
 
   initNews();
+
+  initFarm();
+}
+
+/// External packages
+void initExternal() {
+  sl.registerLazySingleton<HiveInterface>(() => Hive);
 }

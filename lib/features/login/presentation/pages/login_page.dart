@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/presentation/pages/loading.dart';
-import '../../../../core/user/domain/usecases/sign_up.dart';
 import '../../../../core/util/validator.dart';
 import '../../../../injection_container.dart';
 import '../../../home/presentation/pages/home.dart';

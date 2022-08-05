@@ -9,7 +9,6 @@ import '../../../farms/presentation/pages/farms_page.dart';
 import '../../../news/presentation/pages/news_page.dart';
 import '../../../settings/presentation/pages/settings_page.dart';
 import '../../../stocks/presentation/pages/stocks_page.dart';
-import '../../../tasks/presentation/pages/tasks_page.dart';
 import 'dashboard.dart';
 
 ///HomeScreen

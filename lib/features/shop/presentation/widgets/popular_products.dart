@@ -6,8 +6,8 @@ import 'section_title.dart';
 
 class PopularProducts extends StatelessWidget {
   const PopularProducts({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class PopularProducts extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: defaultPadding),
           child: SectionTitle(
-            title: "Popular",
+            title: 'Popular',
             pressSeeAll: () {},
           ),
         ),

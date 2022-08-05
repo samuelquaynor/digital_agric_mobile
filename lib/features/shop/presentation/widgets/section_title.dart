@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
-    Key? key,
+    super.key,
     required this.title,
     required this.pressSeeAll,
-  }) : super(key: key);
+  });
   final String title;
   final VoidCallback pressSeeAll;
 
@@ -24,7 +24,7 @@ class SectionTitle extends StatelessWidget {
         TextButton(
           onPressed: pressSeeAll,
           child: const Text(
-            "See All",
+            'See All',
             style: TextStyle(color: Colors.black54),
           ),
         )

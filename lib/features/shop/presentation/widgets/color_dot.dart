@@ -4,10 +4,10 @@ import '../../../../core/data/constants.dart';
 
 class ColorDot extends StatelessWidget {
   const ColorDot({
-    Key? key,
+    super.key,
     required this.color,
     required this.isActive,
-  }) : super(key: key);
+  });
 
   final Color color;
   final bool isActive;

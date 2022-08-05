@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class ActiveProjectsCard extends StatelessWidget {
-  final Color cardColor;
-  final double loadingPercent;
-  final String title;
-  final String subtitle;
 
   const ActiveProjectsCard({
     required this.cardColor,
@@ -13,6 +9,10 @@ class ActiveProjectsCard extends StatelessWidget {
     required this.title,
     required this.subtitle,
   });
+  final Color cardColor;
+  final double loadingPercent;
+  final String title;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,6 @@ class ActiveProjectsCard extends StatelessWidget {
               animation: true,
               radius: 40,
               percent: loadingPercent,
-              lineWidth: 5,
               circularStrokeCap: CircularStrokeCap.round,
               backgroundColor: Colors.white10,
               progressColor: Colors.white,

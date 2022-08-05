@@ -5,13 +5,13 @@ import '../../../../core/data/constants.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
-    Key? key,
+    super.key,
     required this.image,
     required this.title,
     required this.price,
     required this.press,
     required this.bgColor,
-  }) : super(key: key);
+  });
   final String image, title;
   final VoidCallback press;
   final int price;
@@ -53,7 +53,7 @@ class ProductCard extends StatelessWidget {
                 ),
                 const SizedBox(width: defaultPadding / 4),
                 Text(
-                  "\$" + price.toString(),
+                  r'$' + price.toString(),
                   style: Theme.of(context).textTheme.subtitle2,
                 ),
               ],

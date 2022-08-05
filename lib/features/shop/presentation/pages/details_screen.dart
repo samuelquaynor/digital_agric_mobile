@@ -6,7 +6,7 @@ import '../../data/models/Product.dart';
 import '../widgets/color_dot.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({Key? key, required this.product}) : super(key: key);
+  const DetailsScreen({super.key, required this.product});
 
   final Product product;
 
@@ -22,7 +22,7 @@ class DetailsScreen extends StatelessWidget {
             icon: CircleAvatar(
               backgroundColor: Colors.white,
               child: SvgPicture.asset(
-                "assets/images/Heart.svg",
+                'assets/images/Heart.svg',
                 height: 20,
               ),
             ),
@@ -61,7 +61,7 @@ class DetailsScreen extends StatelessWidget {
                       ),
                       const SizedBox(width: defaultPadding),
                       Text(
-                        "\$" + product.price.toString(),
+                        '\$${product.price}',
                         style: Theme.of(context).textTheme.headline6,
                       ),
                     ],
@@ -69,11 +69,11 @@ class DetailsScreen extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: defaultPadding),
                     child: Text(
-                      "A Henley shirt is a collarless pullover shirt, by a round neckline and a placket about 3 to 5 inches (8 to 13 cm) long and usually having 2–5 buttons.",
+                      'A Henley shirt is a collarless pullover shirt, by a round neckline and a placket about 3 to 5 inches (8 to 13 cm) long and usually having 2–5 buttons.',
                     ),
                   ),
                   Text(
-                    "Colors",
+                    'Colors',
                     style: Theme.of(context).textTheme.subtitle2,
                   ),
                   const SizedBox(height: defaultPadding / 2),
@@ -103,7 +103,7 @@ class DetailsScreen extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                             primary: primaryColor,
                             shape: const StadiumBorder()),
-                        child: const Text("Add to Cart"),
+                        child: const Text('Add to Cart'),
                       ),
                     ),
                   )

@@ -11,7 +11,7 @@ abstract class FarmLocalDatabase {
   Future<void> save(FarmEntity farm);
 }
 
-class FarmLocalDatabaseImpl extends FarmLocalDatabase {
+class FarmLocalDatabaseImpl implements FarmLocalDatabase {
   /// Constructor
   FarmLocalDatabaseImpl(this.hiveInterface);
 

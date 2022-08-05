@@ -1,5 +1,8 @@
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../../../core/error/exception.dart';
 import '../../../../core/error/failures.dart';
@@ -21,19 +24,31 @@ class FarmRepositoryImpl implements FarmRepository {
   @override
   Future<Either<Failure, String?>> createFarm(
       {required FarmEntity farm}) async {
-    // final CollectionReference users =
-    //     FirebaseFirestore.instance.collection('farms');
+    final uid = const Uuid().v1();
+    final currentFirebaseUser =
+        //await
+        FirebaseAuth.instance.currentUser!;
+    final userid = currentFirebaseUser.uid;
+    print(userid);
+    final users = FirebaseDatabase.instance.ref('farms/$userid');
     try {
       await networkInfo.hasInternet();
       await localDatabase.save(farm);
-      // final result = users
-      //     .add(farm.toJson())
-      //     .then((value) => '')
-      //     .catchError((dynamic error) => 'Failed to create farm $error');
+      final result = users
+          .set(farm.copyWith(id: uid).toJson())
+          .then((value) => '')
+          .catchError((dynamic error) => 'Failed to create farm $error');
+      print(await result);
       // return Right(await result);
       return right(null);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));
     }
+  }
+
+  @override
+  Future<Either<Failure, FarmEntity>> getFarms() {
+    // TODO: implement getFarms
+    throw UnimplementedError();
   }
 }

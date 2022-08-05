@@ -1,7 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import '../../features/farms/domain/entities/farm_entity.dart';
-import '../user/domain/entities/user.dart';
 
 /// Add adapters to Hive per entity
 class HiveAdapters {

@@ -241,7 +241,7 @@ class ArticleView extends StatelessWidget {
                                 ])),
                             const SizedBox(height: 5),
                             Text(
-                                '${article.content ?? 'Nothing to show here!'}',
+                                article.content ?? 'Nothing to show here!',
                                 style: GoogleFonts.lora(
                                     fontSize: 16,
                                     height: 1.35,

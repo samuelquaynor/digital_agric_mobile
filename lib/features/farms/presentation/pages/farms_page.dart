@@ -40,7 +40,15 @@ class FarmsPage extends StatelessWidget {
                           horizontal: 10, vertical: 10),
                       decoration: BoxDecoration(
                           color: Colors.green,
-                          borderRadius: BorderRadius.circular(10)))),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: FadeInImage(
+                          fit: BoxFit.cover,
+                          imageErrorBuilder: (context, error, stackTrace) =>
+                              const Icon(FontAwesomeIcons.plantWilt,
+                                  color: Colors.white, size: 40),
+                          placeholder: const AssetImage(
+                              'assets/images/logo-white-transparentbg.png'),
+                          image: const NetworkImage('avatarUrl')))),
             ),
             ListTile(
                 title: Text('Prediction Algorithms',
