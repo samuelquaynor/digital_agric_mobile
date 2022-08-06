@@ -5,7 +5,7 @@ import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 import '../../../../core/weather/presentation/bloc/weather_bloc.dart';
 import '../../../../injection_container.dart';
-import '../../../farms/presentation/pages/farms_page.dart';
+import '../../../farms/presentation/pages/farms_dashboard_page.dart';
 import '../../../news/presentation/pages/news_page.dart';
 import '../../../settings/presentation/pages/settings_page.dart';
 import '../../../stocks/presentation/pages/stocks_page.dart';
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> pages = [
     const Dashboard(),
-    const FarmsPage(),
+    FarmsPage(),
     const StocksPage(),
     const NewsPage(),
     const SettingsPage()

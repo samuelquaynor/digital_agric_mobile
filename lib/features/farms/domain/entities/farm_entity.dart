@@ -19,7 +19,7 @@ class FarmEntity with _$FarmEntity {
     @HiveField(3) required double farmSize,
     @HiveField(4) required double longitude,
     @HiveField(5) required double latitude,
-    @HiveField(6) required List<String> crops,
+    @HiveField(6) required List<dynamic> crops,
   }) = _FarmEntity;
 
   /// Initial state with default values
@@ -29,7 +29,7 @@ class FarmEntity with _$FarmEntity {
       farmSize: 0,
       longitude: 0,
       latitude: 0,
-      crops: []);
+      crops: <String>[]);
 
   /// Convert from json to model
   factory FarmEntity.fromJson(Map<String, dynamic> json) =>

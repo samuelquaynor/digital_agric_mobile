@@ -38,22 +38,22 @@ class Dashboard extends StatelessWidget {
                       .textTheme
                       .headline5
                       ?.copyWith(fontWeight: FontWeight.w600)),
-              Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 50,
-                  margin: const EdgeInsets.symmetric(vertical: 16),
-                  child: ListView.builder(
-                      itemBuilder: (context, index) => Container(
-                            width: 120,
-                            margin: const EdgeInsets.symmetric(
-                                vertical: 6, horizontal: 3),
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 5)),
+              // Container(
+              //     width: MediaQuery.of(context).size.width,
+              //     height: 50,
+              //     margin: const EdgeInsets.symmetric(vertical: 16),
+              //     child: ListView.builder(
+              //         itemBuilder: (context, index) => Container(
+              //               width: 120,
+              //               margin: const EdgeInsets.symmetric(
+              //                   vertical: 6, horizontal: 3),
+              //               decoration: BoxDecoration(
+              //                 color: Colors.green,
+              //                 borderRadius: BorderRadius.circular(20),
+              //               ),
+              //             ),
+              //         scrollDirection: Axis.horizontal,
+              //         itemCount: 5)),
               BlocBuilder<WeatherBloc, WeatherState>(builder: (context, state) {
                 if (state is WeatherLoading) {
                   return Container(
@@ -100,6 +100,10 @@ class Dashboard extends StatelessWidget {
                         height: 120,
                         decoration: BoxDecoration(
                             color: Colors.white,
+                            image: const DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage(
+                                    'assets/images/agric-store1.jpg')),
                             borderRadius: BorderRadius.circular(20))),
                   ],
                 ),

@@ -6,6 +6,5 @@ import '../entities/farm_entity.dart';
 abstract class FarmRepository {
   Future<Either<Failure, String?>> createFarm({required FarmEntity farm});
 
-  
-  Future<Either<Failure, FarmEntity>> getFarms();
+  Future<Either<Failure, List<FarmEntity?>>> getFarms();
 }
