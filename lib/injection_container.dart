@@ -9,6 +9,7 @@ import 'features/login/login_injection.dart';
 import 'features/news/news_injection.dart';
 import 'features/settings/settings_injection.dart';
 import 'features/signup/sign_up_injection.dart';
+import 'features/tasks/task_injection.dart';
 
 /// Getter
 final sl = GetIt.instance;
@@ -47,6 +48,8 @@ void initFeatures() {
   initNews();
 
   initFarm();
+
+  initTasks();
 }
 
 /// External packages

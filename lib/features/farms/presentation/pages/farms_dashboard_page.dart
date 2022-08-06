@@ -86,7 +86,7 @@ class FarmsPage extends StatelessWidget {
                                       decoration: TextDecoration.underline)))
                         ]);
                   } else {
-                    return Container(
+                    return SizedBox(
                         height: 150,
                         child: ListView.builder(
                             scrollDirection: Axis.horizontal,
@@ -108,7 +108,7 @@ class FarmsPage extends StatelessWidget {
                                                   stackTrace) =>
                                               Container(
                                                   decoration: BoxDecoration(
-                                                      image: DecorationImage(
+                                                      image: const DecorationImage(
                                                           fit: BoxFit.cover,
                                                           image: AssetImage(
                                                               'assets/images/farm.jpg')),
@@ -122,7 +122,7 @@ class FarmsPage extends StatelessWidget {
                                 ])));
                   }
                 } else {
-                  return Container(
+                  return SizedBox(
                       height: 160,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
@@ -171,7 +171,7 @@ class FarmsPage extends StatelessWidget {
                           image: AssetImage(images[itemIndex]))),
                   child: Padding(
                       padding: const EdgeInsets.only(
-                          top: 16.0, left: 8, right: 8, bottom: 8),
+                          top: 16, left: 8, right: 8, bottom: 8),
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -182,7 +182,7 @@ class FarmsPage extends StatelessWidget {
                                     ?.copyWith(color: Colors.white)),
                             Padding(
                                 padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
+                                    const EdgeInsets.symmetric(vertical: 8),
                                 child: Text(algorithmsSubTitle[itemIndex],
                                     textAlign: TextAlign.center,
                                     style: Theme.of(context)
@@ -190,10 +190,9 @@ class FarmsPage extends StatelessWidget {
                                         .bodyMedium
                                         ?.copyWith(color: Colors.white))),
                             Align(
-                                alignment: Alignment.center,
                                 child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 6.0),
+                                    padding:
+                                        const EdgeInsets.symmetric(vertical: 6),
                                     child: Text('Check it out >',
                                         style: Theme.of(context)
                                             .textTheme

@@ -6,7 +6,6 @@ import 'package:number_inc_dec/number_inc_dec.dart';
 import '../../../../core/presentation/pages/loading.dart';
 import '../../../../core/util/validator.dart';
 import '../../../../injection_container.dart';
-import '../../../home/presentation/pages/home.dart';
 import '../../data/models/address.dart';
 import '../../domain/entities/farm_entity.dart';
 import '../bloc/farms_bloc.dart';
@@ -169,8 +168,8 @@ class _CreateFarmState extends State<CreateFarm> {
                       scrollDirection: Axis.horizontal,
                       padding: const EdgeInsets.all(8),
                       itemBuilder: (context, index) => Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 6),
-                            child: Chip(
+                          margin: const EdgeInsets.symmetric(horizontal: 6),
+                          child: Chip(
                               label: Text(
                                 crops[index],
                                 style: const TextStyle(color: Colors.white),
@@ -185,9 +184,7 @@ class _CreateFarmState extends State<CreateFarm> {
                                 setState(() {
                                   crops.removeAt(index);
                                 });
-                              },
-                            ),
-                          ),
+                              })),
                       shrinkWrap: true,
                       itemCount: crops.length)),
               ListTile(

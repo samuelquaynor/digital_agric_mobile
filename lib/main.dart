@@ -21,21 +21,14 @@ Future<void> main() async {
   // ignore: avoid_bool_literals_in_conditional_expressions
   final isLoggedIn = FirebaseAuth.instance.currentUser == null ? false : true;
   // await HiveAdapters.setUp();
-  runApp(
-    MultiBlocProvider(
+  runApp(MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create: (context) => sl<WeatherBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => sl<NewsBloc>(),
-        ),
+        BlocProvider(create: (context) => sl<WeatherBloc>()),
+        BlocProvider(create: (context) => sl<NewsBloc>())
       ],
       child: MaterialApp(
           title: 'DigiFarm',
           // darkTheme: darkTheme,
           theme: lightTheme,
-          home: isLoggedIn ? const HomeScreen() : const LoginPage()),
-    ),
-  );
+          home: isLoggedIn ? const HomeScreen() : const LoginPage())));
 }

@@ -36,6 +36,21 @@ class Validator {
     }
   }
 
+  /// Name validator
+  static String? input(String? value) {
+    const pattern = r'(^[a-zA-Z ]*$)';
+    final regExp = RegExp(pattern);
+    if (regExp.hasMatch(value!)) {
+      if (value.trim().isNotEmpty) {
+        return null;
+      } else {
+        return 'input is required';
+      }
+    } else {
+      return 'Punctuations and numbers are not allowed!';
+    }
+  }
+
   /// Pattern checks for valid phone Numbers
   static String? phoneNumber(String? value) {
     const pattern = r'^((?!2(1|2|5)|5([1-3]|6|8))(2[0-8]|5[0-9]))\d{7}$';
