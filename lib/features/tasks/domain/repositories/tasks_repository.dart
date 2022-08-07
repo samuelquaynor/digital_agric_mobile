@@ -5,4 +5,7 @@ import '../entities/tasks_entity.dart';
 
 abstract class TasksRepository {
   Future<Either<Failure, String?>> createTasks(TasksEntity task);
+
+  
+  Future<Either<Failure, List<TasksEntity?>>> getTasks();
 }

@@ -50,23 +50,23 @@ class FarmRepositoryImpl implements FarmRepository {
 
   @override
   Future<Either<Failure, List<FarmEntity?>>> getFarms() async {
-    final currentFirebaseUser =
-        //await
-        FirebaseAuth.instance.currentUser!;
+    final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
     final userid = currentFirebaseUser.uid;
     final farms = <FarmEntity>[];
     final farmsFire = FirebaseFirestore.instance.collection('users');
     try {
       await networkInfo.hasInternet();
-      final result = await farmsFire.doc('$userid').collection('farms').get();
-      result.docs.forEach((farm) => farms.add(FarmEntity(
-          id: farm.id,
-          name: farm.get('name') as String,
-          soilType: farm.get('soilType') as String,
-          farmSize: farm.get('farmSize') as double,
-          longitude: farm.get('longitude') as double,
-          latitude: farm.get('latitude') as double,
-          crops: farm.get('crops') as List<dynamic>)));
+      final result = await farmsFire.doc(userid).collection('farms').get();
+      for (var farm in result.docs) {
+        farms.add(FarmEntity(
+            id: farm.id,
+            name: farm.get('name') as String,
+            soilType: farm.get('soilType') as String,
+            farmSize: farm.get('farmSize') as double,
+            longitude: farm.get('longitude') as double,
+            latitude: farm.get('latitude') as double,
+            crops: farm.get('crops') as List<dynamic>));
+      }
       return Right(farms);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));

@@ -9,8 +9,8 @@ import '../../domain/entities/tasks_entity.dart';
 import '../../domain/repositories/tasks_repository.dart';
 
 class TasksRepositoryImpl implements TasksRepository {
-/// Constructor
-TasksRepositoryImpl(this.networkInfo);
+  /// Constructor
+  TasksRepositoryImpl(this.networkInfo);
 
   /// Network information
   final NetworkInfo networkInfo;
@@ -41,4 +41,28 @@ TasksRepositoryImpl(this.networkInfo);
     }
   }
 
+  @override
+  Future<Either<Failure, List<TasksEntity?>>> getTasks() async {
+    final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
+    final userid = currentFirebaseUser.uid;
+    final tasks = <TasksEntity>[];
+    final tasksFire = FirebaseFirestore.instance.collection('users');
+    try {
+      await networkInfo.hasInternet();
+      final result = await tasksFire.doc(userid).collection('tasks').get();
+      for (final task in result.docs) {
+        tasks.add(TasksEntity(
+            id: task.id,
+            name: task.get('name') as String,
+            startTime: task.get('startTime') as String,
+            endTime: task.get('endTime') as String,
+            description: task.get('description') as String,
+            status: task.get('status') as String,
+            farms: task.get('farms') as List<dynamic>));
+      }
+      return Right(tasks);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
 }

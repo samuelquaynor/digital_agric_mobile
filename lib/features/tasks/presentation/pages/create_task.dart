@@ -65,6 +65,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                               onChanged: (value) => setState(() {
                                     title = value;
                                   }),
+                              style: const TextStyle(color: Colors.white),
                               decoration: InputDecoration(
                                   label: const Text('Title'),
                                   border: OutlineInputBorder(

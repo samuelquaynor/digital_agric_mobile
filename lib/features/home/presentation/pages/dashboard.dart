@@ -4,8 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/weather/presentation/bloc/weather_bloc.dart';
 import '../../../../core/weather/presentation/pages/full_weather_screen.dart';
 import '../../../../core/weather/presentation/widgets/display_weather_widget.dart';
-import '../../../shop/presentation/pages/shop_home.dart';
+import '../../../shop/presentation/widgets/agric_store_widget.dart';
 import '../../../tasks/presentation/pages/tasks_page.dart';
+import '../../../tasks/presentation/widgets/tasks_widget.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({
@@ -84,50 +85,17 @@ class Dashboard extends StatelessWidget {
                       child: const Text('Weather Loading Error'));
                 }
               }),
-              GestureDetector(
-                onTap: () => Navigator.of(context).push<void>(MaterialPageRoute(
-                    builder: (context) => const ShopHomeScreen())),
-                child: Column(
-                  children: [
-                    ListTile(
-                        contentPadding: EdgeInsets.zero,
-                        title: Text('AgriStore',
-                            style: Theme.of(context).textTheme.titleMedium),
-                        subtitle: const Text('Buy and Sell here'),
-                        trailing: const Icon(Icons.arrow_forward)),
-                    Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: 120,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            image: const DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage(
-                                    'assets/images/agric-store1.jpg')),
-                            borderRadius: BorderRadius.circular(20))),
-                  ],
-                ),
-              ),
-              Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  child: Text('Current tasks',
-                      style: Theme.of(context).textTheme.titleMedium)),
-              Center(
-                  child: GestureDetector(
-                      onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute<void>(
-                              builder: (context) => const TasksPage())),
-                      child: RichText(
-                          text: TextSpan(
-                              text: 'No Tasks Available, ',
-                              style: TextStyle(
-                                  color: Colors.green.shade900, fontSize: 16),
-                              children: const [
-                            TextSpan(
-                                text: 'Create Task.',
-                                style: TextStyle(
-                                    decoration: TextDecoration.underline))
-                          ]))))
+              const AgricStore(),
+              ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                          builder: (context) => const TasksPage())),
+                  title: Text('Current Task',
+                      style: Theme.of(context).textTheme.titleMedium),
+                  subtitle: const Text('create tasks for farms'),
+                  trailing: const Icon(Icons.arrow_forward)),
+              TasksWidget()
             ])));
   }
 }
