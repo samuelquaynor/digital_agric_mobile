@@ -188,7 +188,9 @@ class FarmsPage extends StatelessWidget {
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyMedium
-                                        ?.copyWith(color: Colors.white))),
+                                        ?.copyWith(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w500))),
                             Align(
                                 child: Padding(
                                     padding:
@@ -197,7 +199,9 @@ class FarmsPage extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyMedium
-                                            ?.copyWith(color: Colors.white))))
+                                            ?.copyWith(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w500))))
                           ]))),
               options: CarouselOptions(
                   autoPlayInterval: const Duration(seconds: 10),

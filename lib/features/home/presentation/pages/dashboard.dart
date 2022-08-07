@@ -4,14 +4,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/weather/presentation/bloc/weather_bloc.dart';
 import '../../../../core/weather/presentation/pages/full_weather_screen.dart';
 import '../../../../core/weather/presentation/widgets/display_weather_widget.dart';
+import '../../../../injection_container.dart';
+import '../../../farms/domain/entities/farm_entity.dart';
+import '../../../farms/presentation/bloc/farms_bloc.dart';
 import '../../../shop/presentation/widgets/agric_store_widget.dart';
 import '../../../tasks/presentation/pages/tasks_page.dart';
 import '../../../tasks/presentation/widgets/tasks_widget.dart';
 
-class Dashboard extends StatelessWidget {
+class Dashboard extends StatefulWidget {
   const Dashboard({
     super.key,
   });
+
+  @override
+  State<Dashboard> createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> {
+  final bloc = sl<FarmsBloc>();
 
   @override
   Widget build(BuildContext context) {
@@ -91,11 +101,28 @@ class Dashboard extends StatelessWidget {
                   onTap: () => Navigator.of(context).push(
                       MaterialPageRoute<void>(
                           builder: (context) => const TasksPage())),
-                  title: Text('Current Task',
+                  title: Text('Current Tasks',
                       style: Theme.of(context).textTheme.titleMedium),
                   subtitle: const Text('create tasks for farms'),
                   trailing: const Icon(Icons.arrow_forward)),
-              TasksWidget()
+              FutureBuilder(
+                  future: bloc.getFarmsBloc(),
+                  builder:
+                      (context, AsyncSnapshot<List<FarmEntity?>> snapshot) {
+                    if (snapshot.hasData) {
+                      if (snapshot.data!.isEmpty) {
+                        return const Center(
+                          child: Text('No Farms Avaliable Hence No Task'),
+                        );
+                      } else {
+                        return TasksWidget(
+                          farms: snapshot.data ?? [],
+                        );
+                      }
+                    } else {
+                      return const LinearProgressIndicator();
+                    }
+                  })
             ])));
   }
 }

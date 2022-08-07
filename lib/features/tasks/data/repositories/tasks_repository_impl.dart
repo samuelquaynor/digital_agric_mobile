@@ -49,7 +49,7 @@ class TasksRepositoryImpl implements TasksRepository {
     final tasksFire = FirebaseFirestore.instance.collection('users');
     try {
       await networkInfo.hasInternet();
-      final result = await tasksFire.doc(userid).collection('tasks').get();
+      final result = await tasksFire.doc(userid).collection('tasks').orderBy('endTime').get();
       for (final task in result.docs) {
         tasks.add(TasksEntity(
             id: task.id,
