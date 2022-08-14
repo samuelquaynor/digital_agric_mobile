@@ -1,12 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../error/failures.dart';
 import '../../../usecases/usecase.dart';
 import '../repositories/user_repository.dart';
 
-class SignUp implements UseCase<UserCredential, SignUpParams> {
+class SignUp implements UseCase<String?, SignUpParams> {
   /// Constructor
   SignUp(this.repository);
 
@@ -14,26 +13,27 @@ class SignUp implements UseCase<UserCredential, SignUpParams> {
   final UserRepository repository;
 
   @override
-  Future<Either<Failure, UserCredential>> call(SignUpParams params) =>
+  Future<Either<Failure, String?>> call(SignUpParams params) =>
       repository.signUpWithEmailAndPassword(
-        password: params.password,
-        email: params.email,
-      );
+          password: params.password,
+          email: params.email,
+          fullName: params.fullName);
 }
 
 /// Creating a user account params
 class SignUpParams extends Equatable {
   /// Constructor
-  const SignUpParams({
-    required this.email,
-    required this.password,
-  });
+  const SignUpParams(
+      {required this.email, required this.password, required this.fullName});
 
   /// Email Address
   final String email;
 
   /// Password
   final String password;
+
+  /// Full name
+  final String fullName;
 
   @override
   List<Object> get props => [email, password];

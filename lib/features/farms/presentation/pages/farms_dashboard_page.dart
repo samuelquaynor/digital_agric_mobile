@@ -70,8 +70,8 @@ class FarmsPage extends StatelessWidget {
           FutureBuilder(
               future: bloc.getFarmsBloc(),
               builder: (context, AsyncSnapshot<List<FarmEntity?>> snapshot) {
-                if (snapshot.hasData) {
-                  if (snapshot.data!.isEmpty) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  if (snapshot.data?.isEmpty ?? true) {
                     return Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

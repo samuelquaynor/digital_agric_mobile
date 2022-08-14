@@ -16,7 +16,7 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   final formKey = GlobalKey<FormState>();
-  late String emailText, confirmPasswordText, passwordText;
+  late String emailText, confirmPasswordText, fullName, passwordText;
 
   // ObscureText ternary
   final obscureLoginPasswordText = ValueNotifier<bool>(true);
@@ -72,40 +72,55 @@ class _SignUpPageState extends State<SignUpPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(bottom: 24),
-                    child: Text('Sign up',
-                        style: Theme.of(context).textTheme.titleLarge),
-                  ),
+                      margin: const EdgeInsets.only(bottom: 24),
+                      child: Text('Sign up',
+                          style: Theme.of(context).textTheme.titleLarge)),
                   Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.only(left: 14, right: 14, top: 4),
-                    margin: const EdgeInsets.only(bottom: 16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: const Color(0xFFE9E9E9)),
-                    ),
-                    child: TextFormField(
-                      onSaved: (value) => emailText = value!,
-                      validator: Validator.email,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: const InputDecoration(
-                        label: Text(
-                          'Email',
-                          style: TextStyle(
-                            color: Color(0xFF9D9D9D),
-                          ),
-                        ),
-                        floatingLabelBehavior: FloatingLabelBehavior.always,
-                        border: InputBorder.none,
-                        hintText: 'youremail@email.com',
-                        hintStyle: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xFF9D9D9D),
-                        ),
-                      ),
-                    ),
-                  ),
+                      width: MediaQuery.of(context).size.width,
+                      padding:
+                          const EdgeInsets.only(left: 14, right: 14, top: 4),
+                      margin: const EdgeInsets.only(bottom: 16),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: const Color(0xFFE9E9E9))),
+                      child: TextFormField(
+                          onSaved: (value) => emailText = value!,
+                          validator: Validator.email,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: const InputDecoration(
+                              label: Text('Email',
+                                  style: TextStyle(color: Color(0xFF9D9D9D))),
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.always,
+                              border: InputBorder.none,
+                              hintText: 'youremail@email.com',
+                              hintStyle: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xFF9D9D9D))))),
+                  Container(
+                      width: MediaQuery.of(context).size.width,
+                      padding:
+                          const EdgeInsets.only(left: 14, right: 14, top: 4),
+                      margin: const EdgeInsets.only(bottom: 16),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: const Color(0xFFE9E9E9))),
+                      child: TextFormField(
+                          onSaved: (value) => fullName = value!,
+                          validator: Validator.name,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: const InputDecoration(
+                              label: Text('Full Name',
+                                  style: TextStyle(color: Color(0xFF9D9D9D))),
+                              floatingLabelBehavior:
+                                  FloatingLabelBehavior.always,
+                              border: InputBorder.none,
+                              hintText: 'Edwin Darko',
+                              hintStyle: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xFF9D9D9D))))),
                   ValueListenableBuilder<bool>(
                       valueListenable: obscureLoginPasswordText,
                       builder: (context, result, child) {
@@ -183,8 +198,9 @@ class _SignUpPageState extends State<SignUpPage> {
                                 ),
                               ),
                               suffixIcon: IconButton(
-                                  onPressed: () => obscureConfirmPasswordText
-                                      .value = !obscureConfirmPasswordText.value,
+                                  onPressed: () =>
+                                      obscureConfirmPasswordText.value =
+                                          !obscureConfirmPasswordText.value,
                                   icon: Icon(obscureConfirmPasswordText.value
                                       ? Icons.visibility
                                       : Icons.visibility_off)),
@@ -212,7 +228,9 @@ class _SignUpPageState extends State<SignUpPage> {
                             context: context,
                             builder: (context) => LoadingPage(
                                 errorText: bloc.signUpUser(
-                                    email: emailText, password: passwordText),
+                                    email: emailText,
+                                    password: passwordText,
+                                    fullName: fullName),
                                 callback: () => Navigator.of(context).push(
                                     MaterialPageRoute<void>(
                                         builder: (context) =>

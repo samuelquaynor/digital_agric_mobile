@@ -60,7 +60,7 @@ class TasksWidget extends StatelessWidget {
                     Text.rich(TextSpan(children: [
                       TextSpan(
                           text:
-                              '${tasks[index]?.name} was not\nperformed. You have ',
+                              '${tasks[index]?.name} was not\nperformed. delayed ',
                           style: const TextStyle(fontWeight: FontWeight.w500)),
                       TextSpan(
                           text: '${diff.inDays} days',
@@ -107,7 +107,7 @@ class TasksWidget extends StatelessWidget {
                     Text.rich(TextSpan(children: [
                       TextSpan(
                           text:
-                              '${tasks[index]?.name} was not\nperformed. You have ',
+                              '${tasks[index]?.name} was not\nperformed. delayed ',
                           style: const TextStyle(fontWeight: FontWeight.w500)),
                       TextSpan(
                           text: '${diff.inHours} hours',
@@ -154,7 +154,7 @@ class TasksWidget extends StatelessWidget {
                     Text.rich(TextSpan(children: [
                       TextSpan(
                           text:
-                              '${tasks[index]?.name} was not\nperformed. You have ',
+                              '${tasks[index]?.name} was not\nperformed. delayed ',
                           style: const TextStyle(fontWeight: FontWeight.w500)),
                       TextSpan(
                           text: '${diff.inMinutes} minutes',
@@ -201,7 +201,7 @@ class TasksWidget extends StatelessWidget {
                     Text.rich(TextSpan(children: [
                       TextSpan(
                           text:
-                              '${tasks[index]?.name} was not\nperformed. You have ',
+                              '${tasks[index]?.name} was not\nperformed. delayed ',
                           style: const TextStyle(fontWeight: FontWeight.w500)),
                       TextSpan(
                           text: '${diff.inSeconds} seconds',

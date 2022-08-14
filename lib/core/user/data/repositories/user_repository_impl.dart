@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -28,13 +29,20 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  Future<Either<Failure, UserCredential>> signUpWithEmailAndPassword(
-      {required String email, required String password}) async {
+  Future<Either<Failure, String?>> signUpWithEmailAndPassword(
+      {required String email,
+      required String password,
+      required String fullName}) async {
     try {
       await networkInfo.hasInternet();
-      final res = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(email: email, password: password);
-      return Right(res);
+      await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(email: email, password: password)
+          .then((value) => FirebaseFirestore.instance
+              .collection('users/${value.user?.uid}')
+              .add({
+                'fullName': fullName,
+              }.cast<String, dynamic>()));
+      return const Right(null);
     } on FirebaseAuthException catch (e) {
       return Left(Failure(e.message ?? ''));
     } on Exception {

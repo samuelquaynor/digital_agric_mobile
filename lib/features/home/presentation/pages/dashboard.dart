@@ -7,6 +7,7 @@ import '../../../../core/weather/presentation/widgets/display_weather_widget.dar
 import '../../../../injection_container.dart';
 import '../../../farms/domain/entities/farm_entity.dart';
 import '../../../farms/presentation/bloc/farms_bloc.dart';
+import '../../../farms/presentation/pages/create_farm.dart';
 import '../../../shop/presentation/widgets/agric_store_widget.dart';
 import '../../../tasks/presentation/pages/tasks_page.dart';
 import '../../../tasks/presentation/widgets/tasks_widget.dart';
@@ -109,11 +110,22 @@ class _DashboardState extends State<Dashboard> {
                   future: bloc.getFarmsBloc(),
                   builder:
                       (context, AsyncSnapshot<List<FarmEntity?>> snapshot) {
-                    if (snapshot.hasData) {
-                      if (snapshot.data!.isEmpty) {
-                        return const Center(
-                          child: Text('No Farms Avaliable Hence No Task'),
-                        );
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      if (snapshot.data?.isEmpty ?? true) {
+                        return Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text('No Farms Available. '),
+                              GestureDetector(
+                                  onTap: () => Navigator.of(context).push<void>(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const CreateFarm())),
+                                  child: const Text('Create One',
+                                      style: TextStyle(
+                                          decoration:
+                                              TextDecoration.underline)))
+                            ]);
                       } else {
                         return TasksWidget(
                           farms: snapshot.data ?? [],
