@@ -101,7 +101,7 @@ class _DashboardState extends State<Dashboard> {
                   contentPadding: EdgeInsets.zero,
                   onTap: () => Navigator.of(context).push(
                       MaterialPageRoute<void>(
-                          builder: (context) => const TasksPage())),
+                          builder: (context) => TasksPage())),
                   title: Text('Current Tasks',
                       style: Theme.of(context).textTheme.titleMedium),
                   subtitle: const Text('create tasks for farms'),

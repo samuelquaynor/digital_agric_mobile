@@ -11,7 +11,8 @@ void initTasks() {
   final sl = GetIt.instance;
 
   sl
-    ..registerFactory(() => TasksBloc(createTaskUsc: sl(), getTasks: sl()))
+    ..registerFactory(() =>
+        TasksBloc(createTaskUsc: sl(), getTasks: sl(), retrieveUser: sl()))
     ..registerLazySingleton(() => CreateTaskUsc(sl()))
     ..registerLazySingleton(() => GetTasks(sl()))
     // ..registerLazySingleton<FarmLocalDatabase>(

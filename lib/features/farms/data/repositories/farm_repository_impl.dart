@@ -57,7 +57,7 @@ class FarmRepositoryImpl implements FarmRepository {
     try {
       await networkInfo.hasInternet();
       final result = await farmsFire.doc(userid).collection('farms').get();
-      for (var farm in result.docs) {
+      for (final farm in result.docs) {
         farms.add(FarmEntity(
             id: farm.id,
             name: farm.get('name') as String,

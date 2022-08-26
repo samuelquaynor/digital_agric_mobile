@@ -17,14 +17,13 @@ class TasksRepositoryImpl implements TasksRepository {
 
   @override
   Future<Either<Failure, String?>> createTasks(TasksEntity task) async {
-    final currentFirebaseUser =
-        //await
-        FirebaseAuth.instance.currentUser!;
+    final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
     final userid = currentFirebaseUser.uid;
-    final users = FirebaseFirestore.instance.collection('users/$userid/tasks');
     try {
       await networkInfo.hasInternet();
-      final result = users
+      final users =
+          FirebaseFirestore.instance.collection('users/$userid/tasks');
+      await users
           .add(<String, dynamic>{
             'name': task.name,
             'description': task.description,
@@ -46,10 +45,14 @@ class TasksRepositoryImpl implements TasksRepository {
     final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
     final userid = currentFirebaseUser.uid;
     final tasks = <TasksEntity>[];
-    final tasksFire = FirebaseFirestore.instance.collection('users');
     try {
       await networkInfo.hasInternet();
-      final result = await tasksFire.doc(userid).collection('tasks').orderBy('endTime').get();
+      final tasksFire = FirebaseFirestore.instance.collection('users');
+      final result = await tasksFire
+          .doc(userid)
+          .collection('tasks')
+          .orderBy('endTime')
+          .get();
       for (final task in result.docs) {
         tasks.add(TasksEntity(
             id: task.id,

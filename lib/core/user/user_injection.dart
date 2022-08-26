@@ -5,6 +5,7 @@ import 'domain/repositories/user_repository.dart';
 import 'domain/usecases/get_user.dart';
 import 'domain/usecases/login.dart';
 import 'domain/usecases/logout.dart';
+import 'domain/usecases/retrieveUser.dart';
 import 'domain/usecases/sign_up.dart';
 
 /// Add user dependency
@@ -16,6 +17,7 @@ void initUser() {
     ..registerLazySingleton(() => Logout(sl()))
     ..registerLazySingleton(() => SignUp(sl()))
     ..registerLazySingleton(() => GetUser(sl()))
+    ..registerLazySingleton(() => RetrieveUser(sl()))
     // Repository
     ..registerLazySingleton<UserRepository>(() => UserRepositoryImpl(sl()));
   // database

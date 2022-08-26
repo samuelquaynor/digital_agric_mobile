@@ -6,6 +6,7 @@ import '../../../../core/data/hive_adapters.dart';
 part 'tasks_entity.g.dart';
 part 'tasks_entity.freezed.dart';
 
+/// Tasks Entity
 @HiveType(typeId: HiveAdapters.tasks)
 @freezed
 class TasksEntity with _$TasksEntity {

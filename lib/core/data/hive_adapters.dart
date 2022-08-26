@@ -6,7 +6,10 @@ import '../../features/tasks/domain/entities/tasks_entity.dart';
 /// Add adapters to Hive per entity
 class HiveAdapters {
   /// User entity
+  static const user = 0;
+  /// Farm entity
   static const farm = 3;
+  /// Tasks entity
   static const tasks = 4;
 
   /// Initialize adapters when app starts

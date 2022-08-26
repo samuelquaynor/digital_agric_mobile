@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> pages = [
     const Dashboard(),
     FarmsPage(),
-    const StocksPage(),
+    // const StocksPage(),
     const NewsPage(),
     const SettingsPage()
   ];
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
               unselectedColor: const Color.fromARGB(255, 140, 221, 143),
             ),
 
-            /// Likes
+            /// Farms
             SalomonBottomBarItem(
               icon: const Icon(
                 FontAwesomeIcons.plantWilt,
@@ -81,17 +81,17 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
             /// Search
-            SalomonBottomBarItem(
-              icon: const Icon(
-                FontAwesomeIcons.chartBar,
-                size: 20,
-              ),
-              title: const Text('Stocks'),
-              selectedColor: Colors.white,
-              unselectedColor: const Color.fromARGB(255, 140, 221, 143),
-            ),
+            // SalomonBottomBarItem(
+            //   icon: const Icon(
+            //     FontAwesomeIcons.chartBar,
+            //     size: 20,
+            //   ),
+            //   title: const Text('Stocks'),
+            //   selectedColor: Colors.white,
+            //   unselectedColor: const Color.fromARGB(255, 140, 221, 143),
+            // ),
 
-            /// Profile
+            /// News
             SalomonBottomBarItem(
               icon: const Icon(
                 FontAwesomeIcons.newspaper,

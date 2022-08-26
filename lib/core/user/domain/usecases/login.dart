@@ -6,10 +6,12 @@ import '../../../error/failures.dart';
 import '../../../usecases/usecase.dart';
 import '../repositories/user_repository.dart';
 
+/// Login Usecase
 class Login implements UseCase<UserCredential, LoginParams> {
   /// Constructor
   Login(this.repository);
 
+  /// User Repository
   final UserRepository repository;
 
   @override
@@ -18,6 +20,7 @@ class Login implements UseCase<UserCredential, LoginParams> {
           password: params.password, email: params.email);
 }
 
+/// Login Parms
 class LoginParams extends Equatable {
   /// Constructor
   const LoginParams({required this.email, required this.password});

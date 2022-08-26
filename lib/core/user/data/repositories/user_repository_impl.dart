@@ -2,10 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../../../features/farms/domain/entities/farm_entity.dart';
+import '../../../../features/tasks/domain/entities/tasks_entity.dart';
+import '../../../error/exception.dart';
 import '../../../error/failures.dart';
 import '../../../platform/network_info.dart';
+import '../../domain/entities/user.dart';
 import '../../domain/repositories/user_repository.dart';
 
+/// User Repository Implementation
 class UserRepositoryImpl implements UserRepository {
   /// Constructor
   UserRepositoryImpl(this.networkInfo);
@@ -37,11 +42,12 @@ class UserRepositoryImpl implements UserRepository {
       await networkInfo.hasInternet();
       await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password)
-          .then((value) => FirebaseFirestore.instance
-              .collection('users/${value.user?.uid}')
-              .add({
-                'fullName': fullName,
-              }.cast<String, dynamic>()));
+          .then((userNew) async {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(userNew.user?.uid)
+            .set({'email': email, 'name': fullName}.cast<String, dynamic>());
+      });
       return const Right(null);
     } on FirebaseAuthException catch (e) {
       return Left(Failure(e.message ?? ''));
@@ -62,4 +68,51 @@ class UserRepositoryImpl implements UserRepository {
   bool get isLoggedIn =>
       // ignore: avoid_bool_literals_in_conditional_expressions
       FirebaseAuth.instance.currentUser == null ? false : true;
+
+  @override
+  Future<Either<Failure, UserEntity>> retrieveUser() async {
+    final uid = currentUser.uid;
+    final tasks = <TasksEntity>[];
+    final farms = <FarmEntity>[];
+    try {
+      await networkInfo.hasInternet();
+      final fireUser = FirebaseFirestore.instance.collection('users');
+      final user = await fireUser.doc(uid).get();
+      final tasksResult = await fireUser
+          .doc(uid)
+          .collection('tasks')
+          .orderBy('endTime')
+          .get();
+      final farmResult = await fireUser.doc(uid).collection('farms').get();
+      for (final farm in farmResult.docs) {
+        farms.add(FarmEntity(
+            id: farm.id,
+            name: farm.get('name') as String,
+            soilType: farm.get('soilType') as String,
+            farmSize: farm.get('farmSize') as double,
+            longitude: farm.get('longitude') as double,
+            latitude: farm.get('latitude') as double,
+            crops: farm.get('crops') as List<dynamic>));
+      }
+      for (final task in tasksResult.docs) {
+        tasks.add(TasksEntity(
+            id: task.id,
+            name: task.get('name') as String,
+            startTime: task.get('startTime') as String,
+            endTime: task.get('endTime') as String,
+            description: task.get('description') as String,
+            status: task.get('status') as String,
+            farms: task.get('farms') as List<dynamic>));
+      }
+      final userResult = UserEntity(
+          id: user.id,
+          email: user.get('email') as String,
+          name: user.get('name') as String,
+          farms: farms,
+          tasks: tasks);
+      return Right(userResult);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
 }

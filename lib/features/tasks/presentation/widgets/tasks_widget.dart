@@ -7,13 +7,18 @@ import '../../domain/entities/tasks_entity.dart';
 import '../bloc/tasks_bloc.dart';
 import '../pages/tasks_page.dart';
 
+/// Tasks Widget in  home
 class TasksWidget extends StatelessWidget {
+  /// Constructor
   TasksWidget({super.key, required this.farms});
 
+  /// Tasks Bloc
   final bloc = sl<TasksBloc>();
 
+  /// Farm LIst
   final List<FarmEntity?> farms;
 
+  /// find farms created by user
   List<FarmEntity?> findFarm(
       {required List<FarmEntity?> farmEntites,
       required List<dynamic> farmStrings}) {
@@ -25,6 +30,7 @@ class TasksWidget extends StatelessWidget {
     return result;
   }
 
+  /// Return tasks widget based on task
   Builder? dateDifference(
       {required String startTime,
       required String endTime,
@@ -437,7 +443,7 @@ class TasksWidget extends StatelessWidget {
                   child: GestureDetector(
                       onTap: () => Navigator.of(context).push(
                           MaterialPageRoute<void>(
-                              builder: (context) => const TasksPage())),
+                              builder: (context) => TasksPage())),
                       child: RichText(
                           text: TextSpan(
                               text: 'No Tasks Available, ',
