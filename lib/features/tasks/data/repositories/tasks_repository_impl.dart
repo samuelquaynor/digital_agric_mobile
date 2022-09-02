@@ -5,9 +5,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../core/error/exception.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/platform/network_info.dart';
+import '../../../farms/domain/entities/farm_entity.dart';
 import '../../domain/entities/tasks_entity.dart';
 import '../../domain/repositories/tasks_repository.dart';
 
+/// Implement [TasksRepository]
 class TasksRepositoryImpl implements TasksRepository {
   /// Constructor
   TasksRepositoryImpl(this.networkInfo);
@@ -64,6 +66,46 @@ class TasksRepositoryImpl implements TasksRepository {
             farms: task.get('farms') as List<dynamic>));
       }
       return Right(tasks);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> deleteTasks(TasksEntity task) async {
+    try {
+      await networkInfo.hasInternet();
+      final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
+      final userid = currentFirebaseUser.uid;
+      final tasksFire = FirebaseFirestore.instance.collection('users');
+      await tasksFire
+          .doc(userid)
+          .collection('tasks')
+          .doc(task.id)
+          .delete()
+          .catchError((dynamic error) =>
+              throw DeviceException('{deleting task had an error $error}'));
+      return const Right(true);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> markDone(TasksEntity task) async {
+    try {
+      await networkInfo.hasInternet();
+      final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
+      final userid = currentFirebaseUser.uid;
+      final tasksFire = FirebaseFirestore.instance.collection('users');
+      await tasksFire
+          .doc(userid)
+          .collection('tasks')
+          .doc(task.id)
+          .update(task.toJson())
+          .catchError((dynamic error) =>
+              throw DeviceException('{updating task had an error $error}'));
+      return const Right(true);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));
     }

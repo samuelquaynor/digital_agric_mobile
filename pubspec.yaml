@@ -66,6 +66,7 @@ dependencies:
   uuid: ^3.0.6
   firebase_database: ^9.0.13
   shimmer: ^2.0.0
+  flutter_slidable: ^2.0.0
   datetime_picker_formfield: ^2.0.1
 
 dev_dependencies:

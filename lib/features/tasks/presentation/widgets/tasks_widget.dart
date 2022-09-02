@@ -435,10 +435,13 @@ class TasksWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: bloc.getTaksBloc(),
+        future: bloc.getTasksBloc(),
+        initialData: const <TasksEntity>[],
         builder: (context, AsyncSnapshot<List<TasksEntity?>> snapshot) {
           if (snapshot.hasData) {
-            if (snapshot.data!.isEmpty) {
+            if (snapshot.requireData
+                .where((task) => task?.status != 'Done')
+                .isEmpty) {
               return Center(
                   child: GestureDetector(
                       onTap: () => Navigator.of(context).push(
@@ -446,7 +449,7 @@ class TasksWidget extends StatelessWidget {
                               builder: (context) => TasksPage())),
                       child: RichText(
                           text: TextSpan(
-                              text: 'No Tasks Available, ',
+                              text: 'No Current Tasks Available, ',
                               style: TextStyle(
                                   color: Colors.green.shade900, fontSize: 16),
                               children: const [
@@ -457,10 +460,20 @@ class TasksWidget extends StatelessWidget {
                           ]))));
             } else {
               return SizedBox(
-                  height: snapshot.data!.length <= 1 ? 130 : 400,
+                  height: snapshot.requireData
+                              .where((element) => element?.status != 'Done')
+                              .length <=
+                          1
+                      ? 130
+                      : 400,
                   child: ListView.builder(
-                      itemCount: snapshot.data!.length <= 3
-                          ? snapshot.data!.length
+                      itemCount: snapshot.data!
+                                  .where((element) => element?.status != 'Done')
+                                  .length <=
+                              3
+                          ? snapshot.data!
+                              .where((element) => element?.status != 'Done')
+                              .length
                           : 3,
                       shrinkWrap: true,
                       physics: const NeverScrollableScrollPhysics(),
@@ -479,10 +492,19 @@ class TasksWidget extends StatelessWidget {
                               ],
                               borderRadius: BorderRadius.circular(20)),
                           child: dateDifference(
-                              endTime: snapshot.data?[index]?.endTime ?? '',
-                              startTime: snapshot.data?[index]?.startTime ?? '',
+                              endTime: snapshot.data!
+                                      .where((element) =>
+                                          element?.status != 'Done')
+                                      .toList()[index]
+                                      ?.endTime ??
+                                  '',
+                              startTime: snapshot.data!
+                                      .where((element) => element?.status != 'Done')
+                                      .toList()[index]
+                                      ?.startTime ??
+                                  '',
                               index: index,
-                              tasks: snapshot.data ?? []))));
+                              tasks: snapshot.data!.where((element) => element?.status != 'Done').toList()))));
             }
           } else {
             return SizedBox(

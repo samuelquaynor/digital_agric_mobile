@@ -37,6 +37,7 @@ void initCore() {
       .registerLazySingleton<NetworkInfo>(NetworkInfoImpl.new);
 }
 
+/// Initialize features
 void initFeatures() {
   // Login dependencies
   initLogin();

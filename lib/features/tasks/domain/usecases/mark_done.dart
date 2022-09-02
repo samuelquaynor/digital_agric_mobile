@@ -6,24 +6,25 @@ import '../../../../core/usecases/usecase.dart';
 import '../entities/tasks_entity.dart';
 import '../repositories/tasks_repository.dart';
 
-/// Create task usecase
-class CreateTaskUsc implements UseCase<String?, CreateTaskUscParams> {
+/// Mark Task as done usecase
+class MarkDone implements UseCase<bool, MarkDoneParams> {
   /// Constructor
-  CreateTaskUsc(this.repository);
+  MarkDone(this.repository);
 
   /// Tasks Repository
   final TasksRepository repository;
 
   @override
-  Future<Either<Failure, String?>> call(CreateTaskUscParams params) =>
-      repository.createTasks(params.task);
+  Future<Either<Failure, bool>> call(MarkDoneParams params) =>
+      repository.markDone(params.task);
 }
 
-/// Create task usecase params
-class CreateTaskUscParams extends Equatable {
+/// Mark Task as done usecase params
+class MarkDoneParams extends Equatable {
   /// Constructor
-  const CreateTaskUscParams(this.task);
+  const MarkDoneParams(this.task);
 
+  /// Task Entity
   final TasksEntity task;
 
   @override

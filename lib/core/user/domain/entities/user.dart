@@ -18,25 +18,48 @@ class UserEntity with _$UserEntity {
   const factory UserEntity({
     /// primary key
     @HiveField(0) required String id,
+
     /// Email Address
     @HiveField(1) required String email,
+
     /// Full Name
     @HiveField(2) required String name,
+    
     /// Farms
-    @HiveField(5) required List<FarmEntity> farms,
+    @JsonKey(
+        name: 'farms',
+        defaultValue: <FarmEntity>[],
+        fromJson: _farmEntityFromJson)
+    @HiveField(5)
+        required List<FarmEntity> farms,
     /// Tasks
-    @HiveField(6) required List<TasksEntity> tasks,
+    @JsonKey(
+        name: 'tasks',
+        defaultValue: <TasksEntity>[],
+        fromJson: _tasksEntityFromJson)
+    @HiveField(6)
+        required List<TasksEntity> tasks,
   }) = _UserEntity;
 
   /// Initial state with default values
-  factory UserEntity.initial() => const UserEntity(
-        id: '',
-        email: '',
-        name: '',
-        farms: [],
-        tasks: []
-      );
+  factory UserEntity.initial() =>
+      const UserEntity(id: '', email: '', name: '', farms: [], tasks: []);
 
   /// Convert from json to model
-  factory UserEntity.fromJson(Map<String, dynamic> json) => _$UserEntityFromJson(json);
+  factory UserEntity.fromJson(Map<String, dynamic> json) =>
+      _$UserEntityFromJson(json);
+}
+
+List<FarmEntity> _farmEntityFromJson(List<dynamic> json) {
+  return json
+      .cast<Map<String, dynamic>>()
+      .map<FarmEntity>(FarmEntity.fromJson)
+      .toList();
+}
+
+List<TasksEntity> _tasksEntityFromJson(List<dynamic> json) {
+  return json
+      .cast<Map<String, dynamic>>()
+      .map<TasksEntity>(TasksEntity.fromJson)
+      .toList();
 }

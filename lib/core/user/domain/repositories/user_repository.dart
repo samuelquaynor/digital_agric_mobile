@@ -13,7 +13,7 @@ abstract class UserRepository {
   bool get isLoggedIn;
 
   /// Retrieve Complete User Details From Firestore
-  Future<Either<Failure, UserEntity>> retrieveUser();
+  Future<Either<Failure, UserEntity>> retrieveUser(bool localUser);
 
   /// Login With Email and Password
   Future<Either<Failure, UserCredential>> loginWithEmailAndPassword(

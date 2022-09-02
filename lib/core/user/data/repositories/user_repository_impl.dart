@@ -9,14 +9,18 @@ import '../../../error/failures.dart';
 import '../../../platform/network_info.dart';
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/user_repository.dart';
+import '../datasources/user_local_database.dart';
 
 /// User Repository Implementation
 class UserRepositoryImpl implements UserRepository {
   /// Constructor
-  UserRepositoryImpl(this.networkInfo);
+  UserRepositoryImpl({required this.networkInfo, required this.localDatabase});
 
   /// Network information
   final NetworkInfo networkInfo;
+
+  /// Remote database
+  final UserLocalDatabase localDatabase;
 
   @override
   Future<Either<Failure, UserCredential>> loginWithEmailAndPassword(
@@ -70,19 +74,18 @@ class UserRepositoryImpl implements UserRepository {
       FirebaseAuth.instance.currentUser == null ? false : true;
 
   @override
-  Future<Either<Failure, UserEntity>> retrieveUser() async {
+  Future<Either<Failure, UserEntity>> retrieveUser(bool localUser) async {
     final uid = currentUser.uid;
     final tasks = <TasksEntity>[];
     final farms = <FarmEntity>[];
     try {
       await networkInfo.hasInternet();
+      final usere = await localDatabase.retrieve();
+      if (localUser) return Right(usere);
       final fireUser = FirebaseFirestore.instance.collection('users');
       final user = await fireUser.doc(uid).get();
-      final tasksResult = await fireUser
-          .doc(uid)
-          .collection('tasks')
-          .orderBy('endTime')
-          .get();
+      final tasksResult =
+          await fireUser.doc(uid).collection('tasks').orderBy('endTime').get();
       final farmResult = await fireUser.doc(uid).collection('farms').get();
       for (final farm in farmResult.docs) {
         farms.add(FarmEntity(
@@ -110,6 +113,7 @@ class UserRepositoryImpl implements UserRepository {
           name: user.get('name') as String,
           farms: farms,
           tasks: tasks);
+      await localDatabase.save(userResult);
       return Right(userResult);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));

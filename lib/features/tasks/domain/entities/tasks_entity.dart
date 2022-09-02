@@ -31,6 +31,8 @@ class TasksEntity with _$TasksEntity {
       farms: <String>[],
       status: 'To-do');
 
+      
+
   /// Convert from json to model
   factory TasksEntity.fromJson(Map<String, dynamic> json) =>
       _$TasksEntityFromJson(json);

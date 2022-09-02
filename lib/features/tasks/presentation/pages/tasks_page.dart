@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -7,8 +5,8 @@ import '../../../../core/user/domain/entities/user.dart';
 import '../../../../core/util/converters.dart';
 import '../../../../injection_container.dart';
 import '../bloc/tasks_bloc.dart';
-import '../widgets/active_project_card.dart';
 import '../widgets/back_button.dart';
+import '../widgets/slidable_tasks_widget.dart';
 import '../widgets/task_column.dart';
 import '../widgets/top_container.dart';
 import 'calendar_page.dart';
@@ -26,8 +24,9 @@ class TasksPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-        body: FutureBuilder(
+        body: FutureBuilder<UserEntity>(
             future: bloc.retrieveUserBloc(),
+            initialData: UserEntity.initial(),
             builder: (context, AsyncSnapshot<UserEntity?> snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 return SafeArea(
@@ -63,7 +62,7 @@ class TasksPage extends StatelessWidget {
                               padding: const EdgeInsets.all(8),
                               child: Column(children: <Widget>[
                                 Text(
-                                  snapshot.data?.name.capitalize() ?? '',
+                                  snapshot.requireData?.name.capitalize() ?? '',
                                   style: TextStyle(
                                     fontSize: 22,
                                     color: Colors.green.shade900,
@@ -108,8 +107,8 @@ class TasksPage extends StatelessWidget {
                                             size: 20, color: Colors.white)))
                               ]),
                           const SizedBox(height: 15),
-                          if (snapshot.data != null &&
-                              snapshot.data!.tasks.isEmpty)
+                          if (snapshot.requireData == null ||
+                              snapshot.requireData!.tasks.isEmpty)
                             Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -131,32 +130,33 @@ class TasksPage extends StatelessWidget {
                               //     iconBackgroundColor: Colors.red,
                               //     title: 'Overdue',
                               //     subtitle:
-                              //         '${snapshot.data?.tasks.where((task) => task.status == 'To-do').length ?? 0} tasks now.'),
+                              //         '${snapshot.requireData?.tasks.where((task) => task.status == 'To-do').length ?? 0} tasks now.'),
                               const SizedBox(height: 15),
                               TaskColumn(
                                   icon: Icons.alarm,
                                   iconBackgroundColor: Colors.green,
                                   title: 'To Do',
                                   subtitle:
-                                      '${snapshot.data?.tasks.where((task) => task.status == 'To-do').length ?? 0} tasks now.'),
+                                      '${snapshot.requireData?.tasks.where((task) => task.status == 'To-do').length ?? 0} tasks now.'),
                               const SizedBox(height: 15),
                               TaskColumn(
                                   icon: Icons.blur_circular,
                                   iconBackgroundColor: Colors.yellow.shade700,
                                   title: 'In Progress',
                                   subtitle:
-                                      '${snapshot.data?.tasks.where((task) => task.status == 'In-progess').length ?? 0} tasks now.'),
+                                      '${snapshot.requireData?.tasks.where((task) => task.status == 'In-progess').length ?? 0} tasks now.'),
                               const SizedBox(height: 15),
                               TaskColumn(
                                   icon: Icons.check_circle_outline,
                                   iconBackgroundColor: Colors.blue,
                                   title: 'Done',
                                   subtitle:
-                                      '${snapshot.data?.tasks.where((task) => task.status == 'Done').length ?? 0} tasks now.')
+                                      '${snapshot.requireData?.tasks.where((task) => task.status == 'Done').length ?? 0} tasks now.')
                             ])
                         ])),
-                    if (snapshot.data != null &&
-                        snapshot.data!.tasks.isNotEmpty)
+                    if (snapshot.requireData!.tasks
+                        .where((task) => task.status != 'Done')
+                        .isNotEmpty)
                       Container(
                           color: Colors.transparent,
                           padding: const EdgeInsets.symmetric(
@@ -169,36 +169,17 @@ class TasksPage extends StatelessWidget {
                                         .textTheme
                                         .titleMedium),
                                 const SizedBox(height: 5),
-                                GridView.count(
-                                    crossAxisCount: 2,
-                                    shrinkWrap: true,
-                                    crossAxisSpacing: 10,
-                                    mainAxisSpacing: 10,
-                                    physics:
-                                        const NeverScrollableScrollPhysics(),
-                                    children: snapshot.data!.tasks
+                                SlidableTaskWidget(
+                                    tasks: snapshot.requireData!.tasks
                                         .where((task) => task.status != 'Done')
-                                        .toList()
-                                        .map((task) => ActiveProjectsCard(
-                                              cardColor: Colors.primaries[
-                                                  Random().nextInt(
-                                                      Colors.primaries.length)],
-                                              loadingPercent: 0.25,
-                                              title: task.name,
-                                              subtitle: '9',
-                                              diff: DateTime.now().difference(
-                                                  DateTime.parse(task.endTime)),
-                                            ))
                                         .toList())
                               ]))
                     else
-                      const SizedBox.shrink()
+                      const Text('No Current Tasks Available')
                   ])))
                 ]));
               } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
+                return const Center(child: CircularProgressIndicator());
               }
             }));
   }

@@ -14,7 +14,9 @@ import '../bloc/tasks_bloc.dart';
 import '../widgets/back_button.dart';
 import '../widgets/top_container.dart';
 
+/// Create a new task
 class CreateNewTaskPage extends StatefulWidget {
+  /// Constructor
   const CreateNewTaskPage({super.key});
 
   @override
@@ -37,7 +39,6 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    const downwardIcon = Icon(Icons.keyboard_arrow_down, color: Colors.black54);
     return Scaffold(
         body: Form(
             key: formKey,
