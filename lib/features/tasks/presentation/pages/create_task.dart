@@ -387,8 +387,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                                       const SnackBar(
                                           content: Text(
                                               'Tasks has been created successfully')));
-                                  // Navigator.of(context).push(MaterialPageRoute<void>(
-                                  //     builder: (context) => const HomeScreen()));
+                                  Navigator.of(context).pop();
                                 }));
                       },
                       child: const Text('Create Task')))

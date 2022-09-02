@@ -76,11 +76,19 @@ class TasksWidget extends StatelessWidget {
                     Wrap(
                         spacing: 10,
                         children: findFarm(
-                                farmEntites: farms,
-                                farmStrings: tasks[index]?.farms ?? <String>[])
-                            .map((farm) {
-                          return Chip(label: Text('${farm?.name}'));
-                        }).toList()),
+                                    farmEntites: farms,
+                                    farmStrings:
+                                        tasks[index]?.farms ?? <String>[])
+                                .isNotEmpty
+                            ? findFarm(
+                                    farmEntites: farms,
+                                    farmStrings:
+                                        tasks[index]?.farms ?? <String>[])
+                                .map((farm) {
+                                return Chip(
+                                    label: Text(farm?.name ?? 'General Task'));
+                              }).toList()
+                            : [const Chip(label: Text('General Task'))]),
                   ]))
         ]);
       });
@@ -123,11 +131,19 @@ class TasksWidget extends StatelessWidget {
                     Wrap(
                         spacing: 10,
                         children: findFarm(
-                                farmEntites: farms,
-                                farmStrings: tasks[index]?.farms ?? <String>[])
-                            .map((farm) {
-                          return Chip(label: Text('${farm?.name}'));
-                        }).toList()),
+                                    farmEntites: farms,
+                                    farmStrings:
+                                        tasks[index]?.farms ?? <String>[])
+                                .isNotEmpty
+                            ? findFarm(
+                                    farmEntites: farms,
+                                    farmStrings:
+                                        tasks[index]?.farms ?? <String>[])
+                                .map((farm) {
+                                return Chip(
+                                    label: Text(farm?.name ?? 'General Task'));
+                              }).toList()
+                            : [const Chip(label: Text('General Task'))]),
                   ]))
         ]);
       });
@@ -170,11 +186,19 @@ class TasksWidget extends StatelessWidget {
                     Wrap(
                         spacing: 10,
                         children: findFarm(
-                                farmEntites: farms,
-                                farmStrings: tasks[index]?.farms ?? <String>[])
-                            .map((farm) {
-                          return Chip(label: Text('${farm?.name}'));
-                        }).toList()),
+                                    farmEntites: farms,
+                                    farmStrings:
+                                        tasks[index]?.farms ?? <String>[])
+                                .isNotEmpty
+                            ? findFarm(
+                                    farmEntites: farms,
+                                    farmStrings:
+                                        tasks[index]?.farms ?? <String>[])
+                                .map((farm) {
+                                return Chip(
+                                    label: Text(farm?.name ?? 'General Task'));
+                              }).toList()
+                            : [const Chip(label: Text('General Task'))]),
                   ]))
         ]);
       });
@@ -217,11 +241,19 @@ class TasksWidget extends StatelessWidget {
                     Wrap(
                         spacing: 10,
                         children: findFarm(
-                                farmEntites: farms,
-                                farmStrings: tasks[index]?.farms ?? <String>[])
-                            .map((farm) {
-                          return Chip(label: Text('${farm?.name}'));
-                        }).toList()),
+                                    farmEntites: farms,
+                                    farmStrings:
+                                        tasks[index]?.farms ?? <String>[])
+                                .isNotEmpty
+                            ? findFarm(
+                                    farmEntites: farms,
+                                    farmStrings:
+                                        tasks[index]?.farms ?? <String>[])
+                                .map((farm) {
+                                return Chip(
+                                    label: Text(farm?.name ?? 'General Task'));
+                              }).toList()
+                            : [const Chip(label: Text('General Task'))]),
                   ]))
         ]);
       });
@@ -267,12 +299,19 @@ class TasksWidget extends StatelessWidget {
                       Wrap(
                           spacing: 10,
                           children: findFarm(
-                                  farmEntites: farms,
-                                  farmStrings:
-                                      tasks[index]?.farms ?? <String>[])
-                              .map((farm) {
-                            return Chip(label: Text('${farm?.name}'));
-                          }).toList()),
+                                      farmEntites: farms,
+                                      farmStrings:
+                                          tasks[index]?.farms ?? <String>[])
+                                  .isNotEmpty
+                              ? findFarm(
+                                      farmEntites: farms,
+                                      farmStrings:
+                                          tasks[index]?.farms ?? <String>[])
+                                  .map((farm) {
+                                  return Chip(
+                                      label: Text(farm?.name ?? 'General Task'));
+                                }).toList()
+                              : [const Chip(label: Text('General Task'))]),
                     ]))
           ]);
         });
@@ -317,12 +356,19 @@ class TasksWidget extends StatelessWidget {
                       Wrap(
                           spacing: 10,
                           children: findFarm(
-                                  farmEntites: farms,
-                                  farmStrings:
-                                      tasks[index]?.farms ?? <String>[])
-                              .map((farm) {
-                            return Chip(label: Text('${farm?.name}'));
-                          }).toList()),
+                                      farmEntites: farms,
+                                      farmStrings:
+                                          tasks[index]?.farms ?? <String>[])
+                                  .isNotEmpty
+                              ? findFarm(
+                                      farmEntites: farms,
+                                      farmStrings:
+                                          tasks[index]?.farms ?? <String>[])
+                                  .map((farm) {
+                                  return Chip(
+                                      label: Text(farm?.name ?? 'General Task'));
+                                }).toList()
+                              : [const Chip(label: Text('General Task'))]),
                     ]))
           ]);
         });
@@ -367,12 +413,19 @@ class TasksWidget extends StatelessWidget {
                       Wrap(
                           spacing: 10,
                           children: findFarm(
-                                  farmEntites: farms,
-                                  farmStrings:
-                                      tasks[index]?.farms ?? <String>[])
-                              .map((farm) {
-                            return Chip(label: Text('${farm?.name}'));
-                          }).toList()),
+                                      farmEntites: farms,
+                                      farmStrings:
+                                          tasks[index]?.farms ?? <String>[])
+                                  .isNotEmpty
+                              ? findFarm(
+                                      farmEntites: farms,
+                                      farmStrings:
+                                          tasks[index]?.farms ?? <String>[])
+                                  .map((farm) {
+                                  return Chip(
+                                      label: Text(farm?.name ?? 'General Task'));
+                                }).toList()
+                              : [const Chip(label: Text('General Task'))]),
                     ]))
           ]);
         });
@@ -417,12 +470,19 @@ class TasksWidget extends StatelessWidget {
                       Wrap(
                           spacing: 10,
                           children: findFarm(
-                                  farmEntites: farms,
-                                  farmStrings:
-                                      tasks[index]?.farms ?? <String>[])
-                              .map((farm) {
-                            return Chip(label: Text('${farm?.name}'));
-                          }).toList()),
+                                      farmEntites: farms,
+                                      farmStrings:
+                                          tasks[index]?.farms ?? <String>[])
+                                  .isNotEmpty
+                              ? findFarm(
+                                      farmEntites: farms,
+                                      farmStrings:
+                                          tasks[index]?.farms ?? <String>[])
+                                  .map((farm) {
+                                  return Chip(
+                                      label: Text(farm?.name ?? 'General Task'));
+                                }).toList()
+                              : [const Chip(label: Text('General Task'))]),
                     ]))
           ]);
         });

@@ -9,10 +9,13 @@ import '../../../farms/domain/entities/farm_entity.dart';
 import '../../../farms/presentation/bloc/farms_bloc.dart';
 import '../../../farms/presentation/pages/create_farm.dart';
 import '../../../shop/presentation/widgets/agric_store_widget.dart';
+import '../../../tasks/presentation/pages/all_tasks.dart';
 import '../../../tasks/presentation/pages/tasks_page.dart';
 import '../../../tasks/presentation/widgets/tasks_widget.dart';
 
+/// Home Dashboard
 class Dashboard extends StatefulWidget {
+  /// Constructor
   const Dashboard({
     super.key,
   });
@@ -24,8 +27,25 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   final bloc = sl<FarmsBloc>();
 
+  List<FarmEntity?> tasks = <FarmEntity>[];
+
+  Future<void> loadUser() async {
+    final loadedTasks = await bloc.getFarmsBloc();
+    setState(() {
+      tasks = loadedTasks;
+    });
+    return;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadUser();
+  }
+
   @override
   Widget build(BuildContext context) {
+    loadUser();
     return Scaffold(
         appBar: AppBar(
             leading: Padding(
@@ -101,40 +121,39 @@ class _DashboardState extends State<Dashboard> {
                   contentPadding: EdgeInsets.zero,
                   onTap: () => Navigator.of(context).push(
                       MaterialPageRoute<void>(
-                          builder: (context) => TasksPage())),
+                          builder: (context) => const TasksPage())),
                   title: Text('Current Tasks',
                       style: Theme.of(context).textTheme.titleMedium),
                   subtitle: const Text('create tasks for farms'),
                   trailing: const Icon(Icons.arrow_forward)),
-              FutureBuilder(
-                  future: bloc.getFarmsBloc(),
-                  builder:
-                      (context, AsyncSnapshot<List<FarmEntity?>> snapshot) {
-                    if (snapshot.connectionState == ConnectionState.done) {
-                      if (snapshot.data?.isEmpty ?? true) {
-                        return Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text('No Farms Available. '),
-                              GestureDetector(
-                                  onTap: () => Navigator.of(context).push<void>(
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const CreateFarm())),
-                                  child: const Text('Create One',
-                                      style: TextStyle(
-                                          decoration:
-                                              TextDecoration.underline)))
-                            ]);
-                      } else {
-                        return TasksWidget(
-                          farms: snapshot.data ?? [],
-                        );
-                      }
-                    } else {
-                      return const LinearProgressIndicator();
-                    }
-                  })
+              Builder(builder: (context) {
+                if (tasks.isEmpty) {
+                  return Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('No Farms Available. '),
+                        GestureDetector(
+                            onTap: () => Navigator.of(context).push<void>(
+                                MaterialPageRoute(
+                                    builder: (context) => const CreateFarm())),
+                            child: const Text('Create One',
+                                style: TextStyle(
+                                    decoration: TextDecoration.underline)))
+                      ]);
+                } else {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push<void>(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const AllTasks()));
+                    },
+                    child: TasksWidget(
+                      farms: tasks,
+                    ),
+                  );
+                }
+              })
             ])));
   }
 }

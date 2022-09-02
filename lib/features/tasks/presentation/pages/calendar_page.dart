@@ -35,24 +35,10 @@ class CalendarPage extends StatelessWidget {
               const SizedBox(height: 30),
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    const Text(
-                      'Today',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.w700),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push<void>(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CreateNewTaskPage()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(9)),
-                      child: const Text('Add Task'),
-                    ),
+                  children: const <Widget>[
+                    Text('Today',
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.w700))
                   ]),
               const SizedBox(height: 10),
               Row(

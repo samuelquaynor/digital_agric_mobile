@@ -12,7 +12,8 @@ void initFarm() {
   final sl = GetIt.instance;
 
   sl
-    ..registerFactory(() => FarmsBloc(createFarm: sl(), getFarm: sl()))
+    ..registerFactory(
+        () => FarmsBloc(createFarm: sl(), getFarm: sl(), retrieveUser: sl()))
     ..registerLazySingleton(() => CreateFarm(sl()))
     ..registerLazySingleton(() => GetFarm(sl()))
     ..registerLazySingleton<FarmLocalDatabase>(

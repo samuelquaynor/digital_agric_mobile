@@ -10,10 +10,14 @@ import '../bloc/tasks_bloc.dart';
 /// SlidableTaskWidget
 class SlidableTaskWidget extends StatefulWidget {
   /// Constructor
-  const SlidableTaskWidget({super.key, required this.tasks});
+  const SlidableTaskWidget(
+      {super.key, required this.tasks, required this.loadUser});
 
   /// List of tasks entities
   final List<TasksEntity> tasks;
+
+  /// Fuction for updating state
+  final Future<void> loadUser;
 
   @override
   State<SlidableTaskWidget> createState() => _SlidableTaskWidgetState();
@@ -46,13 +50,6 @@ class _SlidableTaskWidgetState extends State<SlidableTaskWidget> {
                   key: const ValueKey(0),
                   endActionPane: ActionPane(
                       motion: const ScrollMotion(),
-                      dismissible: DismissiblePane(onDismissed: () async {
-                        await showDialog<void>(
-                            context: context,
-                            builder: (context) => LoadingPage(
-                                errorText:
-                                    bloc.deleteTaskBloc(widget.tasks[index])));
-                      }),
                       children: [
                         SlidableAction(
                             onPressed: (context) async {
