@@ -16,7 +16,7 @@ class CreateTaskUsc implements UseCase<String?, CreateTaskUscParams> {
 
   @override
   Future<Either<Failure, String?>> call(CreateTaskUscParams params) =>
-      repository.createTasks(params.task);
+      repository.createTask(params.task);
 }
 
 /// Create task usecase params

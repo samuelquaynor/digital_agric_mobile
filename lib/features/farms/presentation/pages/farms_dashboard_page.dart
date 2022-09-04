@@ -7,10 +7,18 @@ import '../../../../injection_container.dart';
 import '../../domain/entities/farm_entity.dart';
 import '../bloc/farms_bloc.dart';
 import 'create_farm.dart';
+import 'single_farm_page.dart';
 
-class FarmsPage extends StatelessWidget {
-  FarmsPage({super.key});
+/// DashboardFarmsPage
+class DashboardFarmsPage extends StatefulWidget {
+  /// Constructor
+  const DashboardFarmsPage({super.key});
 
+  @override
+  State<DashboardFarmsPage> createState() => _DashboardFarmsPageState();
+}
+
+class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
   final bloc = sl<FarmsBloc>();
 
   List<String> images = [
@@ -23,12 +31,6 @@ class FarmsPage extends StatelessWidget {
     'Crop Prediction',
     'Weather Prediction',
     'Weed Detection'
-  ];
-
-  List<String> algorithmsSubTitle = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et '
   ];
 
   List<String> crops = [
@@ -92,34 +94,45 @@ class FarmsPage extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,
                             itemCount: snapshot.data?.length,
-                            itemBuilder: (context, index) => Column(children: [
-                                  Container(
-                                      width: 100,
-                                      height: 100,
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 10, vertical: 10),
-                                      decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          borderRadius:
-                                              BorderRadius.circular(10)),
-                                      child: FadeInImage(
-                                          fit: BoxFit.cover,
-                                          imageErrorBuilder: (context, error,
-                                                  stackTrace) =>
-                                              Container(
-                                                  decoration: BoxDecoration(
-                                                      image: const DecorationImage(
-                                                          fit: BoxFit.cover,
-                                                          image: AssetImage(
-                                                              'assets/images/farm.jpg')),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              15))),
-                                          placeholder: const AssetImage(
-                                              'assets/images/logo-white-transparentbg.png'),
-                                          image: const NetworkImage('avatarUrl'))),
-                                  Text('${snapshot.data?[index]?.name}')
-                                ])));
+                            itemBuilder: (context, index) => Material(
+                                  color: Colors.transparent,
+                                  child: InkWell(
+                                    onTap: () => Navigator.push<void>(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                SingleFarmPage(
+                                                  farm: snapshot.data![index]!,
+                                                ))),
+                                    child: Column(children: [
+                                      Container(
+                                          width: 100,
+                                          height: 100,
+                                          margin: const EdgeInsets.symmetric(
+                                              horizontal: 10, vertical: 10),
+                                          decoration: BoxDecoration(
+                                              color: Colors.green,
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                          child: FadeInImage(
+                                              fit: BoxFit.cover,
+                                              imageErrorBuilder:
+                                                  (context, error, stackTrace) => Container(
+                                                      decoration: BoxDecoration(
+                                                          image: const DecorationImage(
+                                                              fit: BoxFit.cover,
+                                                              image: AssetImage(
+                                                                  'assets/images/farm.jpg')),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                  15))),
+                                              placeholder: const AssetImage(
+                                                  'assets/images/logo-white-transparentbg.png'),
+                                              image: const NetworkImage('avatarUrl'))),
+                                      Text('${snapshot.data?[index]?.name}')
+                                    ]),
+                                  ),
+                                )));
                   }
                 } else {
                   return SizedBox(
@@ -183,7 +196,8 @@ class FarmsPage extends StatelessWidget {
                             Padding(
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 8),
-                                child: Text(algorithmsSubTitle[itemIndex],
+                                child: Text(
+                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ',
                                     textAlign: TextAlign.center,
                                     style: Theme.of(context)
                                         .textTheme

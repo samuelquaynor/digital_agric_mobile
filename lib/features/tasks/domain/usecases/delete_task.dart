@@ -16,7 +16,7 @@ class DeleteTask implements UseCase<bool, DeleteTaskParams> {
 
   @override
   Future<Either<Failure, bool>> call(DeleteTaskParams params) =>
-      repository.deleteTasks(params.task);
+      repository.deleteTask(params.task);
 }
 
 /// Delete Tasks entity params

@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -33,4 +34,21 @@ Future<void> main() async {
           // darkTheme: darkTheme,
           theme: lightTheme,
           home: isLoggedIn ? const HomeScreen() : const LoginPage())));
+  await AwesomeNotifications()
+      .initialize('resource://drawable/res_notification_app_icon', [
+    NotificationChannel(
+        channelKey: 'basic_channel',
+        channelName: 'Basic Notifications',
+        defaultColor: Colors.green,
+        importance: NotificationImportance.High,
+        channelShowBadge: true,
+        channelDescription: ''),
+    NotificationChannel(
+        channelKey: 'scheduled_channel',
+        channelName: 'Scheduled Notifications',
+        defaultColor: Colors.teal,
+        locked: true,
+        importance: NotificationImportance.High,
+        channelDescription: '')
+  ]);
 }

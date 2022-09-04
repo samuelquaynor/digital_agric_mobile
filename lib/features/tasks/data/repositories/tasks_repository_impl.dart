@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -5,7 +6,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../../../../core/error/exception.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/platform/network_info.dart';
-import '../../../farms/domain/entities/farm_entity.dart';
 import '../../domain/entities/tasks_entity.dart';
 import '../../domain/repositories/tasks_repository.dart';
 
@@ -18,7 +18,7 @@ class TasksRepositoryImpl implements TasksRepository {
   final NetworkInfo networkInfo;
 
   @override
-  Future<Either<Failure, String?>> createTasks(TasksEntity task) async {
+  Future<Either<Failure, String?>> createTask(TasksEntity task) async {
     final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
     final userid = currentFirebaseUser.uid;
     try {
@@ -36,6 +36,7 @@ class TasksRepositoryImpl implements TasksRepository {
           })
           .then((value) => '')
           .catchError((dynamic error) => 'Failed to create task $error');
+      await createTaskReminderNotification(task);
       return right(null);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));
@@ -72,7 +73,7 @@ class TasksRepositoryImpl implements TasksRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> deleteTasks(TasksEntity task) async {
+  Future<Either<Failure, bool>> deleteTask(TasksEntity task) async {
     try {
       await networkInfo.hasInternet();
       final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
@@ -85,6 +86,7 @@ class TasksRepositoryImpl implements TasksRepository {
           .delete()
           .catchError((dynamic error) =>
               throw DeviceException('{deleting task had an error $error}'));
+      await cancelTaskReminderNotification(task);
       return const Right(true);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));
@@ -105,6 +107,50 @@ class TasksRepositoryImpl implements TasksRepository {
           .update(task.toJson())
           .catchError((dynamic error) =>
               throw DeviceException('{updating task had an error $error}'));
+      await cancelTaskReminderNotification(task);
+      return const Right(true);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> createTaskReminderNotification(
+      TasksEntity task) async {
+    try {
+      final dateTime = DateTime.parse(task.endTime);
+      final result = await AwesomeNotifications().createNotification(
+          content: NotificationContent(
+              id: dateTime.millisecondsSinceEpoch.remainder(1000000000),
+              channelKey: 'scheduled_channel',
+              title: '${Emojis.time_alarm_clock} Your task is due',
+              body: 'Open to review your task.',
+              wakeUpScreen: true,
+              criticalAlert: true,
+              notificationLayout: NotificationLayout.Default),
+          actionButtons: [
+            NotificationActionButton(
+                key: 'MARK_DONE', label: 'Open To Mark Done')
+          ],
+          schedule: NotificationCalendar(
+              day: dateTime.day,
+              hour: dateTime.hour,
+              minute: dateTime.minute,
+              second: dateTime.second,
+              millisecond: dateTime.millisecond));
+      return Right(result);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> cancelTaskReminderNotification(
+      TasksEntity task) async {
+    try {
+      final dateTime = DateTime.parse(task.endTime);
+      await AwesomeNotifications().cancelSchedule(
+          dateTime.millisecondsSinceEpoch.remainder(1000000000));
       return const Right(true);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/data/constants.dart';
 import '../../data/models/Product.dart';
-import '../pages/details_screen.dart';
+import '../pages/buy/details_screen.dart';
 import 'product_card.dart';
 import 'section_title.dart';
 

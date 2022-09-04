@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -8,7 +9,6 @@ import '../../../../injection_container.dart';
 import '../../../farms/presentation/pages/farms_dashboard_page.dart';
 import '../../../news/presentation/pages/news_page.dart';
 import '../../../settings/presentation/pages/settings_page.dart';
-import '../../../stocks/presentation/pages/stocks_page.dart';
 import 'dashboard.dart';
 
 ///HomeScreen
@@ -32,11 +32,46 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> pages = [
     const Dashboard(),
-    FarmsPage(),
+    const DashboardFarmsPage(),
     // const StocksPage(),
     const NewsPage(),
     const SettingsPage()
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    AwesomeNotifications().isNotificationAllowed().then((isAllowed) {
+      if (!isAllowed) {
+        showDialog<void>(
+            context: context,
+            builder: (context) => AlertDialog(
+                    title: const Text('Allow Notifications'),
+                    content: const Text(
+                        'Our app would like to send you notifications'),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text(
+                          "Don't Allow",
+                          style: TextStyle(color: Colors.grey, fontSize: 18),
+                        ),
+                      ),
+                      TextButton(
+                          onPressed: () => AwesomeNotifications()
+                              .requestPermissionToSendNotifications()
+                              .then((_) => Navigator.pop(context)),
+                          child: const Text('Allow',
+                              style: TextStyle(
+                                  color: Colors.teal,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold)))
+                    ]));
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
