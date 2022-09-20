@@ -19,7 +19,7 @@ class SettingsPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title:  Text('Settings', style: Theme.of(context).textTheme.titleMedium)),
         body: SafeArea(
-            child: FutureBuilder<User>(
+            child: FutureBuilder<User?>(
                 future: bloc.user(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
@@ -41,11 +41,11 @@ class SettingsPage extends StatelessWidget {
                               //   setState(() {});
                               // }
                             },
-                            avatarUrl: snapshot.requireData.photoURL ?? '',
+                            avatarUrl: snapshot.requireData?.photoURL ?? '',
                           ),
-                          Text(snapshot.requireData.displayName ?? '',
+                          Text(snapshot.requireData?.displayName ?? '',
                               style: Theme.of(context).textTheme.headline6),
-                          Text(snapshot.requireData.email ?? '',
+                          Text(snapshot.requireData?.email ?? '',
                               style: Theme.of(context).textTheme.subtitle1),
                           // if (snapshot.requireData.vip)
                           //   SvgPicture.asset(SvgAssets.vip, width: 30),

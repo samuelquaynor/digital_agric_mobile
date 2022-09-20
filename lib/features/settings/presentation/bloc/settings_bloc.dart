@@ -8,8 +8,10 @@ import '../../../../core/user/domain/usecases/logout.dart';
 part 'settings_event.dart';
 part 'settings_state.dart';
 
+/// Settings Bloc
 class SettingsBloc {
-  SettingsBloc({required this.logout, required this.retrieveUser}) : super();
+  /// Constructor
+  SettingsBloc({required this.logout, required this.retrieveUser});
 
   /// Get user info
   final GetUser retrieveUser;
@@ -18,7 +20,7 @@ class SettingsBloc {
   final Logout logout;
 
   /// Get user details
-  Future<User> user() async => retrieveUser(NoParams());
+  Future<User?> user() async => retrieveUser(NoParams());
 
   /// Log out a user
   Future<String?> logoutUser() {

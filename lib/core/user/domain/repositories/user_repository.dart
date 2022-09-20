@@ -7,7 +7,7 @@ import '../entities/user.dart';
 /// User Repository
 abstract class UserRepository {
   /// Retrieves the current user details from firebase cache.
-  User get currentUser;
+  User? get currentUser;
 
   /// Checks if user is already logged in
   bool get isLoggedIn;

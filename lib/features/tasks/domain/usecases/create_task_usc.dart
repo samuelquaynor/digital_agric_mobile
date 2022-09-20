@@ -24,6 +24,7 @@ class CreateTaskUscParams extends Equatable {
   /// Constructor
   const CreateTaskUscParams(this.task);
 
+  /// Task entity
   final TasksEntity task;
 
   @override

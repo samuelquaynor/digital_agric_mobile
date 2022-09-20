@@ -6,6 +6,7 @@ import 'package:shimmer/shimmer.dart';
 import '../../../../injection_container.dart';
 import '../../domain/entities/farm_entity.dart';
 import '../bloc/farms_bloc.dart';
+import '../widgets/prediction_carousel.dart';
 import 'create_farm.dart';
 import 'single_farm_page.dart';
 
@@ -20,18 +21,6 @@ class DashboardFarmsPage extends StatefulWidget {
 
 class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
   final bloc = sl<FarmsBloc>();
-
-  List<String> images = [
-    'assets/images/crop-prediction.jpg',
-    'assets/images/weather-predict.png',
-    'assets/images/weed-detect.png'
-  ];
-
-  List<String> algorithmsTitle = [
-    'Crop Prediction',
-    'Weather Prediction',
-    'Weed Detection'
-  ];
 
   List<String> crops = [
     'Rice',
@@ -172,54 +161,28 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
               title: Text('Prediction Algorithms',
                   style: Theme.of(context).textTheme.titleMedium),
               trailing: const Icon(Icons.arrow_forward)),
-          CarouselSlider.builder(
-              itemCount: 3,
-              itemBuilder: (context, itemIndex, pageViewIndex) => Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage(images[itemIndex]))),
-                  child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 16, left: 8, right: 8, bottom: 8),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(algorithmsTitle[itemIndex],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge
-                                    ?.copyWith(color: Colors.white)),
-                            Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8),
-                                child: Text(
-                                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ',
-                                    textAlign: TextAlign.center,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium
-                                        ?.copyWith(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w500))),
-                            Align(
-                                child: Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 6),
-                                    child: Text('Check it out >',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyMedium
-                                            ?.copyWith(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w500))))
-                          ]))),
+          CarouselSlider(
+              items: [
+                PredictionCarousel(
+                    title: 'Weed Detection',
+                    urlImage: 'assets/images/weed-detect.png',
+                    onPressed: () {},
+                    description: 'lorem '),
+                PredictionCarousel(
+                    title: 'Flood Detection',
+                    urlImage: 'assets/images/weather-predict.png',
+                    onPressed: () {},
+                    description: 'Flood Detection API detects flooded areas in a photo using artificial intelligence. Useful  agriculture.'),
+                PredictionCarousel(
+                    title: 'Cereal Seeds Detection',
+                    urlImage: 'assets/images/crop-prediction.jpg',
+                    onPressed: () {},
+                    description:
+                        'This Cereals Seeds Recognition API is used to recognize grain seeds among: wheat, maize, oat, barley, rye, quinoa, millet, sorghum, rice from a close up photo using Artificial Intelligence.'),
+              ],
               options: CarouselOptions(
                   autoPlayInterval: const Duration(seconds: 10),
-                  height: 200,
+                  height: 220,
                   autoPlay: true,
                   enlargeCenterPage: true)),
           ListTile(

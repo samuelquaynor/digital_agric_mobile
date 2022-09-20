@@ -10,5 +10,5 @@ class GetUser  {
   final UserRepository repository;
 
   @override
-  User call(NoParams params) => repository.currentUser;
+  User? call(NoParams params) => repository.currentUser;
 }

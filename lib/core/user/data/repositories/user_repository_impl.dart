@@ -66,7 +66,7 @@ class UserRepositoryImpl implements UserRepository {
   }
 
   @override
-  User get currentUser => FirebaseAuth.instance.currentUser!;
+  User? get currentUser => FirebaseAuth.instance.currentUser;
 
   @override
   bool get isLoggedIn =>
@@ -75,9 +75,10 @@ class UserRepositoryImpl implements UserRepository {
 
   @override
   Future<Either<Failure, UserEntity>> retrieveUser(bool localUser) async {
-    final uid = currentUser.uid;
+    final uid = currentUser?.uid ?? '';
     final tasks = <TasksEntity>[];
     final farms = <FarmEntity>[];
+    if (uid == '') return right(UserEntity.initial());
     try {
       await networkInfo.hasInternet();
       final usere = await localDatabase.retrieve();
@@ -112,7 +113,8 @@ class UserRepositoryImpl implements UserRepository {
           email: user.get('email') as String,
           name: user.get('name') as String,
           farms: farms,
-          tasks: tasks);
+          tasks: tasks,
+          orders: []);
       await localDatabase.save(userResult);
       return Right(userResult);
     } on DeviceException catch (error) {

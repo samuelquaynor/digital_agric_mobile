@@ -57,6 +57,7 @@ class DefaultFirebaseOptions {
     appId: '1:911262043896:android:6acd8521b01a66f070750d',
     messagingSenderId: '911262043896',
     projectId: 'digi-farm103',
+    databaseURL: 'https://digi-farm103-default-rtdb.firebaseio.com',
     storageBucket: 'digi-farm103.appspot.com',
   );
 }

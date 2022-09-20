@@ -48,6 +48,14 @@ mixin _$UserEntity {
   @HiveField(6)
   List<TasksEntity> get tasks => throw _privateConstructorUsedError;
 
+  /// Tasks
+  @JsonKey(
+      name: 'orders',
+      defaultValue: <OrderEntity>[],
+      fromJson: _orderEntityFromJson)
+  @HiveField(7)
+  List<OrderEntity> get orders => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserEntityCopyWith<UserEntity> get copyWith =>
@@ -77,7 +85,13 @@ abstract class $UserEntityCopyWith<$Res> {
           defaultValue: <TasksEntity>[],
           fromJson: _tasksEntityFromJson)
       @HiveField(6)
-          List<TasksEntity> tasks});
+          List<TasksEntity> tasks,
+      @JsonKey(
+          name: 'orders',
+          defaultValue: <OrderEntity>[],
+          fromJson: _orderEntityFromJson)
+      @HiveField(7)
+          List<OrderEntity> orders});
 }
 
 /// @nodoc
@@ -95,6 +109,7 @@ class _$UserEntityCopyWithImpl<$Res> implements $UserEntityCopyWith<$Res> {
     Object? name = freezed,
     Object? farms = freezed,
     Object? tasks = freezed,
+    Object? orders = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -117,6 +132,10 @@ class _$UserEntityCopyWithImpl<$Res> implements $UserEntityCopyWith<$Res> {
           ? _value.tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<TasksEntity>,
+      orders: orders == freezed
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<OrderEntity>,
     ));
   }
 }
@@ -146,7 +165,13 @@ abstract class _$$_UserEntityCopyWith<$Res>
           defaultValue: <TasksEntity>[],
           fromJson: _tasksEntityFromJson)
       @HiveField(6)
-          List<TasksEntity> tasks});
+          List<TasksEntity> tasks,
+      @JsonKey(
+          name: 'orders',
+          defaultValue: <OrderEntity>[],
+          fromJson: _orderEntityFromJson)
+      @HiveField(7)
+          List<OrderEntity> orders});
 }
 
 /// @nodoc
@@ -166,6 +191,7 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
     Object? name = freezed,
     Object? farms = freezed,
     Object? tasks = freezed,
+    Object? orders = freezed,
   }) {
     return _then(_$_UserEntity(
       id: id == freezed
@@ -188,6 +214,10 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
           ? _value._tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<TasksEntity>,
+      orders: orders == freezed
+          ? _value._orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<OrderEntity>,
     ));
   }
 }
@@ -214,9 +244,16 @@ class _$_UserEntity implements _UserEntity {
           defaultValue: <TasksEntity>[],
           fromJson: _tasksEntityFromJson)
       @HiveField(6)
-          required final List<TasksEntity> tasks})
+          required final List<TasksEntity> tasks,
+      @JsonKey(
+          name: 'orders',
+          defaultValue: <OrderEntity>[],
+          fromJson: _orderEntityFromJson)
+      @HiveField(7)
+          required final List<OrderEntity> orders})
       : _farms = farms,
-        _tasks = tasks;
+        _tasks = tasks,
+        _orders = orders;
 
   factory _$_UserEntity.fromJson(Map<String, dynamic> json) =>
       _$$_UserEntityFromJson(json);
@@ -266,9 +303,24 @@ class _$_UserEntity implements _UserEntity {
     return EqualUnmodifiableListView(_tasks);
   }
 
+  /// Tasks
+  final List<OrderEntity> _orders;
+
+  /// Tasks
+  @override
+  @JsonKey(
+      name: 'orders',
+      defaultValue: <OrderEntity>[],
+      fromJson: _orderEntityFromJson)
+  @HiveField(7)
+  List<OrderEntity> get orders {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_orders);
+  }
+
   @override
   String toString() {
-    return 'UserEntity(id: $id, email: $email, name: $name, farms: $farms, tasks: $tasks)';
+    return 'UserEntity(id: $id, email: $email, name: $name, farms: $farms, tasks: $tasks, orders: $orders)';
   }
 
   @override
@@ -280,7 +332,8 @@ class _$_UserEntity implements _UserEntity {
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other._farms, _farms) &&
-            const DeepCollectionEquality().equals(other._tasks, _tasks));
+            const DeepCollectionEquality().equals(other._tasks, _tasks) &&
+            const DeepCollectionEquality().equals(other._orders, _orders));
   }
 
   @JsonKey(ignore: true)
@@ -291,7 +344,8 @@ class _$_UserEntity implements _UserEntity {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(_farms),
-      const DeepCollectionEquality().hash(_tasks));
+      const DeepCollectionEquality().hash(_tasks),
+      const DeepCollectionEquality().hash(_orders));
 
   @JsonKey(ignore: true)
   @override
@@ -323,7 +377,13 @@ abstract class _UserEntity implements UserEntity {
           defaultValue: <TasksEntity>[],
           fromJson: _tasksEntityFromJson)
       @HiveField(6)
-          required final List<TasksEntity> tasks}) = _$_UserEntity;
+          required final List<TasksEntity> tasks,
+      @JsonKey(
+          name: 'orders',
+          defaultValue: <OrderEntity>[],
+          fromJson: _orderEntityFromJson)
+      @HiveField(7)
+          required final List<OrderEntity> orders}) = _$_UserEntity;
 
   factory _UserEntity.fromJson(Map<String, dynamic> json) =
       _$_UserEntity.fromJson;
@@ -361,6 +421,15 @@ abstract class _UserEntity implements UserEntity {
       fromJson: _tasksEntityFromJson)
   @HiveField(6)
   List<TasksEntity> get tasks => throw _privateConstructorUsedError;
+  @override
+
+  /// Tasks
+  @JsonKey(
+      name: 'orders',
+      defaultValue: <OrderEntity>[],
+      fromJson: _orderEntityFromJson)
+  @HiveField(7)
+  List<OrderEntity> get orders => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_UserEntityCopyWith<_$_UserEntity> get copyWith =>

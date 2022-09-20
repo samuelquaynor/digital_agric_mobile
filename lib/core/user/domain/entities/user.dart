@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 
 import '../../../../features/farms/domain/entities/farm_entity.dart';
+import '../../../../features/shop/domain/entities/order_entity.dart';
 import '../../../../features/tasks/domain/entities/tasks_entity.dart';
 import '../../../data/hive_adapters.dart';
 
@@ -24,7 +25,7 @@ class UserEntity with _$UserEntity {
 
     /// Full Name
     @HiveField(2) required String name,
-    
+
     /// Farms
     @JsonKey(
         name: 'farms',
@@ -32,6 +33,7 @@ class UserEntity with _$UserEntity {
         fromJson: _farmEntityFromJson)
     @HiveField(5)
         required List<FarmEntity> farms,
+
     /// Tasks
     @JsonKey(
         name: 'tasks',
@@ -39,11 +41,19 @@ class UserEntity with _$UserEntity {
         fromJson: _tasksEntityFromJson)
     @HiveField(6)
         required List<TasksEntity> tasks,
+
+    /// Tasks
+    @JsonKey(
+        name: 'orders',
+        defaultValue: <OrderEntity>[],
+        fromJson: _orderEntityFromJson)
+    @HiveField(7)
+        required List<OrderEntity> orders,
   }) = _UserEntity;
 
   /// Initial state with default values
-  factory UserEntity.initial() =>
-      const UserEntity(id: '', email: '', name: '', farms: [], tasks: []);
+  factory UserEntity.initial() => const UserEntity(
+      id: '', email: '', name: '', farms: [], tasks: [], orders: []);
 
   /// Convert from json to model
   factory UserEntity.fromJson(Map<String, dynamic> json) =>
@@ -61,5 +71,12 @@ List<TasksEntity> _tasksEntityFromJson(List<dynamic> json) {
   return json
       .cast<Map<String, dynamic>>()
       .map<TasksEntity>(TasksEntity.fromJson)
+      .toList();
+}
+
+List<OrderEntity> _orderEntityFromJson(List<dynamic> json) {
+  return json
+      .cast<Map<String, dynamic>>()
+      .map<OrderEntity>(OrderEntity.fromJson)
       .toList();
 }

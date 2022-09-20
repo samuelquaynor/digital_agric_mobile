@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../pages/shop_home.dart';
+import '../pages/buy/shop_home.dart';
 
 class AgricStore extends StatelessWidget {
   const AgricStore({
@@ -11,7 +11,7 @@ class AgricStore extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (context) => const ShopHomeScreen())),
+            MaterialPageRoute(builder: (context) =>  ShopHomeScreen())),
         child: Column(children: [
           ListTile(
               contentPadding: EdgeInsets.zero,
