@@ -15,7 +15,7 @@ class PredictionTile extends StatefulWidget {
 }
 
 class _PredictionTileState extends State<PredictionTile> {
-  String mapKey = 'AIzaSyB-DXDM28-apXG86HbxwKu6Q7ZI7V0BqS4';
+  String mapKey = 'AIzaSyChlSYajoQ0gJ0tBW-_ViE5ACej3fdcn1o';
 
   Future<dynamic> getRequest(String url) async {
     final response = await http.get(Uri.parse(url));
@@ -60,6 +60,7 @@ class _PredictionTileState extends State<PredictionTile> {
     return TextButton(
         style: TextButton.styleFrom(backgroundColor: Colors.white),
         onPressed: () async {
+          // ignore: unawaited_futures
           showDialog<void>(
               context: context,
               barrierDismissible: false,
@@ -72,8 +73,9 @@ class _PredictionTileState extends State<PredictionTile> {
                       child: Text('Loading...'))
                 ]));
               });
+          print('response');
           final response =
-              await getPlaceDetails(widget.prediction.placeId!.toString());
+              await getPlaceDetails(widget.prediction.placeId.toString());
           Navigator.of(context).pop<Address>(response);
         },
         child: Container(

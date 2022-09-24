@@ -7,6 +7,7 @@ import 'core/weather/weather_injection.dart';
 import 'features/farms/farm_injection.dart';
 import 'features/login/login_injection.dart';
 import 'features/news/news_injection.dart';
+import 'features/predictions/prediction_injection.dart';
 import 'features/settings/settings_injection.dart';
 import 'features/shop/shop_injection.dart';
 import 'features/signup/sign_up_injection.dart';
@@ -52,8 +53,10 @@ void initFeatures() {
   initFarm();
 
   initTasks();
-  
+
   initShop();
+
+  initPrediction();
 }
 
 /// External packages

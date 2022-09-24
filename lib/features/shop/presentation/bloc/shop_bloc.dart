@@ -20,7 +20,7 @@ class ShopBloc {
   ShopBloc(
       {required this.retrieveCarts,
       required this.retrieveUser,
-      required this.createTaskUsc,
+      required this.createOrderUsc,
       required this.saveCarts,
       required this.getCategories});
 
@@ -36,12 +36,12 @@ class ShopBloc {
   /// Retrieve User Usecase
   final RetrieveUser retrieveUser;
 
-  /// Create Tasks Usecase
-  final CreateOrderkUsc createTaskUsc;
+  /// Create Orders Usecase
+  final CreateOrderkUsc createOrderUsc;
 
   /// Create an order
-  Future<String?> createOrderBloc(OrderEntity task) async {
-    final result = await createTaskUsc(CreateOrderUscParams(task));
+  Future<String?> createOrderBloc(OrderEntity order) async {
+    final result = await createOrderUsc(CreateOrderUscParams(order));
     await retrieveUser(const RetrieveUserParams(localUser: false));
     return result.fold((l) => l.toString(), (r) => null);
   }

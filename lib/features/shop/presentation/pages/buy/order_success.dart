@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 /// order success page
 class OrderSuccess extends StatelessWidget {
   /// Constructor
-  const OrderSuccess({super.key});
+   OrderSuccess({super.key});
+
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +44,9 @@ class OrderSuccess extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: ElevatedButton(
                   onPressed: () async {
-                    await Navigator.of(context).push<void>(MaterialPageRoute(
-                        builder: (context) => const OrderSuccess()));
+                    Navigator.of(context).popUntil((route) {
+                      return count++ == 3;
+                    });
                   },
                   child: const Text('Continue Shopping'))))
     ])));

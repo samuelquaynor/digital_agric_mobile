@@ -60,21 +60,24 @@ class UserEntity with _$UserEntity {
       _$UserEntityFromJson(json);
 }
 
-List<FarmEntity> _farmEntityFromJson(List<dynamic> json) {
+List<FarmEntity> _farmEntityFromJson(List<dynamic>? json) {
+  if (json == null) return [];
   return json
       .cast<Map<String, dynamic>>()
       .map<FarmEntity>(FarmEntity.fromJson)
       .toList();
 }
 
-List<TasksEntity> _tasksEntityFromJson(List<dynamic> json) {
+List<TasksEntity> _tasksEntityFromJson(List<dynamic>? json) {
+  if (json == null) return [];
   return json
       .cast<Map<String, dynamic>>()
       .map<TasksEntity>(TasksEntity.fromJson)
       .toList();
 }
 
-List<OrderEntity> _orderEntityFromJson(List<dynamic> json) {
+List<OrderEntity> _orderEntityFromJson(List<dynamic>? json) {
+  if (json == null) return [];
   return json
       .cast<Map<String, dynamic>>()
       .map<OrderEntity>(OrderEntity.fromJson)

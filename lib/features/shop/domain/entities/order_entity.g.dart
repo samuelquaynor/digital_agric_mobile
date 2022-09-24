@@ -25,7 +25,7 @@ class OrderEntityAdapter extends TypeAdapter<OrderEntity> {
       destinationLongitude: fields[6] as double,
       destinationLatitude: fields[7] as double,
       destinationName: fields[8] as String,
-      carts: (fields[3] as List).cast<Cart>(),
+      carts: (fields[3] as List).cast<Cart?>(),
     );
   }
 
@@ -89,5 +89,5 @@ Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'destinationLongitude': instance.destinationLongitude,
       'destinationLatitude': instance.destinationLatitude,
       'destinationName': instance.destinationName,
-      'items': instance.carts.map((e) => e.toJson()).toList(),
+      'items': instance.carts.map((e) => e?.toJson()).toList(),
     };

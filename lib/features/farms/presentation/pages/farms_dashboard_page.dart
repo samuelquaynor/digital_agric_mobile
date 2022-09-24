@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../../injection_container.dart';
+import '../../../predictions/presentation/pages/scan_crop.dart';
 import '../../domain/entities/farm_entity.dart';
 import '../bloc/farms_bloc.dart';
 import '../widgets/prediction_carousel.dart';
@@ -164,15 +165,20 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
           CarouselSlider(
               items: [
                 PredictionCarousel(
-                    title: 'Weed Detection',
+                    title: 'Plant Disease Detection',
                     urlImage: 'assets/images/weed-detect.png',
-                    onPressed: () {},
-                    description: 'lorem '),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute<void>(
+                          builder: (context) => const ScanCrop()));
+                    },
+                    description:
+                        'Plant Disease Detection Accepts a POST request with an image in the form of base64 string and returns plant, disease and remedy.'),
                 PredictionCarousel(
                     title: 'Flood Detection',
                     urlImage: 'assets/images/weather-predict.png',
                     onPressed: () {},
-                    description: 'Flood Detection API detects flooded areas in a photo using artificial intelligence. Useful  agriculture.'),
+                    description:
+                        'Flood Detection API detects flooded areas in a photo using artificial intelligence. Useful  agriculture.'),
                 PredictionCarousel(
                     title: 'Cereal Seeds Detection',
                     urlImage: 'assets/images/crop-prediction.jpg',

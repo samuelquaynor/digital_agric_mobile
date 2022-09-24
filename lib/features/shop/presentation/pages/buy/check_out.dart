@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/presentation/pages/loading.dart';
 import '../../../../../injection_container.dart';
+import '../../../domain/entities/cart.dart';
 import '../../../domain/entities/order_entity.dart';
 import '../../bloc/shop_bloc.dart';
 import '../../widgets/destination_card.dart';
@@ -13,10 +14,14 @@ import 'order_success.dart';
 /// Shop check out page
 class ShopCheckOut extends StatefulWidget {
   /// Constructor
-  const ShopCheckOut({super.key, required this.totalPrice});
+  const ShopCheckOut(
+      {super.key, required this.totalPrice, required this.carts});
 
   /// Total price of items in cart
   final double totalPrice;
+
+  /// List of carts
+  final List<Cart?> carts;
 
   @override
   State<ShopCheckOut> createState() => _ShopCheckOutState();
@@ -73,12 +78,16 @@ class _ShopCheckOutState extends State<ShopCheckOut> {
                         await showDialog<void>(
                             context: context,
                             builder: (context) => LoadingPage(
-                                errorText: bloc.createOrderBloc(order),
+                                errorText: bloc.createOrderBloc(order.copyWith(
+                                    carts: widget.carts,
+                                    deliveryPrice: widget.totalPrice / 20,
+                                    totalPrice: widget.totalPrice +
+                                        (widget.totalPrice / 20))),
                                 callback: () async {
                                   await Navigator.of(context).push<void>(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              const OrderSuccess()));
+                                              OrderSuccess()));
                                 }));
                       },
                       child: const Text('Order Now'))))

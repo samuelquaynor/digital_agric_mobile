@@ -38,7 +38,7 @@ mixin _$OrderEntity {
   String get destinationName => throw _privateConstructorUsedError;
   @JsonKey(name: 'items', defaultValue: <Cart>[], fromJson: _cartFromJson)
   @HiveField(3)
-  List<Cart> get carts => throw _privateConstructorUsedError;
+  List<Cart?> get carts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -70,7 +70,7 @@ abstract class $OrderEntityCopyWith<$Res> {
           String destinationName,
       @JsonKey(name: 'items', defaultValue: <Cart>[], fromJson: _cartFromJson)
       @HiveField(3)
-          List<Cart> carts});
+          List<Cart?> carts});
 }
 
 /// @nodoc
@@ -129,7 +129,7 @@ class _$OrderEntityCopyWithImpl<$Res> implements $OrderEntityCopyWith<$Res> {
       carts: carts == freezed
           ? _value.carts
           : carts // ignore: cast_nullable_to_non_nullable
-              as List<Cart>,
+              as List<Cart?>,
     ));
   }
 }
@@ -158,7 +158,7 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderEntityCopyWith<$Res> {
           String destinationName,
       @JsonKey(name: 'items', defaultValue: <Cart>[], fromJson: _cartFromJson)
       @HiveField(3)
-          List<Cart> carts});
+          List<Cart?> carts});
 }
 
 /// @nodoc
@@ -218,7 +218,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderEntityCopyWithImpl<$Res>
       carts: carts == freezed
           ? _value._carts
           : carts // ignore: cast_nullable_to_non_nullable
-              as List<Cart>,
+              as List<Cart?>,
     ));
   }
 }
@@ -246,7 +246,7 @@ class _$_Order implements _Order {
           required this.destinationName,
       @JsonKey(name: 'items', defaultValue: <Cart>[], fromJson: _cartFromJson)
       @HiveField(3)
-          required final List<Cart> carts})
+          required final List<Cart?> carts})
       : _carts = carts;
 
   factory _$_Order.fromJson(Map<String, dynamic> json) =>
@@ -276,11 +276,11 @@ class _$_Order implements _Order {
   @override
   @HiveField(8)
   final String destinationName;
-  final List<Cart> _carts;
+  final List<Cart?> _carts;
   @override
   @JsonKey(name: 'items', defaultValue: <Cart>[], fromJson: _cartFromJson)
   @HiveField(3)
-  List<Cart> get carts {
+  List<Cart?> get carts {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_carts);
   }
@@ -356,7 +356,7 @@ abstract class _Order implements OrderEntity {
           required final String destinationName,
       @JsonKey(name: 'items', defaultValue: <Cart>[], fromJson: _cartFromJson)
       @HiveField(3)
-          required final List<Cart> carts}) = _$_Order;
+          required final List<Cart?> carts}) = _$_Order;
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$_Order.fromJson;
 
@@ -387,7 +387,7 @@ abstract class _Order implements OrderEntity {
   @override
   @JsonKey(name: 'items', defaultValue: <Cart>[], fromJson: _cartFromJson)
   @HiveField(3)
-  List<Cart> get carts => throw _privateConstructorUsedError;
+  List<Cart?> get carts => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OrderCopyWith<_$_Order> get copyWith =>

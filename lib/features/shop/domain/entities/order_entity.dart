@@ -32,7 +32,7 @@ class OrderEntity with _$OrderEntity {
           required String destinationName,
       @JsonKey(name: 'items', defaultValue: <Cart>[], fromJson: _cartFromJson)
       @HiveField(3)
-          required List<Cart> carts}) = _Order;
+          required List<Cart?> carts}) = _Order;
 
   /// Initial state with default values
   factory OrderEntity.initial() => OrderEntity(

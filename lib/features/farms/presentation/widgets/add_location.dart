@@ -24,7 +24,7 @@ class _SearchPageState extends State<SearchPage> {
     }
   }
 
-  String mapKey = 'AIzaSyB-DXDM28-apXG86HbxwKu6Q7ZI7V0BqS4';
+  String mapKey = 'AIzaSyChlSYajoQ0gJ0tBW-_ViE5ACej3fdcn1o';
 
   List<Prediction> destinationPredictionList = [];
 
@@ -96,13 +96,10 @@ class _SearchPageState extends State<SearchPage> {
                     child: const Icon(Icons.arrow_back),
                   ),
                   Center(
-                    child: Text('Set Location',
-                        style: Theme.of(context).textTheme.titleMedium),
-                  ),
+                      child: Text('Set Location',
+                          style: Theme.of(context).textTheme.titleMedium))
                 ]),
-                const SizedBox(
-                  height: 18,
-                ),
+                const SizedBox(height: 18),
                 // Row(children: <Widget>[
                 //   Image.asset('assets/images/pickicon.png',
                 //       height: 16, width: 16),
@@ -129,9 +126,7 @@ class _SearchPageState extends State<SearchPage> {
                 Row(children: <Widget>[
                   Image.asset('assets/images/desticon.png',
                       height: 16, width: 16),
-                  const SizedBox(
-                    width: 18,
-                  ),
+                  const SizedBox(width: 18),
                   Expanded(
                       child: Container(
                           decoration: BoxDecoration(

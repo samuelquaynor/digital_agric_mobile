@@ -43,7 +43,6 @@ class _CreateFarmState extends State<CreateFarm> {
   Future _showCropAddDialog() {
     return showDialog<void>(
         context: context,
-        barrierDismissible: true,
         builder: (BuildContext context) {
           return AlertDialog(
               backgroundColor: Colors.white,
@@ -107,8 +106,7 @@ class _CreateFarmState extends State<CreateFarm> {
                                 const SnackBar(
                                     content: Text(
                                         'Farm has been created successfully')));
-                            // Navigator.of(context).push(MaterialPageRoute<void>(
-                            //     builder: (context) => const HomeScreen()));
+                            Navigator.of(context).pop();
                           }));
                 },
                 child: const Text('Save'))),

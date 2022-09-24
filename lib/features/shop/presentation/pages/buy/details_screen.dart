@@ -15,6 +15,9 @@ class DetailsScreen extends StatefulWidget {
   /// Constructor
   const DetailsScreen({super.key, required this.product});
 
+  /// DetailsScreen
+  static const routeName = '/detailScreen';
+
   /// Product model
   final Product product;
 
@@ -95,7 +98,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       child: const Text('Add to Cart'))),
               body: Column(children: [
                 SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.35,
                     child: FadeInImage(
                         imageErrorBuilder: (context, error, stackTrace) =>
                             Image.asset('assets/images/rice.png',

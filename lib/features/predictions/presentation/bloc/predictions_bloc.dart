@@ -1,13 +1,23 @@
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+
+import '../../../../core/usecases/usecase.dart';
+import '../../domain/entities/plant_disease_entity.dart';
+import '../../domain/usecases/plant_disease_usc.dart';
 
 part 'predictions_event.dart';
 part 'predictions_state.dart';
 
-class PredictionsBloc extends Bloc<PredictionsEvent, PredictionsState> {
-  PredictionsBloc() : super(PredictionsInitial()) {
-    on<PredictionsEvent>((event, emit) {
-      // TODO: implement event handler
-    });
+/// Prediction Bloc
+class PredictionsBloc {
+  /// Constructor
+  PredictionsBloc(this.plantDiseasePredictorUsc);
+
+  /// PlantDiseasePredictor usecase
+  final PlantDiseasePredictor plantDiseasePredictorUsc;
+
+  /// plantDiseasePredictor bloc
+  Future<PlantDiseaseEntity> plantDiseasePredictorBloc(String imagePath) async {
+    final result = await plantDiseasePredictorUsc(StringParams(imagePath));
+    return result.fold((l) => PlantDiseaseEntity.initial(), (r) => r);
   }
 }

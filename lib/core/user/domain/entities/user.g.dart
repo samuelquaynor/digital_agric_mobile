@@ -66,13 +66,13 @@ _$_UserEntity _$$_UserEntityFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       farms: json['farms'] == null
           ? []
-          : _farmEntityFromJson(json['farms'] as List),
+          : _farmEntityFromJson(json['farms'] as List?),
       tasks: json['tasks'] == null
           ? []
-          : _tasksEntityFromJson(json['tasks'] as List),
+          : _tasksEntityFromJson(json['tasks'] as List?),
       orders: json['orders'] == null
           ? []
-          : _orderEntityFromJson(json['orders'] as List),
+          : _orderEntityFromJson(json['orders'] as List?),
     );
 
 Map<String, dynamic> _$$_UserEntityToJson(_$_UserEntity instance) =>

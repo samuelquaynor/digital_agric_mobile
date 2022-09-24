@@ -43,14 +43,17 @@ class CheckoutCard extends StatelessWidget {
                     child: ElevatedButton(
                         child: const Text('Check Out'),
                         onPressed: () {
-                          Navigator.of(context).push<void>(MaterialPageRoute(
-                              builder: (context) => ShopCheckOut(
-                                  totalPrice: carts.isNotEmpty
-                                      ? carts
-                                          .map<double?>(
-                                              (cart) => cart?.totalPrice ?? 0)
-                                          .reduce((a, b) => a! + b!)!
-                                      : 0)));
+                          if (carts.isNotEmpty) {
+                            Navigator.of(context).push<void>(MaterialPageRoute(
+                                builder: (context) => ShopCheckOut(
+                                    totalPrice: carts.isNotEmpty
+                                        ? carts
+                                            .map<double?>(
+                                                (cart) => cart?.totalPrice ?? 0)
+                                            .reduce((a, b) => a! + b!)!
+                                        : 0,
+                                    carts: carts)));
+                          }
                         }))
               ])
             ])));

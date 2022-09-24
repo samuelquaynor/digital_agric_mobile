@@ -7,9 +7,8 @@
         android:label="DigiFarm"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
-        <!-- <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBgT96iKD-v7uUzfXgoB5tscl0GwN-DBPg" /> -->
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyChlSYajoQ0gJ0tBW-_ViE5ACej3fdcn1o"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

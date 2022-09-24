@@ -9,7 +9,7 @@ import 'domain/usecases/retrieve_carts.dart';
 import 'domain/usecases/save_carts.dart';
 import 'presentation/bloc/shop_bloc.dart';
 
-///
+/// init shop injection
 void initShop() {
   final sl = GetIt.instance;
 
@@ -18,7 +18,7 @@ void initShop() {
         getCategories: sl(),
         retrieveCarts: sl(),
         saveCarts: sl(),
-        createTaskUsc: sl(),
+        createOrderUsc: sl(),
         retrieveUser: sl()))
     ..registerLazySingleton(() => GetCategories(sl()))
     ..registerLazySingleton(() => SaveCarts(sl()))

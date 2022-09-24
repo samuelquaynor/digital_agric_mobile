@@ -35,15 +35,21 @@ class ShopRepositoryImpl implements ShopRepository {
           FirebaseFirestore.instance.collection('users/$userid/orders');
       await users
           .add(<String, dynamic>{
-            'id': orderEntity.id,
             'createdAt': orderEntity.createdAt,
-            'userId': orderEntity.userId,
+            'userId': userid,
             'totalPrice': orderEntity.totalPrice,
             'deliveryPrice': orderEntity.deliveryPrice,
             'destinationLongitude': orderEntity.destinationLongitude,
             'destinationLatitude': orderEntity.destinationLatitude,
             'destinationName': orderEntity.destinationName,
             'carts': orderEntity.carts
+                .map((cart) => {
+                      'initialPrice': cart?.initialPrice,
+                      'quantity': cart?.quantity,
+                      'totalPrice': cart?.totalPrice,
+                      'product': {'id': cart?.product?.id}
+                    })
+                .toList()
           })
           .then((value) => '')
           .catchError((dynamic error) => 'Failed to create task $error');
