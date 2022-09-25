@@ -12,7 +12,9 @@ import '../bloc/farms_bloc.dart';
 import '../widgets/add_location.dart';
 import '../widgets/farm_profile_image.dart';
 
+/// Create farm page
 class CreateFarm extends StatefulWidget {
+  /// Constructor
   const CreateFarm({super.key});
 
   @override

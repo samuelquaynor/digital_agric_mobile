@@ -101,7 +101,6 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                                           margin: const EdgeInsets.symmetric(
                                               horizontal: 10, vertical: 10),
                                           decoration: BoxDecoration(
-                                              color: Colors.green,
                                               borderRadius:
                                                   BorderRadius.circular(10)),
                                           child: FadeInImage(

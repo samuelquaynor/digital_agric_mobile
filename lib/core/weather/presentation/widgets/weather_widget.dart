@@ -6,9 +6,16 @@ import 'forecast_horizontal_widget.dart';
 import 'value_tile.dart';
 import 'weather_swipe_pager.dart';
 
+/// Weather forecast widget
 class WeatherWidget extends StatefulWidget {
-  const WeatherWidget({required this.weather, required this.forecast});
+  /// Constructor
+  const WeatherWidget(
+      {super.key, required this.weather, required this.forecast});
+
+  /// Weather model
   final Weather weather;
+
+  /// list of weather
   final List<Weather> forecast;
 
   @override
@@ -56,7 +63,8 @@ class _WeatherWidgetState extends State<WeatherWidget> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ValueTile(label: 'wind speed', value: '${widget.weather.windSpeed} m/s'),
+            ValueTile(
+                label: 'wind speed', value: '${widget.weather.windSpeed} m/s'),
             const Padding(
               padding: EdgeInsets.only(left: 15, right: 15),
               child: Center(

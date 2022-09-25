@@ -5,8 +5,10 @@ import 'package:weather/weather.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../domain/usecases/getCurrentWeather.dart';
 import '../../domain/usecases/getCurrentWeatherByCity.dart';
+import '../../domain/usecases/getCurrentWeatherByLocation.dart';
 import '../../domain/usecases/getForecastWeather.dart';
 import '../../domain/usecases/getForecastWeatherByCity.dart';
+import '../../domain/usecases/getForecastWeatherByLocation.dart';
 
 part 'weather_event.dart';
 part 'weather_state.dart';
@@ -14,14 +16,17 @@ part 'weather_state.dart';
 ///Weather Bloc
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   /// Constructor
-  WeatherBloc({
-    required this.getCurrentWeatherByCity,
-    required this.getForecastWeather,
-    required this.getForecastWeatherByCity,
-    required this.getCurrentWeather,
-  }) : super(WeatherLoading()) {
+  WeatherBloc(
+      {required this.getCurrentWeatherByCity,
+      required this.getForecastWeather,
+      required this.getForecastWeatherByCity,
+      required this.getCurrentWeather,
+      required this.getForecastWeatherByLocation,
+      required this.getCurrentWeatherByLocation})
+      : super(WeatherLoading()) {
     on<LoadWeather>(getCurrentWeatherBloc);
     on<LoadCustomWeather>(getCurrentWeatherByCityBloc);
+    on<LoadCustomWeatherLocation>(getWeatherByLocationBloc);
   }
 
   /// Get weather usecase
@@ -35,6 +40,12 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
   /// Get weather forecast usecase
   final GetForecastWeatherByCity getForecastWeatherByCity;
+
+  /// Get weather by location forecast usecase
+  final GetForecastWeatherByLocation getForecastWeatherByLocation;
+
+  /// Get weather by location usecase
+  final GetCurrentWeatherByLocation getCurrentWeatherByLocation;
 
   /// Get weather bloc
   Future<void> getCurrentWeatherBloc(
@@ -57,6 +68,23 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     late Weather wea;
     final weather = await getCurrentWeatherByCity(StringParams(event.city));
     final forecast = await getForecastWeatherByCity(StringParams(event.city));
+    emit(weather.fold((l) => WeatherError(l.message), (r) {
+      wea = r;
+      return WeatherLoaded(weather: r, forecast: const []);
+    }));
+    emit(forecast.fold((l) => WeatherError(l.message),
+        (r) => WeatherLoaded(forecast: r, weather: wea)));
+  }
+
+  /// Get weather bloc
+  Future<void> getWeatherByLocationBloc(
+      LoadCustomWeatherLocation event, Emitter<WeatherState> emit) async {
+    emit(WeatherLoading());
+    late Weather wea;
+    final weather = await getCurrentWeatherByLocation(
+        GCWBLParams(latitude: event.latitude, longitude: event.longitude));
+    final forecast = await getForecastWeatherByLocation(
+        GFWBLParams(latitude: event.latitude, longitude: event.longitude));
     emit(weather.fold((l) => WeatherError(l.message), (r) {
       wea = r;
       return WeatherLoaded(weather: r, forecast: const []);

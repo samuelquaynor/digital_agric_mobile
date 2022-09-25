@@ -6,14 +6,19 @@ import 'current_conditions.dart';
 import 'empty_widget.dart';
 import 'temperature_line_chart.dart';
 
+/// Weather swiper page
 class WeatherSwipePager extends StatelessWidget {
+  /// Constructor
   const WeatherSwipePager({
     super.key,
     required this.weather,
     required this.forecast,
   });
 
+  /// Weather model
   final Weather weather;
+
+  /// List of weather
   final List<Weather> forecast;
 
   @override

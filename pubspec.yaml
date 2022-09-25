@@ -78,6 +78,7 @@ dependencies:
   permission_handler: ^10.0.1
   pdf: ^3.8.3
   share_plus: ^4.4.0
+  draggable_home: ^1.0.3
 
 dev_dependencies:
   build_runner: ^2.1.11

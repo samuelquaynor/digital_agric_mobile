@@ -103,7 +103,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
   Future _showCityChangeDialog() {
     return showDialog<void>(
         context: context,
-        barrierDismissible: true,
         builder: (BuildContext context) {
           return AlertDialog(
             backgroundColor: Colors.white,

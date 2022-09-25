@@ -17,7 +17,7 @@ class ForecastHorizontal extends StatelessWidget {
   });
 
   ///List of Weathers
-  final List<Weather> weathers;
+  final List<Weather?> weathers;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class ForecastHorizontal extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10, right: 10),
             child: Center(
                 child: ValueTile(
-              value: DateFormat('E, ha').format(item.date!),
+              value: DateFormat('E, ha').format(item!.date!),
               label: '${roundDouble(item.temperature?.celsius ?? 0, 1)}°',
               iconData: WeatherIcons.getIconData(item.weatherIcon!),
             )),

@@ -57,9 +57,32 @@ class WeatherRepositoryImpl implements WeatherRepository {
   }
 
   @override
-  Future<Either<Failure, List<Weather>>> getForeCastWeatherByCity(String city) async {
+  Future<Either<Failure, List<Weather>>> getForeCastWeatherByCity(
+      String city) async {
     try {
       final forecast = await wf.fiveDayForecastByCityName(city);
+      return Right(forecast);
+    } on PlatformException {
+      return const Left(Failure('Weather Retrieval Failed.'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, Weather>> getCurrentWeatherByLongitudeLatitude(
+      {required double longitude, required double latitude}) async {
+    try {
+      final forecast = await wf.currentWeatherByLocation(latitude, longitude);
+      return Right(forecast);
+    } on PlatformException {
+      return const Left(Failure('Weather Retrieval Failed.'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<Weather>>> getForeCastWeatherByLongitudeLatitude(
+      {required double longitude, required double latitude}) async {
+    try {
+      final forecast = await wf.fiveDayForecastByLocation(latitude, longitude);
       return Right(forecast);
     } on PlatformException {
       return const Left(Failure('Weather Retrieval Failed.'));
