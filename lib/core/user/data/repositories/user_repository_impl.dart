@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../../../features/farms/domain/entities/crop_info.dart';
 import '../../../../features/farms/domain/entities/farm_entity.dart';
 import '../../../../features/tasks/domain/entities/tasks_entity.dart';
 import '../../../error/exception.dart';
@@ -89,6 +90,7 @@ class UserRepositoryImpl implements UserRepository {
           await fireUser.doc(uid).collection('tasks').orderBy('endTime').get();
       final farmResult = await fireUser.doc(uid).collection('farms').get();
       for (final farm in farmResult.docs) {
+        final farmCrops = farm.get('crops') as List<dynamic>;
         farms.add(FarmEntity(
             id: farm.id,
             name: farm.get('name') as String,
@@ -96,7 +98,10 @@ class UserRepositoryImpl implements UserRepository {
             farmSize: farm.get('farmSize') as double,
             longitude: farm.get('longitude') as double,
             latitude: farm.get('latitude') as double,
-            crops: farm.get('crops') as List<dynamic>));
+            crops: farmCrops
+                .cast<Map<String, dynamic>>()
+                .map<CropInfo>(CropInfo.fromJson)
+                .toList()));
       }
       for (final task in tasksResult.docs) {
         tasks.add(TasksEntity(

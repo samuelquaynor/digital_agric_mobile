@@ -142,16 +142,13 @@ class _DashboardState extends State<Dashboard> {
                       ]);
                 } else {
                   return GestureDetector(
-                    onTap: () {
-                      Navigator.push<void>(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const AllTasks()));
-                    },
-                    child: TasksWidget(
-                      farms: tasks,
-                    ),
-                  );
+                      onTap: () {
+                        Navigator.push<void>(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AllTasks()));
+                      },
+                      child: TasksWidget(farms: tasks));
                 }
               })
             ])));

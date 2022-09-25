@@ -82,11 +82,7 @@ class ShopRepositoryImpl implements ShopRepository {
     try {
       await networkInfo.hasInternet();
       final cart = await localDatabase.retrieveCarts();
-      // if (local)
       return Right(cart);
-      // final result = await remoteDatasource.getMutualFunds();
-      // await localDatabase.save(result);
-      // return Right(result);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));
     }

@@ -5,7 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/weather/presentation/bloc/weather_bloc.dart';
 import '../../../../core/weather/presentation/pages/full_weather_screen.dart';
 import '../../../../core/weather/presentation/widgets/display_weather_widget.dart';
+import '../../../../injection_container.dart';
+import '../../../tasks/presentation/pages/all_tasks.dart';
+import '../../../tasks/presentation/pages/create_task.dart';
+import '../../../tasks/presentation/widgets/tasks_widget.dart';
 import '../../domain/entities/farm_entity.dart';
+import '../bloc/farms_bloc.dart';
+import 'create_farm.dart';
 
 /// Single  Farm Page
 class SingleFarmPage extends StatefulWidget {
@@ -20,6 +26,26 @@ class SingleFarmPage extends StatefulWidget {
 }
 
 class _SingleFarmPageState extends State<SingleFarmPage> {
+  final bloc = sl<FarmsBloc>();
+
+  List<FarmEntity?> tasks = <FarmEntity>[];
+
+  Future<void> loadUser() async {
+    final loadedTasks = await bloc.getFarmsBloc();
+    setState(() {
+      tasks = loadedTasks
+          .where((element) => element?.id == widget.farm.id)
+          .toList();
+    });
+    return;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadUser();
+  }
+
   @override
   Widget build(BuildContext context) {
     context.read<WeatherBloc>().add(LoadCustomWeatherLocation(
@@ -90,7 +116,47 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                               borderRadius: BorderRadius.circular(20)),
                           child: const Text('Weather Loading Error'));
                     }
-                  }))
+                  })),
+              Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Farm Tasks',
+                            style: Theme.of(context).textTheme.titleMedium),
+                        Builder(builder: (context) {
+                          if (tasks.isEmpty) {
+                            return Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 16),
+                                      child: Text('No Tasks Available. ')),
+                                  GestureDetector(
+                                      onTap: () => Navigator.of(context)
+                                          .push<void>(MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const CreateNewTaskPage())),
+                                      child: const Text('Create One',
+                                          style: TextStyle(
+                                              decoration:
+                                                  TextDecoration.underline)))
+                                ]);
+                          } else {
+                            return GestureDetector(
+                                onTap: () {
+                                  Navigator.push<void>(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const AllTasks()));
+                                },
+                                child: TasksWidget(farms: tasks));
+                          }
+                        })
+                      ]))
             ]));
   }
 }

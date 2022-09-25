@@ -5,6 +5,7 @@ import 'package:shimmer/shimmer.dart';
 
 import '../../../../injection_container.dart';
 import '../../../predictions/presentation/pages/scan_crop.dart';
+import '../../domain/entities/crop_info.dart';
 import '../../domain/entities/farm_entity.dart';
 import '../bloc/farms_bloc.dart';
 import '../widgets/prediction_carousel.dart';
@@ -183,7 +184,7 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                     urlImage: 'assets/images/crop-prediction.jpg',
                     onPressed: () {},
                     description:
-                        'This Cereals Seeds Recognition API is used to recognize grain seeds among: wheat, maize, oat, barley, rye, quinoa, millet, sorghum, rice from a close up photo using Artificial Intelligence.'),
+                        'This Cereals Seeds Recognition API is used to recognize grain seeds among: wheat, maize, oat, barley, rye, quinoa, millet, sorgh.'),
               ],
               options: CarouselOptions(
                   autoPlayInterval: const Duration(seconds: 10),
@@ -195,33 +196,51 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                   style: Theme.of(context).textTheme.titleMedium),
               subtitle: const Text('Check more info of plants here'),
               trailing: const Icon(Icons.arrow_forward)),
-          SizedBox(
-              height: 200,
-              width: MediaQuery.of(context).size.width,
-              child: ListView.builder(
-                  itemBuilder: (context, index) => Column(children: [
-                        Container(
-                            width: 120,
-                            height: 120,
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 10),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(20),
-                                image: DecorationImage(
-                                    fit: BoxFit.contain,
-                                    image: AssetImage(cropImages[index])),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.green.withOpacity(0.2),
-                                      blurRadius: 5,
-                                      spreadRadius: 3,
-                                      offset: const Offset(0, 5))
-                                ])),
-                        Text(crops[index])
-                      ]),
-                  itemCount: crops.length,
-                  scrollDirection: Axis.horizontal))
+          FutureBuilder<List<CropInfo?>>(
+              future: bloc.getCropInfoBloc(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const LinearProgressIndicator();
+                } else {
+                  return SizedBox(
+                      height: 200,
+                      width: MediaQuery.of(context).size.width,
+                      child: ListView.builder(
+                          itemBuilder: (context, index) => Column(children: [
+                                Container(
+                                    width: 120,
+                                    height: 120,
+                                    margin: const EdgeInsets.symmetric(
+                                        horizontal: 10, vertical: 10),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color:
+                                                  Colors.green.withOpacity(0.2),
+                                              blurRadius: 5,
+                                              spreadRadius: 3,
+                                              offset: const Offset(0, 5))
+                                        ]),
+                                    child: FadeInImage(
+                                        imageErrorBuilder:
+                                            (context, error, stackTrace) =>
+                                                Image.asset(
+                                                    'assets/images/rice.png',
+                                                    fit: BoxFit.cover),
+                                        fit: BoxFit.cover,
+                                        placeholder: const AssetImage(
+                                            'assets/images/rice.png'),
+                                        image: NetworkImage(
+                                            snapshot.data?[index]?.photoUrl ??
+                                                '',
+                                            scale: 1.5))),
+                                Text('${snapshot.data?[index]?.name}')
+                              ]),
+                          itemCount: snapshot.data?.length,
+                          scrollDirection: Axis.horizontal));
+                }
+              })
         ])));
   }
 }

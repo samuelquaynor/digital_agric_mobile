@@ -6,10 +6,12 @@ import '../../../../core/usecases/usecase.dart';
 import '../entities/farm_entity.dart';
 import '../repositories/farm_repository.dart';
 
+/// Create farm usecase
 class CreateFarm implements UseCase<String?, CreateFarmParams> {
   /// Constructor
   CreateFarm(this.repository);
 
+  /// Farm repository
   final FarmRepository repository;
 
   @override
@@ -17,10 +19,12 @@ class CreateFarm implements UseCase<String?, CreateFarmParams> {
       repository.createFarm(farm: params.farm);
 }
 
+/// Create farm params
 class CreateFarmParams extends Equatable {
   /// Constructor
   const CreateFarmParams(this.farm);
 
+  /// farm paramete
   final FarmEntity farm;
 
   @override

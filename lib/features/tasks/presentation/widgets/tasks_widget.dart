@@ -309,7 +309,8 @@ class TasksWidget extends StatelessWidget {
                                           tasks[index]?.farms ?? <String>[])
                                   .map((farm) {
                                   return Chip(
-                                      label: Text(farm?.name ?? 'General Task'));
+                                      label:
+                                          Text(farm?.name ?? 'General Task'));
                                 }).toList()
                               : [const Chip(label: Text('General Task'))]),
                     ]))
@@ -366,7 +367,8 @@ class TasksWidget extends StatelessWidget {
                                           tasks[index]?.farms ?? <String>[])
                                   .map((farm) {
                                   return Chip(
-                                      label: Text(farm?.name ?? 'General Task'));
+                                      label:
+                                          Text(farm?.name ?? 'General Task'));
                                 }).toList()
                               : [const Chip(label: Text('General Task'))]),
                     ]))
@@ -423,7 +425,8 @@ class TasksWidget extends StatelessWidget {
                                           tasks[index]?.farms ?? <String>[])
                                   .map((farm) {
                                   return Chip(
-                                      label: Text(farm?.name ?? 'General Task'));
+                                      label:
+                                          Text(farm?.name ?? 'General Task'));
                                 }).toList()
                               : [const Chip(label: Text('General Task'))]),
                     ]))
@@ -480,7 +483,8 @@ class TasksWidget extends StatelessWidget {
                                           tasks[index]?.farms ?? <String>[])
                                   .map((farm) {
                                   return Chip(
-                                      label: Text(farm?.name ?? 'General Task'));
+                                      label:
+                                          Text(farm?.name ?? 'General Task'));
                                 }).toList()
                               : [const Chip(label: Text('General Task'))]),
                     ]))
@@ -506,18 +510,21 @@ class TasksWidget extends StatelessWidget {
                   child: GestureDetector(
                       onTap: () => Navigator.of(context).push(
                           MaterialPageRoute<void>(
-                              builder: (context) => TasksPage())),
-                      child: RichText(
-                          text: TextSpan(
-                              text: 'No Current Tasks Available, ',
-                              style: TextStyle(
-                                  color: Colors.green.shade900, fontSize: 16),
-                              children: const [
-                            TextSpan(
-                                text: 'Create Task.',
+                              builder: (context) => const TasksPage())),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: RichText(
+                            text: TextSpan(
+                                text: 'No Current Tasks Available, ',
                                 style: TextStyle(
-                                    decoration: TextDecoration.underline))
-                          ]))));
+                                    color: Colors.green.shade900, fontSize: 16),
+                                children: const [
+                              TextSpan(
+                                  text: 'Create Task.',
+                                  style: TextStyle(
+                                      decoration: TextDecoration.underline))
+                            ])),
+                      )));
             } else {
               return SizedBox(
                   height: snapshot.requireData

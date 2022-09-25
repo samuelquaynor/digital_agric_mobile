@@ -244,5 +244,140 @@
       ],
       "icon": "https://www.kindpng.com/picc/m/298-2983882_food-processing-industry-different-types-of-dairy-products.png"
     }
+  ],
+  "cropInfo": [
+    {
+      "description": "Tomato plants are tender warm-season crops that love the sun and cannot bear frost. It’s important not to put plants in the ground too early. In most regions, the soil is not warm enough to plant tomatoes outdoors until late spring and early summer except in zone 10, where they are a fall and winter crop.",
+      "id": 1,
+      "name": "Tomato",
+      "plantType": "vegetable",
+      "flowerColor": "yellow",
+      "soilPH": "Acidic, Slightly Acidic to Neutral",
+      "soilTemperature": "22",
+      "germinationPeriod": "3-5",
+      "bloomTime": "Summer",
+      "sunExposure": "Full Sun",
+      "daysToHarvest": 90,
+      "varieties": [
+        "Determinate",
+        "Indeterminate"
+      ],
+      "pests": [
+        "Aphids",
+        "Tomatoes Hornworm",
+        "Spider Mites"
+      ],
+      "diseases": [
+        "Blossom-End Rot",
+        "Early Blight",
+        "Late Blight",
+        "Mosaic Virus",
+        "Fusarium Wilt",
+        "Powdery Mildew",
+        "Cracking"
+      ],
+      "learnMore": "https://www.almanac.com/plant/tomatoes",
+      "photoUrl": "https://www.kindpng.com/picc/m/42-425444_tomato-clipart-svg-tomato-png-transparent-png.png"
+    },
+    {
+      "description": "Carrots are a cool-season crop grown in spring. They are an excellent source of vitamin A and add color to a meal. They can be served cooked or raw.",
+      "id": 2,
+      "name": "Carrots",
+      "plantType": "vegetable",
+      "flowerColor": "white",
+      "soilPH": "Neutral",
+      "soilTemperature": "22",
+      "germinationPeriod": "14-21",
+      "bloomTime": "All Season",
+      "sunExposure": "Full Sun",
+      "daysToHarvest": 80,
+      "varieties": [
+        "Bolero",
+        "Danvers",
+        "Little Finger",
+        "Nantes",
+        "Thumberline"
+      ],
+      "pests": [
+        "Carrot rust flies",
+        "Flea beetles",
+        "Root-knot nematodes",
+        "Wireworms",
+        "Leafhoppers"
+      ],
+      "diseases": [
+        "Aster Yellow Disease",
+        "Black (Itersonilia) canker"
+      ],
+      "learnMore": "https://www.almanac.com/plant/carrots",
+      "photoUrl": "https://www.almanac.com/sites/default/files/styles/max_1300x1300/public/image_nodes/carrots-table_popidar-ss.jpg?itok=QNApt8uf"
+    },
+    {
+      "description": "Sweet corn is a tender, warm-season annual crop that produces ears of yellow, white, or bi-colored kernels. A long, frost-free growing season (60 to 100 frost-free days) is necessary to grow and harvest corn.",
+      "id": 3,
+      "name": "Corn",
+      "plantType": "vegetable",
+      "flowerColor": "white, yellow",
+      "soilPH": "Slightly Acidic to Neutral",
+      "soilTemperature": "22",
+      "germinationPeriod": "7-10",
+      "bloomTime": "Summer",
+      "sunExposure": "Full Sun",
+      "daysToHarvest": 90,
+      "varieties": [
+        "Argent",
+        "Luther Hill",
+        "Silver Queen",
+        "Sweet Sunshine",
+        "Iochief"
+      ],
+      "pests": [
+        "Corn earworms",
+        "Cucumber beetles",
+        "Deer",
+        "Flea beetles",
+        "Raccoons",
+        "Earwigs"
+      ],
+      "diseases": [
+        "Anthracnose",
+        "Downy mildew"
+      ],
+      "learnMore": "https://www.almanac.com/plant/corn",
+      "photoUrl": "https://www.almanac.com/sites/default/files/styles/max_1300x1300/public/image_nodes/corn-1605664_1920.jpg?itok=ofE7MirN"
+    },
+    {
+      "description": "The tomato is the edible berry of the plant Solanum lycopersicum, commonly known as the tomato plant. The species originated in western South America, Mexico, and Central America.",
+      "id": 4,
+      "name": "Okra",
+      "plantType": "vegetable",
+      "flowerColor": "white, yellow",
+      "soilPH": "Slightly Acidic to Neutral",
+      "soilTemperature": "22",
+      "germinationPeriod": "2-12",
+      "bloomTime": "Summer",
+      "sunExposure": "Full Sun",
+      "daysToHarvest": 65,
+      "varieties": [
+        "Blondy",
+        "Burgundy",
+        "Cajun Jewel",
+        "Clemson Spineless",
+        "Louisiana Green Velvet"
+      ],
+      "pests": [
+        "Aphids",
+        "Japanese beetles",
+        "Stinkbugs",
+        "Whiteflies"
+      ],
+      "diseases": [
+        "Fusarium wilt",
+        "Powdery mildew",
+        "Root-knot nematodes"
+      ],
+      "learnMore": "https://www.almanac.com/plant/okra",
+      "photoUrl": "https://www.almanac.com/sites/default/files/styles/max_2600x2600/public/images/okra.jpg?itok=QjF_8yZ2"
+    }
   ]
 }

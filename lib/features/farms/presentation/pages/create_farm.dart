@@ -7,6 +7,7 @@ import '../../../../core/presentation/pages/loading.dart';
 import '../../../../core/util/validator.dart';
 import '../../../../injection_container.dart';
 import '../../data/models/address.dart';
+import '../../domain/entities/crop_info.dart';
 import '../../domain/entities/farm_entity.dart';
 import '../bloc/farms_bloc.dart';
 import '../widgets/add_location.dart';
@@ -36,11 +37,11 @@ class _CreateFarmState extends State<CreateFarm> {
   final selectedSoil = ValueNotifier<String>('');
   final farmName = ValueNotifier<String>('');
   late Address? address = Address();
-  final List<String> crops = [];
+  final List<CropInfo> crops = [];
   late String soiltype;
   late double farmSize;
 
-  late String crop;
+  late CropInfo crop;
 
   Future _showCropAddDialog() {
     return showDialog<void>(
@@ -61,7 +62,7 @@ class _CreateFarmState extends State<CreateFarm> {
                   autofocus: true,
                   onChanged: (text) {
                     setState(() {
-                      crop = text;
+                      // crop = text;
                     });
                   },
                   decoration: const InputDecoration(
@@ -161,32 +162,69 @@ class _CreateFarmState extends State<CreateFarm> {
                   trailing: IconButton(
                       onPressed: _showCropAddDialog,
                       icon: const Icon(Icons.add_box, color: Colors.green))),
-              SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: 50,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.all(8),
-                      itemBuilder: (context, index) => Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 6),
-                          child: Chip(
-                              label: Text(
-                                crops[index],
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                              backgroundColor: Colors.green,
-                              deleteIconColor: Colors.white,
-                              deleteIcon: const Icon(
-                                Icons.close,
-                                size: 16,
-                              ),
-                              onDeleted: () {
-                                setState(() {
-                                  crops.removeAt(index);
-                                });
-                              })),
-                      shrinkWrap: true,
-                      itemCount: crops.length)),
+              FutureBuilder<List<CropInfo?>>(
+                  future: bloc.getCropInfoBloc(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const LinearProgressIndicator();
+                    } else {
+                      return SizedBox(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width,
+                          child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              padding: const EdgeInsets.all(8),
+                              itemBuilder: (context, index) => Container(
+                                  margin:
+                                      const EdgeInsets.symmetric(horizontal: 6),
+                                  child: Chip(
+                                      label: Text(
+                                        snapshot.data?[index]?.name ?? '',
+                                        style: const TextStyle(
+                                            color: Colors.white),
+                                      ),
+                                      backgroundColor: Colors.green,
+                                      deleteIconColor: Colors.white,
+                                      deleteIcon: crops.firstWhere(
+                                                  (crop) =>
+                                                      crop.id ==
+                                                      snapshot
+                                                          .requireData[index]
+                                                          ?.id,
+                                                  orElse: CropInfo.initial) !=
+                                              CropInfo.initial()
+                                          ? const Icon(
+                                              Icons.close,
+                                              size: 16,
+                                            )
+                                          : const Icon(
+                                              Icons.add,
+                                              size: 16,
+                                            ),
+                                      onDeleted: () {
+                                        if (crops.firstWhere(
+                                                (crop) =>
+                                                    crop.id ==
+                                                    snapshot
+                                                        .requireData[index]?.id,
+                                                orElse: CropInfo.initial) ==
+                                            CropInfo.initial()) {
+                                          setState(() {
+                                            crops.add(
+                                                snapshot.requireData[index]!);
+                                          });
+                                        } else {
+                                          setState(() {
+                                            crops.removeWhere((crop) =>
+                                                crop.id ==
+                                                snapshot.data?[index]?.id);
+                                          });
+                                        }
+                                      })),
+                              shrinkWrap: true,
+                              itemCount: snapshot.data?.length));
+                    }
+                  }),
               ListTile(
                   title: Text('Add Location',
                       style: Theme.of(context).textTheme.titleMedium),

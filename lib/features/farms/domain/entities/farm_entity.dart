@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 
 import '../../../../core/data/hive_adapters.dart';
+import 'crop_info.dart';
 
 part 'farm_entity.freezed.dart';
 part 'farm_entity.g.dart';
@@ -19,7 +20,10 @@ class FarmEntity with _$FarmEntity {
     @HiveField(3) required double farmSize,
     @HiveField(4) required double longitude,
     @HiveField(5) required double latitude,
-    @HiveField(6) required List<dynamic> crops,
+    @JsonKey(
+        name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
+    @HiveField(6)
+        required List<CropInfo?> crops,
   }) = _FarmEntity;
 
   /// Initial state with default values
@@ -29,9 +33,16 @@ class FarmEntity with _$FarmEntity {
       farmSize: 0,
       longitude: 0,
       latitude: 0,
-      crops: <String>[]);
+      crops: []);
 
   /// Convert from json to model
   factory FarmEntity.fromJson(Map<String, dynamic> json) =>
       _$FarmEntityFromJson(json);
+}
+
+List<CropInfo> _cropsFromJson(List<dynamic> json) {
+  return json
+      .cast<Map<String, dynamic>>()
+      .map<CropInfo>(CropInfo.fromJson)
+      .toList();
 }

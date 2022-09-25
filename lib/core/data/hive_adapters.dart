@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
+import '../../features/farms/domain/entities/crop_info.dart';
 import '../../features/farms/domain/entities/farm_entity.dart';
 import '../../features/shop/domain/entities/cart.dart';
 import '../../features/shop/domain/entities/category.dart';
@@ -29,6 +30,12 @@ class HiveAdapters {
 
   /// Cart entity
   static const cart = 7;
+  
+  /// Cart entity
+  static const cropInfo = 8;
+
+  /// Cart entity
+  static const farmerCrop = 9;
 
   /// Initialize adapters when app starts
   static Future<void> setUp() async {
@@ -40,6 +47,7 @@ class HiveAdapters {
       ..registerAdapter<TasksEntity>(TasksEntityAdapter())
       ..registerAdapter<Product>(ProductAdapter())
       ..registerAdapter<Cart>(CartAdapter())
+      ..registerAdapter<CropInfo>(CropInfoAdapter())
       ..registerAdapter<Category>(CategoryAdapter());
   }
 }

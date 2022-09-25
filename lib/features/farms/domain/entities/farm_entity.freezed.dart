@@ -32,8 +32,9 @@ mixin _$FarmEntity {
   double get longitude => throw _privateConstructorUsedError;
   @HiveField(5)
   double get latitude => throw _privateConstructorUsedError;
+  @JsonKey(name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
   @HiveField(6)
-  List<dynamic> get crops => throw _privateConstructorUsedError;
+  List<CropInfo?> get crops => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,13 +48,22 @@ abstract class $FarmEntityCopyWith<$Res> {
           FarmEntity value, $Res Function(FarmEntity) then) =
       _$FarmEntityCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(0) String? id,
-      @HiveField(1) String name,
-      @HiveField(2) String soilType,
-      @HiveField(3) double farmSize,
-      @HiveField(4) double longitude,
-      @HiveField(5) double latitude,
-      @HiveField(6) List<dynamic> crops});
+      {@HiveField(0)
+          String? id,
+      @HiveField(1)
+          String name,
+      @HiveField(2)
+          String soilType,
+      @HiveField(3)
+          double farmSize,
+      @HiveField(4)
+          double longitude,
+      @HiveField(5)
+          double latitude,
+      @JsonKey(
+          name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
+      @HiveField(6)
+          List<CropInfo?> crops});
 }
 
 /// @nodoc
@@ -102,7 +112,7 @@ class _$FarmEntityCopyWithImpl<$Res> implements $FarmEntityCopyWith<$Res> {
       crops: crops == freezed
           ? _value.crops
           : crops // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<CropInfo?>,
     ));
   }
 }
@@ -115,13 +125,22 @@ abstract class _$$_FarmEntityCopyWith<$Res>
       __$$_FarmEntityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(0) String? id,
-      @HiveField(1) String name,
-      @HiveField(2) String soilType,
-      @HiveField(3) double farmSize,
-      @HiveField(4) double longitude,
-      @HiveField(5) double latitude,
-      @HiveField(6) List<dynamic> crops});
+      {@HiveField(0)
+          String? id,
+      @HiveField(1)
+          String name,
+      @HiveField(2)
+          String soilType,
+      @HiveField(3)
+          double farmSize,
+      @HiveField(4)
+          double longitude,
+      @HiveField(5)
+          double latitude,
+      @JsonKey(
+          name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
+      @HiveField(6)
+          List<CropInfo?> crops});
 }
 
 /// @nodoc
@@ -172,7 +191,7 @@ class __$$_FarmEntityCopyWithImpl<$Res> extends _$FarmEntityCopyWithImpl<$Res>
       crops: crops == freezed
           ? _value._crops
           : crops // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<CropInfo?>,
     ));
   }
 }
@@ -182,13 +201,22 @@ class __$$_FarmEntityCopyWithImpl<$Res> extends _$FarmEntityCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$_FarmEntity implements _FarmEntity {
   const _$_FarmEntity(
-      {@HiveField(0) this.id,
-      @HiveField(1) required this.name,
-      @HiveField(2) required this.soilType,
-      @HiveField(3) required this.farmSize,
-      @HiveField(4) required this.longitude,
-      @HiveField(5) required this.latitude,
-      @HiveField(6) required final List<dynamic> crops})
+      {@HiveField(0)
+          this.id,
+      @HiveField(1)
+          required this.name,
+      @HiveField(2)
+          required this.soilType,
+      @HiveField(3)
+          required this.farmSize,
+      @HiveField(4)
+          required this.longitude,
+      @HiveField(5)
+          required this.latitude,
+      @JsonKey(
+          name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
+      @HiveField(6)
+          required final List<CropInfo?> crops})
       : _crops = crops;
 
   factory _$_FarmEntity.fromJson(Map<String, dynamic> json) =>
@@ -212,10 +240,11 @@ class _$_FarmEntity implements _FarmEntity {
   @override
   @HiveField(5)
   final double latitude;
-  final List<dynamic> _crops;
+  final List<CropInfo?> _crops;
   @override
+  @JsonKey(name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
   @HiveField(6)
-  List<dynamic> get crops {
+  List<CropInfo?> get crops {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_crops);
   }
@@ -264,13 +293,22 @@ class _$_FarmEntity implements _FarmEntity {
 
 abstract class _FarmEntity implements FarmEntity {
   const factory _FarmEntity(
-      {@HiveField(0) final String? id,
-      @HiveField(1) required final String name,
-      @HiveField(2) required final String soilType,
-      @HiveField(3) required final double farmSize,
-      @HiveField(4) required final double longitude,
-      @HiveField(5) required final double latitude,
-      @HiveField(6) required final List<dynamic> crops}) = _$_FarmEntity;
+      {@HiveField(0)
+          final String? id,
+      @HiveField(1)
+          required final String name,
+      @HiveField(2)
+          required final String soilType,
+      @HiveField(3)
+          required final double farmSize,
+      @HiveField(4)
+          required final double longitude,
+      @HiveField(5)
+          required final double latitude,
+      @JsonKey(
+          name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
+      @HiveField(6)
+          required final List<CropInfo?> crops}) = _$_FarmEntity;
 
   factory _FarmEntity.fromJson(Map<String, dynamic> json) =
       _$_FarmEntity.fromJson;
@@ -294,8 +332,9 @@ abstract class _FarmEntity implements FarmEntity {
   @HiveField(5)
   double get latitude => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
   @HiveField(6)
-  List<dynamic> get crops => throw _privateConstructorUsedError;
+  List<CropInfo?> get crops => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_FarmEntityCopyWith<_$_FarmEntity> get copyWith =>

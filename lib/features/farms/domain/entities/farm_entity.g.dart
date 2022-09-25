@@ -23,7 +23,7 @@ class FarmEntityAdapter extends TypeAdapter<FarmEntity> {
       farmSize: fields[3] as double,
       longitude: fields[4] as double,
       latitude: fields[5] as double,
-      crops: (fields[6] as List).cast<dynamic>(),
+      crops: (fields[6] as List).cast<CropInfo?>(),
     );
   }
 
@@ -70,7 +70,7 @@ _$_FarmEntity _$$_FarmEntityFromJson(Map<String, dynamic> json) =>
       farmSize: (json['farmSize'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
       latitude: (json['latitude'] as num).toDouble(),
-      crops: json['crops'] as List<dynamic>,
+      crops: json['crops'] == null ? [] : _cropsFromJson(json['crops'] as List),
     );
 
 Map<String, dynamic> _$$_FarmEntityToJson(_$_FarmEntity instance) =>
@@ -81,5 +81,5 @@ Map<String, dynamic> _$$_FarmEntityToJson(_$_FarmEntity instance) =>
       'farmSize': instance.farmSize,
       'longitude': instance.longitude,
       'latitude': instance.latitude,
-      'crops': instance.crops,
+      'crops': instance.crops.map((e) => e?.toJson()).toList(),
     };
