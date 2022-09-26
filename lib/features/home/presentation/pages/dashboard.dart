@@ -59,7 +59,7 @@ class _DashboardState extends State<Dashboard> {
               IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.notifications_none_outlined)),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.apps_rounded))
+              // IconButton(onPressed: () {}, icon: const Icon(Icons.apps_rounded))
             ]),
         body: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),

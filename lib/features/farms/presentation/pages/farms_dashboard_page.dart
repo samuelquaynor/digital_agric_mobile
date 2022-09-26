@@ -10,6 +10,7 @@ import '../../domain/entities/farm_entity.dart';
 import '../bloc/farms_bloc.dart';
 import '../widgets/prediction_carousel.dart';
 import 'create_farm.dart';
+import 'crop_info.dart';
 import 'single_farm_page.dart';
 
 /// DashboardFarmsPage
@@ -173,23 +174,22 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                     },
                     description:
                         'Plant Disease Detection Accepts a POST request with an image in the form of base64 string and returns plant, disease and remedy.'),
-                PredictionCarousel(
-                    title: 'Flood Detection',
-                    urlImage: 'assets/images/weather-predict.png',
-                    onPressed: () {},
-                    description:
-                        'Flood Detection API detects flooded areas in a photo using artificial intelligence. Useful  agriculture.'),
-                PredictionCarousel(
-                    title: 'Cereal Seeds Detection',
-                    urlImage: 'assets/images/crop-prediction.jpg',
-                    onPressed: () {},
-                    description:
-                        'This Cereals Seeds Recognition API is used to recognize grain seeds among: wheat, maize, oat, barley, rye, quinoa, millet, sorgh.'),
+                // PredictionCarousel(
+                //     title: 'Flood Detection',
+                //     urlImage: 'assets/images/weather-predict.png',
+                //     onPressed: () {},
+                //     description:
+                //         'Flood Detection API detects flooded areas in a photo using artificial intelligence. Useful  agriculture.'),
+                // PredictionCarousel(
+                //     title: 'Cereal Seeds Detection',
+                //     urlImage: 'assets/images/crop-prediction.jpg',
+                //     onPressed: () {},
+                //     description:
+                //         'This Cereals Seeds Recognition API is used to recognize grain seeds among: wheat, maize, oat, barley, rye, quinoa, millet, sorgh.'),
               ],
               options: CarouselOptions(
                   autoPlayInterval: const Duration(seconds: 10),
                   height: 220,
-                  autoPlay: true,
                   enlargeCenterPage: true)),
           ListTile(
               title: Text('Plants Info',
@@ -207,34 +207,42 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                       width: MediaQuery.of(context).size.width,
                       child: ListView.builder(
                           itemBuilder: (context, index) => Column(children: [
-                                Container(
-                                    width: 120,
-                                    height: 120,
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 10, vertical: 10),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color:
-                                                  Colors.green.withOpacity(0.2),
-                                              blurRadius: 5,
-                                              spreadRadius: 3,
-                                              offset: const Offset(0, 5))
-                                        ]),
-                                    child: FadeInImage(
-                                        imageErrorBuilder:
-                                            (context, error, stackTrace) =>
-                                                Image.asset(
-                                                    'assets/images/rice.png',
-                                                    fit: BoxFit.cover),
-                                        fit: BoxFit.cover,
-                                        placeholder: const AssetImage(
-                                            'assets/images/rice.png'),
-                                        image: NetworkImage(
-                                            snapshot.data?[index]?.photoUrl ??
-                                                '',
-                                            scale: 1.5))),
+                                GestureDetector(
+                                  onTap: () => Navigator.of(context).push<void>(
+                                      MaterialPageRoute(
+                                          builder: (context) => CropInfoScreen(
+                                              cropInfo:
+                                                  snapshot.data?[index]))),
+                                  child: Container(
+                                      width: 120,
+                                      height: 120,
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 10, vertical: 10),
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: Colors.green
+                                                    .withOpacity(0.2),
+                                                blurRadius: 5,
+                                                spreadRadius: 3,
+                                                offset: const Offset(0, 5))
+                                          ]),
+                                      child: FadeInImage(
+                                          imageErrorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Image.asset(
+                                                      'assets/images/rice.png',
+                                                      fit: BoxFit.cover),
+                                          fit: BoxFit.cover,
+                                          placeholder: const AssetImage(
+                                              'assets/images/rice.png'),
+                                          image: NetworkImage(
+                                              snapshot.data?[index]?.photoUrl ??
+                                                  '',
+                                              scale: 1.5))),
+                                ),
                                 Text('${snapshot.data?[index]?.name}')
                               ]),
                           itemCount: snapshot.data?.length,
