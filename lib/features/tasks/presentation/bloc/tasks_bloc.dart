@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 
-import '../../../../core/usecases/usecase.dart';
 import '../../../../core/user/domain/entities/user.dart';
 import '../../../../core/user/domain/usecases/retrieveUser.dart';
 import '../../domain/entities/tasks_entity.dart';

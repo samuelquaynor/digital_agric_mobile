@@ -26,6 +26,12 @@ class UserEntity with _$UserEntity {
     /// Full Name
     @HiveField(2) required String name,
 
+    /// Full Name
+    @HiveField(3) String? phoneNumber,
+
+    /// Full Name
+    @HiveField(4) String? password,
+
     /// Farms
     @JsonKey(
         name: 'farms',

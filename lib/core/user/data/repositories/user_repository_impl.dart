@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -122,6 +124,26 @@ class UserRepositoryImpl implements UserRepository {
           orders: []);
       await localDatabase.save(userResult);
       return Right(userResult);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> update(UserEntity userEntity) async {
+    try {
+      await networkInfo.hasInternet();
+      final user = FirebaseAuth.instance.currentUser;
+      final fireUser = FirebaseFirestore.instance.collection('users');
+      final userUpdate = fireUser.doc(user?.uid);
+      final updateName = await userUpdate.update({'name': userEntity.name});
+      final updateEmail = await user?.updateEmail(userEntity.email);
+      // final updatePhoneNumber =
+      //     await user?.updatePhoneNumber(userEntity.phoneNumber);
+      if (userEntity.password != null && userEntity.password != '') {
+        final updatePassword = user?.updatePassword(userEntity.password ?? '');
+      }
+      return Right(userEntity);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));
     }

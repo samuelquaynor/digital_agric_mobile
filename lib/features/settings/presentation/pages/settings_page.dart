@@ -1,26 +1,32 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/data/images.dart';
 import '../../../../core/presentation/pages/loading.dart';
+import '../../../../core/user/domain/entities/user.dart';
 import '../../../../injection_container.dart';
 import '../../../login/presentation/pages/login_page.dart';
 import '../bloc/settings_bloc.dart';
+import '../widgets/change_password.dart';
+import '../widgets/change_phone.dart';
+import '../widgets/edit_profile.dart';
 import '../widgets/profile_image.dart';
 
+/// Settings Page
 class SettingsPage extends StatelessWidget {
+  /// Constructor
   const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final bloc = sl<SettingsBloc>();
-
     final size = MediaQuery.of(context).size;
     return Scaffold(
-        appBar: AppBar(title:  Text('Settings', style: Theme.of(context).textTheme.titleMedium)),
+        appBar: AppBar(
+            title: Text('Settings',
+                style: Theme.of(context).textTheme.titleMedium)),
         body: SafeArea(
-            child: FutureBuilder<User?>(
-                future: bloc.user(),
+            child: FutureBuilder<UserEntity?>(
+                future: bloc.retrieveUserBloc(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     return SingleChildScrollView(
@@ -41,9 +47,9 @@ class SettingsPage extends StatelessWidget {
                               //   setState(() {});
                               // }
                             },
-                            avatarUrl: snapshot.requireData?.photoURL ?? '',
+                            avatarUrl: '',
                           ),
-                          Text(snapshot.requireData?.displayName ?? '',
+                          Text(snapshot.requireData?.name ?? '',
                               style: Theme.of(context).textTheme.headline6),
                           Text(snapshot.requireData?.email ?? '',
                               style: Theme.of(context).textTheme.subtitle1),
@@ -67,8 +73,11 @@ class SettingsPage extends StatelessWidget {
                                       borderRadius: BorderRadius.vertical(
                                           top: Radius.circular(20))),
                                   tileColor: Colors.grey.withOpacity(0.1),
-                                  // onTap: () => Navigator.of(context)
-                                  //     .pushNamed(Routes.editProfile),
+                                  onTap: () => Navigator.push<void>(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const EditProfile())),
                                   leading: const Icon(Icons.mode_edit),
                                   title: const Text('Edit Profile'),
                                   trailing:
@@ -80,8 +89,11 @@ class SettingsPage extends StatelessWidget {
                                       borderRadius: BorderRadius.vertical(
                                           bottom: Radius.circular(20))),
                                   tileColor: Colors.grey.withOpacity(0.1),
-                                  // onTap: () => Navigator.of(context)
-                                  //     .pushNamed(Routes.changePhone),
+                                  onTap: () => Navigator.push<void>(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ChangePhone())),
                                   leading: const Icon(Icons.phone),
                                   title: const Text('Change Phone'),
                                   trailing:
@@ -100,13 +112,15 @@ class SettingsPage extends StatelessWidget {
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(20))),
                                   tileColor: Colors.grey.withOpacity(0.1),
-                                  // onTap: () => Navigator.of(context)
-                                  //     .pushNamed(Routes.changePassword),
+                                  onTap: () => Navigator.push<void>(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ChangePassword())),
                                   leading: const Icon(Icons.lock),
                                   title: const Text('Change Password'),
                                   trailing:
                                       const Icon(Icons.arrow_forward_ios))),
-
                           // Container(
                           //     alignment: Alignment.centerLeft,
                           //     padding: const EdgeInsets.symmetric(

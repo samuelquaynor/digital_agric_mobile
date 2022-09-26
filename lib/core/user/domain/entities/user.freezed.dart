@@ -32,6 +32,14 @@ mixin _$UserEntity {
   @HiveField(2)
   String get name => throw _privateConstructorUsedError;
 
+  /// Full Name
+  @HiveField(3)
+  String? get phoneNumber => throw _privateConstructorUsedError;
+
+  /// Full Name
+  @HiveField(4)
+  String? get password => throw _privateConstructorUsedError;
+
   /// Farms
   @JsonKey(
       name: 'farms',
@@ -74,6 +82,10 @@ abstract class $UserEntityCopyWith<$Res> {
           String email,
       @HiveField(2)
           String name,
+      @HiveField(3)
+          String? phoneNumber,
+      @HiveField(4)
+          String? password,
       @JsonKey(
           name: 'farms',
           defaultValue: <FarmEntity>[],
@@ -107,6 +119,8 @@ class _$UserEntityCopyWithImpl<$Res> implements $UserEntityCopyWith<$Res> {
     Object? id = freezed,
     Object? email = freezed,
     Object? name = freezed,
+    Object? phoneNumber = freezed,
+    Object? password = freezed,
     Object? farms = freezed,
     Object? tasks = freezed,
     Object? orders = freezed,
@@ -124,6 +138,14 @@ class _$UserEntityCopyWithImpl<$Res> implements $UserEntityCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
       farms: farms == freezed
           ? _value.farms
           : farms // ignore: cast_nullable_to_non_nullable
@@ -154,6 +176,10 @@ abstract class _$$_UserEntityCopyWith<$Res>
           String email,
       @HiveField(2)
           String name,
+      @HiveField(3)
+          String? phoneNumber,
+      @HiveField(4)
+          String? password,
       @JsonKey(
           name: 'farms',
           defaultValue: <FarmEntity>[],
@@ -189,6 +215,8 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
     Object? id = freezed,
     Object? email = freezed,
     Object? name = freezed,
+    Object? phoneNumber = freezed,
+    Object? password = freezed,
     Object? farms = freezed,
     Object? tasks = freezed,
     Object? orders = freezed,
@@ -206,6 +234,14 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
       farms: farms == freezed
           ? _value._farms
           : farms // ignore: cast_nullable_to_non_nullable
@@ -233,6 +269,10 @@ class _$_UserEntity implements _UserEntity {
           required this.email,
       @HiveField(2)
           required this.name,
+      @HiveField(3)
+          this.phoneNumber,
+      @HiveField(4)
+          this.password,
       @JsonKey(
           name: 'farms',
           defaultValue: <FarmEntity>[],
@@ -272,6 +312,16 @@ class _$_UserEntity implements _UserEntity {
   @override
   @HiveField(2)
   final String name;
+
+  /// Full Name
+  @override
+  @HiveField(3)
+  final String? phoneNumber;
+
+  /// Full Name
+  @override
+  @HiveField(4)
+  final String? password;
 
   /// Farms
   final List<FarmEntity> _farms;
@@ -320,7 +370,7 @@ class _$_UserEntity implements _UserEntity {
 
   @override
   String toString() {
-    return 'UserEntity(id: $id, email: $email, name: $name, farms: $farms, tasks: $tasks, orders: $orders)';
+    return 'UserEntity(id: $id, email: $email, name: $name, phoneNumber: $phoneNumber, password: $password, farms: $farms, tasks: $tasks, orders: $orders)';
   }
 
   @override
@@ -331,6 +381,9 @@ class _$_UserEntity implements _UserEntity {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other._farms, _farms) &&
             const DeepCollectionEquality().equals(other._tasks, _tasks) &&
             const DeepCollectionEquality().equals(other._orders, _orders));
@@ -343,6 +396,8 @@ class _$_UserEntity implements _UserEntity {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(_farms),
       const DeepCollectionEquality().hash(_tasks),
       const DeepCollectionEquality().hash(_orders));
@@ -366,6 +421,10 @@ abstract class _UserEntity implements UserEntity {
           required final String email,
       @HiveField(2)
           required final String name,
+      @HiveField(3)
+          final String? phoneNumber,
+      @HiveField(4)
+          final String? password,
       @JsonKey(
           name: 'farms',
           defaultValue: <FarmEntity>[],
@@ -403,6 +462,16 @@ abstract class _UserEntity implements UserEntity {
   /// Full Name
   @HiveField(2)
   String get name => throw _privateConstructorUsedError;
+  @override
+
+  /// Full Name
+  @HiveField(3)
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  @override
+
+  /// Full Name
+  @HiveField(4)
+  String? get password => throw _privateConstructorUsedError;
   @override
 
   /// Farms

@@ -25,6 +25,9 @@ abstract class UserRepository {
       required String password,
       required String fullName});
 
+  /// Updates a user info
+  Future<Either<Failure, UserEntity>> update(UserEntity user);
+
   /// Logs out a user
   Future<void> logout();
 }

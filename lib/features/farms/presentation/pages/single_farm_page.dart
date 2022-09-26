@@ -9,9 +9,9 @@ import '../../../../injection_container.dart';
 import '../../../tasks/presentation/pages/all_tasks.dart';
 import '../../../tasks/presentation/pages/create_task.dart';
 import '../../../tasks/presentation/widgets/tasks_widget.dart';
+import '../../domain/entities/crop_info.dart';
 import '../../domain/entities/farm_entity.dart';
 import '../bloc/farms_bloc.dart';
-import 'create_farm.dart';
 
 /// Single  Farm Page
 class SingleFarmPage extends StatefulWidget {
@@ -40,6 +40,8 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
     return;
   }
 
+  List<CropInfo?> fullCrops = [];
+
   @override
   void initState() {
     super.initState();
@@ -67,8 +69,7 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  icon: const Icon(Icons.star_border,
-                      color: Colors.white, size: 22))
+                  icon: const Icon(Icons.delete, color: Colors.white, size: 22))
             ],
             headerWidget: SafeArea(
                 child: FadeInImage(
@@ -117,6 +118,81 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                           child: const Text('Weather Loading Error'));
                     }
                   })),
+              Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Farm Crops',
+                            style: Theme.of(context).textTheme.titleMedium),
+                        FutureBuilder<List<CropInfo?>>(
+                            future: bloc.getCropInfoBloc(),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const LinearProgressIndicator();
+                              } else {
+                                return SizedBox(
+                                    height: 200,
+                                    width: MediaQuery.of(context).size.width,
+                                    child: ListView.builder(
+                                        itemBuilder: (context, index) {
+                                          return Column(children: [
+                                            Builder(builder: (context) {
+                                              setState(() {
+                                                fullCrops = snapshot.requireData
+                                                    .where((crop) =>
+                                                        crop?.id ==
+                                                        widget.farm.crops[index]
+                                                            ?.id)
+                                                    .toList();
+                                                print(fullCrops);
+                                              });
+                                              return Container(
+                                                  width: 120,
+                                                  height: 120,
+                                                  margin: const EdgeInsets.symmetric(
+                                                      horizontal: 10,
+                                                      vertical: 10),
+                                                  decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              20),
+                                                      boxShadow: [
+                                                        BoxShadow(
+                                                            color: Colors.green
+                                                                .withOpacity(
+                                                                    0.2),
+                                                            blurRadius: 5,
+                                                            spreadRadius: 3,
+                                                            offset:
+                                                                const Offset(
+                                                                    0, 5))
+                                                      ]),
+                                                  child: FadeInImage(
+                                                      imageErrorBuilder: (context,
+                                                              error,
+                                                              stackTrace) =>
+                                                          Image.asset(
+                                                              'assets/images/rice.png',
+                                                              fit:
+                                                                  BoxFit.cover),
+                                                      fit: BoxFit.cover,
+                                                      placeholder: const AssetImage(
+                                                          'assets/images/rice.png'),
+                                                      image: NetworkImage(
+                                                          fullCrops[index]?.photoUrl ?? '',
+                                                          scale: 1.5)));
+                                            }),
+                                            Text('${fullCrops[index]?.name}')
+                                          ]);
+                                        },
+                                        itemCount: fullCrops.length,
+                                        scrollDirection: Axis.horizontal));
+                              }
+                            })
+                      ])),
               Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
