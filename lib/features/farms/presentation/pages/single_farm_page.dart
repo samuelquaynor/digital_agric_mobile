@@ -1,14 +1,15 @@
 import 'package:draggable_home/draggable_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:intl/intl.dart';
 
+import '../../../../core/presentation/pages/loading.dart';
 import '../../../../core/weather/presentation/bloc/weather_bloc.dart';
 import '../../../../core/weather/presentation/pages/full_weather_screen.dart';
 import '../../../../core/weather/presentation/widgets/display_weather_widget.dart';
 import '../../../../injection_container.dart';
-import '../../../tasks/presentation/pages/all_tasks.dart';
-import '../../../tasks/presentation/pages/create_task.dart';
-import '../../../tasks/presentation/widgets/tasks_widget.dart';
+import '../../../tasks/domain/entities/tasks_entity.dart';
 import '../../domain/entities/crop_info.dart';
 import '../../domain/entities/farm_entity.dart';
 import '../bloc/farms_bloc.dart';
@@ -28,14 +29,21 @@ class SingleFarmPage extends StatefulWidget {
 class _SingleFarmPageState extends State<SingleFarmPage> {
   final bloc = sl<FarmsBloc>();
 
-  List<FarmEntity?> tasks = <FarmEntity>[];
+  List<TasksEntity?> tasks = <TasksEntity>[];
 
   Future<void> loadUser() async {
-    final loadedTasks = await bloc.getFarmsBloc();
+    final loadedTasks = await bloc.getTasksBloc();
     setState(() {
-      tasks = loadedTasks
-          .where((element) => element?.id == widget.farm.id)
-          .toList();
+      tasks = loadedTasks.where((element) {
+        final tasksRe = <TasksEntity?>[];
+        for (var i = 0; i < int.parse('${element?.farms.length ?? 0}'); i++) {
+          if (element?.farms[i] == widget.farm.id) {
+            tasksRe.add(element);
+          }
+        }
+        // ignore: avoid_bool_literals_in_conditional_expressions
+        return tasksRe.isNotEmpty ? true : false;
+      }).toList();
     });
     return;
   }
@@ -133,23 +141,28 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                                   ConnectionState.waiting) {
                                 return const LinearProgressIndicator();
                               } else {
-                                return SizedBox(
-                                    height: 200,
-                                    width: MediaQuery.of(context).size.width,
-                                    child: ListView.builder(
-                                        itemBuilder: (context, index) {
-                                          return Column(children: [
-                                            Builder(builder: (context) {
-                                              setState(() {
-                                                fullCrops = snapshot.requireData
-                                                    .where((crop) =>
-                                                        crop?.id ==
-                                                        widget.farm.crops[index]
-                                                            ?.id)
-                                                    .toList();
-                                                print(fullCrops);
-                                              });
-                                              return Container(
+                                for (var i = 0;
+                                    i <
+                                        int.parse(
+                                            '${snapshot.data?.length ?? 0}');
+                                    i++) {
+                                  if (widget.farm.crops.firstWhere(
+                                          (element) =>
+                                              element?.id ==
+                                              snapshot.data?[i]?.id,
+                                          orElse: CropInfo.initial) !=
+                                      CropInfo.initial()) {
+                                    fullCrops.add(snapshot.data?[i]);
+                                  }
+                                }
+                                if (fullCrops.isNotEmpty) {
+                                  return SizedBox(
+                                      height: 200,
+                                      width: MediaQuery.of(context).size.width,
+                                      child: ListView.builder(
+                                          itemBuilder: (context, index) {
+                                            return Column(children: [
+                                              Container(
                                                   width: 120,
                                                   height: 120,
                                                   margin: const EdgeInsets.symmetric(
@@ -183,13 +196,20 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                                                           'assets/images/rice.png'),
                                                       image: NetworkImage(
                                                           fullCrops[index]?.photoUrl ?? '',
-                                                          scale: 1.5)));
-                                            }),
-                                            Text('${fullCrops[index]?.name}')
-                                          ]);
-                                        },
-                                        itemCount: fullCrops.length,
-                                        scrollDirection: Axis.horizontal));
+                                                          scale: 1.5))),
+                                              Text('${fullCrops[index]?.name}')
+                                            ]);
+                                          },
+                                          itemCount: fullCrops.length,
+                                          scrollDirection: Axis.horizontal));
+                                } else {
+                                  return const Padding(
+                                    padding: EdgeInsets.all(8),
+                                    child: Center(
+                                        child: Text(
+                                            'No Crops Available For This Farm')),
+                                  );
+                                }
                               }
                             })
                       ])),
@@ -201,37 +221,65 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                       children: [
                         Text('Farm Tasks',
                             style: Theme.of(context).textTheme.titleMedium),
-                        Builder(builder: (context) {
-                          if (tasks.isEmpty) {
-                            return Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(vertical: 16),
-                                      child: Text('No Tasks Available. ')),
-                                  GestureDetector(
-                                      onTap: () => Navigator.of(context)
-                                          .push<void>(MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const CreateNewTaskPage())),
-                                      child: const Text('Create One',
-                                          style: TextStyle(
-                                              decoration:
-                                                  TextDecoration.underline)))
-                                ]);
-                          } else {
-                            return GestureDetector(
-                                onTap: () {
-                                  Navigator.push<void>(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const AllTasks()));
-                                },
-                                child: TasksWidget(farms: tasks));
-                          }
-                        })
+                        if (tasks.isNotEmpty)
+                          ListView.builder(
+                              itemCount: tasks.length,
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) {
+                                return Container(
+                                    height: 70,
+                                    margin:
+                                        const EdgeInsets.symmetric(vertical: 5),
+                                    decoration: BoxDecoration(
+                                        color: Colors.green.shade300,
+                                        borderRadius: BorderRadius.circular(8),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color:
+                                                  Colors.green.withOpacity(0.2),
+                                              blurRadius: 5,
+                                              spreadRadius: 3,
+                                              offset: const Offset(0, 5))
+                                        ]),
+                                    child: Slidable(
+                                        key: const ValueKey(0),
+                                        endActionPane: ActionPane(
+                                            motion: const ScrollMotion(),
+                                            children: [
+                                              SlidableAction(
+                                                  onPressed: (context) async {
+                                                    await showDialog<void>(
+                                                        context: context,
+                                                        builder: (context) =>
+                                                            LoadingPage(
+                                                                errorText: bloc
+                                                                    .deleteTaskBloc(
+                                                                        tasks[
+                                                                            index]!)));
+                                                  },
+                                                  backgroundColor:
+                                                      const Color(0xFFFE4A49),
+                                                  foregroundColor: Colors.white,
+                                                  icon: Icons.delete,
+                                                  label: 'Delete')
+                                            ]),
+                                        child: ListTile(
+                                            title: Text(
+                                                toBeginningOfSentenceCase(
+                                                        tasks[index]?.name) ??
+                                                    '',
+                                                style: const TextStyle(
+                                                    color: Colors.white)),
+                                            subtitle: Text(
+                                                toBeginningOfSentenceCase(
+                                                        tasks[index]?.description) ??
+                                                    '',
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: const TextStyle(color: Colors.white)))));
+                              })
+                        else
+                          const Center(child: Text('No Tasks Available For This Farm'))
                       ]))
             ]));
   }

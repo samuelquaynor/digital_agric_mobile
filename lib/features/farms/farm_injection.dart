@@ -14,7 +14,11 @@ void initFarm() {
 
   sl
     ..registerFactory(() => FarmsBloc(
-        createFarm: sl(), getFarm: sl(), retrieveUser: sl(), getCropInfo: sl()))
+        createFarm: sl(),
+        getFarm: sl(),
+        retrieveUser: sl(),
+        getCropInfo: sl(),
+        deleteTaskUsc: sl()))
     ..registerLazySingleton(() => CreateFarm(sl()))
     ..registerLazySingleton(() => GetFarm(sl()))
     ..registerLazySingleton(() => GetCropInfo(sl()))

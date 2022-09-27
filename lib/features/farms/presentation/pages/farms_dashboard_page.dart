@@ -163,34 +163,47 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
               title: Text('Prediction Algorithms',
                   style: Theme.of(context).textTheme.titleMedium),
               trailing: const Icon(Icons.arrow_forward)),
-          CarouselSlider(
-              items: [
-                PredictionCarousel(
-                    title: 'Plant Disease Detection',
-                    urlImage: 'assets/images/weed-detect.png',
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute<void>(
-                          builder: (context) => const ScanCrop()));
-                    },
-                    description:
-                        'Plant Disease Detection Accepts a POST request with an image in the form of base64 string and returns plant, disease and remedy.'),
-                // PredictionCarousel(
-                //     title: 'Flood Detection',
-                //     urlImage: 'assets/images/weather-predict.png',
-                //     onPressed: () {},
-                //     description:
-                //         'Flood Detection API detects flooded areas in a photo using artificial intelligence. Useful  agriculture.'),
-                // PredictionCarousel(
-                //     title: 'Cereal Seeds Detection',
-                //     urlImage: 'assets/images/crop-prediction.jpg',
-                //     onPressed: () {},
-                //     description:
-                //         'This Cereals Seeds Recognition API is used to recognize grain seeds among: wheat, maize, oat, barley, rye, quinoa, millet, sorgh.'),
-              ],
-              options: CarouselOptions(
-                  autoPlayInterval: const Duration(seconds: 10),
-                  height: 220,
-                  enlargeCenterPage: true)),
+          // CarouselSlider(
+          //     items: [
+          //       PredictionCarousel(
+          //           title: 'Plant Disease Detection',
+          //           urlImage: 'assets/images/weed-detect.png',
+          //           onPressed: () {
+          //             Navigator.of(context).push(MaterialPageRoute<void>(
+          //                 builder: (context) => const ScanCrop()));
+          //           },
+          //           description:
+          //               'Plant Disease Detection Accepts a POST request with an image in the form of base64 string and returns plant, disease and remedy.'),
+          //       // PredictionCarousel(
+          //       //     title: 'Flood Detection',
+          //       //     urlImage: 'assets/images/weather-predict.png',
+          //       //     onPressed: () {},
+          //       //     description:
+          //       //         'Flood Detection API detects flooded areas in a photo using artificial intelligence. Useful  agriculture.'),
+          //       // PredictionCarousel(
+          //       //     title: 'Cereal Seeds Detection',
+          //       //     urlImage: 'assets/images/crop-prediction.jpg',
+          //       //     onPressed: () {},
+          //       //     description:
+          //       //         'This Cereals Seeds Recognition API is used to recognize grain seeds among: wheat, maize, oat, barley, rye, quinoa, millet, sorgh.'),
+          //     ],
+          //     options: CarouselOptions(
+          //         autoPlayInterval: const Duration(seconds: 10),
+          //         height: 220,
+          //         enlargeCenterPage: true)),
+          Container(
+            height: 220,
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+            child: PredictionCarousel(
+                title: 'Plant Disease Detection',
+                urlImage: 'assets/images/weed-detect.png',
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute<void>(
+                      builder: (context) => const ScanCrop()));
+                },
+                description:
+                    'Plant Disease Detection Accepts a POST request with an image in the form of base64 string and returns plant, disease and remedy.'),
+          ),
           ListTile(
               title: Text('Plants Info',
                   style: Theme.of(context).textTheme.titleMedium),

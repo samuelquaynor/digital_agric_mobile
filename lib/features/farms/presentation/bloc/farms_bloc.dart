@@ -2,6 +2,8 @@ import 'package:equatable/equatable.dart';
 
 import '../../../../core/usecases/usecase.dart';
 import '../../../../core/user/domain/usecases/retrieveUser.dart';
+import '../../../tasks/domain/entities/tasks_entity.dart';
+import '../../../tasks/domain/usecases/delete_task.dart';
 import '../../domain/entities/crop_info.dart';
 import '../../domain/entities/farm_entity.dart';
 import '../../domain/usecases/create_farm.dart';
@@ -18,6 +20,7 @@ class FarmsBloc {
       {required this.retrieveUser,
       required this.createFarm,
       required this.getCropInfo,
+      required this.deleteTaskUsc,
       required this.getFarm});
 
   /// Retrieve User Usecase
@@ -32,6 +35,9 @@ class FarmsBloc {
   /// Get Crop Info Usecase
   final GetCropInfo getCropInfo;
 
+  /// Delete Tasks Usecase
+  final DeleteTask deleteTaskUsc;
+
   /// Create a Farm
   Future<String?> createFarmBloc(FarmEntity farm) async {
     final result = await createFarm(CreateFarmParams(farm));
@@ -44,7 +50,20 @@ class FarmsBloc {
     return result.fold((l) => [], (r) => r.farms);
   }
 
-   /// Get Categories from usecase
+  /// Query Farms
+  Future<List<TasksEntity?>> getTasksBloc() async {
+    final result = await retrieveUser(const RetrieveUserParams());
+    return result.fold((l) => [], (r) => r.tasks);
+  }
+
+  /// Delete Tasks bloc
+  Future<String?> deleteTaskBloc(TasksEntity task) async {
+    final result = await deleteTaskUsc(DeleteTaskParams(task));
+    await retrieveUser(const RetrieveUserParams(localUser: false));
+    return result.fold((l) => l.toString(), (r) => null);
+  }
+
+  /// Get Categories from usecase
   Future<List<CropInfo?>> getCropInfoBloc() async {
     final result = await getCropInfo(NoParams());
     return result.fold((l) => [], (r) => r);
