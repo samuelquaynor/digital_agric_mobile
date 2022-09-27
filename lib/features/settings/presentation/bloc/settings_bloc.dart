@@ -1,8 +1,6 @@
-import 'dart:io';
-
 import 'package:equatable/equatable.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
+import '../../../../core/usecases/download_image_url.dart';
 import '../../../../core/usecases/open_image_gallery.dart';
 import '../../../../core/usecases/open_url.dart';
 import '../../../../core/usecases/upload_image.dart';
@@ -24,6 +22,7 @@ class SettingsBloc {
       required this.openUrl,
       required this.openImageGallery,
       required this.uploadFirebaseImage,
+      required this.downLoadImageUrl,
       required this.retrieveUser});
 
   /// Retrieve User Usecase
@@ -44,10 +43,16 @@ class SettingsBloc {
   /// Upload image to storage
   final UploadFirebaseImage uploadFirebaseImage;
 
+  /// Download image url
+  final DownLoadImageUrl downLoadImageUrl;
+
   /// Get User
   Future<UserEntity> retrieveUserBloc() async {
     final result = await retrieveUser(const RetrieveUserParams());
-    return result.fold((l) => UserEntity.initial(), (r) => r);
+    return result.fold((l) => UserEntity.initial(), (r) async {
+      return r.copyWith(
+          avatar: r.avatar != null ? await downloadImage(r.avatar ?? '') : '');
+    });
   }
 
   /// Log out a user
@@ -82,6 +87,7 @@ class SettingsBloc {
     return 'Change password is unavailable!';
   }
 
+  /// Open browser
   void openBrowser(String url) => openUrl(StringParams(url));
 
   /// Get image
@@ -96,12 +102,19 @@ class SettingsBloc {
     return result.fold((f) => '', (path) => path);
   }
 
+  /// get image link from Firebase
+  Future<String?> downloadImage(String uploadLink) async {
+    final result = await downLoadImageUrl(StringParams(uploadLink));
+    return result.fold((failure) => null, (url) => url);
+  }
+
   /// Change avatar
   Future<String?> changeAvatar() async {
     final avatarUrl = await _uploadImage();
     final localUser = await retrieveUserBloc();
     final result = await updateUser(
         UpdateUserParams(localUser.copyWith(avatar: avatarUrl)));
+    await retrieveUser(const RetrieveUserParams(localUser: false));
     return result.fold((failure) => failure.toString(), (user) => null);
   }
 }

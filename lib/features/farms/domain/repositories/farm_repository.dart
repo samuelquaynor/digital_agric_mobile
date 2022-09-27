@@ -14,4 +14,10 @@ abstract class FarmRepository {
 
   /// Get Crop info from firebase realtime database
   Future<Either<Failure, List<CropInfo>>> getCropInfos();
+  
+  /// Create a farm on firebase
+  Future<Either<Failure, bool>> updateFarm({required FarmEntity farm});
+
+  /// Create a farm on firebase
+  Future<Either<Failure, bool>> deleteFarm({required FarmEntity farm});
 }

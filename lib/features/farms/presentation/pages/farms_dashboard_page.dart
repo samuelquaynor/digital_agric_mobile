@@ -1,7 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shimmer/shimmer.dart';
 
 import '../../../../injection_container.dart';
 import '../../../predictions/presentation/pages/scan_crop.dart';
@@ -25,23 +23,31 @@ class DashboardFarmsPage extends StatefulWidget {
 class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
   final bloc = sl<FarmsBloc>();
 
-  List<String> crops = [
-    'Rice',
-    'Tomato',
-    'Wheat',
-    'Groundnut',
-    'Beans',
-    'Maize'
-  ];
+  List<FarmEntity?> farms = <FarmEntity?>[];
 
-  List<String> cropImages = [
-    'assets/images/rice.png',
-    'assets/images/tomato.png',
-    'assets/images/wheat.png',
-    'assets/images/groundnut.png',
-    'assets/images/beans.png',
-    'assets/images/maize.png'
-  ];
+  List<CropInfo?> cropInfos = <CropInfo?>[];
+
+  Future<void> loadData() async {
+    final newFarms = await bloc.getFarmsBloc();
+    final newCropInfos = await bloc.getCropInfoBloc();
+    setState(() {
+      farms = newFarms;
+      cropInfos = newCropInfos;
+    });
+    return;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  @override
+  void dispose() {
+    loadData();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,42 +67,42 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                       style: Theme.of(context).textTheme.titleMedium),
                   subtitle: const Text('Create a farm to track progress'),
                   trailing: const Icon(Icons.arrow_forward))),
-          FutureBuilder(
-              future: bloc.getFarmsBloc(),
-              builder: (context, AsyncSnapshot<List<FarmEntity?>> snapshot) {
-                if (snapshot.connectionState == ConnectionState.done) {
-                  if (snapshot.data?.isEmpty ?? true) {
-                    return Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text('No Farms Available. '),
-                          GestureDetector(
-                              onTap: () => Navigator.of(context).push<void>(
+          Builder(builder: (context) {
+            if (farms.isEmpty) {
+              return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('No Farms Available. '),
+                    GestureDetector(
+                        onTap: () => Navigator.of(context).push<void>(
+                            MaterialPageRoute(
+                                builder: (context) => const CreateFarm())),
+                        child: const Text('Create One',
+                            style: TextStyle(
+                                decoration: TextDecoration.underline)))
+                  ]);
+            } else {
+              return SizedBox(
+                  height: 150,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: farms.length,
+                      itemBuilder: (context, index) => Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: () => Navigator.push<void>(
+                                  context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const CreateFarm())),
-                              child: const Text('Create One',
-                                  style: TextStyle(
-                                      decoration: TextDecoration.underline)))
-                        ]);
-                  } else {
-                    return SizedBox(
-                        height: 150,
-                        child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            shrinkWrap: true,
-                            itemCount: snapshot.data?.length,
-                            itemBuilder: (context, index) => Material(
-                                  color: Colors.transparent,
-                                  child: InkWell(
-                                    onTap: () => Navigator.push<void>(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                SingleFarmPage(
-                                                  farm: snapshot.data![index]!,
-                                                ))),
-                                    child: Column(children: [
+                                      builder: (context) => SingleFarmPage(
+                                            farm: farms[index]!,
+                                          ))),
+                              child: FutureBuilder<String?>(
+                                  initialData: '',
+                                  future: bloc.getFarmAvatarUrl(
+                                      farms[index]?.avatar ?? ''),
+                                  builder: (context, avatarSnapshot) {
+                                    return Column(children: [
                                       Container(
                                           width: 100,
                                           height: 100,
@@ -119,46 +125,14 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                                                                   15))),
                                               placeholder: const AssetImage(
                                                   'assets/images/logo-white-transparentbg.png'),
-                                              image: const NetworkImage('avatarUrl'))),
-                                      Text('${snapshot.data?[index]?.name}')
-                                    ]),
-                                  ),
-                                )));
-                  }
-                } else {
-                  return SizedBox(
-                      height: 160,
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) => Column(children: [
-                                Shimmer.fromColors(
-                                    baseColor: Colors.grey.shade300,
-                                    highlightColor: Colors.grey.shade100,
-                                    child: Container(
-                                        width: 100,
-                                        height: 100,
-                                        margin: const EdgeInsets.symmetric(
-                                            horizontal: 10, vertical: 10),
-                                        decoration: BoxDecoration(
-                                            color: Colors.green,
-                                            borderRadius:
-                                                BorderRadius.circular(10)))),
-                                Container(
-                                    alignment: Alignment.centerLeft,
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 10, horizontal: 20),
-                                    child: Shimmer.fromColors(
-                                        baseColor: Colors.grey.shade300,
-                                        highlightColor: Colors.grey.shade100,
-                                        child: Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 10, horizontal: 20),
-                                            height: 10,
-                                            width: 80,
-                                            color: Colors.white)))
-                              ])));
-                }
-              }),
+                                              image: NetworkImage(avatarSnapshot.requireData ?? ''))),
+                                      Text('${farms[index]?.name}')
+                                    ]);
+                                  }),
+                            ),
+                          )));
+            }
+          }),
           ListTile(
               title: Text('Prediction Algorithms',
                   style: Theme.of(context).textTheme.titleMedium),
@@ -209,59 +183,53 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                   style: Theme.of(context).textTheme.titleMedium),
               subtitle: const Text('Check more info of plants here'),
               trailing: const Icon(Icons.arrow_forward)),
-          FutureBuilder<List<CropInfo?>>(
-              future: bloc.getCropInfoBloc(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const LinearProgressIndicator();
-                } else {
-                  return SizedBox(
-                      height: 200,
-                      width: MediaQuery.of(context).size.width,
-                      child: ListView.builder(
-                          itemBuilder: (context, index) => Column(children: [
-                                GestureDetector(
-                                  onTap: () => Navigator.of(context).push<void>(
-                                      MaterialPageRoute(
-                                          builder: (context) => CropInfoScreen(
-                                              cropInfo:
-                                                  snapshot.data?[index]))),
-                                  child: Container(
-                                      width: 120,
-                                      height: 120,
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 10, vertical: 10),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.green
-                                                    .withOpacity(0.2),
-                                                blurRadius: 5,
-                                                spreadRadius: 3,
-                                                offset: const Offset(0, 5))
-                                          ]),
-                                      child: FadeInImage(
-                                          imageErrorBuilder:
-                                              (context, error, stackTrace) =>
-                                                  Image.asset(
-                                                      'assets/images/rice.png',
-                                                      fit: BoxFit.cover),
-                                          fit: BoxFit.cover,
-                                          placeholder: const AssetImage(
-                                              'assets/images/rice.png'),
-                                          image: NetworkImage(
-                                              snapshot.data?[index]?.photoUrl ??
-                                                  '',
-                                              scale: 1.5))),
-                                ),
-                                Text('${snapshot.data?[index]?.name}')
-                              ]),
-                          itemCount: snapshot.data?.length,
-                          scrollDirection: Axis.horizontal));
-                }
-              })
+          Builder(builder: (context) {
+            if (cropInfos.isEmpty) {
+              return const LinearProgressIndicator();
+            } else {
+              return SizedBox(
+                  height: 200,
+                  width: MediaQuery.of(context).size.width,
+                  child: ListView.builder(
+                      itemBuilder: (context, index) => Column(children: [
+                            GestureDetector(
+                              onTap: () => Navigator.of(context).push<void>(
+                                  MaterialPageRoute(
+                                      builder: (context) => CropInfoScreen(
+                                          cropInfo: cropInfos[index]))),
+                              child: Container(
+                                  width: 120,
+                                  height: 120,
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 10),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color:
+                                                Colors.green.withOpacity(0.2),
+                                            blurRadius: 5,
+                                            spreadRadius: 3,
+                                            offset: const Offset(0, 5))
+                                      ]),
+                                  child: FadeInImage(
+                                      imageErrorBuilder: (context, error,
+                                              stackTrace) =>
+                                          Image.asset('assets/images/rice.png',
+                                              fit: BoxFit.cover),
+                                      fit: BoxFit.cover,
+                                      placeholder: const AssetImage(
+                                          'assets/images/rice.png'),
+                                      image: NetworkImage(
+                                          cropInfos[index]?.photoUrl ?? '',
+                                          scale: 1.5))),
+                            ),
+                            Text(cropInfos[index]?.name ?? '')
+                          ]),
+                      itemCount: cropInfos.length,
+                      scrollDirection: Axis.horizontal));
+            }
+          })
         ])));
   }
 }

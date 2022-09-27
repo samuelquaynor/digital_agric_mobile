@@ -41,6 +41,7 @@ class FarmRepositoryImpl implements FarmRepository {
             'longitude': farm.longitude,
             'latitude': farm.latitude,
             'soilType': farm.soilType,
+            'avatar': farm.avatar,
             'crops': farm.crops.map((crop) => {'id': crop?.id}).toList(),
           })
           .then((value) => '')
@@ -83,12 +84,59 @@ class FarmRepositoryImpl implements FarmRepository {
             id: farm.id,
             name: farm.get('name') as String,
             soilType: farm.get('soilType') as String,
+            avatar: farm.get('avatar') as String?,
             farmSize: farm.get('farmSize') as double,
             longitude: farm.get('longitude') as double,
             latitude: farm.get('latitude') as double,
             crops: farm.get('crops') as List<CropInfo?>));
       }
       return Right(farms);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> deleteFarm({required FarmEntity farm}) async {
+    try {
+      await networkInfo.hasInternet();
+      final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
+      final userid = currentFirebaseUser.uid;
+      final tasksFire = FirebaseFirestore.instance.collection('users');
+      await tasksFire
+          .doc(userid)
+          .collection('farms')
+          .doc(farm.id)
+          .delete()
+          .catchError((dynamic error) =>
+              throw DeviceException('{deleting task had an error $error}'));
+      return const Right(true);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, bool>> updateFarm({required FarmEntity farm}) async {
+    try {
+      await networkInfo.hasInternet();
+      final currentFirebaseUser = FirebaseAuth.instance.currentUser!;
+      final userid = currentFirebaseUser.uid;
+      final tasksFire = FirebaseFirestore.instance.collection('users');
+      await tasksFire
+          .doc(userid)
+          .collection('farms')
+          .doc(farm.id)
+          .update(<String, dynamic>{
+        'name': farm.name,
+        'farmSize': farm.farmSize,
+        'longitude': farm.longitude,
+        'latitude': farm.latitude,
+        'soilType': farm.soilType,
+        'avatar': farm.avatar,
+        'crops': farm.crops.map((crop) => {'id': crop?.id}).toList(),
+      });
+      return const Right(true);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));
     }

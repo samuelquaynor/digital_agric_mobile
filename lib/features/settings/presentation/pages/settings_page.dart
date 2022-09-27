@@ -22,6 +22,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   final bloc = sl<SettingsBloc>();
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -32,9 +33,9 @@ class _SettingsPageState extends State<SettingsPage> {
         body: SafeArea(
             child: FutureBuilder<UserEntity?>(
                 future: bloc.retrieveUserBloc(),
+                initialData: UserEntity.initial(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    print(snapshot.data?.avatar);
                     return SingleChildScrollView(
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -50,10 +51,11 @@ class _SettingsPageState extends State<SettingsPage> {
                                     const SnackBar(
                                         content: Text(
                                             'You have changed your avatar.')));
-                                setState(() {});
+                                setState(() {
+                                });
                               }
                             },
-                            avatarUrl: snapshot.data?.avatar ?? '',
+                            avatarUrl: snapshot.requireData?.avatar ?? '',
                           ),
                           Text(snapshot.requireData?.name ?? '',
                               style: Theme.of(context).textTheme.headline6),

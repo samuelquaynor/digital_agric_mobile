@@ -32,6 +32,8 @@ mixin _$FarmEntity {
   double get longitude => throw _privateConstructorUsedError;
   @HiveField(5)
   double get latitude => throw _privateConstructorUsedError;
+  @HiveField(7)
+  String? get avatar => throw _privateConstructorUsedError;
   @JsonKey(name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
   @HiveField(6)
   List<CropInfo?> get crops => throw _privateConstructorUsedError;
@@ -60,6 +62,8 @@ abstract class $FarmEntityCopyWith<$Res> {
           double longitude,
       @HiveField(5)
           double latitude,
+      @HiveField(7)
+          String? avatar,
       @JsonKey(
           name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
       @HiveField(6)
@@ -82,6 +86,7 @@ class _$FarmEntityCopyWithImpl<$Res> implements $FarmEntityCopyWith<$Res> {
     Object? farmSize = freezed,
     Object? longitude = freezed,
     Object? latitude = freezed,
+    Object? avatar = freezed,
     Object? crops = freezed,
   }) {
     return _then(_value.copyWith(
@@ -109,6 +114,10 @@ class _$FarmEntityCopyWithImpl<$Res> implements $FarmEntityCopyWith<$Res> {
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
+      avatar: avatar == freezed
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String?,
       crops: crops == freezed
           ? _value.crops
           : crops // ignore: cast_nullable_to_non_nullable
@@ -137,6 +146,8 @@ abstract class _$$_FarmEntityCopyWith<$Res>
           double longitude,
       @HiveField(5)
           double latitude,
+      @HiveField(7)
+          String? avatar,
       @JsonKey(
           name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
       @HiveField(6)
@@ -161,6 +172,7 @@ class __$$_FarmEntityCopyWithImpl<$Res> extends _$FarmEntityCopyWithImpl<$Res>
     Object? farmSize = freezed,
     Object? longitude = freezed,
     Object? latitude = freezed,
+    Object? avatar = freezed,
     Object? crops = freezed,
   }) {
     return _then(_$_FarmEntity(
@@ -188,6 +200,10 @@ class __$$_FarmEntityCopyWithImpl<$Res> extends _$FarmEntityCopyWithImpl<$Res>
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
+      avatar: avatar == freezed
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
+              as String?,
       crops: crops == freezed
           ? _value._crops
           : crops // ignore: cast_nullable_to_non_nullable
@@ -213,6 +229,8 @@ class _$_FarmEntity implements _FarmEntity {
           required this.longitude,
       @HiveField(5)
           required this.latitude,
+      @HiveField(7)
+          this.avatar,
       @JsonKey(
           name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
       @HiveField(6)
@@ -240,6 +258,9 @@ class _$_FarmEntity implements _FarmEntity {
   @override
   @HiveField(5)
   final double latitude;
+  @override
+  @HiveField(7)
+  final String? avatar;
   final List<CropInfo?> _crops;
   @override
   @JsonKey(name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
@@ -251,7 +272,7 @@ class _$_FarmEntity implements _FarmEntity {
 
   @override
   String toString() {
-    return 'FarmEntity(id: $id, name: $name, soilType: $soilType, farmSize: $farmSize, longitude: $longitude, latitude: $latitude, crops: $crops)';
+    return 'FarmEntity(id: $id, name: $name, soilType: $soilType, farmSize: $farmSize, longitude: $longitude, latitude: $latitude, avatar: $avatar, crops: $crops)';
   }
 
   @override
@@ -265,6 +286,7 @@ class _$_FarmEntity implements _FarmEntity {
             const DeepCollectionEquality().equals(other.farmSize, farmSize) &&
             const DeepCollectionEquality().equals(other.longitude, longitude) &&
             const DeepCollectionEquality().equals(other.latitude, latitude) &&
+            const DeepCollectionEquality().equals(other.avatar, avatar) &&
             const DeepCollectionEquality().equals(other._crops, _crops));
   }
 
@@ -278,6 +300,7 @@ class _$_FarmEntity implements _FarmEntity {
       const DeepCollectionEquality().hash(farmSize),
       const DeepCollectionEquality().hash(longitude),
       const DeepCollectionEquality().hash(latitude),
+      const DeepCollectionEquality().hash(avatar),
       const DeepCollectionEquality().hash(_crops));
 
   @JsonKey(ignore: true)
@@ -305,6 +328,8 @@ abstract class _FarmEntity implements FarmEntity {
           required final double longitude,
       @HiveField(5)
           required final double latitude,
+      @HiveField(7)
+          final String? avatar,
       @JsonKey(
           name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
       @HiveField(6)
@@ -331,6 +356,9 @@ abstract class _FarmEntity implements FarmEntity {
   @override
   @HiveField(5)
   double get latitude => throw _privateConstructorUsedError;
+  @override
+  @HiveField(7)
+  String? get avatar => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
   @HiveField(6)

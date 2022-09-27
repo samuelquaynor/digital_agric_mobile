@@ -5,6 +5,7 @@ import 'package:image_picker/image_picker.dart';
 import 'core/platform/gallery_info.dart';
 import 'core/platform/launch_info.dart';
 import 'core/platform/network_info.dart';
+import 'core/usecases/download_image_url.dart';
 import 'core/usecases/open_image_gallery.dart';
 import 'core/usecases/open_multiple_images_gallery.dart';
 import 'core/usecases/open_url.dart';
@@ -49,6 +50,8 @@ void initCore() {
     ..registerLazySingleton(() => OpenMultipleImageGallery(sl()))
     // Upload an image to firebase
     ..registerLazySingleton(() => UploadFirebaseImage(sl()))
+    // Download an imageUrl from firebase
+    ..registerLazySingleton(() => DownLoadImageUrl(sl()))
 
     // Image picker Package
     ..registerLazySingleton<GalleryInfo>(() => GalleryInfoImpl(sl()))

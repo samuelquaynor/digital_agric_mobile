@@ -17,6 +17,9 @@ abstract class GalleryInfo {
 
   /// Uploads an image to firebase storage and returns the image
   Future<Either<Failure, String>> uploadImage(String filePath);
+
+  /// retrieves an imageUrl from firebase storage
+  Future<Either<Failure, String>> downloadImageUrl(String filePath);
 }
 
 /// Implements [GalleryInfo]
@@ -58,6 +61,20 @@ class GalleryInfoImpl implements GalleryInfo {
       final result = await ref.putFile(io.File(filePath), metadata);
       return Right(result.ref.fullPath);
     } on PlatformException {
+      return const Left(Failure('Device failure.\nFailed to retrieve image.'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, String>> downloadImageUrl(String filePath) async {
+    try {
+      final result =
+          await FirebaseStorage.instanceFor(bucket: 'gs://digi-farm103')
+              .ref()
+              .child(filePath)
+              .getDownloadURL();
+      return Right(result);
+    } on Exception {
       return const Left(Failure('Device failure.\nFailed to retrieve image.'));
     }
   }

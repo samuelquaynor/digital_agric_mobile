@@ -41,38 +41,40 @@ class _CreateFarmState extends State<CreateFarm> {
   late String soiltype;
   late double farmSize;
 
+  String profileImageUrl = '';
+
   late CropInfo crop;
 
-  Future _showCropAddDialog() {
-    return showDialog<void>(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-              backgroundColor: Colors.white,
-              title: const Text('Add Crop', style: TextStyle(fontSize: 16)),
-              actions: <Widget>[
-                TextButton(
-                    onPressed: () {
-                      crops.add(crop);
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('Add'))
-              ],
-              content: TextField(
-                  autofocus: true,
-                  onChanged: (text) {
-                    setState(() {
-                      // crop = text;
-                    });
-                  },
-                  decoration: const InputDecoration(
-                      hintText: 'Add a crop',
-                      hintStyle:
-                          TextStyle(color: Colors.black38, fontSize: 14)),
-                  style: const TextStyle(color: Colors.black),
-                  cursorColor: Colors.black));
-        });
-  }
+  // Future _showCropAddDialog() {
+  //   return showDialog<void>(
+  //       context: context,
+  //       builder: (BuildContext context) {
+  //         return AlertDialog(
+  //             backgroundColor: Colors.white,
+  //             title: const Text('Add Crop', style: TextStyle(fontSize: 16)),
+  //             actions: <Widget>[
+  //               TextButton(
+  //                   onPressed: () {
+  //                     crops.add(crop);
+  //                     Navigator.of(context).pop();
+  //                   },
+  //                   child: const Text('Add'))
+  //             ],
+  //             content: TextField(
+  //                 autofocus: true,
+  //                 onChanged: (text) {
+  //                   setState(() {
+  //                     // crop = text;
+  //                   });
+  //                 },
+  //                 decoration: const InputDecoration(
+  //                     hintText: 'Add a crop',
+  //                     hintStyle:
+  //                         TextStyle(color: Colors.black38, fontSize: 14)),
+  //                 style: const TextStyle(color: Colors.black),
+  //                 cursorColor: Colors.black));
+  //       });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +99,7 @@ class _CreateFarmState extends State<CreateFarm> {
                       crops: crops,
                       farmSize: farmSize,
                       soilType: soiltype,
+                      avatar: profileImageUrl,
                       latitude: address?.latitude ?? 0,
                       longitude: address?.longitude ?? 0,
                       name: farmName.value);
@@ -122,19 +125,18 @@ class _CreateFarmState extends State<CreateFarm> {
                 padding: const EdgeInsets.all(12),
                 child: FarmProfileImage(
                     onChange: () async {
-                      // final loading = await showDialog<bool>(
-                      //     context: context,
-                      //     builder: (context) => LoadingPage(
-                      //         errorText: bloc.changeAvatar()));
-                      // if (loading ?? false) {
-                      //   ScaffoldMessenger.of(context).showSnackBar(
-                      //       const SnackBar(
-                      //           content: Text(
-                      //               'You have changed your avatar.')));
-                      //   setState(() {});
-                      // }
+                      final imageUrl = await bloc.changeAvatar();
+                      if (imageUrl != '') {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content:
+                                    Text('You have changed your avatar.')));
+                        setState(() {
+                          profileImageUrl = imageUrl!;
+                        });
+                      }
                     },
-                    avatarUrl: ''),
+                    avatarUrl: profileImageUrl),
               ),
               const Text('Add Photos of the farm here.'),
               ValueListenableBuilder<String>(
@@ -155,13 +157,14 @@ class _CreateFarmState extends State<CreateFarm> {
                               validator: Validator.name,
                               keyboardType: TextInputType.name)))),
               ListTile(
-                  title: Text('Add Crop(s)',
-                      style: Theme.of(context).textTheme.titleMedium),
-                  subtitle:
-                      const Text('select crops that will be grown in the farm'),
-                  trailing: IconButton(
-                      onPressed: _showCropAddDialog,
-                      icon: const Icon(Icons.add_box, color: Colors.green))),
+                title: Text('Add Crop(s)',
+                    style: Theme.of(context).textTheme.titleMedium),
+                subtitle:
+                    const Text('select crops that will be grown in the farm'),
+                // trailing: IconButton(
+                //     onPressed: _showCropAddDialog,
+                //     icon: const Icon(Icons.add_box, color: Colors.green))
+              ),
               FutureBuilder<List<CropInfo?>>(
                   future: bloc.getCropInfoBloc(),
                   builder: (context, snapshot) {

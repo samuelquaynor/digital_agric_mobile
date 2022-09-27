@@ -74,25 +74,42 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
             alwaysShowLeadingAndAction: true,
             actions: [
               IconButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
+                  onPressed: () async {
+                    await showDialog<void>(
+                        context: context,
+                        builder: (context) => LoadingPage(
+                            errorText: bloc.deleteFarmBloc(widget.farm),
+                            callback: () {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text(
+                                          'Farm has been deleted successfully')));
+                              Navigator.of(context).pop();
+                            }));
                   },
                   icon: const Icon(Icons.delete, color: Colors.white, size: 22))
             ],
-            headerWidget: SafeArea(
-                child: FadeInImage(
-                    fit: BoxFit.cover,
-                    imageErrorBuilder: (context, error, stackTrace) =>
-                        Container(
-                            decoration: BoxDecoration(
-                                image: const DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image:
-                                        AssetImage('assets/images/farm.jpg')),
-                                borderRadius: BorderRadius.circular(15))),
-                    placeholder: const AssetImage(
-                        'assets/images/logo-white-transparentbg.png'),
-                    image: const NetworkImage('avatarUrl'))),
+            headerWidget: FutureBuilder<String?>(
+                initialData: '',
+                future: bloc.getFarmAvatarUrl(widget.farm.avatar ?? ''),
+                builder: (context, avatarSnapshot) {
+                  print(avatarSnapshot.requireData);
+                  return SafeArea(
+                      child: FadeInImage(
+                          fit: BoxFit.contain,
+                          imageErrorBuilder: (context, error, stackTrace) =>
+                              Container(
+                                  decoration: BoxDecoration(
+                                      image: const DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage(
+                                              'assets/images/farm.jpg')),
+                                      borderRadius: BorderRadius.circular(15))),
+                          placeholder: const AssetImage(
+                              'assets/images/farm.jpg'),
+                          image:
+                              NetworkImage(avatarSnapshot.requireData ?? '')));
+                }),
             body: [
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -279,7 +296,8 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                                                 style: const TextStyle(color: Colors.white)))));
                               })
                         else
-                          const Center(child: Text('No Tasks Available For This Farm'))
+                          const Center(
+                              child: Text('No Tasks Available For This Farm'))
                       ]))
             ]));
   }

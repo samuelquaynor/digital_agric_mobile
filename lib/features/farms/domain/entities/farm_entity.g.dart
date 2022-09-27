@@ -23,6 +23,7 @@ class FarmEntityAdapter extends TypeAdapter<FarmEntity> {
       farmSize: fields[3] as double,
       longitude: fields[4] as double,
       latitude: fields[5] as double,
+      avatar: fields[7] as String?,
       crops: (fields[6] as List).cast<CropInfo?>(),
     );
   }
@@ -30,7 +31,7 @@ class FarmEntityAdapter extends TypeAdapter<FarmEntity> {
   @override
   void write(BinaryWriter writer, FarmEntity obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -43,6 +44,8 @@ class FarmEntityAdapter extends TypeAdapter<FarmEntity> {
       ..write(obj.longitude)
       ..writeByte(5)
       ..write(obj.latitude)
+      ..writeByte(7)
+      ..write(obj.avatar)
       ..writeByte(6)
       ..write(obj.crops);
   }
@@ -70,6 +73,7 @@ _$_FarmEntity _$$_FarmEntityFromJson(Map<String, dynamic> json) =>
       farmSize: (json['farmSize'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
       latitude: (json['latitude'] as num).toDouble(),
+      avatar: json['avatar'] as String?,
       crops: json['crops'] == null ? [] : _cropsFromJson(json['crops'] as List),
     );
 
@@ -81,5 +85,6 @@ Map<String, dynamic> _$$_FarmEntityToJson(_$_FarmEntity instance) =>
       'farmSize': instance.farmSize,
       'longitude': instance.longitude,
       'latitude': instance.latitude,
+      'avatar': instance.avatar,
       'crops': instance.crops.map((e) => e?.toJson()).toList(),
     };

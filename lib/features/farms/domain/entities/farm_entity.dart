@@ -20,6 +20,7 @@ class FarmEntity with _$FarmEntity {
     @HiveField(3) required double farmSize,
     @HiveField(4) required double longitude,
     @HiveField(5) required double latitude,
+    @HiveField(7) String? avatar,
     @JsonKey(
         name: 'crops', defaultValue: <CropInfo>[], fromJson: _cropsFromJson)
     @HiveField(6)

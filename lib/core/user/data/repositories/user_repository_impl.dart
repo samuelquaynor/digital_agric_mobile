@@ -97,6 +97,7 @@ class UserRepositoryImpl implements UserRepository {
             id: farm.id,
             name: farm.get('name') as String,
             soilType: farm.get('soilType') as String,
+            avatar: farm.get('avatar') as String?,
             farmSize: farm.get('farmSize') as double,
             longitude: farm.get('longitude') as double,
             latitude: farm.get('latitude') as double,
