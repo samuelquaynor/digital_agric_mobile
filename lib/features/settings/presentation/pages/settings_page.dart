@@ -12,13 +12,18 @@ import '../widgets/edit_profile.dart';
 import '../widgets/profile_image.dart';
 
 /// Settings Page
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   /// Constructor
   const SettingsPage({super.key});
 
   @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  final bloc = sl<SettingsBloc>();
+  @override
   Widget build(BuildContext context) {
-    final bloc = sl<SettingsBloc>();
     final size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
@@ -29,25 +34,26 @@ class SettingsPage extends StatelessWidget {
                 future: bloc.retrieveUserBloc(),
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
+                    print(snapshot.data?.avatar);
                     return SingleChildScrollView(
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                           SettingsProfileImage(
                             onChange: () async {
-                              // final loading = await showDialog<bool>(
-                              //     context: context,
-                              //     builder: (context) => LoadingPage(
-                              //         errorText: bloc.changeAvatar()));
-                              // if (loading ?? false) {
-                              //   ScaffoldMessenger.of(context).showSnackBar(
-                              //       const SnackBar(
-                              //           content: Text(
-                              //               'You have changed your avatar.')));
-                              //   setState(() {});
-                              // }
+                              final loading = await showDialog<bool>(
+                                  context: context,
+                                  builder: (context) => LoadingPage(
+                                      errorText: bloc.changeAvatar()));
+                              if (loading ?? false) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        content: Text(
+                                            'You have changed your avatar.')));
+                                setState(() {});
+                              }
                             },
-                            avatarUrl: '',
+                            avatarUrl: snapshot.data?.avatar ?? '',
                           ),
                           Text(snapshot.requireData?.name ?? '',
                               style: Theme.of(context).textTheme.headline6),

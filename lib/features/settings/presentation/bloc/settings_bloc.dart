@@ -1,5 +1,11 @@
-import 'package:equatable/equatable.dart';
+import 'dart:io';
 
+import 'package:equatable/equatable.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+
+import '../../../../core/usecases/open_image_gallery.dart';
+import '../../../../core/usecases/open_url.dart';
+import '../../../../core/usecases/upload_image.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../../../core/user/domain/entities/user.dart';
 import '../../../../core/user/domain/update.dart';
@@ -15,6 +21,9 @@ class SettingsBloc {
   SettingsBloc(
       {required this.logout,
       required this.updateUser,
+      required this.openUrl,
+      required this.openImageGallery,
+      required this.uploadFirebaseImage,
       required this.retrieveUser});
 
   /// Retrieve User Usecase
@@ -25,6 +34,15 @@ class SettingsBloc {
 
   /// Change user details
   final UpdateUser updateUser;
+
+  /// Opens phone or a browser
+  final OpenUrl openUrl;
+
+  /// Open gallery for image
+  final OpenImageGallery openImageGallery;
+
+  /// Upload image to storage
+  final UploadFirebaseImage uploadFirebaseImage;
 
   /// Get User
   Future<UserEntity> retrieveUserBloc() async {
@@ -62,5 +80,28 @@ class SettingsBloc {
     // final result = await signInApple(NoParams());
     // return result.fold((failure) => failure.toString(), (user) => null);
     return 'Change password is unavailable!';
+  }
+
+  void openBrowser(String url) => openUrl(StringParams(url));
+
+  /// Get image
+  Future<String> _retrieveImage() async {
+    final result = await openImageGallery(NoParams());
+    return result.fold((f) => '', (path) => path);
+  }
+
+  Future<String> _uploadImage() async {
+    final image = await _retrieveImage();
+    final result = await uploadFirebaseImage(StringParams(image));
+    return result.fold((f) => '', (path) => path);
+  }
+
+  /// Change avatar
+  Future<String?> changeAvatar() async {
+    final avatarUrl = await _uploadImage();
+    final localUser = await retrieveUserBloc();
+    final result = await updateUser(
+        UpdateUserParams(localUser.copyWith(avatar: avatarUrl)));
+    return result.fold((failure) => failure.toString(), (user) => null);
   }
 }

@@ -1,7 +1,14 @@
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
+import 'package:image_picker/image_picker.dart';
 
+import 'core/platform/gallery_info.dart';
+import 'core/platform/launch_info.dart';
 import 'core/platform/network_info.dart';
+import 'core/usecases/open_image_gallery.dart';
+import 'core/usecases/open_multiple_images_gallery.dart';
+import 'core/usecases/open_url.dart';
+import 'core/usecases/upload_image.dart';
 import 'core/user/user_injection.dart';
 import 'core/weather/weather_injection.dart';
 import 'features/farms/farm_injection.dart';
@@ -35,8 +42,22 @@ void initCore() {
 
   // Network Package
   sl
-      // Network Package
-      .registerLazySingleton<NetworkInfo>(NetworkInfoImpl.new);
+
+    // Pick image from gallery
+    ..registerLazySingleton(() => OpenImageGallery(sl()))
+    // Pick multiple images from gallery
+    ..registerLazySingleton(() => OpenMultipleImageGallery(sl()))
+    // Upload an image to firebase
+    ..registerLazySingleton(() => UploadFirebaseImage(sl()))
+
+    // Image picker Package
+    ..registerLazySingleton<GalleryInfo>(() => GalleryInfoImpl(sl()))
+    // Launch Package
+    ..registerLazySingleton<LaunchInfo>(LaunchInfoImpl.new)
+    // Open Url
+    ..registerLazySingleton(() => OpenUrl(sl()))
+    // Network Package
+    ..registerLazySingleton<NetworkInfo>(NetworkInfoImpl.new);
 }
 
 /// Initialize features
@@ -61,5 +82,7 @@ void initFeatures() {
 
 /// External packages
 void initExternal() {
-  sl.registerLazySingleton<HiveInterface>(() => Hive);
+  sl
+    ..registerLazySingleton(ImagePicker.new)
+    ..registerLazySingleton<HiveInterface>(() => Hive);
 }

@@ -119,6 +119,7 @@ class UserRepositoryImpl implements UserRepository {
           id: user.id,
           email: user.get('email') as String,
           name: user.get('name') as String,
+          avatar: user.get('avatar') as String?,
           farms: farms,
           tasks: tasks,
           orders: []);
@@ -136,7 +137,7 @@ class UserRepositoryImpl implements UserRepository {
       final user = FirebaseAuth.instance.currentUser;
       final fireUser = FirebaseFirestore.instance.collection('users');
       final userUpdate = fireUser.doc(user?.uid);
-      final updateName = await userUpdate.update({'name': userEntity.name});
+      final updateName = await userUpdate.update({'name': userEntity.name, 'avatar': userEntity.avatar});
       final updateEmail = await user?.updateEmail(userEntity.email);
       // final updatePhoneNumber =
       //     await user?.updatePhoneNumber(userEntity.phoneNumber);

@@ -37,6 +37,10 @@ mixin _$UserEntity {
   String? get phoneNumber => throw _privateConstructorUsedError;
 
   /// Full Name
+  @HiveField(8)
+  String? get avatar => throw _privateConstructorUsedError;
+
+  /// Full Name
   @HiveField(4)
   String? get password => throw _privateConstructorUsedError;
 
@@ -84,6 +88,8 @@ abstract class $UserEntityCopyWith<$Res> {
           String name,
       @HiveField(3)
           String? phoneNumber,
+      @HiveField(8)
+          String? avatar,
       @HiveField(4)
           String? password,
       @JsonKey(
@@ -120,6 +126,7 @@ class _$UserEntityCopyWithImpl<$Res> implements $UserEntityCopyWith<$Res> {
     Object? email = freezed,
     Object? name = freezed,
     Object? phoneNumber = freezed,
+    Object? avatar = freezed,
     Object? password = freezed,
     Object? farms = freezed,
     Object? tasks = freezed,
@@ -141,6 +148,10 @@ class _$UserEntityCopyWithImpl<$Res> implements $UserEntityCopyWith<$Res> {
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      avatar: avatar == freezed
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String?,
       password: password == freezed
           ? _value.password
@@ -178,6 +189,8 @@ abstract class _$$_UserEntityCopyWith<$Res>
           String name,
       @HiveField(3)
           String? phoneNumber,
+      @HiveField(8)
+          String? avatar,
       @HiveField(4)
           String? password,
       @JsonKey(
@@ -216,6 +229,7 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
     Object? email = freezed,
     Object? name = freezed,
     Object? phoneNumber = freezed,
+    Object? avatar = freezed,
     Object? password = freezed,
     Object? farms = freezed,
     Object? tasks = freezed,
@@ -237,6 +251,10 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      avatar: avatar == freezed
+          ? _value.avatar
+          : avatar // ignore: cast_nullable_to_non_nullable
               as String?,
       password: password == freezed
           ? _value.password
@@ -271,6 +289,8 @@ class _$_UserEntity implements _UserEntity {
           required this.name,
       @HiveField(3)
           this.phoneNumber,
+      @HiveField(8)
+          this.avatar,
       @HiveField(4)
           this.password,
       @JsonKey(
@@ -317,6 +337,11 @@ class _$_UserEntity implements _UserEntity {
   @override
   @HiveField(3)
   final String? phoneNumber;
+
+  /// Full Name
+  @override
+  @HiveField(8)
+  final String? avatar;
 
   /// Full Name
   @override
@@ -370,7 +395,7 @@ class _$_UserEntity implements _UserEntity {
 
   @override
   String toString() {
-    return 'UserEntity(id: $id, email: $email, name: $name, phoneNumber: $phoneNumber, password: $password, farms: $farms, tasks: $tasks, orders: $orders)';
+    return 'UserEntity(id: $id, email: $email, name: $name, phoneNumber: $phoneNumber, avatar: $avatar, password: $password, farms: $farms, tasks: $tasks, orders: $orders)';
   }
 
   @override
@@ -383,6 +408,7 @@ class _$_UserEntity implements _UserEntity {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality().equals(other.avatar, avatar) &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other._farms, _farms) &&
             const DeepCollectionEquality().equals(other._tasks, _tasks) &&
@@ -397,6 +423,7 @@ class _$_UserEntity implements _UserEntity {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(avatar),
       const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(_farms),
       const DeepCollectionEquality().hash(_tasks),
@@ -423,6 +450,8 @@ abstract class _UserEntity implements UserEntity {
           required final String name,
       @HiveField(3)
           final String? phoneNumber,
+      @HiveField(8)
+          final String? avatar,
       @HiveField(4)
           final String? password,
       @JsonKey(
@@ -467,6 +496,11 @@ abstract class _UserEntity implements UserEntity {
   /// Full Name
   @HiveField(3)
   String? get phoneNumber => throw _privateConstructorUsedError;
+  @override
+
+  /// Full Name
+  @HiveField(8)
+  String? get avatar => throw _privateConstructorUsedError;
   @override
 
   /// Full Name

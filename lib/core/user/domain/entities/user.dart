@@ -29,6 +29,10 @@ class UserEntity with _$UserEntity {
     /// Full Name
     @HiveField(3) String? phoneNumber,
 
+    
+    /// Full Name
+    @HiveField(8) String? avatar,
+
     /// Full Name
     @HiveField(4) String? password,
 

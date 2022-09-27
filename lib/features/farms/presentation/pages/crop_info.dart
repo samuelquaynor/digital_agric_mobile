@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/data/constants.dart';
+import '../../../../injection_container.dart';
+import '../../../settings/presentation/bloc/settings_bloc.dart';
 import '../../domain/entities/crop_info.dart';
 
 /// Crop Info Screen
@@ -17,6 +19,9 @@ class CropInfoScreen extends StatefulWidget {
 
 class _CropInfoScreenState extends State<CropInfoScreen> {
   bool isLoading = false;
+
+  final bloc = sl<SettingsBloc>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +41,8 @@ class _CropInfoScreenState extends State<CropInfoScreen> {
                     ? const Text('Read More')
                     : const FittedBox(
                         child: CircularProgressIndicator(color: Colors.white)),
-                onPressed: () async {})),
+                onPressed: () =>
+                    bloc.openBrowser('${widget.cropInfo?.learnMore}'))),
         body: SingleChildScrollView(
             child: Column(children: [
           SizedBox(

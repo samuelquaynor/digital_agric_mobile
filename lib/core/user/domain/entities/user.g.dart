@@ -21,6 +21,7 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
       email: fields[1] as String,
       name: fields[2] as String,
       phoneNumber: fields[3] as String?,
+      avatar: fields[8] as String?,
       password: fields[4] as String?,
       farms: (fields[5] as List).cast<FarmEntity>(),
       tasks: (fields[6] as List).cast<TasksEntity>(),
@@ -31,7 +32,7 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
   @override
   void write(BinaryWriter writer, UserEntity obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -40,6 +41,8 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
       ..write(obj.name)
       ..writeByte(3)
       ..write(obj.phoneNumber)
+      ..writeByte(8)
+      ..write(obj.avatar)
       ..writeByte(4)
       ..write(obj.password)
       ..writeByte(5)
@@ -71,6 +74,7 @@ _$_UserEntity _$$_UserEntityFromJson(Map<String, dynamic> json) =>
       email: json['email'] as String,
       name: json['name'] as String,
       phoneNumber: json['phoneNumber'] as String?,
+      avatar: json['avatar'] as String?,
       password: json['password'] as String?,
       farms: json['farms'] == null
           ? []
@@ -89,6 +93,7 @@ Map<String, dynamic> _$$_UserEntityToJson(_$_UserEntity instance) =>
       'email': instance.email,
       'name': instance.name,
       'phoneNumber': instance.phoneNumber,
+      'avatar': instance.avatar,
       'password': instance.password,
       'farms': instance.farms.map((e) => e.toJson()).toList(),
       'tasks': instance.tasks.map((e) => e.toJson()).toList(),
