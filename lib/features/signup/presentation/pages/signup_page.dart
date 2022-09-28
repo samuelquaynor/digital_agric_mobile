@@ -157,7 +157,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                             color: Color(0xFF9D9D9D)))));
                           }),
                       const Text(
-                          'By continuing your confirm that you agree \nwith our Terms and Conditions',
+                          'By continuing you confirm that you agree \nwith our Terms and Conditions',
                           textAlign: TextAlign.center),
                       const SizedBox(height: 20),
                       SizedBox(
@@ -181,7 +181,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                                     const HomeScreen()))));
                               },
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.green.shade500,
+                                  primary: Colors.green.shade500,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20))),
                               child: const Text('Sign up',
@@ -197,7 +197,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   MaterialPageRoute<void>(
                                       builder: (context) => const LoginPage())),
                               style: TextButton.styleFrom(
-                                foregroundColor: const Color(0xFF9D9D9D),
+                                primary: const Color(0xFF9D9D9D),
                               ),
                               child: const Text(
                                   'Already have an account? Login..')))

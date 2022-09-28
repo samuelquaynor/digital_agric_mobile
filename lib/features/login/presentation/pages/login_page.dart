@@ -137,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                                               const HomeScreen()))));
                         },
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.green.shade500,
+                            primary: Colors.green.shade500,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20))),
                         child: const Text(
@@ -162,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                                           builder: (context) =>
                                               const SignUpPage())),
                                   style: TextButton.styleFrom(
-                                    foregroundColor: Colors.green,
+                                    primary: Colors.green,
                                   ),
                                   child: const Text('Sign up.'))
                             ]))
