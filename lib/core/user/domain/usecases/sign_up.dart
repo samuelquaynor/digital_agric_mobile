@@ -5,6 +5,7 @@ import '../../../error/failures.dart';
 import '../../../usecases/usecase.dart';
 import '../repositories/user_repository.dart';
 
+/// Sign up usecase
 class SignUp implements UseCase<String?, SignUpParams> {
   /// Constructor
   SignUp(this.repository);

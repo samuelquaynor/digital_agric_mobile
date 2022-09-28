@@ -3,11 +3,14 @@ import 'package:news_api_flutter_package/model/article.dart';
 
 import '../pages/article_view.dart';
 
+/// News Card widget
 class NewsCard extends StatelessWidget {
+  /// Constructor
   const NewsCard({
     required this.news,
     super.key,
   });
+  /// News Data
   final Article news;
 
   @override

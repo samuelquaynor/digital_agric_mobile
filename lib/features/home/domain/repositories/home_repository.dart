@@ -1,5 +1,2 @@
-
-
-
-abstract class HomeRepository {
-}
+/// Home Repository
+abstract class HomeRepository {}

@@ -16,7 +16,7 @@ class RetrieveCarts implements UseCase<List<Cart?>, RetrieveCartParams> {
 
   @override
   Future<Either<Failure, List<Cart?>>> call(RetrieveCartParams params) async =>
-      repository.retrieveCarts(params.local);
+      repository.retrieveCarts(local: params.local);
 }
 
 /// Get retieve cart Params

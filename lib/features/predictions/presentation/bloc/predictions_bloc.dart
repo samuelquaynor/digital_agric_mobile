@@ -1,11 +1,6 @@
-import 'package:equatable/equatable.dart';
-
 import '../../../../core/usecases/usecase.dart';
 import '../../domain/entities/plant_disease_entity.dart';
 import '../../domain/usecases/plant_disease_usc.dart';
-
-part 'predictions_event.dart';
-part 'predictions_state.dart';
 
 /// Prediction Bloc
 class PredictionsBloc {

@@ -1,9 +1,4 @@
-import 'package:equatable/equatable.dart';
-
 import '../../../../core/user/domain/usecases/login.dart';
-
-part 'login_event.dart';
-part 'login_state.dart';
 
 /// Login Bloc
 class LoginBloc {

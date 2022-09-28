@@ -1,10 +1,8 @@
-import 'package:equatable/equatable.dart';
-
 import '../../../../core/usecases/download_image_url.dart';
 import '../../../../core/usecases/open_image_gallery.dart';
 import '../../../../core/usecases/upload_image.dart';
 import '../../../../core/usecases/usecase.dart';
-import '../../../../core/user/domain/usecases/retrieveUser.dart';
+import '../../../../core/user/domain/usecases/retrieve_user.dart';
 import '../../../tasks/domain/entities/tasks_entity.dart';
 import '../../../tasks/domain/usecases/delete_task.dart';
 import '../../domain/entities/crop_info.dart';
@@ -14,9 +12,6 @@ import '../../domain/usecases/delete_farm.dart';
 import '../../domain/usecases/edit_farm.dart';
 import '../../domain/usecases/get_crop_info.dart';
 import '../../domain/usecases/get_farms.dart';
-
-part 'farms_event.dart';
-part 'farms_state.dart';
 
 /// Farm Bloc
 class FarmsBloc {

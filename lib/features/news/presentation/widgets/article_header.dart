@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
+/// Article Header Page
 class ArticleHeader extends SliverPersistentHeaderDelegate {
+  /// Constructor
   ArticleHeader({required this.child});
 
+  /// index number
   int index = 0;
 
+  /// child widget of header
   final Widget child;
 
   @override

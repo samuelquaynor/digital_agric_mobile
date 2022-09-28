@@ -16,7 +16,7 @@ class RetrieveUser implements UseCase<UserEntity, RetrieveUserParams> {
 
   @override
   Future<Either<Failure, UserEntity>> call(RetrieveUserParams params) =>
-      repository.retrieveUser(params.localUser);
+      repository.retrieveUser(localUser: params.localUser);
 }
 
 /// Get user details Params

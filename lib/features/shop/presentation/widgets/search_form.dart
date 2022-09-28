@@ -3,12 +3,15 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/data/constants.dart';
 
+/// outline Input Border
 const OutlineInputBorder outlineInputBorder = OutlineInputBorder(
   borderRadius: BorderRadius.all(Radius.circular(12)),
   borderSide: BorderSide.none,
 );
 
+/// Search Form
 class SearchForm extends StatelessWidget {
+  /// Constructor
   const SearchForm({
     super.key,
   });

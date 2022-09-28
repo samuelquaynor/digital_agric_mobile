@@ -4,7 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/news_bloc.dart';
 import '../widgets/news_card.dart';
 
+/// News Page
 class NewsPage extends StatelessWidget {
+  /// Constructor
   const NewsPage({super.key});
 
   @override
@@ -41,7 +43,7 @@ class NewsPage extends StatelessWidget {
               );
             } else if (state is NewsErrorState) {
               return Center(
-                child: Text(state.errorMessage.toString()),
+                child: Text(state.errorMessage),
               );
             }
             return const Center(

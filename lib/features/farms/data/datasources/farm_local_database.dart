@@ -3,6 +3,7 @@ import 'package:hive/hive.dart';
 import '../../../../core/error/exception.dart';
 import '../../domain/entities/farm_entity.dart';
 
+/// Farm Local Database
 abstract class FarmLocalDatabase {
   /// returns a farm model
   Future<FarmEntity> retrieve();
@@ -11,13 +12,15 @@ abstract class FarmLocalDatabase {
   Future<void> save(FarmEntity farm);
 }
 
+/// Implementation of [FarmLocalDatabase]
 class FarmLocalDatabaseImpl implements FarmLocalDatabase {
   /// Constructor
   FarmLocalDatabaseImpl(this.hiveInterface);
 
+  /// hiveInterface
   final HiveInterface hiveInterface;
 
-  /// BoxName for [FarmAdapter]
+  /// BoxName for [FarmEntityAdapter]
   static const String _boxName = 'farm';
 
   @override

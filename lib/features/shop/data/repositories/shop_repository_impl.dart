@@ -78,7 +78,8 @@ class ShopRepositoryImpl implements ShopRepository {
   }
 
   @override
-  Future<Either<Failure, List<Cart?>>> retrieveCarts(bool local) async {
+  Future<Either<Failure, List<Cart?>>> retrieveCarts(
+      {required bool local}) async {
     try {
       await networkInfo.hasInternet();
       final cart = await localDatabase.retrieveCarts();

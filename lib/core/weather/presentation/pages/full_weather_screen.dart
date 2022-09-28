@@ -8,7 +8,13 @@ import '../bloc/weather_bloc.dart';
 import '../widgets/weather_widget.dart';
 
 /// OptionsMenu
-enum OptionsMenu { changeCity, settings }
+enum OptionsMenu {
+  /// change city enum
+  changeCity,
+
+  /// settings enum
+  settings
+}
 
 /// Full Weather Screen
 class WeatherScreen extends StatefulWidget {
@@ -18,6 +24,8 @@ class WeatherScreen extends StatefulWidget {
 
   ///Weather
   final Weather weather;
+
+  /// Weather forecast
   final List<Weather?> forecast;
 
   @override
@@ -54,10 +62,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                                 style: TextStyle(
                                     color: Colors.green.shade900,
                                     fontSize: 14)))
-                        // const PopupMenuItem<OptionsMenu>(
-                        //   value: OptionsMenu.settings,
-                        //   child: Text('settings'),
-                        // ),
                       ],
                   child: const Icon(Icons.more_vert))
             ]),
@@ -89,16 +93,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
               }
             }));
   }
-
-  // Future<void> _fetchWeatherWithCity() async {
-  //   final newWeather = await bloc.getCurrentWeatherByCityBloc(_cityName);
-  //   final newForecast = await bloc.getForecastWeatherByCityBloc(_cityName);
-  //   setState(() {
-  //     weatherChange = newWeather!;
-  //     forecastchange = newForecast!;
-  //   });
-  //   print(weatherChange);
-  // }
 
   Future _showCityChangeDialog() {
     return showDialog<void>(
@@ -137,13 +131,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   void _onOptionMenuItemSelected(OptionsMenu item) {
-    switch (item) {
-      case OptionsMenu.changeCity:
-        _showCityChangeDialog();
-        break;
-      case OptionsMenu.settings:
-        // TODO: Handle this case.
-        break;
-    }
+    _showCityChangeDialog();
   }
 }

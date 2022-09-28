@@ -6,8 +6,14 @@ import 'package:weather/weather.dart';
 /// x axis - date
 /// y axis - temperature
 class TemperatureLineChart extends StatelessWidget {
-  const TemperatureLineChart({required this.weathers, required this.animate});
+  /// Constructor
+  const TemperatureLineChart(
+      {super.key, required this.weathers, required this.animate});
+
+  /// weather forecast
   final List<Weather> weathers;
+
+  /// animate line chart
   final bool animate;
 
   @override

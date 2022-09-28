@@ -54,7 +54,7 @@ class _AllTasksState extends State<AllTasks> {
                     Navigator.push<void>(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CalendarPage()));
+                            builder: (context) => const CalendarPage()));
                   },
                   child: const Icon(Icons.calendar_today))
             ]),

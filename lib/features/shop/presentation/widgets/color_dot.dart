@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/data/constants.dart';
 
+/// Color dot widget
 class ColorDot extends StatelessWidget {
+  /// Constructor
   const ColorDot({
     super.key,
     required this.color,
     required this.isActive,
   });
 
+  /// Color
   final Color color;
+
+  /// when color dot is active
   final bool isActive;
 
   @override

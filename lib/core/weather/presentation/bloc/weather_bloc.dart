@@ -3,12 +3,12 @@ import 'package:equatable/equatable.dart';
 import 'package:weather/weather.dart';
 
 import '../../../../core/usecases/usecase.dart';
-import '../../domain/usecases/getCurrentWeather.dart';
-import '../../domain/usecases/getCurrentWeatherByCity.dart';
-import '../../domain/usecases/getCurrentWeatherByLocation.dart';
-import '../../domain/usecases/getForecastWeather.dart';
-import '../../domain/usecases/getForecastWeatherByCity.dart';
-import '../../domain/usecases/getForecastWeatherByLocation.dart';
+import '../../domain/usecases/get_current_weather.dart';
+import '../../domain/usecases/get_current_weather_by_city.dart';
+import '../../domain/usecases/get_current_weather_by_location.dart';
+import '../../domain/usecases/get_forecast_weather_by_city.dart';
+import '../../domain/usecases/get_forecast_weather_by_location.dart';
+import '../../domain/usecases/get_weather_forecast.dart';
 
 part 'weather_event.dart';
 part 'weather_state.dart';

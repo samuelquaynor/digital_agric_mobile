@@ -4,9 +4,12 @@ import '../widgets/back_button.dart';
 import '../widgets/calendar_dates.dart';
 import '../widgets/dates_list.dart';
 import '../widgets/task_container.dart';
-import 'create_task.dart';
 
+/// Calendar Page
 class CalendarPage extends StatelessWidget {
+  /// Constructor
+  const CalendarPage({super.key});
+
   Widget _dashedText() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 15),
@@ -31,7 +34,7 @@ class CalendarPage extends StatelessWidget {
           ),
           child: Column(
             children: <Widget>[
-              MyBackButton(),
+              const MyBackButton(),
               const SizedBox(height: 30),
               Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

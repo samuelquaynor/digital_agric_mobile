@@ -7,6 +7,7 @@ import '../../../home/presentation/pages/home.dart';
 import '../../../signup/presentation/pages/signup_page.dart';
 import '../bloc/login_bloc.dart';
 
+/// Login page
 class LoginPage extends StatefulWidget {
   /// Constructor
   const LoginPage({super.key});
@@ -170,8 +171,8 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 18),
+                              backgroundColor: Colors.green,
                               elevation: 0,
-                              primary: Colors.green,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
                               ),
@@ -189,9 +190,9 @@ class _LoginPageState extends State<LoginPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               TextButton(
-                                  onPressed: () => null,
+                                  onPressed: () {},
                                   style: TextButton.styleFrom(
-                                    primary: const Color(0xFF9D9D9D),
+                                    foregroundColor: const Color(0xFF9D9D9D),
                                   ),
                                   child: const Text('Forgot your password?')),
                               TextButton(
@@ -200,7 +201,7 @@ class _LoginPageState extends State<LoginPage> {
                                           builder: (context) =>
                                               const SignUpPage())),
                                   style: TextButton.styleFrom(
-                                      primary: const Color(0xFF9D9D9D)),
+                                      foregroundColor: const Color(0xFF9D9D9D)),
                                   child: const Text('Sign up.')),
                             ]))
                   ])))

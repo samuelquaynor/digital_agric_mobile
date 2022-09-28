@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 
+/// Custom Text Field
 class MyTextField extends StatelessWidget {
+  /// Constructor
   const MyTextField(
-      {required this.label, this.maxLines = 1, this.minLines = 1, this.icon});
+      {super.key,
+      required this.label,
+      this.maxLines = 1,
+      this.minLines = 1,
+      this.icon});
+
+  /// Text field label
   final String label;
+
+  /// Text field max lines
   final int maxLines;
+
+  /// Text field min lines
   final int minLines;
+
+  /// Text field icon
   final Icon? icon;
 
   @override

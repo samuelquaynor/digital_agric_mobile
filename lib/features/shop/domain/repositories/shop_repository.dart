@@ -14,7 +14,7 @@ abstract class ShopRepository {
   Future<Either<Failure, String?>> saveCarts(List<Cart?> carts);
 
   /// queries list of carts from firebase
-  Future<Either<Failure, List<Cart?>>> retrieveCarts(bool local);
+  Future<Either<Failure, List<Cart?>>> retrieveCarts({required bool local});
 
   /// queries list of orders from firebase
   Future<Either<Failure, String?>> createOrder(OrderEntity orderEntity);

@@ -1,8 +1,6 @@
-import 'package:equatable/equatable.dart';
-
 import '../../../../core/usecases/usecase.dart';
 import '../../../../core/user/domain/entities/user.dart';
-import '../../../../core/user/domain/usecases/retrieveUser.dart';
+import '../../../../core/user/domain/usecases/retrieve_user.dart';
 import '../../domain/entities/cart.dart';
 import '../../domain/entities/category.dart';
 import '../../domain/entities/order_entity.dart';
@@ -10,9 +8,6 @@ import '../../domain/usecases/create_order.dart';
 import '../../domain/usecases/get_categories.dart';
 import '../../domain/usecases/retrieve_carts.dart';
 import '../../domain/usecases/save_carts.dart';
-
-part 'shop_event.dart';
-part 'shop_state.dart';
 
 /// ShopBloc
 class ShopBloc {

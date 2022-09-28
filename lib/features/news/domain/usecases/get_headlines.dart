@@ -5,6 +5,7 @@ import '../../../../core/error/failures.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../repositories/news_repository.dart';
 
+/// Get Headlines usecase
 class GetHeadlines implements UseCase<List<Article>, NoParams> {
   /// Constructor
   GetHeadlines(this.repository);

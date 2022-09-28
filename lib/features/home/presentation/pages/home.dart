@@ -23,13 +23,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var _currentIndex = 0;
   final bloc = sl<WeatherBloc>();
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-  }
-
+  
   List<Widget> pages = [
     const Dashboard(),
     const DashboardFarmsPage(),

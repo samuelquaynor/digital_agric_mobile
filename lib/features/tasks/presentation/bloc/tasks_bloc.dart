@@ -1,15 +1,10 @@
-import 'package:equatable/equatable.dart';
-
 import '../../../../core/user/domain/entities/user.dart';
-import '../../../../core/user/domain/usecases/retrieveUser.dart';
+import '../../../../core/user/domain/usecases/retrieve_user.dart';
 import '../../domain/entities/tasks_entity.dart';
 import '../../domain/usecases/create_task_usc.dart';
 import '../../domain/usecases/delete_task.dart';
 import '../../domain/usecases/get_tasks.dart';
 import '../../domain/usecases/mark_done.dart';
-
-part 'tasks_event.dart';
-part 'tasks_state.dart';
 
 /// Tasks Bloc
 class TasksBloc {

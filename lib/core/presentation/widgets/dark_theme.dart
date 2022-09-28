@@ -26,7 +26,7 @@ ThemeData darkTheme = ThemeData(
             borderRadius: BorderRadius.all(Radius.circular(20)))),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            primary: Colors.greenAccent,
+            backgroundColor: Colors.greenAccent,
             padding: const EdgeInsets.symmetric(vertical: 15),
             elevation: 3,
             shape: RoundedRectangleBorder(

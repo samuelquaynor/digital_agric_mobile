@@ -56,8 +56,8 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
           child: SingleChildScrollView(
               child: Column(children: [
             GestureDetector(
-                onTap: () => Navigator.of(context).push<void>(
-                    MaterialPageRoute(builder: (context) => const CreateFarm())),
+                onTap: () => Navigator.of(context).push<void>(MaterialPageRoute(
+                    builder: (context) => const CreateFarm())),
                 child: ListTile(
                     title: Text('Create Farm',
                         style: Theme.of(context).textTheme.titleMedium),
@@ -107,21 +107,31 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                                             decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(10)),
-                                            child: FadeInImage(
-                                                fit: BoxFit.cover,
-                                                imageErrorBuilder:
-                                                    (context, error, stackTrace) => Container(
-                                                        decoration: BoxDecoration(
-                                                            image: const DecorationImage(
-                                                                fit: BoxFit.cover,
-                                                                image: AssetImage(
-                                                                    'assets/images/farm.jpg')),
-                                                            borderRadius:
-                                                                BorderRadius.circular(
-                                                                    15))),
-                                                placeholder: const AssetImage(
-                                                    'assets/images/logo-white-transparentbg.png'),
-                                                image: NetworkImage(avatarSnapshot.requireData ?? ''))),
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              child: FadeInImage(
+                                                  fit: BoxFit.cover,
+                                                  imageErrorBuilder: (context,
+                                                          error, stackTrace) =>
+                                                      DecoratedBox(
+                                                          decoration: BoxDecoration(
+                                                              image: const DecorationImage(
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                  image: AssetImage(
+                                                                      'assets/images/farm.jpg')),
+                                                              borderRadius:
+                                                                  BorderRadius.circular(
+                                                                      15))),
+                                                  placeholder: const AssetImage(
+                                                      'assets/images/logo-white-transparentbg.png'),
+                                                  image: NetworkImage(avatarSnapshot
+                                                              .requireData ==
+                                                          ''
+                                                      ? 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
+                                                      : '${avatarSnapshot.requireData}')),
+                                            )),
                                         Text('${farms[index]?.name}')
                                       ]);
                                     }),
@@ -208,17 +218,21 @@ class _DashboardFarmsPageState extends State<DashboardFarmsPage> {
                                               spreadRadius: 3,
                                               offset: const Offset(0, 5))
                                         ]),
-                                    child: FadeInImage(
-                                        imageErrorBuilder: (context, error,
-                                                stackTrace) =>
-                                            Image.asset('assets/images/rice.png',
-                                                fit: BoxFit.cover),
-                                        fit: BoxFit.cover,
-                                        placeholder: const AssetImage(
-                                            'assets/images/rice.png'),
-                                        image: NetworkImage(
-                                            cropInfos[index]?.photoUrl ?? '',
-                                            scale: 1.5))),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(30),
+                                      child: FadeInImage(
+                                          imageErrorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Image.asset(
+                                                      'assets/images/rice.png',
+                                                      fit: BoxFit.cover),
+                                          fit: BoxFit.cover,
+                                          placeholder: const AssetImage(
+                                              'assets/images/rice.png'),
+                                          image: NetworkImage(
+                                              cropInfos[index]?.photoUrl ?? '',
+                                              scale: 1.5)),
+                                    )),
                               ),
                               Text(cropInfos[index]?.name ?? '')
                             ]),

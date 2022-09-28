@@ -7,6 +7,7 @@ import '../../../home/presentation/pages/home.dart';
 import '../../../login/presentation/pages/login_page.dart';
 import '../bloc/signup_bloc.dart';
 
+/// Sign Up Page
 class SignUpPage extends StatefulWidget {
   /// Constructor
   const SignUpPage({super.key});
@@ -238,8 +239,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 18),
+                        backgroundColor: Colors.green,
                         elevation: 0,
-                        primary: Colors.green,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -262,7 +263,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           MaterialPageRoute<void>(
                               builder: (context) => const LoginPage())),
                       style: TextButton.styleFrom(
-                        primary: const Color(0xFF9D9D9D),
+                        foregroundColor: const Color(0xFF9D9D9D),
                       ),
                       child: const Text('Already have an accoount. Login'),
                     ),

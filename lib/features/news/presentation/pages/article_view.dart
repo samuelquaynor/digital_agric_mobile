@@ -7,9 +7,12 @@ import 'package:news_api_flutter_package/model/article.dart';
 import '../../../../core/util/date_format.dart';
 import '../widgets/article_header.dart';
 
+/// Article View Page
 class ArticleView extends StatelessWidget {
+  /// Constructor
   const ArticleView({super.key, required this.article});
 
+  /// Article Data
   final Article article;
 
   @override
@@ -240,8 +243,7 @@ class ArticleView extends StatelessWidget {
                                           ])))
                                 ])),
                             const SizedBox(height: 5),
-                            Text(
-                                article.content ?? 'Nothing to show here!',
+                            Text(article.content ?? 'Nothing to show here!',
                                 style: GoogleFonts.lora(
                                     fontSize: 16,
                                     height: 1.35,

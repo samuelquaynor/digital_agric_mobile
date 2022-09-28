@@ -87,7 +87,7 @@ class _ShopCheckOutState extends State<ShopCheckOut> {
                                   await Navigator.of(context).push<void>(
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              OrderSuccess()));
+                                              const OrderSuccess()));
                                 }));
                       },
                       child: const Text('Order Now'))))

@@ -6,8 +6,12 @@ import 'package:http/http.dart' as http;
 import '../../data/models/address.dart';
 import '../../data/models/prediction.dart';
 
+/// Prediction Tile
 class PredictionTile extends StatefulWidget {
-  const PredictionTile({required this.prediction});
+  /// Constructor
+  const PredictionTile({super.key, required this.prediction});
+
+  /// Prediction model
   final Prediction prediction;
 
   @override
@@ -73,35 +77,32 @@ class _PredictionTileState extends State<PredictionTile> {
                       child: Text('Loading...'))
                 ]));
               });
-          print('response');
           final response =
               await getPlaceDetails(widget.prediction.placeId.toString());
           Navigator.of(context).pop<Address>(response);
         },
-        child: Container(
-            color: Colors.white,
-            child: Column(children: [
-              const SizedBox(height: 8),
-              Row(children: <Widget>[
-                const Icon(Icons.location_on, color: Color(0xFFadadad)),
-                const SizedBox(width: 12),
-                Expanded(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                      Text('${widget.prediction.mainText}',
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: const TextStyle(fontSize: 16)),
-                      const SizedBox(height: 2),
-                      Text('${widget.prediction.secondaryText}',
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: const TextStyle(
-                              fontSize: 12, color: Color(0xFFadadad)))
-                    ]))
-              ]),
-              const SizedBox(height: 8)
-            ])));
+        child: Column(children: [
+          const SizedBox(height: 8),
+          Row(children: <Widget>[
+            const Icon(Icons.location_on, color: Color(0xFFadadad)),
+            const SizedBox(width: 12),
+            Expanded(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                  Text('${widget.prediction.mainText}',
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      style: const TextStyle(fontSize: 16)),
+                  const SizedBox(height: 2),
+                  Text('${widget.prediction.secondaryText}',
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
+                      style: const TextStyle(
+                          fontSize: 12, color: Color(0xFFadadad)))
+                ]))
+          ]),
+          const SizedBox(height: 8)
+        ]));
   }
 }

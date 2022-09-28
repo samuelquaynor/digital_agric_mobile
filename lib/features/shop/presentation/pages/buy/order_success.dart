@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 /// order success page
-class OrderSuccess extends StatelessWidget {
+class OrderSuccess extends StatefulWidget {
   /// Constructor
-   OrderSuccess({super.key});
+  const OrderSuccess({super.key});
 
+  @override
+  State<OrderSuccess> createState() => _OrderSuccessState();
+}
+
+class _OrderSuccessState extends State<OrderSuccess> {
   int count = 0;
 
   @override
@@ -15,26 +20,26 @@ class OrderSuccess extends StatelessWidget {
       Expanded(
           flex: 3,
           child:
+              // ignore: avoid_unnecessary_containers
               Container(child: Image.asset('assets/images/wallet_illu.png'))),
       Expanded(
           flex: 2,
-          child: Container(
-              child: Column(children: [
+          child: Column(children: [
             Text('Order Successful',
-                style: Theme.of(context).textTheme.titleLarge),
+            style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: 8),
             Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                ),
-                child: Text(
-                    'Thank you for the order Your order will be prepared and shipped by courier within 1-2 days',
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context)
-                        .textTheme
-                        .caption
-                        ?.copyWith(fontSize: 14)))
-          ]))),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
+            child: Text(
+                'Thank you for the order Your order will be prepared and shipped by courier within 1-2 days',
+                textAlign: TextAlign.center,
+                style: Theme.of(context)
+                    .textTheme
+                    .caption
+                    ?.copyWith(fontSize: 14)))
+          ])),
       Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16,

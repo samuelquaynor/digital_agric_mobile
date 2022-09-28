@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../pages/buy/shop_home.dart';
 
+/// AgricStore Page
 class AgricStore extends StatelessWidget {
+  /// Constructor
   const AgricStore({
     super.key,
   });
@@ -11,7 +13,7 @@ class AgricStore extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () => Navigator.of(context).push<void>(
-            MaterialPageRoute(builder: (context) =>  ShopHomeScreen())),
+            MaterialPageRoute(builder: (context) => const ShopHomeScreen())),
         child: Column(children: [
           ListTile(
               contentPadding: EdgeInsets.zero,

@@ -1,4 +1,3 @@
-import 'package:firebase_database/firebase_database.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 
@@ -22,9 +21,7 @@ class Category with _$Category {
       @HiveField(2)
           required String icon,
       @JsonKey(
-          name: 'items',
-          defaultValue: <Product>[],
-          fromJson: _productFromJson)
+          name: 'items', defaultValue: <Product>[], fromJson: _productFromJson)
       @HiveField(3)
           required List<Product> products}) = _Category;
 
@@ -36,7 +33,7 @@ class Category with _$Category {
   factory Category.fromJson(Map<String, dynamic> json) =>
       _$CategoryFromJson(json);
 
-      /// Convert from DataSnapshot to model
+  /// Convert from DataSnapshot to model
   // factory Category.fromDataSnapshot(Object? dataSnapshot)  {
   //  return Category(id: dataSnapshot.get('id') as String, title: dataSnapshot.get('title') as String, icon: dataSnapshot.get('icon') as String, products: products)
   // }

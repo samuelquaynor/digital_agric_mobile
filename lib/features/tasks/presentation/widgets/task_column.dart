@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
 
+/// Task Column
 class TaskColumn extends StatelessWidget {
+  /// Constructor
   const TaskColumn({
+    super.key,
     required this.icon,
     required this.iconBackgroundColor,
     required this.title,
     required this.subtitle,
   });
+
+  /// Task Column icon
   final IconData icon;
+
+  /// Task Column icon color
   final Color iconBackgroundColor;
+
+  /// Task Column title
   final String title;
+
+  /// Task Column subtitle
   final String subtitle;
   @override
   Widget build(BuildContext context) {

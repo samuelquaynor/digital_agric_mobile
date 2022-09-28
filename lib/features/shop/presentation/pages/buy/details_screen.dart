@@ -94,7 +94,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                                             'Item has been added to cart')))));
                       },
                       style: ElevatedButton.styleFrom(
-                          primary: primaryColor, shape: const StadiumBorder()),
+                          backgroundColor: primaryColor,
+                          shape: const StadiumBorder()),
                       child: const Text('Add to Cart'))),
               body: Column(children: [
                 SizedBox(

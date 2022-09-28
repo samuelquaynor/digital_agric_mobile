@@ -1,3 +1,4 @@
+/// Day of the week
 List<String> days = [
   'Sun',
   'Mon',
@@ -14,6 +15,8 @@ List<String> days = [
   'Fri',
   'Sat'
 ];
+
+/// Dates list
 List<String> dates = [
   '5',
   '6',
@@ -31,4 +34,5 @@ List<String> dates = [
   '18'
 ];
 
+/// Time list
 List<int> time = [9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8];

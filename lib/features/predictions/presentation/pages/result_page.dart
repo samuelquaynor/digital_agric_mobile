@@ -46,14 +46,13 @@ class _ResultPageState extends State<ResultPage> {
                   setState(() {
                     isLoading = true;
                   });
-                  final result = await makeReport(
+                  await makeReport(
                       plant: widget.plantDiseaseEntity.plant,
                       disease: widget.plantDiseaseEntity.disease,
                       remedy: widget.plantDiseaseEntity.remedy);
                   setState(() {
                     isLoading = false;
                   });
-                  print(result);
                 })),
         body: SingleChildScrollView(
           child: Column(children: [

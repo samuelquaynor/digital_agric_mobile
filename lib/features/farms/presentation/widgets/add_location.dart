@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import '../../data/models/prediction.dart';
-import 'PredictionTile.dart';
+import 'predition_tile.dart';
 
+/// Search Page
 class SearchPage extends StatefulWidget {
+  /// Constructor
+  const SearchPage({super.key});
+
   @override
-  _SearchPageState createState() => _SearchPageState();
+  State<SearchPage> createState() => _SearchPageState();
 }
 
 class _SearchPageState extends State<SearchPage> {
@@ -39,8 +43,7 @@ class _SearchPageState extends State<SearchPage> {
         return 'failed';
       }
     } catch (e) {
-      //  return 'failed';
-      print(e);
+      return 'failed';
     }
   }
 
@@ -50,7 +53,6 @@ class _SearchPageState extends State<SearchPage> {
           'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$placeName&key=$mapKey&sessiontoken=123254251&components=country:gh';
       final dynamic response = await getRequest(url);
       if (response == 'failed') {
-        print('RESPONSE FAILED ON SEARCH');
         return;
       }
       if (response['status'] == 'OK') {
@@ -128,7 +130,7 @@ class _SearchPageState extends State<SearchPage> {
                       height: 16, width: 16),
                   const SizedBox(width: 18),
                   Expanded(
-                      child: Container(
+                      child: DecoratedBox(
                           decoration: BoxDecoration(
                               color: Colors.grey.shade200,
                               borderRadius: BorderRadius.circular(4)),

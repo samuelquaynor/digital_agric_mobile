@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 
+/// Task Container
 class TaskContainer extends StatelessWidget {
+  /// Constructor
   const TaskContainer({
+    super.key,
     required this.title,
     required this.subtitle,
     required this.boxColor,
   });
+
+  /// Task Container title
   final String title;
+
+  /// Task Container sub title
   final String subtitle;
+
+  /// Task Container box color
   final Color boxColor;
 
   @override

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
+/// Photo Button
 class PhotoButton extends StatefulWidget {
-  const PhotoButton({required this.onTap});
+  /// Constructor
+  const PhotoButton({super.key, required this.onTap});
+
+  /// PhotoButton on tap
   final void Function() onTap;
 
   @override
-  _PhotoButtonState createState() => _PhotoButtonState();
+  State<PhotoButton> createState() => _PhotoButtonState();
 }
 
 class _PhotoButtonState extends State<PhotoButton> {
@@ -43,7 +47,7 @@ class _PhotoButtonState extends State<PhotoButton> {
         },
         child: ConstrainedBox(
             constraints: const BoxConstraints(minHeight: 74, minWidth: 74),
-            child: Container(
+            child: DecoratedBox(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.red,

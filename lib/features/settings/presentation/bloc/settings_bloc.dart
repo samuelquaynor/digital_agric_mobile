@@ -1,5 +1,3 @@
-import 'package:equatable/equatable.dart';
-
 import '../../../../core/usecases/download_image_url.dart';
 import '../../../../core/usecases/open_image_gallery.dart';
 import '../../../../core/usecases/open_url.dart';
@@ -8,10 +6,7 @@ import '../../../../core/usecases/usecase.dart';
 import '../../../../core/user/domain/entities/user.dart';
 import '../../../../core/user/domain/update.dart';
 import '../../../../core/user/domain/usecases/logout.dart';
-import '../../../../core/user/domain/usecases/retrieveUser.dart';
-
-part 'settings_event.dart';
-part 'settings_state.dart';
+import '../../../../core/user/domain/usecases/retrieve_user.dart';
 
 /// Settings Bloc
 class SettingsBloc {

@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
 
+/// Calendar Dates
 class CalendarDates extends StatelessWidget {
+  /// Constructor
   const CalendarDates({
+    super.key,
     required this.day,
     required this.date,
     required this.dayColor,
     required this.dateColor,
   });
+
+  /// Calendar day
   final String day;
+
+  /// Calendar date
   final String date;
+
+  /// Calendar day color
   final Color dayColor;
+
+  /// Calendar date color
   final Color dateColor;
 
   @override

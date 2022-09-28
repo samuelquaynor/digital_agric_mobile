@@ -5,6 +5,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 class ActiveProjectsCard extends StatelessWidget {
   /// Constructor
   const ActiveProjectsCard({
+    super.key,
     required this.cardColor,
     required this.loadingPercent,
     required this.title,

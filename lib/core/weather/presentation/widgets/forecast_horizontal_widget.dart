@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/weather.dart';
 
-import '../../../util/WeatherIconMapper.dart';
 import '../../../util/converters.dart';
+import '../../../util/weather_icon_mapper.dart';
 import 'value_tile.dart';
 
 /// Renders a horizontal scrolling list of weather conditions

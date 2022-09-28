@@ -40,7 +40,7 @@ class WeatherSwipePager extends StatelessWidget {
               weathers: forecast,
             );
           }
-          return EmptyWidget();
+          return const EmptyWidget();
         },
         pagination: const SwiperPagination(
           margin: EdgeInsets.all(15),

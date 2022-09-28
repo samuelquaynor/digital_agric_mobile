@@ -50,7 +50,7 @@ class ScanCrop extends StatelessWidget {
                           Navigator.push<void>(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => CameraPage()));
+                                  builder: (context) => const CameraPage()));
                         },
                         child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -64,7 +64,6 @@ class _ShopHomeScreenState extends State<ShopHomeScreen> {
                     } else {
                       return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text('Explore',
                                 style: Theme.of(context)

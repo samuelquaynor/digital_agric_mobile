@@ -77,7 +77,7 @@ class UserRepositoryImpl implements UserRepository {
       FirebaseAuth.instance.currentUser == null ? false : true;
 
   @override
-  Future<Either<Failure, UserEntity>> retrieveUser(bool localUser) async {
+  Future<Either<Failure, UserEntity>> retrieveUser({required bool localUser}) async {
     final uid = currentUser?.uid ?? '';
     final tasks = <TasksEntity>[];
     final farms = <FarmEntity>[];

@@ -95,7 +95,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                               }
                               formKey.currentState!.save();
                               // Verify phone number
-                              final user = await bloc.retrieveUserBloc();
+                              await bloc.retrieveUserBloc();
                               return showDialog(
                                   context: context,
                                   builder: (context) => LoadingPage(

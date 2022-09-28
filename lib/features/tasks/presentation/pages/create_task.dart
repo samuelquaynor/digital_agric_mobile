@@ -50,7 +50,7 @@ class _CreateNewTaskPageState extends State<CreateNewTaskPage> {
                   width: width,
                   height: 250,
                   child: Column(children: <Widget>[
-                    MyBackButton(),
+                    const MyBackButton(),
                     const SizedBox(height: 20),
                     Row(children: const <Widget>[
                       Text('Create new task',

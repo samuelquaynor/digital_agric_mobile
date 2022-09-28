@@ -1,11 +1,8 @@
-import 'package:equatable/equatable.dart';
-
 import '../../../../core/user/domain/usecases/sign_up.dart';
 
-part 'signup_event.dart';
-part 'signup_state.dart';
-
+/// Sign up bloc
 class SignupBloc {
+  /// Constructor
   SignupBloc(this.signUp) : super();
 
   /// Create a user account

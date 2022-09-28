@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
+/// Section Title widget
 class SectionTitle extends StatelessWidget {
+  /// Constructor
   const SectionTitle({
     super.key,
     required this.title,
     required this.pressSeeAll,
   });
+
+  /// Section Title
   final String title;
+
+  /// Section onPress see all
   final VoidCallback pressSeeAll;
 
   @override

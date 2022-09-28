@@ -7,13 +7,21 @@ import 'empty_widget.dart';
 /// second row displays [iconData]
 /// third row displays [value]
 class ValueTile extends StatelessWidget {
+  /// Constructor
   const ValueTile({
+    super.key,
     this.iconData,
     required this.label,
     required this.value,
   });
+
+  /// Tile label
   final String label;
+
+  /// Tile value
   final String value;
+
+  /// Tile icon data
   final IconData? iconData;
 
   @override
@@ -34,7 +42,7 @@ class ValueTile extends StatelessWidget {
             size: 20,
           )
         else
-          EmptyWidget(),
+          const EmptyWidget(),
         const SizedBox(
           height: 10,
         ),

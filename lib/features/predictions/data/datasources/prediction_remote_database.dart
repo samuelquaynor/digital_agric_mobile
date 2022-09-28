@@ -23,10 +23,8 @@ class PredictionRemoteDatabaseImpl implements PredictionRemoteDatabase {
     final response = await dio.post<String>(
         'https://plant-disease-detector-pytorch.herokuapp.com/',
         data: {'image': imageBase64});
-    print(response);
 
     final jsonResponse = json.decode(response.data!) as Map<String, dynamic>;
-    print(jsonResponse);
 
     return PlantDiseaseEntity.fromJson(jsonResponse);
   }

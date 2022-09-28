@@ -65,8 +65,8 @@ class _TasksPageState extends State<TasksPage> {
                   height: 150,
                   width: width,
                   child: Column(children: <Widget>[
-                    Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                    const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12),
                         child: MyBackButton()),
                     Row(children: <Widget>[
                       CircularPercentIndicator(
@@ -197,8 +197,7 @@ class _TasksPageState extends State<TasksPage> {
                                     ]))
                           else
                             const Padding(
-                                padding:
-                                    EdgeInsets.symmetric(vertical: 10),
+                              padding: EdgeInsets.symmetric(vertical: 10),
                               child: Text('No Current Tasks Available'),
                             )
                         ])

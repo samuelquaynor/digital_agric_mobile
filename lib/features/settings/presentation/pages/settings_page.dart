@@ -51,11 +51,10 @@ class _SettingsPageState extends State<SettingsPage> {
                                     const SnackBar(
                                         content: Text(
                                             'You have changed your avatar.')));
-                                setState(() {
-                                });
+                                setState(() {});
                               }
                             },
-                            avatarUrl: snapshot.requireData?.avatar ?? '',
+                            avatarUrl: snapshot.requireData?.avatar ?? 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80',
                           ),
                           Text(snapshot.requireData?.name ?? '',
                               style: Theme.of(context).textTheme.headline6),

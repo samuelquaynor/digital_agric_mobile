@@ -19,7 +19,7 @@ class UserLocalDatabaseImpl implements UserLocalDatabase {
   /// Hive database instance for storing data
   final HiveInterface hiveInterface;
 
-  /// BoxName for [UserAdapter]
+  /// BoxName for [UserEntityAdapter]
   static const String _boxName = 'user';
 
   /// Returns a hive instance of a user model

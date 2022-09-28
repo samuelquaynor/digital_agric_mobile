@@ -93,22 +93,22 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                 initialData: '',
                 future: bloc.getFarmAvatarUrl(widget.farm.avatar ?? ''),
                 builder: (context, avatarSnapshot) {
-                  print(avatarSnapshot.requireData);
                   return SafeArea(
                       child: FadeInImage(
                           fit: BoxFit.contain,
                           imageErrorBuilder: (context, error, stackTrace) =>
-                              Container(
+                              DecoratedBox(
                                   decoration: BoxDecoration(
                                       image: const DecorationImage(
                                           fit: BoxFit.cover,
                                           image: AssetImage(
                                               'assets/images/farm.jpg')),
                                       borderRadius: BorderRadius.circular(15))),
-                          placeholder: const AssetImage(
-                              'assets/images/farm.jpg'),
-                          image:
-                              NetworkImage(avatarSnapshot.requireData ?? '')));
+                          placeholder:
+                              const AssetImage('assets/images/farm.jpg'),
+                          image: NetworkImage(avatarSnapshot.requireData == ''
+                              ? 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
+                              : '${avatarSnapshot.requireData}')));
                 }),
             body: [
               Padding(
@@ -182,13 +182,14 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                                               Container(
                                                   width: 120,
                                                   height: 120,
-                                                  margin: const EdgeInsets.symmetric(
+                                                  margin: const EdgeInsets
+                                                          .symmetric(
                                                       horizontal: 10,
                                                       vertical: 10),
                                                   decoration: BoxDecoration(
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              20),
+                                                              50),
                                                       boxShadow: [
                                                         BoxShadow(
                                                             color: Colors.green
@@ -200,20 +201,28 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                                                                 const Offset(
                                                                     0, 5))
                                                       ]),
-                                                  child: FadeInImage(
-                                                      imageErrorBuilder: (context,
-                                                              error,
-                                                              stackTrace) =>
-                                                          Image.asset(
-                                                              'assets/images/rice.png',
-                                                              fit:
-                                                                  BoxFit.cover),
-                                                      fit: BoxFit.cover,
-                                                      placeholder: const AssetImage(
-                                                          'assets/images/rice.png'),
-                                                      image: NetworkImage(
-                                                          fullCrops[index]?.photoUrl ?? '',
-                                                          scale: 1.5))),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            50),
+                                                    child: FadeInImage(
+                                                        imageErrorBuilder: (context,
+                                                                error,
+                                                                stackTrace) =>
+                                                            Image.asset(
+                                                                'assets/images/rice.png',
+                                                                fit: BoxFit
+                                                                    .cover),
+                                                        fit: BoxFit.cover,
+                                                        placeholder:
+                                                            const AssetImage(
+                                                                'assets/images/rice.png'),
+                                                        image: NetworkImage(
+                                                            fullCrops[index]
+                                                                    ?.photoUrl ??
+                                                                '',
+                                                            scale: 1.5)),
+                                                  )),
                                               Text('${fullCrops[index]?.name}')
                                             ]);
                                           },

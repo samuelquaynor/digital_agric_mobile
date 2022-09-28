@@ -6,9 +6,21 @@ import 'package:path_provider/path_provider.dart';
 import '../widgets/photo_button.dart';
 import 'image_preview.dart';
 
-enum Camera { backCamera, frontCamera }
+/// Camera Enum
+enum Camera {
+  /// Back Camera enum
+  backCamera,
 
+  /// Front Camera enum
+  frontCamera
+}
+
+/// Camera Page
 class CameraPage extends StatefulWidget {
+  /// Constructor
+  const CameraPage({super.key});
+
+  /// Camera Page route
   static const String route = '/CameraPage';
 
   @override
@@ -146,14 +158,13 @@ class _CameraPageState extends State<CameraPage> {
     if (scale < 1) scale = 1 / scale;
     return SafeArea(
         child: Scaffold(
-            body: Container(
+            body: ColoredBox(
                 color: Colors.black,
                 child: Stack(children: <Widget>[
-                  Container(
-                      child: Transform.scale(
-                          scale: scale,
-                          child: CameraPreview(_controller) //cameraPreview
-                          )),
+                  Transform.scale(
+                      scale: scale,
+                      child: CameraPreview(_controller) //cameraPreview
+                      ),
                   Align(
                       alignment: Alignment.bottomCenter,
                       child: Row(

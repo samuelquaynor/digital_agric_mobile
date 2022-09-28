@@ -7,7 +7,7 @@ import 'domain/update.dart';
 import 'domain/usecases/get_user.dart';
 import 'domain/usecases/login.dart';
 import 'domain/usecases/logout.dart';
-import 'domain/usecases/retrieveUser.dart';
+import 'domain/usecases/retrieve_user.dart';
 import 'domain/usecases/sign_up.dart';
 
 /// Add user dependency

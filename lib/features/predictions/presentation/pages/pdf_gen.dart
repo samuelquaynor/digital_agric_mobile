@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
-import 'package:permission_handler/permission_handler.dart';
 import 'package:share_plus/share_plus.dart';
 
 /// Retrieves image file from assets
@@ -36,18 +35,17 @@ Future<bool> makeReport(
     required String disease,
     required String remedy}) async {
   final user = FirebaseAuth.instance.currentUser;
-  print(user.toString());
   final dateTime = DateTime.now().toString();
 
   /// get external storage directory
-  final appDocDirectory = await getExternalStorageDirectory();
+  await getExternalStorageDirectory();
 
   /// downloads path
-  const downloads = '/storage/emulated/0/Download';
+  // const downloads = '/storage/emulated/0/Download';
 
-  const permission1 = Permission.storage;
+  // const permission1 = Permission.storage;
 
-  String? dir;
+  // String? dir;
 
   final pdf = pw.Document();
 
@@ -105,7 +103,7 @@ Future<bool> makeReport(
   final pathdir = directry.path;
 
   final file = File('$pathdir/Report_$name.pdf');
-  final file2 = await file.writeAsBytes(await pdf.save());
+  await file.writeAsBytes(await pdf.save());
   await Share.shareFiles([file.path]);
 
   return true;
