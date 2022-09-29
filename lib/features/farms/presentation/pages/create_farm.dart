@@ -45,37 +45,6 @@ class _CreateFarmState extends State<CreateFarm> {
 
   late CropInfo crop;
 
-  // Future _showCropAddDialog() {
-  //   return showDialog<void>(
-  //       context: context,
-  //       builder: (BuildContext context) {
-  //         return AlertDialog(
-  //             backgroundColor: Colors.white,
-  //             title: const Text('Add Crop', style: TextStyle(fontSize: 16)),
-  //             actions: <Widget>[
-  //               TextButton(
-  //                   onPressed: () {
-  //                     crops.add(crop);
-  //                     Navigator.of(context).pop();
-  //                   },
-  //                   child: const Text('Add'))
-  //             ],
-  //             content: TextField(
-  //                 autofocus: true,
-  //                 onChanged: (text) {
-  //                   setState(() {
-  //                     // crop = text;
-  //                   });
-  //                 },
-  //                 decoration: const InputDecoration(
-  //                     hintText: 'Add a crop',
-  //                     hintStyle:
-  //                         TextStyle(color: Colors.black38, fontSize: 14)),
-  //                 style: const TextStyle(color: Colors.black),
-  //                 cursorColor: Colors.black));
-  //       });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -373,6 +342,16 @@ class _CreateFarmState extends State<CreateFarm> {
                                           fractionDigits: 3,
                                           incDecFactor: 0.001,
                                           onChanged: (value) {
+                                            setState(() {
+                                              farmSize = value as double;
+                                            });
+                                          },
+                                          onDecrement: (value) {
+                                            setState(() {
+                                              farmSize = value as double;
+                                            });
+                                          },
+                                          onIncrement: (value) {
                                             setState(() {
                                               farmSize = value as double;
                                             });

@@ -13,20 +13,19 @@ import 'features/login/presentation/pages/login_page.dart';
 import 'features/news/presentation/bloc/news_bloc.dart';
 import 'firebase_options.dart';
 import 'injection_container.dart' as di;
-import 'injection_container.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   di.init();
   await HiveAdapters.setUp();
-  await di.sl<RetrieveUser>().call(const RetrieveUserParams(localUser: false)); 
+  await di.sl<RetrieveUser>().call(const RetrieveUserParams(localUser: false));
   // ignore: avoid_bool_literals_in_conditional_expressions
   final isLoggedIn = FirebaseAuth.instance.currentUser == null ? false : true;
   runApp(MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => sl<WeatherBloc>()),
-        BlocProvider(create: (context) => sl<NewsBloc>())
+        BlocProvider(create: (context) => di.sl<WeatherBloc>()),
+        BlocProvider(create: (context) => di.sl<NewsBloc>())
       ],
       child: MaterialApp(
           title: 'DigiFarm',

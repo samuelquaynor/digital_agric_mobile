@@ -4,6 +4,7 @@ import 'data/datasources/user_local_database.dart';
 import 'data/repositories/user_repository_impl.dart';
 import 'domain/repositories/user_repository.dart';
 import 'domain/update.dart';
+import 'domain/usecases/change_password.dart';
 import 'domain/usecases/get_user.dart';
 import 'domain/usecases/login.dart';
 import 'domain/usecases/logout.dart';
@@ -21,6 +22,7 @@ void initUser() {
     ..registerLazySingleton(() => GetUser(sl()))
     ..registerLazySingleton(() => RetrieveUser(sl()))
     ..registerLazySingleton(() => UpdateUser(sl()))
+    ..registerLazySingleton(() => ChangePasswordUsc(sl()))
     // Repository
     ..registerLazySingleton<UserRepository>(
         () => UserRepositoryImpl(localDatabase: sl(), networkInfo: sl()))

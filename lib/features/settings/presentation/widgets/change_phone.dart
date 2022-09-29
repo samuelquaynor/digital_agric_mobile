@@ -17,8 +17,24 @@ class ChangePhone extends StatefulWidget {
 class _ChangePhoneState extends State<ChangePhone> {
   late String phoneNumberText;
 
+  final phoneController = TextEditingController();
+
   final formKey = GlobalKey<FormState>();
+
   final _bloc = sl<SettingsBloc>();
+
+  @override
+  void initState() {
+    super.initState();
+    initPhoneNumber();
+  }
+
+  Future<void> initPhoneNumber() async {
+    final user = await _bloc.retrieveUserBloc();
+    setState(() {
+      phoneController.text = user.phoneNumber?.replaceFirst('+233', '0') ?? '';
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +58,7 @@ class _ChangePhoneState extends State<ChangePhone> {
                           padding: const EdgeInsets.symmetric(
                               vertical: 15, horizontal: 10),
                           child: IntlPhoneField(
+                              controller: phoneController,
                               initialCountryCode: 'GH',
                               onSaved: (value) => phoneNumberText =
                                   value!.completeNumber.replaceFirst('0', ''),

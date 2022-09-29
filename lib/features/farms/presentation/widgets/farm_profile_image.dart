@@ -17,26 +17,30 @@ class FarmProfileImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
-      Container(
-          margin: const EdgeInsets.symmetric(horizontal: 10),
-          height: 80,
-          width: 80,
-          child: ClipRRect(
-              borderRadius: BorderRadius.circular(50),
-              child: FadeInImage(
-                  fit: BoxFit.cover,
-                  imageErrorBuilder: (context, error, stackTrace) => Container(
-                      height: 80,
-                      width: 80,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10, horizontal: 20),
-                      decoration: const BoxDecoration(
-                          color: Colors.green, shape: BoxShape.circle),
-                      child:
-                          const Icon(Icons.add, color: Colors.white, size: 25)),
-                  placeholder: const AssetImage(
-                      'assets/images/logo-white-transparentbg.png'),
-                  image: NetworkImage(avatarUrl)))),
+      GestureDetector(
+        onTap: onChange,
+        child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+            height: 80,
+            width: 80,
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: FadeInImage(
+                    fit: BoxFit.cover,
+                    imageErrorBuilder: (context, error, stackTrace) =>
+                        Container(
+                            height: 80,
+                            width: 80,
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 20),
+                            decoration: const BoxDecoration(
+                                color: Colors.green, shape: BoxShape.circle),
+                            child: const Icon(Icons.add,
+                                color: Colors.white, size: 25)),
+                    placeholder: const AssetImage(
+                        'assets/images/logo-white-transparentbg.png'),
+                    image: NetworkImage(avatarUrl)))),
+      ),
       Padding(
           padding: const EdgeInsets.only(left: 60, top: 50),
           child: GestureDetector(

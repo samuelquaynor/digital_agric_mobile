@@ -5,6 +5,7 @@ import '../../../../core/usecases/upload_image.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../../../../core/user/domain/entities/user.dart';
 import '../../../../core/user/domain/update.dart';
+import '../../../../core/user/domain/usecases/change_password.dart';
 import '../../../../core/user/domain/usecases/logout.dart';
 import '../../../../core/user/domain/usecases/retrieve_user.dart';
 
@@ -16,6 +17,7 @@ class SettingsBloc {
       required this.updateUser,
       required this.openUrl,
       required this.openImageGallery,
+      required this.changePasswordUsc,
       required this.uploadFirebaseImage,
       required this.downLoadImageUrl,
       required this.retrieveUser});
@@ -40,6 +42,9 @@ class SettingsBloc {
 
   /// Download image url
   final DownLoadImageUrl downLoadImageUrl;
+
+  /// Change password usecase
+  final ChangePasswordUsc changePasswordUsc;
 
   /// Get User
   Future<UserEntity> retrieveUserBloc() async {
@@ -76,10 +81,9 @@ class SettingsBloc {
   }
 
   /// Change user password
-  Future<String?> changePassword(String password) async {
-    // final result = await signInApple(NoParams());
-    // return result.fold((failure) => failure.toString(), (user) => null);
-    return 'Change password is unavailable!';
+  Future<String?> changePasswordBloc(String password) async {
+    final result = await changePasswordUsc(StringParams(password));
+    return result.fold((l) => l.message, (r) => null);
   }
 
   /// Open browser

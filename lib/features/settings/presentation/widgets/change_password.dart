@@ -100,7 +100,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                                   context: context,
                                   builder: (context) => LoadingPage(
                                       errorText:
-                                          bloc.changePassword(passwordText),
+                                          bloc.changePasswordBloc(passwordText),
                                       callback: () {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(const SnackBar(

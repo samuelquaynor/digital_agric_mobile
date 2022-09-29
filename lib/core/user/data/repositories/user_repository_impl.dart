@@ -53,7 +53,14 @@ class UserRepositoryImpl implements UserRepository {
         await FirebaseFirestore.instance
             .collection('users')
             .doc(userNew.user?.uid)
-            .set({'email': email, 'name': fullName}.cast<String, dynamic>());
+            .set({
+              'email': email,
+              'name': fullName,
+              'avatar': '',
+              'phoneNumber': '',
+              'farms': <FarmEntity>[],
+              'tasks': <TasksEntity>[]
+            }.cast<String, dynamic>());
       });
       return const Right(null);
     } on FirebaseAuthException catch (e) {
@@ -77,7 +84,8 @@ class UserRepositoryImpl implements UserRepository {
       FirebaseAuth.instance.currentUser == null ? false : true;
 
   @override
-  Future<Either<Failure, UserEntity>> retrieveUser({required bool localUser}) async {
+  Future<Either<Failure, UserEntity>> retrieveUser(
+      {required bool localUser}) async {
     final uid = currentUser?.uid ?? '';
     final tasks = <TasksEntity>[];
     final farms = <FarmEntity>[];
@@ -121,6 +129,7 @@ class UserRepositoryImpl implements UserRepository {
           email: user.get('email') as String,
           name: user.get('name') as String,
           avatar: user.get('avatar') as String?,
+          phoneNumber: user.get('phoneNumber') as String?,
           farms: farms,
           tasks: tasks,
           orders: []);
@@ -138,16 +147,29 @@ class UserRepositoryImpl implements UserRepository {
       final user = FirebaseAuth.instance.currentUser;
       final fireUser = FirebaseFirestore.instance.collection('users');
       final userUpdate = fireUser.doc(user?.uid);
-      final updateName = await userUpdate.update({'name': userEntity.name, 'avatar': userEntity.avatar});
+      final updateName = await userUpdate.update({
+        'name': userEntity.name,
+        'avatar': userEntity.avatar,
+        'phoneNumber': userEntity.phoneNumber
+      });
       final updateEmail = await user?.updateEmail(userEntity.email);
-      // final updatePhoneNumber =
-      //     await user?.updatePhoneNumber(userEntity.phoneNumber);
       if (userEntity.password != null && userEntity.password != '') {
         final updatePassword = user?.updatePassword(userEntity.password ?? '');
       }
       return Right(userEntity);
     } on DeviceException catch (error) {
       return Left(Failure(error.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, String?>> changePassword(String password) async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      await user?.updatePassword(password);
+      return const Right(null);
+    } on Exception {
+      return const Left(Failure('Change password failed'));
     }
   }
 }

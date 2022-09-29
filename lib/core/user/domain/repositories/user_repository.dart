@@ -30,4 +30,7 @@ abstract class UserRepository {
 
   /// Logs out a user
   Future<void> logout();
+
+  /// Change user password
+  Future<Either<Failure, String?>> changePassword(String password);
 }

@@ -63,7 +63,7 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
     return Scaffold(
         body: DraggableHome(
             leading: IconButton(
-                icon: Icon(Icons.arrow_back, color: Colors.green.shade900),
+                icon: const Icon(Icons.arrow_back, color: Colors.white),
                 onPressed: () => Navigator.of(context).pop()),
             headerExpandedHeight: 0.45,
             title: Text(widget.farm.name,
@@ -93,22 +93,20 @@ class _SingleFarmPageState extends State<SingleFarmPage> {
                 initialData: '',
                 future: bloc.getFarmAvatarUrl(widget.farm.avatar ?? ''),
                 builder: (context, avatarSnapshot) {
-                  return SafeArea(
-                      child: FadeInImage(
-                          fit: BoxFit.contain,
-                          imageErrorBuilder: (context, error, stackTrace) =>
-                              DecoratedBox(
-                                  decoration: BoxDecoration(
-                                      image: const DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: AssetImage(
-                                              'assets/images/farm.jpg')),
-                                      borderRadius: BorderRadius.circular(15))),
-                          placeholder:
-                              const AssetImage('assets/images/farm.jpg'),
-                          image: NetworkImage(avatarSnapshot.requireData == ''
-                              ? 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
-                              : '${avatarSnapshot.requireData}')));
+                  return FadeInImage(
+                      fit: BoxFit.fill,
+                      imageErrorBuilder: (context, error, stackTrace) =>
+                          DecoratedBox(
+                              decoration: BoxDecoration(
+                                  image: const DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image:
+                                          AssetImage('assets/images/farm.jpg')),
+                                  borderRadius: BorderRadius.circular(15))),
+                      placeholder: const AssetImage('assets/images/farm.jpg'),
+                      image: NetworkImage(avatarSnapshot.requireData == ''
+                          ? 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80'
+                          : '${avatarSnapshot.requireData}'));
                 }),
             body: [
               Padding(

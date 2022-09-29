@@ -12,5 +12,5 @@ void initSettings() {
       updateUser: sl(),
       openUrl: sl(),
       openImageGallery: sl(),
-      uploadFirebaseImage: sl(), downLoadImageUrl: sl()));
+      uploadFirebaseImage: sl(), downLoadImageUrl: sl(), changePasswordUsc: sl()));
 }
