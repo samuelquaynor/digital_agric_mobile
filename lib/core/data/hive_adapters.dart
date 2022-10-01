@@ -1,11 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
-import '../../features/farms/domain/entities/crop_info.dart';
-import '../../features/farms/domain/entities/farm_entity.dart';
-import '../../features/shop/domain/entities/cart.dart';
-import '../../features/shop/domain/entities/category.dart';
-import '../../features/shop/domain/entities/product.dart';
-import '../../features/tasks/domain/entities/tasks_entity.dart';
+import '../../features/predictions/domain/entities/crop_info.dart';
 import '../user/domain/entities/user.dart';
 
 /// Add adapters to Hive per entity
@@ -30,7 +25,7 @@ class HiveAdapters {
 
   /// Cart entity
   static const cart = 7;
-  
+
   /// Cart entity
   static const cropInfo = 8;
 
@@ -43,11 +38,6 @@ class HiveAdapters {
     Hive
       ..init(appDocumentDirectory.path)
       ..registerAdapter<UserEntity>(UserEntityAdapter())
-      ..registerAdapter<FarmEntity>(FarmEntityAdapter())
-      ..registerAdapter<TasksEntity>(TasksEntityAdapter())
-      ..registerAdapter<Product>(ProductAdapter())
-      ..registerAdapter<Cart>(CartAdapter())
-      ..registerAdapter<CropInfo>(CropInfoAdapter())
-      ..registerAdapter<Category>(CategoryAdapter());
+      ..registerAdapter<CropInfo>(CropInfoAdapter());
   }
 }

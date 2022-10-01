@@ -4,9 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../../../features/farms/domain/entities/crop_info.dart';
-import '../../../../features/farms/domain/entities/farm_entity.dart';
-import '../../../../features/tasks/domain/entities/tasks_entity.dart';
 import '../../../error/exception.dart';
 import '../../../error/failures.dart';
 import '../../../platform/network_info.dart';
@@ -57,9 +54,7 @@ class UserRepositoryImpl implements UserRepository {
               'email': email,
               'name': fullName,
               'avatar': '',
-              'phoneNumber': '',
-              'farms': <FarmEntity>[],
-              'tasks': <TasksEntity>[]
+              'phoneNumber': ''
             }.cast<String, dynamic>());
       });
       return const Right(null);
@@ -87,8 +82,6 @@ class UserRepositoryImpl implements UserRepository {
   Future<Either<Failure, UserEntity>> retrieveUser(
       {required bool localUser}) async {
     final uid = currentUser?.uid ?? '';
-    final tasks = <TasksEntity>[];
-    final farms = <FarmEntity>[];
     if (uid == '') return right(UserEntity.initial());
     try {
       await networkInfo.hasInternet();
@@ -96,43 +89,12 @@ class UserRepositoryImpl implements UserRepository {
       if (localUser) return Right(usere);
       final fireUser = FirebaseFirestore.instance.collection('users');
       final user = await fireUser.doc(uid).get();
-      final tasksResult =
-          await fireUser.doc(uid).collection('tasks').orderBy('endTime').get();
-      final farmResult = await fireUser.doc(uid).collection('farms').get();
-      for (final farm in farmResult.docs) {
-        final farmCrops = farm.get('crops') as List<dynamic>;
-        farms.add(FarmEntity(
-            id: farm.id,
-            name: farm.get('name') as String,
-            soilType: farm.get('soilType') as String,
-            avatar: farm.get('avatar') as String?,
-            farmSize: farm.get('farmSize') as double,
-            longitude: farm.get('longitude') as double,
-            latitude: farm.get('latitude') as double,
-            crops: farmCrops
-                .cast<Map<String, dynamic>>()
-                .map<CropInfo>(CropInfo.fromJson)
-                .toList()));
-      }
-      for (final task in tasksResult.docs) {
-        tasks.add(TasksEntity(
-            id: task.id,
-            name: task.get('name') as String,
-            startTime: task.get('startTime') as String,
-            endTime: task.get('endTime') as String,
-            description: task.get('description') as String,
-            status: task.get('status') as String,
-            farms: task.get('farms') as List<dynamic>));
-      }
       final userResult = UserEntity(
           id: user.id,
           email: user.get('email') as String,
           name: user.get('name') as String,
           avatar: user.get('avatar') as String?,
-          phoneNumber: user.get('phoneNumber') as String?,
-          farms: farms,
-          tasks: tasks,
-          orders: []);
+          phoneNumber: user.get('phoneNumber') as String?);
       await localDatabase.save(userResult);
       return Right(userResult);
     } on DeviceException catch (error) {

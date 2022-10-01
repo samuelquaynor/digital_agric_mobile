@@ -6,8 +6,6 @@ import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 import '../../../../core/weather/presentation/bloc/weather_bloc.dart';
 import '../../../../injection_container.dart';
-import '../../../farms/presentation/pages/farms_dashboard_page.dart';
-import '../../../news/presentation/pages/news_page.dart';
 import '../../../settings/presentation/pages/settings_page.dart';
 import 'dashboard.dart';
 
@@ -23,13 +21,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var _currentIndex = 0;
   final bloc = sl<WeatherBloc>();
-  
-  List<Widget> pages = [
-    const Dashboard(),
-    const DashboardFarmsPage(),
-    const NewsPage(),
-    const SettingsPage()
-  ];
+
+  List<Widget> pages = [const Dashboard(), const SettingsPage()];
 
   @override
   void initState() {
@@ -74,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       bottomNavigationBar: Container(
         padding: const EdgeInsets.symmetric(vertical: 5),
-        margin: const EdgeInsets.all(10),
+        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 60),
         decoration: BoxDecoration(
           color: Colors.green.shade900,
           borderRadius: BorderRadius.circular(35),
@@ -93,39 +86,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 size: 20,
               ),
               title: const Text('Home'),
-              selectedColor: Colors.white,
-              unselectedColor: const Color.fromARGB(255, 140, 221, 143),
-            ),
-
-            /// Farms
-            SalomonBottomBarItem(
-              icon: const Icon(
-                FontAwesomeIcons.plantWilt,
-                size: 20,
-              ),
-              title: const Text('Farms'),
-              selectedColor: Colors.white,
-              unselectedColor: const Color.fromARGB(255, 140, 221, 143),
-            ),
-
-            /// Search
-            // SalomonBottomBarItem(
-            //   icon: const Icon(
-            //     FontAwesomeIcons.chartBar,
-            //     size: 20,
-            //   ),
-            //   title: const Text('Stocks'),
-            //   selectedColor: Colors.white,
-            //   unselectedColor: const Color.fromARGB(255, 140, 221, 143),
-            // ),
-
-            /// News
-            SalomonBottomBarItem(
-              icon: const Icon(
-                FontAwesomeIcons.newspaper,
-                size: 20,
-              ),
-              title: const Text('News'),
               selectedColor: Colors.white,
               unselectedColor: const Color.fromARGB(255, 140, 221, 143),
             ),

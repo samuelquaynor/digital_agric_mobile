@@ -1,9 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
 
-import '../../../../features/farms/domain/entities/farm_entity.dart';
-import '../../../../features/shop/domain/entities/order_entity.dart';
-import '../../../../features/tasks/domain/entities/tasks_entity.dart';
 import '../../../data/hive_adapters.dart';
 
 part 'user.freezed.dart';
@@ -29,67 +26,17 @@ class UserEntity with _$UserEntity {
     /// Full Name
     @HiveField(3) String? phoneNumber,
 
-    
     /// Full Name
     @HiveField(8) String? avatar,
 
     /// Full Name
     @HiveField(4) String? password,
-
-    /// Farms
-    @JsonKey(
-        name: 'farms',
-        defaultValue: <FarmEntity>[],
-        fromJson: _farmEntityFromJson)
-    @HiveField(5)
-        required List<FarmEntity> farms,
-
-    /// Tasks
-    @JsonKey(
-        name: 'tasks',
-        defaultValue: <TasksEntity>[],
-        fromJson: _tasksEntityFromJson)
-    @HiveField(6)
-        required List<TasksEntity> tasks,
-
-    /// Tasks
-    @JsonKey(
-        name: 'orders',
-        defaultValue: <OrderEntity>[],
-        fromJson: _orderEntityFromJson)
-    @HiveField(7)
-        required List<OrderEntity> orders,
   }) = _UserEntity;
 
   /// Initial state with default values
-  factory UserEntity.initial() => const UserEntity(
-      id: '', email: '', name: '', farms: [], tasks: [], orders: []);
+  factory UserEntity.initial() => const UserEntity(id: '', email: '', name: '');
 
   /// Convert from json to model
   factory UserEntity.fromJson(Map<String, dynamic> json) =>
       _$UserEntityFromJson(json);
-}
-
-List<FarmEntity> _farmEntityFromJson(List<dynamic>? json) {
-  if (json == null) return [];
-  return json
-      .cast<Map<String, dynamic>>()
-      .map<FarmEntity>(FarmEntity.fromJson)
-      .toList();
-}
-
-List<TasksEntity> _tasksEntityFromJson(List<dynamic>? json) {
-  if (json == null) return [];
-  return json
-      .cast<Map<String, dynamic>>()
-      .map<TasksEntity>(TasksEntity.fromJson)
-      .toList();
-}
-
-List<OrderEntity> _orderEntityFromJson(List<dynamic>? json) {
-  if (json == null) return [];
-  return json
-      .cast<Map<String, dynamic>>()
-      .map<OrderEntity>(OrderEntity.fromJson)
-      .toList();
 }

@@ -12,14 +12,10 @@ import 'core/usecases/open_url.dart';
 import 'core/usecases/upload_image.dart';
 import 'core/user/user_injection.dart';
 import 'core/weather/weather_injection.dart';
-import 'features/farms/farm_injection.dart';
 import 'features/login/login_injection.dart';
-import 'features/news/news_injection.dart';
 import 'features/predictions/prediction_injection.dart';
 import 'features/settings/settings_injection.dart';
-import 'features/shop/shop_injection.dart';
 import 'features/signup/sign_up_injection.dart';
-import 'features/tasks/task_injection.dart';
 
 /// Getter
 final sl = GetIt.instance;
@@ -71,14 +67,6 @@ void initFeatures() {
   initSignUp();
 
   initSettings();
-
-  initNews();
-
-  initFarm();
-
-  initTasks();
-
-  initShop();
 
   initPrediction();
 }

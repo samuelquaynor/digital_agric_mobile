@@ -5,13 +5,11 @@ import '../../../../core/weather/presentation/bloc/weather_bloc.dart';
 import '../../../../core/weather/presentation/pages/full_weather_screen.dart';
 import '../../../../core/weather/presentation/widgets/display_weather_widget.dart';
 import '../../../../injection_container.dart';
-import '../../../farms/domain/entities/farm_entity.dart';
-import '../../../farms/presentation/bloc/farms_bloc.dart';
-import '../../../farms/presentation/pages/create_farm.dart';
-import '../../../shop/presentation/widgets/agric_store_widget.dart';
-import '../../../tasks/presentation/pages/all_tasks.dart';
-import '../../../tasks/presentation/pages/tasks_page.dart';
-import '../../../tasks/presentation/widgets/tasks_widget.dart';
+import '../../../predictions/domain/entities/crop_info.dart';
+import '../../../predictions/presentation/bloc/predictions_bloc.dart';
+import '../../../predictions/presentation/pages/crop_info.dart';
+import '../../../predictions/presentation/pages/scan_crop.dart';
+import '../../../predictions/presentation/widgets/prediction_carousel.dart';
 
 /// Home Dashboard
 class Dashboard extends StatefulWidget {
@@ -23,24 +21,8 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  final bloc = sl<FarmsBloc>();
-
-  List<FarmEntity?> tasks = <FarmEntity>[];
-
-  Future<void> loadUser() async {
-    final loadedTasks = await bloc.getFarmsBloc();
-    setState(() {
-      tasks.addAll(loadedTasks);
-    });
-    return;
-  }
-
-  @override
-  void initState() {
-    loadUser();
-    super.initState();
-  }
-
+  final bloc = sl<PredictionsBloc>();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,31 +41,13 @@ class _DashboardState extends State<Dashboard> {
               // IconButton(onPressed: () {}, icon: const Icon(Icons.apps_rounded))
             ]),
         body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-          child: RefreshIndicator(
-            onRefresh: loadUser,
+            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
             child: ListView(shrinkWrap: true, children: [
               Text('Dashboard',
                   style: Theme.of(context)
                       .textTheme
                       .headline5
                       ?.copyWith(fontWeight: FontWeight.w600)),
-              // Container(
-              //     width: MediaQuery.of(context).size.width,
-              //     height: 50,
-              //     margin: const EdgeInsets.symmetric(vertical: 16),
-              //     child: ListView.builder(
-              //         itemBuilder: (context, index) => Container(
-              //               width: 120,
-              //               margin: const EdgeInsets.symmetric(
-              //                   vertical: 6, horizontal: 3),
-              //               decoration: BoxDecoration(
-              //                 color: Colors.green,
-              //                 borderRadius: BorderRadius.circular(20),
-              //               ),
-              //             ),
-              //         scrollDirection: Axis.horizontal,
-              //         itemCount: 5)),
               BlocBuilder<WeatherBloc, WeatherState>(builder: (context, state) {
                 if (state is WeatherLoading) {
                   return Container(
@@ -114,43 +78,76 @@ class _DashboardState extends State<Dashboard> {
                       child: const Text('Weather Loading Error'));
                 }
               }),
-              const AgricStore(),
               ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute<void>(
-                          builder: (context) => const TasksPage())),
-                  title: Text('Current Tasks',
+                  title: Text('Prediction Algorithms',
                       style: Theme.of(context).textTheme.titleMedium),
-                  subtitle: const Text('create tasks for farms'),
                   trailing: const Icon(Icons.arrow_forward)),
-              Builder(builder: (context) {
-                if (tasks.isEmpty) {
-                  return Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text('No Farms Available. '),
-                        GestureDetector(
-                            onTap: () => Navigator.of(context).push<void>(
-                                MaterialPageRoute(
-                                    builder: (context) => const CreateFarm())),
-                            child: const Text('Create One',
-                                style: TextStyle(
-                                    decoration: TextDecoration.underline)))
-                      ]);
-                } else {
-                  return GestureDetector(
-                      onTap: () {
-                        Navigator.push<void>(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const AllTasks()));
-                      },
-                      child: TasksWidget(farms: tasks));
-                }
-              })
-            ]),
-          ),
-        ));
+              SizedBox(
+                height: 220,
+                child: PredictionCarousel(
+                    title: 'Plant Disease Detection',
+                    urlImage: 'assets/images/weed-detect.png',
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute<void>(
+                          builder: (context) => const ScanCrop()));
+                    },
+                    description:
+                        'Plant Disease Detection Accepts a POST request with an image in the form of base64 string and returns plant, disease and remedy.'),
+              ),
+              ListTile(
+                  title: Text('Plants Info',
+                      style: Theme.of(context).textTheme.titleMedium),
+                  subtitle: const Text('Check more info of plants here'),
+                  trailing: const Icon(Icons.arrow_forward)),
+              FutureBuilder<List<CropInfo?>>(
+                  future: bloc.getCropInfoBloc(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const LinearProgressIndicator();
+                    } else {
+                      return SizedBox(
+                          height: 200,
+                          width: MediaQuery.of(context).size.width,
+                          child: ListView.builder(
+                              itemBuilder: (context, index) =>
+                                  Column(children: [
+                                    GestureDetector(
+                                        onTap: () => Navigator.of(context).push<void>(MaterialPageRoute(
+                                            builder: (context) => CropInfoScreen(
+                                                cropInfo:
+                                                    snapshot.data?[index]))),
+                                        child: Container(
+                                            width: 120,
+                                            height: 120,
+                                            margin: const EdgeInsets.symmetric(
+                                                horizontal: 10, vertical: 10),
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                      color: Colors.green
+                                                          .withOpacity(0.2),
+                                                      blurRadius: 5,
+                                                      spreadRadius: 3,
+                                                      offset:
+                                                          const Offset(0, 5))
+                                                ]),
+                                            child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(30),
+                                                child: FadeInImage(
+                                                    imageErrorBuilder: (context, error, stackTrace) =>
+                                                        Image.asset('assets/images/rice.png', fit: BoxFit.cover),
+                                                    fit: BoxFit.cover,
+                                                    placeholder: const AssetImage('assets/images/rice.png'),
+                                                    image: NetworkImage(snapshot.data?[index]?.photoUrl ?? '', scale: 1.5))))),
+                                    Text(snapshot.data?[index]?.name ?? '')
+                                  ]),
+                              itemCount: snapshot.data?.length,
+                              scrollDirection: Axis.horizontal));
+                    }
+                  })
+            ])));
   }
 }

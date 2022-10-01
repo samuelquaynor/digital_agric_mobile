@@ -60,12 +60,6 @@ class _SettingsPageState extends State<SettingsPage> {
                               style: Theme.of(context).textTheme.headline6),
                           Text(snapshot.requireData?.email ?? '',
                               style: Theme.of(context).textTheme.subtitle1),
-                          // if (snapshot.requireData.vip)
-                          //   SvgPicture.asset(SvgAssets.vip, width: 30),
-                          //Only for Precious
-                          // if (snapshot.requireData.id.contains('246'))
-                          //   Text('Made with ❤️ from Gbenga',
-                          //       style: Theme.of(context).textTheme.subtitle1),
                           Container(
                               alignment: Alignment.centerLeft,
                               padding: const EdgeInsets.symmetric(
@@ -251,11 +245,11 @@ class _SettingsPageState extends State<SettingsPage> {
                                       title: const Text('Logout'),
                                       trailing:
                                           const Icon(Icons.arrow_forward_ios)))),
-                          Image.asset(Images.logoTextBlack,
+                          Image.asset('assets/images/logo.png',
                               height: 50, width: 50, fit: BoxFit.cover),
                           Padding(
                               padding: const EdgeInsets.only(bottom: 20),
-                              child: Text('©  DigiFarms Solutions, Inc.',
+                              child: Text('©  DigiFarm.',
                                   style: Theme.of(context).textTheme.subtitle1))
                         ]));
                   } else {

@@ -23,16 +23,13 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
       phoneNumber: fields[3] as String?,
       avatar: fields[8] as String?,
       password: fields[4] as String?,
-      farms: (fields[5] as List).cast<FarmEntity>(),
-      tasks: (fields[6] as List).cast<TasksEntity>(),
-      orders: (fields[7] as List).cast<OrderEntity>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, UserEntity obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -44,13 +41,7 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
       ..writeByte(8)
       ..write(obj.avatar)
       ..writeByte(4)
-      ..write(obj.password)
-      ..writeByte(5)
-      ..write(obj.farms)
-      ..writeByte(6)
-      ..write(obj.tasks)
-      ..writeByte(7)
-      ..write(obj.orders);
+      ..write(obj.password);
   }
 
   @override
@@ -76,15 +67,6 @@ _$_UserEntity _$$_UserEntityFromJson(Map<String, dynamic> json) =>
       phoneNumber: json['phoneNumber'] as String?,
       avatar: json['avatar'] as String?,
       password: json['password'] as String?,
-      farms: json['farms'] == null
-          ? []
-          : _farmEntityFromJson(json['farms'] as List?),
-      tasks: json['tasks'] == null
-          ? []
-          : _tasksEntityFromJson(json['tasks'] as List?),
-      orders: json['orders'] == null
-          ? []
-          : _orderEntityFromJson(json['orders'] as List?),
     );
 
 Map<String, dynamic> _$$_UserEntityToJson(_$_UserEntity instance) =>
@@ -95,7 +77,4 @@ Map<String, dynamic> _$$_UserEntityToJson(_$_UserEntity instance) =>
       'phoneNumber': instance.phoneNumber,
       'avatar': instance.avatar,
       'password': instance.password,
-      'farms': instance.farms.map((e) => e.toJson()).toList(),
-      'tasks': instance.tasks.map((e) => e.toJson()).toList(),
-      'orders': instance.orders.map((e) => e.toJson()).toList(),
     };

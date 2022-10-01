@@ -44,30 +44,6 @@ mixin _$UserEntity {
   @HiveField(4)
   String? get password => throw _privateConstructorUsedError;
 
-  /// Farms
-  @JsonKey(
-      name: 'farms',
-      defaultValue: <FarmEntity>[],
-      fromJson: _farmEntityFromJson)
-  @HiveField(5)
-  List<FarmEntity> get farms => throw _privateConstructorUsedError;
-
-  /// Tasks
-  @JsonKey(
-      name: 'tasks',
-      defaultValue: <TasksEntity>[],
-      fromJson: _tasksEntityFromJson)
-  @HiveField(6)
-  List<TasksEntity> get tasks => throw _privateConstructorUsedError;
-
-  /// Tasks
-  @JsonKey(
-      name: 'orders',
-      defaultValue: <OrderEntity>[],
-      fromJson: _orderEntityFromJson)
-  @HiveField(7)
-  List<OrderEntity> get orders => throw _privateConstructorUsedError;
-
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserEntityCopyWith<UserEntity> get copyWith =>
@@ -80,36 +56,12 @@ abstract class $UserEntityCopyWith<$Res> {
           UserEntity value, $Res Function(UserEntity) then) =
       _$UserEntityCopyWithImpl<$Res>;
   $Res call(
-      {@HiveField(0)
-          String id,
-      @HiveField(1)
-          String email,
-      @HiveField(2)
-          String name,
-      @HiveField(3)
-          String? phoneNumber,
-      @HiveField(8)
-          String? avatar,
-      @HiveField(4)
-          String? password,
-      @JsonKey(
-          name: 'farms',
-          defaultValue: <FarmEntity>[],
-          fromJson: _farmEntityFromJson)
-      @HiveField(5)
-          List<FarmEntity> farms,
-      @JsonKey(
-          name: 'tasks',
-          defaultValue: <TasksEntity>[],
-          fromJson: _tasksEntityFromJson)
-      @HiveField(6)
-          List<TasksEntity> tasks,
-      @JsonKey(
-          name: 'orders',
-          defaultValue: <OrderEntity>[],
-          fromJson: _orderEntityFromJson)
-      @HiveField(7)
-          List<OrderEntity> orders});
+      {@HiveField(0) String id,
+      @HiveField(1) String email,
+      @HiveField(2) String name,
+      @HiveField(3) String? phoneNumber,
+      @HiveField(8) String? avatar,
+      @HiveField(4) String? password});
 }
 
 /// @nodoc
@@ -128,9 +80,6 @@ class _$UserEntityCopyWithImpl<$Res> implements $UserEntityCopyWith<$Res> {
     Object? phoneNumber = freezed,
     Object? avatar = freezed,
     Object? password = freezed,
-    Object? farms = freezed,
-    Object? tasks = freezed,
-    Object? orders = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -157,18 +106,6 @@ class _$UserEntityCopyWithImpl<$Res> implements $UserEntityCopyWith<$Res> {
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      farms: farms == freezed
-          ? _value.farms
-          : farms // ignore: cast_nullable_to_non_nullable
-              as List<FarmEntity>,
-      tasks: tasks == freezed
-          ? _value.tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
-              as List<TasksEntity>,
-      orders: orders == freezed
-          ? _value.orders
-          : orders // ignore: cast_nullable_to_non_nullable
-              as List<OrderEntity>,
     ));
   }
 }
@@ -181,36 +118,12 @@ abstract class _$$_UserEntityCopyWith<$Res>
       __$$_UserEntityCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@HiveField(0)
-          String id,
-      @HiveField(1)
-          String email,
-      @HiveField(2)
-          String name,
-      @HiveField(3)
-          String? phoneNumber,
-      @HiveField(8)
-          String? avatar,
-      @HiveField(4)
-          String? password,
-      @JsonKey(
-          name: 'farms',
-          defaultValue: <FarmEntity>[],
-          fromJson: _farmEntityFromJson)
-      @HiveField(5)
-          List<FarmEntity> farms,
-      @JsonKey(
-          name: 'tasks',
-          defaultValue: <TasksEntity>[],
-          fromJson: _tasksEntityFromJson)
-      @HiveField(6)
-          List<TasksEntity> tasks,
-      @JsonKey(
-          name: 'orders',
-          defaultValue: <OrderEntity>[],
-          fromJson: _orderEntityFromJson)
-      @HiveField(7)
-          List<OrderEntity> orders});
+      {@HiveField(0) String id,
+      @HiveField(1) String email,
+      @HiveField(2) String name,
+      @HiveField(3) String? phoneNumber,
+      @HiveField(8) String? avatar,
+      @HiveField(4) String? password});
 }
 
 /// @nodoc
@@ -231,9 +144,6 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
     Object? phoneNumber = freezed,
     Object? avatar = freezed,
     Object? password = freezed,
-    Object? farms = freezed,
-    Object? tasks = freezed,
-    Object? orders = freezed,
   }) {
     return _then(_$_UserEntity(
       id: id == freezed
@@ -260,18 +170,6 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      farms: farms == freezed
-          ? _value._farms
-          : farms // ignore: cast_nullable_to_non_nullable
-              as List<FarmEntity>,
-      tasks: tasks == freezed
-          ? _value._tasks
-          : tasks // ignore: cast_nullable_to_non_nullable
-              as List<TasksEntity>,
-      orders: orders == freezed
-          ? _value._orders
-          : orders // ignore: cast_nullable_to_non_nullable
-              as List<OrderEntity>,
     ));
   }
 }
@@ -281,39 +179,12 @@ class __$$_UserEntityCopyWithImpl<$Res> extends _$UserEntityCopyWithImpl<$Res>
 @JsonSerializable(explicitToJson: true)
 class _$_UserEntity implements _UserEntity {
   const _$_UserEntity(
-      {@HiveField(0)
-          required this.id,
-      @HiveField(1)
-          required this.email,
-      @HiveField(2)
-          required this.name,
-      @HiveField(3)
-          this.phoneNumber,
-      @HiveField(8)
-          this.avatar,
-      @HiveField(4)
-          this.password,
-      @JsonKey(
-          name: 'farms',
-          defaultValue: <FarmEntity>[],
-          fromJson: _farmEntityFromJson)
-      @HiveField(5)
-          required final List<FarmEntity> farms,
-      @JsonKey(
-          name: 'tasks',
-          defaultValue: <TasksEntity>[],
-          fromJson: _tasksEntityFromJson)
-      @HiveField(6)
-          required final List<TasksEntity> tasks,
-      @JsonKey(
-          name: 'orders',
-          defaultValue: <OrderEntity>[],
-          fromJson: _orderEntityFromJson)
-      @HiveField(7)
-          required final List<OrderEntity> orders})
-      : _farms = farms,
-        _tasks = tasks,
-        _orders = orders;
+      {@HiveField(0) required this.id,
+      @HiveField(1) required this.email,
+      @HiveField(2) required this.name,
+      @HiveField(3) this.phoneNumber,
+      @HiveField(8) this.avatar,
+      @HiveField(4) this.password});
 
   factory _$_UserEntity.fromJson(Map<String, dynamic> json) =>
       _$$_UserEntityFromJson(json);
@@ -348,54 +219,9 @@ class _$_UserEntity implements _UserEntity {
   @HiveField(4)
   final String? password;
 
-  /// Farms
-  final List<FarmEntity> _farms;
-
-  /// Farms
-  @override
-  @JsonKey(
-      name: 'farms',
-      defaultValue: <FarmEntity>[],
-      fromJson: _farmEntityFromJson)
-  @HiveField(5)
-  List<FarmEntity> get farms {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_farms);
-  }
-
-  /// Tasks
-  final List<TasksEntity> _tasks;
-
-  /// Tasks
-  @override
-  @JsonKey(
-      name: 'tasks',
-      defaultValue: <TasksEntity>[],
-      fromJson: _tasksEntityFromJson)
-  @HiveField(6)
-  List<TasksEntity> get tasks {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tasks);
-  }
-
-  /// Tasks
-  final List<OrderEntity> _orders;
-
-  /// Tasks
-  @override
-  @JsonKey(
-      name: 'orders',
-      defaultValue: <OrderEntity>[],
-      fromJson: _orderEntityFromJson)
-  @HiveField(7)
-  List<OrderEntity> get orders {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_orders);
-  }
-
   @override
   String toString() {
-    return 'UserEntity(id: $id, email: $email, name: $name, phoneNumber: $phoneNumber, avatar: $avatar, password: $password, farms: $farms, tasks: $tasks, orders: $orders)';
+    return 'UserEntity(id: $id, email: $email, name: $name, phoneNumber: $phoneNumber, avatar: $avatar, password: $password)';
   }
 
   @override
@@ -409,10 +235,7 @@ class _$_UserEntity implements _UserEntity {
             const DeepCollectionEquality()
                 .equals(other.phoneNumber, phoneNumber) &&
             const DeepCollectionEquality().equals(other.avatar, avatar) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality().equals(other._farms, _farms) &&
-            const DeepCollectionEquality().equals(other._tasks, _tasks) &&
-            const DeepCollectionEquality().equals(other._orders, _orders));
+            const DeepCollectionEquality().equals(other.password, password));
   }
 
   @JsonKey(ignore: true)
@@ -424,10 +247,7 @@ class _$_UserEntity implements _UserEntity {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(avatar),
-      const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(_farms),
-      const DeepCollectionEquality().hash(_tasks),
-      const DeepCollectionEquality().hash(_orders));
+      const DeepCollectionEquality().hash(password));
 
   @JsonKey(ignore: true)
   @override
@@ -442,36 +262,12 @@ class _$_UserEntity implements _UserEntity {
 
 abstract class _UserEntity implements UserEntity {
   const factory _UserEntity(
-      {@HiveField(0)
-          required final String id,
-      @HiveField(1)
-          required final String email,
-      @HiveField(2)
-          required final String name,
-      @HiveField(3)
-          final String? phoneNumber,
-      @HiveField(8)
-          final String? avatar,
-      @HiveField(4)
-          final String? password,
-      @JsonKey(
-          name: 'farms',
-          defaultValue: <FarmEntity>[],
-          fromJson: _farmEntityFromJson)
-      @HiveField(5)
-          required final List<FarmEntity> farms,
-      @JsonKey(
-          name: 'tasks',
-          defaultValue: <TasksEntity>[],
-          fromJson: _tasksEntityFromJson)
-      @HiveField(6)
-          required final List<TasksEntity> tasks,
-      @JsonKey(
-          name: 'orders',
-          defaultValue: <OrderEntity>[],
-          fromJson: _orderEntityFromJson)
-      @HiveField(7)
-          required final List<OrderEntity> orders}) = _$_UserEntity;
+      {@HiveField(0) required final String id,
+      @HiveField(1) required final String email,
+      @HiveField(2) required final String name,
+      @HiveField(3) final String? phoneNumber,
+      @HiveField(8) final String? avatar,
+      @HiveField(4) final String? password}) = _$_UserEntity;
 
   factory _UserEntity.fromJson(Map<String, dynamic> json) =
       _$_UserEntity.fromJson;
@@ -506,33 +302,6 @@ abstract class _UserEntity implements UserEntity {
   /// Full Name
   @HiveField(4)
   String? get password => throw _privateConstructorUsedError;
-  @override
-
-  /// Farms
-  @JsonKey(
-      name: 'farms',
-      defaultValue: <FarmEntity>[],
-      fromJson: _farmEntityFromJson)
-  @HiveField(5)
-  List<FarmEntity> get farms => throw _privateConstructorUsedError;
-  @override
-
-  /// Tasks
-  @JsonKey(
-      name: 'tasks',
-      defaultValue: <TasksEntity>[],
-      fromJson: _tasksEntityFromJson)
-  @HiveField(6)
-  List<TasksEntity> get tasks => throw _privateConstructorUsedError;
-  @override
-
-  /// Tasks
-  @JsonKey(
-      name: 'orders',
-      defaultValue: <OrderEntity>[],
-      fromJson: _orderEntityFromJson)
-  @HiveField(7)
-  List<OrderEntity> get orders => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_UserEntityCopyWith<_$_UserEntity> get copyWith =>
