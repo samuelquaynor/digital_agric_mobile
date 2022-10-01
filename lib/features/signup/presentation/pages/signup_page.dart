@@ -30,7 +30,7 @@ class _SignUpPageState extends State<SignUpPage> {
         shrinkWrap: true,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.25,
+            height: MediaQuery.of(context).size.height * 0.15,
             width: MediaQuery.of(context).size.width,
             padding: const EdgeInsets.only(left: 32),
             decoration: const BoxDecoration(

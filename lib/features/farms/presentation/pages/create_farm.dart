@@ -41,9 +41,11 @@ class _CreateFarmState extends State<CreateFarm> {
   late String soiltype;
   late double farmSize;
 
-  String profileImageUrl = '';
+  String profileImageUrl = 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80';
 
   late CropInfo crop;
+
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -96,12 +98,13 @@ class _CreateFarmState extends State<CreateFarm> {
                     onChange: () async {
                       final imageUrl = await bloc.changeAvatar();
                       if (imageUrl != '') {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content:
-                                    Text('You have changed your avatar.')));
+                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                            content: Text(
+                                'You have picture have been added to farm.')));
+                        final waitImage =
+                            await bloc.getFarmAvatarUrl(imageUrl ?? 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80');
                         setState(() {
-                          profileImageUrl = imageUrl!;
+                          profileImageUrl = waitImage ?? 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80';
                         });
                       }
                     },

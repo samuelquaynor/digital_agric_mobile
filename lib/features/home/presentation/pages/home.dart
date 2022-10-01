@@ -27,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> pages = [
     const Dashboard(),
     const DashboardFarmsPage(),
-    // const StocksPage(),
     const NewsPage(),
     const SettingsPage()
   ];

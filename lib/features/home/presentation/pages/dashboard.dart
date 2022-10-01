@@ -16,9 +16,7 @@ import '../../../tasks/presentation/widgets/tasks_widget.dart';
 /// Home Dashboard
 class Dashboard extends StatefulWidget {
   /// Constructor
-  const Dashboard({
-    super.key,
-  });
+  const Dashboard({super.key});
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -32,26 +30,25 @@ class _DashboardState extends State<Dashboard> {
   Future<void> loadUser() async {
     final loadedTasks = await bloc.getFarmsBloc();
     setState(() {
-      tasks = loadedTasks;
+      tasks.addAll(loadedTasks);
     });
     return;
   }
 
   @override
   void initState() {
-    super.initState();
     loadUser();
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    loadUser();
     return Scaffold(
         appBar: AppBar(
             leading: Padding(
                 padding: const EdgeInsets.only(left: 10),
-                child:
-                    Image.asset('assets/images/logo-white-transparentbg.png')),
+                child: Image.asset('assets/images/logo.png',
+                    width: 100, height: 100)),
             leadingWidth: 30,
             title: Text('DigiFarm',
                 style: Theme.of(context).textTheme.titleMedium),
@@ -61,10 +58,11 @@ class _DashboardState extends State<Dashboard> {
                   icon: const Icon(Icons.notifications_none_outlined)),
               // IconButton(onPressed: () {}, icon: const Icon(Icons.apps_rounded))
             ]),
-        body: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        body: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+          child: RefreshIndicator(
+            onRefresh: loadUser,
+            child: ListView(shrinkWrap: true, children: [
               Text('Dashboard',
                   style: Theme.of(context)
                       .textTheme
@@ -151,6 +149,8 @@ class _DashboardState extends State<Dashboard> {
                       child: TasksWidget(farms: tasks));
                 }
               })
-            ])));
+            ]),
+          ),
+        ));
   }
 }
