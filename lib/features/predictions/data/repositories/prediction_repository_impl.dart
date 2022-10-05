@@ -53,4 +53,15 @@ class PredictionRepositoryImpl implements PredictionRepository {
       return Left(Failure(error.message));
     }
   }
+
+  @override
+  Future<Either<Failure, bool>> sendAlerts(PlantDiseaseEntity entity) async {
+    try {
+      await networkInfo.hasInternet();
+      final result = await predictionRemoteDatabase.sendAlerts(entity);
+      return Right(result);
+    } on DeviceException catch (error) {
+      return Left(Failure(error.message));
+    }
+  }
 }

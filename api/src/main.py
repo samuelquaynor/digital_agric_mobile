@@ -42,12 +42,12 @@ def send_notification():
         print(message)
 
         data_message = {
-            "title": "Susya Alerts",
+            "title": "Digi Farm Alerts",
             "body": message,
         }
 
         result = push_service.notify_topic_subscribers(
-            data_message=data_message, topic_name="susya")
+            data_message=data_message, topic_name="digifarm")
 
         print(result)
         # location = key_dict['location']

@@ -1,10 +1,10 @@
-import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/data/hive_adapters.dart';
+import 'core/platform/notifications.dart';
 import 'core/presentation/widgets/light_theme.dart';
 import 'core/user/domain/usecases/retrieve_user.dart';
 import 'core/weather/presentation/bloc/weather_bloc.dart';
@@ -23,26 +23,11 @@ Future<void> main() async {
   final isLoggedIn = FirebaseAuth.instance.currentUser == null ? false : true;
   runApp(MultiBlocProvider(
       providers: [BlocProvider(create: (context) => di.sl<WeatherBloc>())],
-      child: MaterialApp(
-          title: 'DigiFarm',
-          // darkTheme: darkTheme,
-          theme: lightTheme,
-          home: isLoggedIn ? const HomeScreen() : const LoginPage())));
-  await AwesomeNotifications()
-      .initialize('resource://drawable/res_notification_app_icon', [
-    NotificationChannel(
-        channelKey: 'basic_channel',
-        channelName: 'Basic Notifications',
-        defaultColor: Colors.green,
-        importance: NotificationImportance.High,
-        channelShowBadge: true,
-        channelDescription: ''),
-    NotificationChannel(
-        channelKey: 'scheduled_channel',
-        channelName: 'Scheduled Notifications',
-        defaultColor: Colors.teal,
-        locked: true,
-        importance: NotificationImportance.High,
-        channelDescription: '')
-  ]);
+      child: NotificationHandler(
+        child: MaterialApp(
+            title: 'DigiFarm',
+            // darkTheme: darkTheme,
+            theme: lightTheme,
+            home: isLoggedIn ? const HomeScreen() : const LoginPage()),
+      )));
 }

@@ -33,15 +33,9 @@ class _DashboardState extends State<Dashboard> {
                     width: 100, height: 100)),
             leadingWidth: 30,
             title: Text('DigiFarm',
-                style: Theme.of(context).textTheme.titleMedium),
-            actions: [
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.notifications_none_outlined)),
-              // IconButton(onPressed: () {}, icon: const Icon(Icons.apps_rounded))
-            ]),
+                style: Theme.of(context).textTheme.titleMedium)),
         body: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
             child: ListView(shrinkWrap: true, children: [
               Text('Dashboard',
                   style: Theme.of(context)

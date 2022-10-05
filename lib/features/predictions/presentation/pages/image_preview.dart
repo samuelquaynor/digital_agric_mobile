@@ -53,7 +53,8 @@ class _ImagePreviewState extends State<ImagePreview> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => ResultPage(
-                              plantDiseaseEntity: result, imagePath: widget.imagePath)));
+                              plantDiseaseEntity: result,
+                              imagePath: widget.imagePath)));
                 })),
         body: Column(children: [
           Image.file(File(widget.imagePath),

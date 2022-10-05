@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 import '../../../../core/data/constants.dart';
+import '../../../../injection_container.dart';
 import '../../domain/entities/plant_disease_entity.dart';
+import '../bloc/predictions_bloc.dart';
 import 'pdf_gen.dart';
 
 /// prediction result page
@@ -24,6 +26,9 @@ class ResultPage extends StatefulWidget {
 
 class _ResultPageState extends State<ResultPage> {
   bool isLoading = false;
+
+  final bloc = sl<PredictionsBloc>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +36,24 @@ class _ResultPageState extends State<ResultPage> {
             leading: IconButton(
                 onPressed: () => Navigator.of(context).pop(),
                 icon: Icon(Icons.arrow_back, color: Colors.green.shade900)),
+            // actions: [
+            //   IconButton(
+            //       onPressed: () async {
+            //         final result =
+            //             await bloc.sendAlertsBloc(widget.plantDiseaseEntity);
+            //         if (result) {
+            //           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            //               content: Text(
+            //                   'Success! The Alert has been sent to everyone')));
+            //         } else {
+            //           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            //               content: Text(
+            //                   'Notification Failed')));
+            //         }
+            //       },
+            //       icon: const Icon(Icons.notifications_active,
+            //           color: Colors.red)),
+            // ],
             title: Text('Your Crop Analysis Report',
                 style: Theme.of(context).textTheme.titleMedium)),
         bottomSheet: Container(
@@ -84,6 +107,14 @@ class _ResultPageState extends State<ResultPage> {
                           padding: const EdgeInsets.symmetric(
                               vertical: defaultPadding),
                           child: Text(widget.plantDiseaseEntity.remedy)),
+                      // const Padding(
+                      //     padding:
+                      //         EdgeInsets.symmetric(vertical: defaultPadding),
+                      //     child: Text(
+                      //         textAlign: TextAlign.center,
+                      //         style: TextStyle(
+                      //             decoration: TextDecoration.underline),
+                      //         'Hit the bell icon on the top right corner to send alert to all farmers')),
                       const SizedBox(height: defaultPadding * 2)
                     ])),
           ]),

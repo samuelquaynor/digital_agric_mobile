@@ -15,6 +15,7 @@ import 'package:flutter/foundation.dart'
 /// );
 /// ```
 class DefaultFirebaseOptions {
+  /// Platform selection
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
       throw UnsupportedError(
@@ -45,6 +46,7 @@ class DefaultFirebaseOptions {
           'DefaultFirebaseOptions have not been configured for linux - '
           'you can reconfigure this by running the FlutterFire CLI again.',
         );
+      // ignore: no_default_cases
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
@@ -52,6 +54,7 @@ class DefaultFirebaseOptions {
     }
   }
 
+  /// Firestore Options
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyD--JDTjT950Gw9TAiv1vuymL8guuvkod0',
     appId: '1:911262043896:android:6acd8521b01a66f070750d',

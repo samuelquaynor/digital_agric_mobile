@@ -12,4 +12,7 @@ abstract class PredictionRepository {
 
   /// Get Crop info from firebase realtime database
   Future<Either<Failure, List<CropInfo>>> getCropInfos();
+
+  /// Send Alerts to users
+  Future<Either<Failure, bool>> sendAlerts(PlantDiseaseEntity entity);
 }
