@@ -1,0 +1,2948 @@
+{
+    "type": "codelist",
+    "id": null,
+    "target": "WCACROPS_CLASSIFICATION",
+    "info": {
+        "name": "FAO WCA Crop List published as RDF/SKOS(XKOS/DCAT) (v2.1, draft)",
+        "origin": "unknown",
+        "stagedBy": null,
+        "stagedOn": 0,
+        "description": "This is the Simple Knowledge Organization System (SKOS) derived from the FAO WCA Crop List. The FAO WCA Crop List was developed for the 2010 round of agricultural censuses. The version represented here is an experimental conversion (into RDF/SKOS), and should not be used as a reference. See original dataset matadata at http://stats-class.fao.uniroma2.it/caliper-catalog/dataset/WCACROPS"
+    },
+    "codes": [
+        {
+            "code": "1",
+            "name": {
+                "en": "Abaca (Manila hemp)"
+            },
+            "children": [],
+            "order": 1,
+            "details": "{\"alternative_labels\": \"Musa textilis\", \"scientific_name\": \"Musa textilis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-07\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9213|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-04\"}"
+        },
+        {
+            "code": "10",
+            "name": {
+                "en": "Arracha"
+            },
+            "children": [],
+            "order": 2,
+            "details": "{\"alternative_labels\": \"Arracacia xanthorrhiza\", \"scientific_name\": \"Arracacia xanthorrhiza\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-07\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01599|https://stats.fao.org/classifications/ICC/v1.0/59|https://stats.fao.org/classifications/ICC/v1.1/5-9\"}"
+        },
+        {
+            "code": "100",
+            "name": {
+                "en": "Eggplant"
+            },
+            "children": [],
+            "order": 3,
+            "details": "{\"alternative_labels\": \"Solanum melongena\", \"scientific_name\": \"Solanum melongena\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01233\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/222|https://stats.fao.org/classifications/ICC/v1.1/2-02-02\"}"
+        },
+        {
+            "code": "101",
+            "name": {
+                "en": "Endive"
+            },
+            "children": [],
+            "order": 4,
+            "details": "{\"alternative_labels\": \"Cichorium endivia\", \"scientific_name\": \"Cichorium endivia\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01233\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01214|https://stats.fao.org/classifications/ICC/v1.0/219|https://stats.fao.org/classifications/ICC/v1.1/2-01-90\"}"
+        },
+        {
+            "code": "102",
+            "name": {
+                "en": "Fennel"
+            },
+            "children": [],
+            "order": 5,
+            "details": "{\"alternative_labels\": \"Foeniculum vulgare\", \"scientific_name\": \"Foeniculum vulgare\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01233\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01654|https://stats.fao.org/classifications/ICC/v1.0/219|https://stats.fao.org/classifications/ICC/v1.1/6-02-01-02\"}"
+        },
+        {
+            "code": "103",
+            "name": {
+                "en": "Fenugreek"
+            },
+            "children": [],
+            "order": 6,
+            "details": "{\"alternative_labels\": \"Trigonella foenum-graecum\", \"scientific_name\": \"Trigonella foenum-graecum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01233\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/79|https://stats.fao.org/classifications/ICC/v1.1/7-9\"}"
+        },
+        {
+            "code": "104",
+            "name": {
+                "en": "Fig"
+            },
+            "children": [],
+            "order": 7,
+            "details": "{\"alternative_labels\": \"Ficus carica\", \"scientific_name\": \"Ficus carica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01315\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/314|https://stats.fao.org/classifications/ICC/v1.1/3-01-05\"}"
+        },
+        {
+            "code": "105",
+            "name": {
+                "en": "Filbert (hazelnut)"
+            },
+            "children": [],
+            "order": 8,
+            "details": "{\"alternative_labels\": \"Corylus avellana\", \"scientific_name\": \"Corylus avellana\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01374\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/364|https://stats.fao.org/classifications/ICC/v1.1/3-06-04\"}"
+        },
+        {
+            "code": "106",
+            "name": {
+                "en": "Fique"
+            },
+            "children": [],
+            "order": 9,
+            "details": "{\"alternative_labels\": \"Furcraea macrophylla\", \"scientific_name\": \"Furcraea macrophylla\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01374\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9219|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-90|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-90\"}"
+        },
+        {
+            "code": "107",
+            "name": {
+                "en": "Flax for fibre"
+            },
+            "children": [],
+            "order": 10,
+            "details": "{\"alternative_labels\": \"Linum usitatissimum\", \"scientific_name\": \"Linum usitatissimum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01374\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9213|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-01\"}"
+        },
+        {
+            "code": "108",
+            "name": {
+                "en": "Flax for oil seed (linseed)"
+            },
+            "children": [],
+            "order": 11,
+            "details": "{\"alternative_labels\": \"Linum usitatissimum\", \"scientific_name\": \"Linum usitatissimum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01374\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9213|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-01\"}"
+        },
+        {
+            "code": "109",
+            "name": {
+                "en": "Fonio"
+            },
+            "children": [],
+            "order": 12,
+            "details": "{\"alternative_labels\": \"Digitaria exilis; D. iburua\", \"scientific_name\": \"D. iburua\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01193\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/192|https://stats.fao.org/classifications/ICC/v1.1/1-11\"}"
+        },
+        {
+            "code": "11",
+            "name": {
+                "en": "Arrowroot"
+            },
+            "children": [],
+            "order": 13,
+            "details": "{\"alternative_labels\": \"Maranta arundinacea\", \"scientific_name\": \"Maranta arundinacea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01193\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01599|https://stats.fao.org/classifications/ICC/v1.0/59|https://stats.fao.org/classifications/ICC/v1.1/5-9\"}"
+        },
+        {
+            "code": "110",
+            "name": {
+                "en": "Formio (New Zealand flax)"
+            },
+            "children": [],
+            "order": 14,
+            "details": "{\"alternative_labels\": \"Phormium tenax\", \"scientific_name\": \"Phormium tenax\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01193\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-90|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-03|https://stats.fao.org/classifications/ICC/v1.0/9214\"}"
+        },
+        {
+            "code": "111",
+            "name": {
+                "en": "Garlic, dry"
+            },
+            "children": [],
+            "order": 15,
+            "details": "{\"alternative_labels\": \"Allium sativum\", \"scientific_name\": \"Allium sativum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01193\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01252|https://stats.fao.org/classifications/ICC/v1.0/233|https://stats.fao.org/classifications/ICC/v1.1/2-03-03\"}"
+        },
+        {
+            "code": "112",
+            "name": {
+                "en": "Garlic, green"
+            },
+            "children": [],
+            "order": 16,
+            "details": "{\"alternative_labels\": \"Allium sativum\", \"scientific_name\": \"Allium sativum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01193\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01252|https://stats.fao.org/classifications/ICC/v1.0/233|https://stats.fao.org/classifications/ICC/v1.1/2-03-03\"}"
+        },
+        {
+            "code": "113",
+            "name": {
+                "en": "Geranium"
+            },
+            "children": [],
+            "order": 17,
+            "details": "{\"alternative_labels\": \"Pelargonium spp.; Geranium spp.\", \"scientific_name\": \"Geranium spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01193\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/931|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-03-01\"}"
+        },
+        {
+            "code": "114",
+            "name": {
+                "en": "Ginger"
+            },
+            "children": [],
+            "order": 18,
+            "details": "{\"alternative_labels\": \"Zingiber officinale\", \"scientific_name\": \"Zingiber officinale\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01657\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/6225|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-05\"}"
+        },
+        {
+            "code": "115",
+            "name": {
+                "en": "Ginseng"
+            },
+            "children": [],
+            "order": 19,
+            "details": "{\"alternative_labels\": \"Panax spp.\", \"scientific_name\": \"Panax spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01657\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/932|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-03-02-01\"}"
+        },
+        {
+            "code": "116",
+            "name": {
+                "en": "Gooseberry (all varieties)"
+            },
+            "children": [],
+            "order": 20,
+            "details": "{\"alternative_labels\": \"Ribes spp.\", \"scientific_name\": \"Ribes spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01351-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/342|https://stats.fao.org/classifications/ICC/v1.1/3-04-02\"}"
+        },
+        {
+            "code": "117",
+            "name": {
+                "en": "Gourd"
+            },
+            "children": [],
+            "order": 21,
+            "details": "{\"alternative_labels\": \"Lagenaria spp; Cucurbita spp.\", \"scientific_name\": \"Cucurbita spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01235\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/226|https://stats.fao.org/classifications/ICC/v1.1/2-02-04\"}"
+        },
+        {
+            "code": "118",
+            "name": {
+                "en": "Gram pea (chickpea)"
+            },
+            "children": [],
+            "order": 22,
+            "details": "{\"alternative_labels\": \"Cicer arietinum\", \"scientific_name\": \"Cicer arietinum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01703\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/73|https://stats.fao.org/classifications/ICC/v1.1/7-03\"}"
+        },
+        {
+            "code": "119",
+            "name": {
+                "en": "Grape"
+            },
+            "children": [],
+            "order": 23,
+            "details": "{\"alternative_labels\": \"Vitis vinifera\", \"scientific_name\": \"Vitis vinifera\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01703\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01330|https://stats.fao.org/classifications/ICC/v1.0/33|https://stats.fao.org/classifications/ICC/v1.1/3-03\"}"
+        },
+        {
+            "code": "12",
+            "name": {
+                "en": "Artichoke"
+            },
+            "children": [],
+            "order": 24,
+            "details": "{\"alternative_labels\": \"Cynara scolymus\", \"scientific_name\": \"Cynara scolymus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01216\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/211|https://stats.fao.org/classifications/ICC/v1.1/2-01-01\"}"
+        },
+        {
+            "code": "120",
+            "name": {
+                "en": "Grapefruit"
+            },
+            "children": [],
+            "order": 25,
+            "details": "{\"alternative_labels\": \"Citrus paradisi\", \"scientific_name\": \"Citrus paradisi\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/321|https://stats.fao.org/classifications/ICC/v1.1/3-02-01\"}"
+        },
+        {
+            "code": "121",
+            "name": {
+                "en": "Grapes for raisins"
+            },
+            "children": [],
+            "order": 26,
+            "details": "{\"alternative_labels\": \"Vitis vinifera\", \"scientific_name\": \"Vitis vinifera\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01330|https://stats.fao.org/classifications/ICC/v1.0/33|https://stats.fao.org/classifications/ICC/v1.1/3-03\"}"
+        },
+        {
+            "code": "122",
+            "name": {
+                "en": "Grapes for table use"
+            },
+            "children": [],
+            "order": 27,
+            "details": "{\"alternative_labels\": \"Vitis vinifera\", \"scientific_name\": \"Vitis vinifera\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01330|https://stats.fao.org/classifications/ICC/v1.0/33|https://stats.fao.org/classifications/ICC/v1.1/3-03\"}"
+        },
+        {
+            "code": "123",
+            "name": {
+                "en": "Grapes for wine"
+            },
+            "children": [],
+            "order": 28,
+            "details": "{\"alternative_labels\": \"Vitis vinifera\", \"scientific_name\": \"Vitis vinifera\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01330|https://stats.fao.org/classifications/ICC/v1.0/33|https://stats.fao.org/classifications/ICC/v1.1/3-03\"}"
+        },
+        {
+            "code": "124",
+            "name": {
+                "en": "Grass esparto"
+            },
+            "children": [],
+            "order": 29,
+            "details": "{\"alternative_labels\": \"Lygeum spartum\", \"scientific_name\": \"Lygeum spartum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/991|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-90|https://stats.fao.org/classifications/ICC/v1.1/9-90-01\"}"
+        },
+        {
+            "code": "125",
+            "name": {
+                "en": "Grass, orchard"
+            },
+            "children": [],
+            "order": 30,
+            "details": "{\"alternative_labels\": \"Dactylis glomerata\", \"scientific_name\": \"Dactylis glomerata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/911|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/9-01-01\"}"
+        },
+        {
+            "code": "126",
+            "name": {
+                "en": "Grass, Sudan"
+            },
+            "children": [],
+            "order": 31,
+            "details": "{\"alternative_labels\": \"Sorghum bicolour var. Sudanense\", \"scientific_name\": \"Sorghum bicolour var. Sudanense\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/911|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/9-01-01\"}"
+        },
+        {
+            "code": "127",
+            "name": {
+                "en": "Groundnut (peanut)"
+            },
+            "children": [],
+            "order": 32,
+            "details": "{\"alternative_labels\": \"Arachis hypogaea\", \"scientific_name\": \"Arachis hypogaea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01421|http://stats-class.fao.uniroma2.it/CPC/v2.1/01422|https://stats.fao.org/classifications/ICC/v1.0/42|https://stats.fao.org/classifications/ICC/v1.1/4-02\"}"
+        },
+        {
+            "code": "128",
+            "name": {
+                "en": "Guarana"
+            },
+            "children": [],
+            "order": 33,
+            "details": "{\"alternative_labels\": \"Paulinia cupana\", \"scientific_name\": \"Paulinia cupana\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/932|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-03-02-04\"}"
+        },
+        {
+            "code": "129",
+            "name": {
+                "en": "Guava"
+            },
+            "children": [],
+            "order": 34,
+            "details": "{\"alternative_labels\": \"Psidium guajava\", \"scientific_name\": \"Psidium guajava\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01316-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/319|https://stats.fao.org/classifications/ICC/v1.1/3-01-06\"}"
+        },
+        {
+            "code": "13",
+            "name": {
+                "en": "Asparagus"
+            },
+            "children": [],
+            "order": 35,
+            "details": "{\"alternative_labels\": \"Asparagus officinalis\", \"scientific_name\": \"Asparagus officinalis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01211\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/212|https://stats.fao.org/classifications/ICC/v1.1/2-01-02\"}"
+        },
+        {
+            "code": "130",
+            "name": {
+                "en": "Guinea corn (sorghum)"
+            },
+            "children": [],
+            "order": 36,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01211\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/14|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-04\"}"
+        },
+        {
+            "code": "131",
+            "name": {
+                "en": "Guinea pepper"
+            },
+            "children": [],
+            "order": 37,
+            "details": "{\"alternative_labels\": \"Afframomum melegueta, piper guineense, xylopia aethiopica)\", \"scientific_name\": \"Afframomum melegueta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01211\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01653|https://stats.fao.org/classifications/ICC/v1.0/6229|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-90\"}"
+        },
+        {
+            "code": "132",
+            "name": {
+                "en": "Hazelnut (filbert)"
+            },
+            "children": [],
+            "order": 38,
+            "details": "{\"alternative_labels\": \"Corylus avellana\", \"scientific_name\": \"Corylus avellana\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01374\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/364|https://stats.fao.org/classifications/ICC/v1.1/3-06-04\"}"
+        },
+        {
+            "code": "133",
+            "name": {
+                "en": "Hemp fibre"
+            },
+            "children": [],
+            "order": 39,
+            "details": "{\"alternative_labels\": \"Cannabis sativa ssp. Indica\", \"scientific_name\": \"Cannabis sativa ssp. Indica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9213|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-04\"}"
+        },
+        {
+            "code": "134",
+            "name": {
+                "en": "Hemp, Manila (abaca)"
+            },
+            "children": [],
+            "order": 40,
+            "details": "{\"alternative_labels\": \"Musa textilis\", \"scientific_name\": \"Musa textilis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-07\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/922|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-04\"}"
+        },
+        {
+            "code": "135",
+            "name": {
+                "en": "Hemp, sun"
+            },
+            "children": [],
+            "order": 41,
+            "details": "{\"alternative_labels\": \"Crotalaria juncea\", \"scientific_name\": \"Crotalaria juncea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-07\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9213|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-04|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01922-02\"}"
+        },
+        {
+            "code": "136",
+            "name": {
+                "en": "Hempseed"
+            },
+            "children": [],
+            "order": 42,
+            "details": "{\"alternative_labels\": \"Cannabis sativa (marijuana)\", \"scientific_name\": \"Cannabis sativa (marijuana)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/439|https://stats.fao.org/classifications/ICC/v1.1/4-03-90\"}"
+        },
+        {
+            "code": "137",
+            "name": {
+                "en": "Henequen"
+            },
+            "children": [],
+            "order": 43,
+            "details": "{\"alternative_labels\": \"Agave fourcroydes\", \"scientific_name\": \"Agave fourcroydes\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/922|https://stats.fao.org/classifications/ICC/v1.1/9-02-02-90|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-06\"}"
+        },
+        {
+            "code": "138",
+            "name": {
+                "en": "Henna"
+            },
+            "children": [],
+            "order": 44,
+            "details": "{\"alternative_labels\": \"Lawsonia inermis\", \"scientific_name\": \"Lawsonia inermis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01912|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-03\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/911|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/9-01-01\"}"
+        },
+        {
+            "code": "139",
+            "name": {
+                "en": "Hop"
+            },
+            "children": [],
+            "order": 45,
+            "details": "{\"alternative_labels\": \"Humulus lupulus\", \"scientific_name\": \"Humulus lupulus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01659\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/619|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-07\"}"
+        },
+        {
+            "code": "14",
+            "name": {
+                "en": "Avocado"
+            },
+            "children": [],
+            "order": 46,
+            "details": "{\"alternative_labels\": \"Persea americana\", \"scientific_name\": \"Persea americana\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01311\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/311|https://stats.fao.org/classifications/ICC/v1.1/3-01-01\"}"
+        },
+        {
+            "code": "140",
+            "name": {
+                "en": "Horse bean"
+            },
+            "children": [],
+            "order": 47,
+            "details": "{\"alternative_labels\": \"Vicia faba\", \"scientific_name\": \"Vicia faba\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01311\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01243|http://stats-class.fao.uniroma2.it/CPC/v2.1/01702|https://stats.fao.org/classifications/ICC/v1.0/72|https://stats.fao.org/classifications/ICC/v1.1/7-02\"}"
+        },
+        {
+            "code": "141",
+            "name": {
+                "en": "Horseradish"
+            },
+            "children": [],
+            "order": 48,
+            "details": "{\"alternative_labels\": \"Armoracia rusticana\", \"scientific_name\": \"Armoracia rusticana\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01311\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/239|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "142",
+            "name": {
+                "en": "Hybrid maize"
+            },
+            "children": [],
+            "order": 49,
+            "details": "{\"alternative_labels\": \"Zea mays\", \"scientific_name\": \"Zea mays\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01911\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01122|http://stats-class.fao.uniroma2.it/CPC/v2.1/01121|https://stats.fao.org/classifications/ICC/v1.0/12|https://stats.fao.org/classifications/ICC/v1.1/1-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01290-01\"}"
+        },
+        {
+            "code": "143",
+            "name": {
+                "en": "Indigo"
+            },
+            "children": [],
+            "order": 50,
+            "details": "{\"alternative_labels\": \"Indigofera tinctoria\", \"scientific_name\": \"Indigofera tinctoria\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01911\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01990|https://stats.fao.org/classifications/ICC/v1.0/991|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-90-01\"}"
+        },
+        {
+            "code": "144",
+            "name": {
+                "en": "Jasmine"
+            },
+            "children": [],
+            "order": 51,
+            "details": "{\"alternative_labels\": \"Jasminum spp.\", \"scientific_name\": \"Jasminum spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01911\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/952|https://stats.fao.org/classifications/ICC/v1.1/9-05-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90\"}"
+        },
+        {
+            "code": "145",
+            "name": {
+                "en": "Jerusalem artichoke"
+            },
+            "children": [],
+            "order": 52,
+            "details": "{\"alternative_labels\": \"Helianthus tuberosus\", \"scientific_name\": \"Helianthus tuberosus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01911\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01599|https://stats.fao.org/classifications/ICC/v1.0/211|https://stats.fao.org/classifications/ICC/v1.1/2-01-01\"}"
+        },
+        {
+            "code": "146",
+            "name": {
+                "en": "Jojoba"
+            },
+            "children": [],
+            "order": 53,
+            "details": "{\"alternative_labels\": \"Simmondsia californica or S. chinensis\", \"scientific_name\": \"Simmondsia californica or S. chinensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-03\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/449|https://stats.fao.org/classifications/ICC/v1.1/4-03-11\"}"
+        },
+        {
+            "code": "147",
+            "name": {
+                "en": "Jowar (sorghum)"
+            },
+            "children": [],
+            "order": 54,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-03\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/14|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-04\"}"
+        },
+        {
+            "code": "148",
+            "name": {
+                "en": "Jute"
+            },
+            "children": [],
+            "order": 55,
+            "details": "{\"alternative_labels\": \"Corchorus spp. (over 30 sp.)\", \"scientific_name\": \"Corchorus spp. (over 30 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-03\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9212|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01922-01\"}"
+        },
+        {
+            "code": "149",
+            "name": {
+                "en": "Kale"
+            },
+            "children": [],
+            "order": 56,
+            "details": "{\"alternative_labels\": \"Brassica oleracea var. Acephala\", \"scientific_name\": \"Brassica oleracea var. Acephala\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-03\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/219|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01219-90|https://stats.fao.org/classifications/ICC/v1.1/2-01-90\"}"
+        },
+        {
+            "code": "15",
+            "name": {
+                "en": "Bajra (Pearl millet)"
+            },
+            "children": [],
+            "order": 57,
+            "details": "{\"alternative_labels\": \"Pennisetum americanum\", \"scientific_name\": \"Pennisetum americanum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-03\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01182|http://stats-class.fao.uniroma2.it/CPC/v2.1/01181|https://stats.fao.org/classifications/ICC/v1.0/18|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "150",
+            "name": {
+                "en": "Kapok"
+            },
+            "children": [],
+            "order": 58,
+            "details": "{\"alternative_labels\": \"Ceiba pentandra\", \"scientific_name\": \"Ceiba pentandra\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-05\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/922|https://stats.fao.org/classifications/ICC/v1.1/9-02-02\"}"
+        },
+        {
+            "code": "151",
+            "name": {
+                "en": "Kava"
+            },
+            "children": [],
+            "order": 59,
+            "details": "{\"alternative_labels\": \"Piper methysticum\", \"scientific_name\": \"Piper methysticum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-05\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/932|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-03-02-03\"}"
+        },
+        {
+            "code": "152",
+            "name": {
+                "en": "Kenaf"
+            },
+            "children": [],
+            "order": 60,
+            "details": "{\"alternative_labels\": \"Hibiscus cannabinus\", \"scientific_name\": \"Hibiscus cannabinus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-05\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9212|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01922-02|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-02\"}"
+        },
+        {
+            "code": "153",
+            "name": {
+                "en": "Kiwi fruit"
+            },
+            "children": [],
+            "order": 61,
+            "details": "{\"alternative_labels\": \"Actinidia deliciosa\", \"scientific_name\": \"Actinidia deliciosa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01352\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/343|https://stats.fao.org/classifications/ICC/v1.1/3-04-03\"}"
+        },
+        {
+            "code": "154",
+            "name": {
+                "en": "Kohlrabi"
+            },
+            "children": [],
+            "order": 62,
+            "details": "{\"alternative_labels\": \"Brassica oleracea var. gongylodes\", \"scientific_name\": \"Brassica oleracea var. gongylodes\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01352\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/239|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01219-90|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "155",
+            "name": {
+                "en": "Kola nut"
+            },
+            "children": [],
+            "order": 63,
+            "details": "{\"alternative_labels\": \"see Cola nut\", \"scientific_name\": \"see Cola nut\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/369|https://stats.fao.org/classifications/ICC/v1.1/3-06-09\"}"
+        },
+        {
+            "code": "156",
+            "name": {
+                "en": "Lavender"
+            },
+            "children": [],
+            "order": 64,
+            "details": "{\"alternative_labels\": \"Lavandula spp. (over 15 sp.)\", \"scientific_name\": \"Lavandula spp. (over 15 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/931|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-03-01\"}"
+        },
+        {
+            "code": "157",
+            "name": {
+                "en": "Leek"
+            },
+            "children": [],
+            "order": 65,
+            "details": "{\"alternative_labels\": \"Allium ampeloprasum; Allium porrum\", \"scientific_name\": \"Allium ampeloprasum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01254\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/235|https://stats.fao.org/classifications/ICC/v1.1/2-03-05\"}"
+        },
+        {
+            "code": "158",
+            "name": {
+                "en": "Lemon"
+            },
+            "children": [],
+            "order": 66,
+            "details": "{\"alternative_labels\": \"Citrus limon\", \"scientific_name\": \"Citrus limon\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01254\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01322|https://stats.fao.org/classifications/ICC/v1.0/322|https://stats.fao.org/classifications/ICC/v1.1/3-02-02\"}"
+        },
+        {
+            "code": "159",
+            "name": {
+                "en": "Lemon grass"
+            },
+            "children": [],
+            "order": 67,
+            "details": "{\"alternative_labels\": \"Cymbopogon citratus\", \"scientific_name\": \"Cymbopogon citratus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01254\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/922|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-02-02-90\"}"
+        },
+        {
+            "code": "16",
+            "name": {
+                "en": "Bambara bean"
+            },
+            "children": [],
+            "order": 68,
+            "details": "{\"alternative_labels\": \"Voandzeia subterranea or Vigna subterranea\", \"scientific_name\": \"Voandzeia subterranea or Vigna subterranea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01708\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/79|https://stats.fao.org/classifications/ICC/v1.1/7-09\"}"
+        },
+        {
+            "code": "160",
+            "name": {
+                "en": "Lentil"
+            },
+            "children": [],
+            "order": 69,
+            "details": "{\"alternative_labels\": \"Lens culinaris\", \"scientific_name\": \"Lens culinaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01704\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/75|https://stats.fao.org/classifications/ICC/v1.1/7-05\"}"
+        },
+        {
+            "code": "161",
+            "name": {
+                "en": "Lespedeza (all varieties)"
+            },
+            "children": [],
+            "order": 70,
+            "details": "{\"alternative_labels\": \"Lespedeza spp.\", \"scientific_name\": \"Lespedeza spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01704\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/911|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/9-01-01\"}"
+        },
+        {
+            "code": "162",
+            "name": {
+                "en": "Lettuce"
+            },
+            "children": [],
+            "order": 71,
+            "details": "{\"alternative_labels\": \"Lactuca sativa var. capitata\", \"scientific_name\": \"Lactuca sativa var. capitata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01704\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01214|https://stats.fao.org/classifications/ICC/v1.0/215|https://stats.fao.org/classifications/ICC/v1.1/2-01-05\"}"
+        },
+        {
+            "code": "163",
+            "name": {
+                "en": "Lime, sour"
+            },
+            "children": [],
+            "order": 72,
+            "details": "{\"alternative_labels\": \"Citrus aurantifolia\", \"scientific_name\": \"Citrus aurantifolia\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01704\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01322|https://stats.fao.org/classifications/ICC/v1.0/322|https://stats.fao.org/classifications/ICC/v1.1/3-02-02\"}"
+        },
+        {
+            "code": "164",
+            "name": {
+                "en": "Lime, sweet"
+            },
+            "children": [],
+            "order": 73,
+            "details": "{\"alternative_labels\": \"Citrus limetta\", \"scientific_name\": \"Citrus limetta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01704\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01322|https://stats.fao.org/classifications/ICC/v1.0/322|https://stats.fao.org/classifications/ICC/v1.1/3-02-02\"}"
+        },
+        {
+            "code": "165",
+            "name": {
+                "en": "Linseed (flax for oil seed)"
+            },
+            "children": [],
+            "order": 74,
+            "details": "{\"alternative_labels\": \"Linum usitatissimum\", \"scientific_name\": \"Linum usitatissimum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01441\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/432|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-01|https://stats.fao.org/classifications/ICC/v1.1/4-03-02\"}"
+        },
+        {
+            "code": "166",
+            "name": {
+                "en": "Liquorice"
+            },
+            "children": [],
+            "order": 75,
+            "details": "{\"alternative_labels\": \"Glycyrrhiza glabra\", \"scientific_name\": \"Glycyrrhiza glabra\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01441\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/931|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-03-01\"}"
+        },
+        {
+            "code": "167",
+            "name": {
+                "en": "Litchi"
+            },
+            "children": [],
+            "order": 76,
+            "details": "{\"alternative_labels\": \"Litchi chinensis\", \"scientific_name\": \"Litchi chinensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01441\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01319|https://stats.fao.org/classifications/ICC/v1.0/319|https://stats.fao.org/classifications/ICC/v1.1/3-01-90\"}"
+        },
+        {
+            "code": "168",
+            "name": {
+                "en": "Loquat"
+            },
+            "children": [],
+            "order": 77,
+            "details": "{\"alternative_labels\": \"Eriobotrya japonica\", \"scientific_name\": \"Eriobotrya japonica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01349-20|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01349-10\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/359|https://stats.fao.org/classifications/ICC/v1.1/3-05-90\"}"
+        },
+        {
+            "code": "169",
+            "name": {
+                "en": "Lupine (all varieties)"
+            },
+            "children": [],
+            "order": 78,
+            "details": "{\"alternative_labels\": \"Lupinus spp.\", \"scientific_name\": \"Lupinus spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01709-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/76|https://stats.fao.org/classifications/ICC/v1.1/7-06\"}"
+        },
+        {
+            "code": "17",
+            "name": {
+                "en": "Banana"
+            },
+            "children": [],
+            "order": 79,
+            "details": "{\"alternative_labels\": \"Musa sapientum, M. cavendishii, M.nana\", \"scientific_name\": \"M. cavendishii\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/312|https://stats.fao.org/classifications/ICC/v1.1/3-01-02\"}"
+        },
+        {
+            "code": "170",
+            "name": {
+                "en": "Macadamia (Queensland nut)"
+            },
+            "children": [],
+            "order": 80,
+            "details": "{\"alternative_labels\": \"Macadamia spp. ternifolia\", \"scientific_name\": \"Macadamia spp. ternifolia\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/369|https://stats.fao.org/classifications/ICC/v1.1/3-06-90|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-90\"}"
+        },
+        {
+            "code": "171",
+            "name": {
+                "en": "Mace"
+            },
+            "children": [],
+            "order": 81,
+            "details": "{\"alternative_labels\": \"Myristica fragrans\", \"scientific_name\": \"Myristica fragrans\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01653|https://stats.fao.org/classifications/ICC/v1.0/6222|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-02\"}"
+        },
+        {
+            "code": "172",
+            "name": {
+                "en": "Maguey"
+            },
+            "children": [],
+            "order": 82,
+            "details": "{\"alternative_labels\": \"Agave atrovirens\", \"scientific_name\": \"Agave atrovirens\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/922|https://stats.fao.org/classifications/ICC/v1.1/9-02-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-06\"}"
+        },
+        {
+            "code": "173",
+            "name": {
+                "en": "Maize (corn)"
+            },
+            "children": [],
+            "order": 83,
+            "details": "{\"alternative_labels\": \"Zea mays\", \"scientific_name\": \"Zea mays\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01122|http://stats-class.fao.uniroma2.it/CPC/v2.1/01121|https://stats.fao.org/classifications/ICC/v1.0/12|https://stats.fao.org/classifications/ICC/v1.1/1-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01290-01\"}"
+        },
+        {
+            "code": "174",
+            "name": {
+                "en": "Maize (corn) for silage"
+            },
+            "children": [],
+            "order": 84,
+            "details": "{\"alternative_labels\": \"Zea mays\", \"scientific_name\": \"Zea mays\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01911|https://stats.fao.org/classifications/ICC/v1.0/12|https://stats.fao.org/classifications/ICC/v1.1/1-02\"}"
+        },
+        {
+            "code": "175",
+            "name": {
+                "en": "Maize (hybrid)"
+            },
+            "children": [],
+            "order": 85,
+            "details": "{\"alternative_labels\": \"Zea mays\", \"scientific_name\": \"Zea mays\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01122|http://stats-class.fao.uniroma2.it/CPC/v2.1/01121|http://stats-class.fao.uniroma2.it/CPC/v2.1/01911|https://stats.fao.org/classifications/ICC/v1.0/12|https://stats.fao.org/classifications/ICC/v1.1/1-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01290-01\"}"
+        },
+        {
+            "code": "176",
+            "name": {
+                "en": "Maize, ordinary"
+            },
+            "children": [],
+            "order": 86,
+            "details": "{\"alternative_labels\": \"Zea mays\", \"scientific_name\": \"Zea mays\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01122|http://stats-class.fao.uniroma2.it/CPC/v2.1/01121|http://stats-class.fao.uniroma2.it/CPC/v2.1/01911|https://stats.fao.org/classifications/ICC/v1.0/12|https://stats.fao.org/classifications/ICC/v1.1/1-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01290-01\"}"
+        },
+        {
+            "code": "177",
+            "name": {
+                "en": "Mandarin"
+            },
+            "children": [],
+            "order": 87,
+            "details": "{\"alternative_labels\": \"Citrus reticulata\", \"scientific_name\": \"Citrus reticulata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/324|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01324-01|https://stats.fao.org/classifications/ICC/v1.1/3-02-04\"}"
+        },
+        {
+            "code": "178",
+            "name": {
+                "en": "Mangel (fodder beet)"
+            },
+            "children": [],
+            "order": 88,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01312-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/81|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "179",
+            "name": {
+                "en": "Mango"
+            },
+            "children": [],
+            "order": 89,
+            "details": "{\"alternative_labels\": \"Mangifera indica\", \"scientific_name\": \"Mangifera indica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01316-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/315|https://stats.fao.org/classifications/ICC/v1.1/3-01-06\"}"
+        },
+        {
+            "code": "18",
+            "name": {
+                "en": "Barley"
+            },
+            "children": [],
+            "order": 90,
+            "details": "{\"alternative_labels\": \"Hordeum vulgare\", \"scientific_name\": \"Hordeum vulgare\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01152|http://stats-class.fao.uniroma2.it/CPC/v2.1/01151\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/15|https://stats.fao.org/classifications/ICC/v1.1/1-05\"}"
+        },
+        {
+            "code": "180",
+            "name": {
+                "en": "Mangosteen/Mangostano"
+            },
+            "children": [],
+            "order": 91,
+            "details": "{\"alternative_labels\": \"Garcinia mangostana\", \"scientific_name\": \"Garcinia mangostana\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01316-03\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/315|https://stats.fao.org/classifications/ICC/v1.1/3-01-06\"}"
+        },
+        {
+            "code": "181",
+            "name": {
+                "en": "Manioc (cassava)"
+            },
+            "children": [],
+            "order": 92,
+            "details": "{\"alternative_labels\": \"Manihot esculenta\", \"scientific_name\": \"Manihot esculenta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01316-03\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/53|https://stats.fao.org/classifications/ICC/v1.1/5-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01219-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01520-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01520-02\"}"
+        },
+        {
+            "code": "182",
+            "name": {
+                "en": "Maslin (mixed cereals)"
+            },
+            "children": [],
+            "order": 93,
+            "details": "{\"alternative_labels\": \"Mixture of Triticum spp.; Secale cereale\", \"scientific_name\": \"Mixture of Triticum spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01199-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/191|https://stats.fao.org/classifications/ICC/v1.1/1-14\"}"
+        },
+        {
+            "code": "183",
+            "name": {
+                "en": "Medlar"
+            },
+            "children": [],
+            "order": 94,
+            "details": "{\"alternative_labels\": \"Mespilus germanica\", \"scientific_name\": \"Mespilus germanica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01349-2\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/359|https://stats.fao.org/classifications/ICC/v1.1/3-05-90\"}"
+        },
+        {
+            "code": "184",
+            "name": {
+                "en": "Melon (except watermelon)"
+            },
+            "children": [],
+            "order": 95,
+            "details": "{\"alternative_labels\": \"Cucumis melo\", \"scientific_name\": \"Cucumis melo\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/225|https://stats.fao.org/classifications/ICC/v1.1/2-05-02\"}"
+        },
+        {
+            "code": "185",
+            "name": {
+                "en": "Millet broom"
+            },
+            "children": [],
+            "order": 96,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/18|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "186",
+            "name": {
+                "en": "Millet, bajra"
+            },
+            "children": [],
+            "order": 97,
+            "details": "{\"alternative_labels\": \"Pennisetum americanum\", \"scientific_name\": \"Pennisetum americanum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01182|http://stats-class.fao.uniroma2.it/CPC/v2.1/01181|https://stats.fao.org/classifications/ICC/v1.0/18|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "187",
+            "name": {
+                "en": "Millet, bulrush"
+            },
+            "children": [],
+            "order": 98,
+            "details": "{\"alternative_labels\": \"Pennisetum americanum\", \"scientific_name\": \"Pennisetum americanum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01182|http://stats-class.fao.uniroma2.it/CPC/v2.1/01181|https://stats.fao.org/classifications/ICC/v1.0/18|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "188",
+            "name": {
+                "en": "Millet, finger"
+            },
+            "children": [],
+            "order": 99,
+            "details": "{\"alternative_labels\": \"Eleusine coracana\", \"scientific_name\": \"Eleusine coracana\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01182|http://stats-class.fao.uniroma2.it/CPC/v2.1/01181|https://stats.fao.org/classifications/ICC/v1.0/18|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "189",
+            "name": {
+                "en": "Millet, foxtail"
+            },
+            "children": [],
+            "order": 100,
+            "details": "{\"alternative_labels\": \"Setaria italica\", \"scientific_name\": \"Setaria italica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01182|http://stats-class.fao.uniroma2.it/CPC/v2.1/01181|https://stats.fao.org/classifications/ICC/v1.0/18|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "19",
+            "name": {
+                "en": "Bay leaves"
+            },
+            "children": [],
+            "order": 101,
+            "details": "{\"alternative_labels\": \"Laurus nobilis,\", \"scientific_name\": \"Laurus nobilis,\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/6229|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-90\"}"
+        },
+        {
+            "code": "190",
+            "name": {
+                "en": "Millet, Japanese"
+            },
+            "children": [],
+            "order": 102,
+            "details": "{\"alternative_labels\": \"Echinochloa esculenta\", \"scientific_name\": \"Echinochloa esculenta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01182|http://stats-class.fao.uniroma2.it/CPC/v2.1/01181|https://stats.fao.org/classifications/ICC/v1.0/18|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "191",
+            "name": {
+                "en": "Millet, pearl (bajra, bulrush)"
+            },
+            "children": [],
+            "order": 103,
+            "details": "{\"alternative_labels\": \"Pennisetum americanum\", \"scientific_name\": \"Pennisetum americanum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01182|http://stats-class.fao.uniroma2.it/CPC/v2.1/01181|https://stats.fao.org/classifications/ICC/v1.0/18|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "192",
+            "name": {
+                "en": "Millet, proso"
+            },
+            "children": [],
+            "order": 104,
+            "details": "{\"alternative_labels\": \"Panicum miliaceum\", \"scientific_name\": \"Panicum miliaceum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01182|http://stats-class.fao.uniroma2.it/CPC/v2.1/01181|https://stats.fao.org/classifications/ICC/v1.0/18|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "193",
+            "name": {
+                "en": "Mint (all varieties)"
+            },
+            "children": [],
+            "order": 105,
+            "details": "{\"alternative_labels\": \"Mentha spp.\", \"scientific_name\": \"Mentha spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/6219|https://stats.fao.org/classifications/ICC/v1.1/9-03-01-01\"}"
+        },
+        {
+            "code": "194",
+            "name": {
+                "en": "Mulberry for fruit (all varieties)"
+            },
+            "children": [],
+            "order": 106,
+            "details": "{\"alternative_labels\": \"Morus spp.\", \"scientific_name\": \"Morus spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/39|https://stats.fao.org/classifications/ICC/v1.1/3-9|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01353-02\"}"
+        },
+        {
+            "code": "195",
+            "name": {
+                "en": "Mulberry for silkworms"
+            },
+            "children": [],
+            "order": 107,
+            "details": "{\"alternative_labels\": \"Morus alba\", \"scientific_name\": \"Morus alba\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/39|https://stats.fao.org/classifications/ICC/v1.1/3-9|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01353-02\"}"
+        },
+        {
+            "code": "196",
+            "name": {
+                "en": "Mushrooms"
+            },
+            "children": [],
+            "order": 108,
+            "details": "{\"alternative_labels\": \"Agaricus spp.\\u00a0; Pleurotus spp\\u00a0; Volvariella\", \"scientific_name\": \"Agaricus spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01270\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/24|https://stats.fao.org/classifications/ICC/v1.1/2-04\"}"
+        },
+        {
+            "code": "197",
+            "name": {
+                "en": "Mustard"
+            },
+            "children": [],
+            "order": 109,
+            "details": "{\"alternative_labels\": \"Brassica nigra; Sinapis alba\", \"scientific_name\": \"Brassica nigra\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01442\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/433|https://stats.fao.org/classifications/ICC/v1.1/4-03-03\"}"
+        },
+        {
+            "code": "198",
+            "name": {
+                "en": "Nectarine"
+            },
+            "children": [],
+            "order": 110,
+            "details": "{\"alternative_labels\": \"Prunus persica var. nectarina\", \"scientific_name\": \"Prunus persica var. nectarina\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01442\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01345|https://stats.fao.org/classifications/ICC/v1.0/354|https://stats.fao.org/classifications/ICC/v1.1/3-05-04\"}"
+        },
+        {
+            "code": "199",
+            "name": {
+                "en": "New Zealand flax (formio)"
+            },
+            "children": [],
+            "order": 111,
+            "details": "{\"alternative_labels\": \"Phormium tenax\", \"scientific_name\": \"Phormium tenax\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01442\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/922|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-90|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-03\"}"
+        },
+        {
+            "code": "2",
+            "name": {
+                "en": "Alfalfa for fodder"
+            },
+            "children": [],
+            "order": 112,
+            "details": "{\"alternative_labels\": \"Medicago sativa\", \"scientific_name\": \"Medicago sativa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01442\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01912|https://stats.fao.org/classifications/ICC/v1.0/911|https://stats.fao.org/classifications/ICC/v1.1/9-01-01\"}"
+        },
+        {
+            "code": "20",
+            "name": {
+                "en": "Basil"
+            },
+            "children": [],
+            "order": 113,
+            "details": "{\"alternative_labels\": \"Ocimum basilicum\", \"scientific_name\": \"Ocimum basilicum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01442\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/931|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-03-01-02\"}"
+        },
+        {
+            "code": "200",
+            "name": {
+                "en": "Niger seed"
+            },
+            "children": [],
+            "order": 114,
+            "details": "{\"alternative_labels\": \"Guizotia abyssinica\", \"scientific_name\": \"Guizotia abyssinica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01442\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/434|https://stats.fao.org/classifications/ICC/v1.1/4-03-04|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01449-90\"}"
+        },
+        {
+            "code": "201",
+            "name": {
+                "en": "Nutmeg"
+            },
+            "children": [],
+            "order": 115,
+            "details": "{\"alternative_labels\": \"Myristica fragrans\", \"scientific_name\": \"Myristica fragrans\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01442\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01653|https://stats.fao.org/classifications/ICC/v1.0/6222|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-02\"}"
+        },
+        {
+            "code": "202",
+            "name": {
+                "en": "Oats, for fodder"
+            },
+            "children": [],
+            "order": 116,
+            "details": "{\"alternative_labels\": \"Avena spp. (about 30 sp.)\", \"scientific_name\": \"Avena spp. (about 30 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01442\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/17|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/1-07\"}"
+        },
+        {
+            "code": "203",
+            "name": {
+                "en": "Oats, for grain"
+            },
+            "children": [],
+            "order": 117,
+            "details": "{\"alternative_labels\": \"Avena spp. (about 30 sp.)\", \"scientific_name\": \"Avena spp. (about 30 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01172|http://stats-class.fao.uniroma2.it/CPC/v2.1/01171\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/17|https://stats.fao.org/classifications/ICC/v1.1/1-07\"}"
+        },
+        {
+            "code": "204",
+            "name": {
+                "en": "Oil palm"
+            },
+            "children": [],
+            "order": 118,
+            "details": "{\"alternative_labels\": \"Elaeis guineensis\", \"scientific_name\": \"Elaeis guineensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01491-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01491-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/443|https://stats.fao.org/classifications/ICC/v1.1/4-04-03\"}"
+        },
+        {
+            "code": "205",
+            "name": {
+                "en": "Okra"
+            },
+            "children": [],
+            "order": 119,
+            "details": "{\"alternative_labels\": \"Abelmoschus esculentus; Hibiscus esculentus\", \"scientific_name\": \"Abelmoschus esculentus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01239-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/229|https://stats.fao.org/classifications/ICC/v1.1/2-02-05\"}"
+        },
+        {
+            "code": "206",
+            "name": {
+                "en": "Olive"
+            },
+            "children": [],
+            "order": 120,
+            "details": "{\"alternative_labels\": \"Olea europaea\", \"scientific_name\": \"Olea europaea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01450\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/442|https://stats.fao.org/classifications/ICC/v1.1/4-04-02\"}"
+        },
+        {
+            "code": "207",
+            "name": {
+                "en": "Onion seed"
+            },
+            "children": [],
+            "order": 121,
+            "details": "{\"alternative_labels\": \"Allium cepa\", \"scientific_name\": \"Allium cepa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01253-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/234|https://stats.fao.org/classifications/ICC/v1.1/2-03-04\"}"
+        },
+        {
+            "code": "208",
+            "name": {
+                "en": "Onion, dry"
+            },
+            "children": [],
+            "order": 122,
+            "details": "{\"alternative_labels\": \"Allium cepa\", \"scientific_name\": \"Allium cepa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01253-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/234|https://stats.fao.org/classifications/ICC/v1.1/2-03-04\"}"
+        },
+        {
+            "code": "209",
+            "name": {
+                "en": "Onion, green"
+            },
+            "children": [],
+            "order": 123,
+            "details": "{\"alternative_labels\": \"Allium cepa\", \"scientific_name\": \"Allium cepa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01253-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/234|https://stats.fao.org/classifications/ICC/v1.1/2-03-04\"}"
+        },
+        {
+            "code": "21",
+            "name": {
+                "en": "Beans, dry, edible, for grains"
+            },
+            "children": [],
+            "order": 124,
+            "details": "{\"alternative_labels\": \"Phaseolus vulgaris\", \"scientific_name\": \"Phaseolus vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01253-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01701|https://stats.fao.org/classifications/ICC/v1.0/71|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01241-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01241-90|https://stats.fao.org/classifications/ICC/v1.1/7-01\"}"
+        },
+        {
+            "code": "210",
+            "name": {
+                "en": "Opium"
+            },
+            "children": [],
+            "order": 125,
+            "details": "{\"alternative_labels\": \"Papaver somniferum\", \"scientific_name\": \"Papaver somniferum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01448\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/931|https://stats.fao.org/classifications/ICC/v1.1/9-03-01\"}"
+        },
+        {
+            "code": "211",
+            "name": {
+                "en": "Orange"
+            },
+            "children": [],
+            "order": 126,
+            "details": "{\"alternative_labels\": \"Citrus sinensis\", \"scientific_name\": \"Citrus sinensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01448\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01323|https://stats.fao.org/classifications/ICC/v1.0/323|https://stats.fao.org/classifications/ICC/v1.1/3-02-03\"}"
+        },
+        {
+            "code": "212",
+            "name": {
+                "en": "Orange, bitter"
+            },
+            "children": [],
+            "order": 127,
+            "details": "{\"alternative_labels\": \"Citrus aurantium\", \"scientific_name\": \"Citrus aurantium\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01448\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01323|https://stats.fao.org/classifications/ICC/v1.0/323|https://stats.fao.org/classifications/ICC/v1.1/3-02-03\"}"
+        },
+        {
+            "code": "213",
+            "name": {
+                "en": "Ornamental plants"
+            },
+            "children": [],
+            "order": 128,
+            "details": "{\"alternative_labels\": \"Various\", \"scientific_name\": \"Various\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01448\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01961|http://stats-class.fao.uniroma2.it/CPC/v2.1/01962|https://stats.fao.org/classifications/ICC/v1.0/951|https://stats.fao.org/classifications/ICC/v1.1/9-05-01\"}"
+        },
+        {
+            "code": "214",
+            "name": {
+                "en": "Palm palmyra"
+            },
+            "children": [],
+            "order": 129,
+            "details": "{\"alternative_labels\": \"Borassus flabellifer\", \"scientific_name\": \"Borassus flabellifer\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01448\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01809|https://stats.fao.org/classifications/ICC/v1.0/992|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-90|https://stats.fao.org/classifications/ICC/v1.1/9-09-02\"}"
+        },
+        {
+            "code": "215",
+            "name": {
+                "en": "Palm, kernel oil"
+            },
+            "children": [],
+            "order": 130,
+            "details": "{\"alternative_labels\": \"Elaeis guineensis\", \"scientific_name\": \"Elaeis guineensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01491-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/443|https://stats.fao.org/classifications/ICC/v1.1/4-04-03\"}"
+        },
+        {
+            "code": "216",
+            "name": {
+                "en": "Palm, oil"
+            },
+            "children": [],
+            "order": 131,
+            "details": "{\"alternative_labels\": \"Elaeis guineensis\", \"scientific_name\": \"Elaeis guineensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01491-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/443|https://stats.fao.org/classifications/ICC/v1.1/4-04-03\"}"
+        },
+        {
+            "code": "217",
+            "name": {
+                "en": "Palm, sago"
+            },
+            "children": [],
+            "order": 132,
+            "details": "{\"alternative_labels\": \"Metroxylon sagu\", \"scientific_name\": \"Metroxylon sagu\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01491-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01599|https://stats.fao.org/classifications/ICC/v1.0/992|https://stats.fao.org/classifications/ICC/v1.1/9-09-02\"}"
+        },
+        {
+            "code": "218",
+            "name": {
+                "en": "Papaya (pawpaw)"
+            },
+            "children": [],
+            "order": 133,
+            "details": "{\"alternative_labels\": \"Carica papaya\", \"scientific_name\": \"Carica papaya\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01317\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/316|https://stats.fao.org/classifications/ICC/v1.1/3-01-07\"}"
+        },
+        {
+            "code": "219",
+            "name": {
+                "en": "Parsnip"
+            },
+            "children": [],
+            "order": 134,
+            "details": "{\"alternative_labels\": \"Pastinaca sativa\", \"scientific_name\": \"Pastinaca sativa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01317\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/239|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "22",
+            "name": {
+                "en": "Beans, harvested green"
+            },
+            "children": [],
+            "order": 135,
+            "details": "{\"alternative_labels\": \"Phaseolus and Vigna spp.\", \"scientific_name\": \"Phaseolus and Vigna spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01317\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01701|https://stats.fao.org/classifications/ICC/v1.0/71|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01241-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01241-90|https://stats.fao.org/classifications/ICC/v1.1/7-01\"}"
+        },
+        {
+            "code": "220",
+            "name": {
+                "en": "Pea, edible dry, for grain"
+            },
+            "children": [],
+            "order": 136,
+            "details": "{\"alternative_labels\": \"Pisum sativum\", \"scientific_name\": \"Pisum sativum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01705\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/77|https://stats.fao.org/classifications/ICC/v1.1/7-07\"}"
+        },
+        {
+            "code": "221",
+            "name": {
+                "en": "Pea, harvested green"
+            },
+            "children": [],
+            "order": 137,
+            "details": "{\"alternative_labels\": \"Pisum sativum\", \"scientific_name\": \"Pisum sativum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01242\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/77|https://stats.fao.org/classifications/ICC/v1.1/7-07\"}"
+        },
+        {
+            "code": "222",
+            "name": {
+                "en": "Peach"
+            },
+            "children": [],
+            "order": 138,
+            "details": "{\"alternative_labels\": \"Prunus persica\", \"scientific_name\": \"Prunus persica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01242\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01345|https://stats.fao.org/classifications/ICC/v1.0/354|https://stats.fao.org/classifications/ICC/v1.1/3-05-04\"}"
+        },
+        {
+            "code": "223",
+            "name": {
+                "en": "Peanut (groundnut)"
+            },
+            "children": [],
+            "order": 139,
+            "details": "{\"alternative_labels\": \"Arachis hypogaea\", \"scientific_name\": \"Arachis hypogaea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01242\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01421|http://stats-class.fao.uniroma2.it/CPC/v2.1/01422|https://stats.fao.org/classifications/ICC/v1.0/42|https://stats.fao.org/classifications/ICC/v1.1/4-02\"}"
+        },
+        {
+            "code": "224",
+            "name": {
+                "en": "Pear"
+            },
+            "children": [],
+            "order": 140,
+            "details": "{\"alternative_labels\": \"Pyrus communis\", \"scientific_name\": \"Pyrus communis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01342-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/355|https://stats.fao.org/classifications/ICC/v1.1/3-05-05\"}"
+        },
+        {
+            "code": "225",
+            "name": {
+                "en": "Pecan nut"
+            },
+            "children": [],
+            "order": 141,
+            "details": "{\"alternative_labels\": \"Carya illinoensis\", \"scientific_name\": \"Carya illinoensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01342-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/369|https://stats.fao.org/classifications/ICC/v1.1/3-06-90|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-90\"}"
+        },
+        {
+            "code": "226",
+            "name": {
+                "en": "Pepper, black"
+            },
+            "children": [],
+            "order": 142,
+            "details": "{\"alternative_labels\": \"Piper nigrum\", \"scientific_name\": \"Piper nigrum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01651\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/6221|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-01\"}"
+        },
+        {
+            "code": "227",
+            "name": {
+                "en": "Pepper, dry"
+            },
+            "children": [],
+            "order": 143,
+            "details": "{\"alternative_labels\": \"Capsicum spp. (over 30 sp.)\", \"scientific_name\": \"Capsicum spp. (over 30 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01652\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/6211|https://stats.fao.org/classifications/ICC/v1.1/6-02-01-01\"}"
+        },
+        {
+            "code": "228",
+            "name": {
+                "en": "Persimmon"
+            },
+            "children": [],
+            "order": 144,
+            "details": "{\"alternative_labels\": \"Diospyros kaki; Diospyros virginiana\", \"scientific_name\": \"Diospyros kaki\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01359-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/319|https://stats.fao.org/classifications/ICC/v1.1/3-01-90\"}"
+        },
+        {
+            "code": "229",
+            "name": {
+                "en": "Pigeon pea"
+            },
+            "children": [],
+            "order": 145,
+            "details": "{\"alternative_labels\": \"Cajanus cajan\", \"scientific_name\": \"Cajanus cajan\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01707\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/78|https://stats.fao.org/classifications/ICC/v1.1/7-08\"}"
+        },
+        {
+            "code": "23",
+            "name": {
+                "en": "Beet, fodder (mangel)"
+            },
+            "children": [],
+            "order": 146,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01707\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/81|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "230",
+            "name": {
+                "en": "Pineapple"
+            },
+            "children": [],
+            "order": 147,
+            "details": "{\"alternative_labels\": \"Ananas comosus\", \"scientific_name\": \"Ananas comosus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01318\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/317|https://stats.fao.org/classifications/ICC/v1.1/3-01-08\"}"
+        },
+        {
+            "code": "231",
+            "name": {
+                "en": "Pistachio nut"
+            },
+            "children": [],
+            "order": 148,
+            "details": "{\"alternative_labels\": \"Pistacia vera\", \"scientific_name\": \"Pistacia vera\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01375\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/365|https://stats.fao.org/classifications/ICC/v1.1/3-06-05\"}"
+        },
+        {
+            "code": "232",
+            "name": {
+                "en": "Plantain"
+            },
+            "children": [],
+            "order": 149,
+            "details": "{\"alternative_labels\": \"Musa paradisiaca\", \"scientific_name\": \"Musa paradisiaca\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01313-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01313-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/312|https://stats.fao.org/classifications/ICC/v1.1/3-01-03\"}"
+        },
+        {
+            "code": "233",
+            "name": {
+                "en": "Plum"
+            },
+            "children": [],
+            "order": 150,
+            "details": "{\"alternative_labels\": \"Prunus domestica\", \"scientific_name\": \"Prunus domestica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01346\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/356|https://stats.fao.org/classifications/ICC/v1.1/3-05-06\"}"
+        },
+        {
+            "code": "234",
+            "name": {
+                "en": "Pomegranate"
+            },
+            "children": [],
+            "order": 151,
+            "details": "{\"alternative_labels\": \"Punica granatum\", \"scientific_name\": \"Punica granatum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01346\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/39|https://stats.fao.org/classifications/ICC/v1.1/3-9|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01359-90\"}"
+        },
+        {
+            "code": "235",
+            "name": {
+                "en": "Pomelo"
+            },
+            "children": [],
+            "order": 152,
+            "details": "{\"alternative_labels\": \"Citrus grandis\", \"scientific_name\": \"Citrus grandis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01321\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/321|https://stats.fao.org/classifications/ICC/v1.1/3-02-01\"}"
+        },
+        {
+            "code": "236",
+            "name": {
+                "en": "Poppy seed"
+            },
+            "children": [],
+            "order": 153,
+            "details": "{\"alternative_labels\": \"Papaver somniferum\", \"scientific_name\": \"Papaver somniferum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01448\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/439|https://stats.fao.org/classifications/ICC/v1.1/4-03-12\"}"
+        },
+        {
+            "code": "237",
+            "name": {
+                "en": "Poppy straw"
+            },
+            "children": [],
+            "order": 154,
+            "details": "{\"alternative_labels\": \"Papaver somniferum\", \"scientific_name\": \"Papaver somniferum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/03249\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/931|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-03-01-90\"}"
+        },
+        {
+            "code": "238",
+            "name": {
+                "en": "Potato"
+            },
+            "children": [],
+            "order": 155,
+            "details": "{\"alternative_labels\": \"Solamum tuberosum\", \"scientific_name\": \"Solamum tuberosum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01510\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/51|https://stats.fao.org/classifications/ICC/v1.1/5-01\"}"
+        },
+        {
+            "code": "239",
+            "name": {
+                "en": "Potato, sweet"
+            },
+            "children": [],
+            "order": 156,
+            "details": "{\"alternative_labels\": \"Ipomoea batatas\", \"scientific_name\": \"Ipomoea batatas\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01510\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01530|https://stats.fao.org/classifications/ICC/v1.0/52|https://stats.fao.org/classifications/ICC/v1.1/5-02\"}"
+        },
+        {
+            "code": "24",
+            "name": {
+                "en": "Beet, red"
+            },
+            "children": [],
+            "order": 157,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01510\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/81|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "240",
+            "name": {
+                "en": "Prune"
+            },
+            "children": [],
+            "order": 158,
+            "details": "{\"alternative_labels\": \"Prunus domestica\", \"scientific_name\": \"Prunus domestica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01346\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/356|https://stats.fao.org/classifications/ICC/v1.1/3-05-06\"}"
+        },
+        {
+            "code": "241",
+            "name": {
+                "en": "Pumpkin, edible"
+            },
+            "children": [],
+            "order": 159,
+            "details": "{\"alternative_labels\": \"Cucurbita spp. (over 25 sp.)\", \"scientific_name\": \"Cucurbita spp. (over 25 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01235\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/226|https://stats.fao.org/classifications/ICC/v1.1/2-02-04\"}"
+        },
+        {
+            "code": "242",
+            "name": {
+                "en": "Pumpkin, for fodder"
+            },
+            "children": [],
+            "order": 160,
+            "details": "{\"alternative_labels\": \"Cucurbita spp. (over 25 sp.)\", \"scientific_name\": \"Cucurbita spp. (over 25 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01235\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/226|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/2-02-04\"}"
+        },
+        {
+            "code": "243",
+            "name": {
+                "en": "Pyrethrum"
+            },
+            "children": [],
+            "order": 161,
+            "details": "{\"alternative_labels\": \"Chrysanthemum cinerariaefolium\", \"scientific_name\": \"Chrysanthemum cinerariaefolium\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/991|https://stats.fao.org/classifications/ICC/v1.1/9-90-01\"}"
+        },
+        {
+            "code": "244",
+            "name": {
+                "en": "Queensland nut"
+            },
+            "children": [],
+            "order": 162,
+            "details": "{\"alternative_labels\": \"See Macadamia\", \"scientific_name\": \"See Macadamia\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/369|https://stats.fao.org/classifications/ICC/v1.1/3-06-90|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-90\"}"
+        },
+        {
+            "code": "245",
+            "name": {
+                "en": "Quince"
+            },
+            "children": [],
+            "order": 163,
+            "details": "{\"alternative_labels\": \"Cydonia oblonga\", \"scientific_name\": \"Cydonia oblonga\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01342-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/355|https://stats.fao.org/classifications/ICC/v1.1/3-05-05\"}"
+        },
+        {
+            "code": "246",
+            "name": {
+                "en": "Quinine"
+            },
+            "children": [],
+            "order": 164,
+            "details": "{\"alternative_labels\": \"Cinchona spp. (more than 6 sp.)\", \"scientific_name\": \"Cinchona spp. (more than 6 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01342-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/932|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-03-02\"}"
+        },
+        {
+            "code": "247",
+            "name": {
+                "en": "Quinoa"
+            },
+            "children": [],
+            "order": 165,
+            "details": "{\"alternative_labels\": \"Chenopodium quinoa\", \"scientific_name\": \"Chenopodium quinoa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01194\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/192|https://stats.fao.org/classifications/ICC/v1.1/1-12\"}"
+        },
+        {
+            "code": "248",
+            "name": {
+                "en": "Radish"
+            },
+            "children": [],
+            "order": 166,
+            "details": "{\"alternative_labels\": \"Raphanus sativus (inc. Cochlearia armoracia)\", \"scientific_name\": \"Raphanus sativus (inc. Cochlearia armoracia)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01194\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/239|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "249",
+            "name": {
+                "en": "Ramie"
+            },
+            "children": [],
+            "order": 167,
+            "details": "{\"alternative_labels\": \"Boehmeria nivea\", \"scientific_name\": \"Boehmeria nivea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01194\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/922|https://stats.fao.org/classifications/ICC/v1.1/9-02-02-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-04\"}"
+        },
+        {
+            "code": "25",
+            "name": {
+                "en": "Beet, sugar"
+            },
+            "children": [],
+            "order": 168,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01801\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/81|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "250",
+            "name": {
+                "en": "Rapeseed (colza)"
+            },
+            "children": [],
+            "order": 169,
+            "details": "{\"alternative_labels\": \"Brassica napus\", \"scientific_name\": \"Brassica napus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01443\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/435|https://stats.fao.org/classifications/ICC/v1.1/4-03-05\"}"
+        },
+        {
+            "code": "251",
+            "name": {
+                "en": "Raspberry (all varieties)"
+            },
+            "children": [],
+            "order": 170,
+            "details": "{\"alternative_labels\": \"Rubus spp. (over 360 sp.)\", \"scientific_name\": \"Rubus spp. (over 360 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01353-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/344|https://stats.fao.org/classifications/ICC/v1.1/3-04-04\"}"
+        },
+        {
+            "code": "252",
+            "name": {
+                "en": "Red beet"
+            },
+            "children": [],
+            "order": 171,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01353-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/81|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "253",
+            "name": {
+                "en": "Redtop"
+            },
+            "children": [],
+            "order": 172,
+            "details": "{\"alternative_labels\": \"Agrostis spp.\", \"scientific_name\": \"Agrostis spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01353-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/911|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/9-01-01\"}"
+        },
+        {
+            "code": "254",
+            "name": {
+                "en": "Rhea"
+            },
+            "children": [],
+            "order": 173,
+            "details": "{\"alternative_labels\": \"Boehmeria nivea\", \"scientific_name\": \"Boehmeria nivea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01353-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/922|https://stats.fao.org/classifications/ICC/v1.1/9-02-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-04\"}"
+        },
+        {
+            "code": "255",
+            "name": {
+                "en": "Rhubarb"
+            },
+            "children": [],
+            "order": 174,
+            "details": "{\"alternative_labels\": \"Rheum spp.\", \"scientific_name\": \"Rheum spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01353-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/219|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01219-90|https://stats.fao.org/classifications/ICC/v1.1/2-01-90\"}"
+        },
+        {
+            "code": "256",
+            "name": {
+                "en": "Rice"
+            },
+            "children": [],
+            "order": 175,
+            "details": "{\"alternative_labels\": \"Oryza sativa; Oryza glaberrima\", \"scientific_name\": \"Oryza glaberrima\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01132|http://stats-class.fao.uniroma2.it/CPC/v2.1/01131\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/13|https://stats.fao.org/classifications/ICC/v1.1/1-03\"}"
+        },
+        {
+            "code": "257",
+            "name": {
+                "en": "Rose"
+            },
+            "children": [],
+            "order": 176,
+            "details": "{\"alternative_labels\": \"Rose spp.\", \"scientific_name\": \"Rose spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01132|http://stats-class.fao.uniroma2.it/CPC/v2.1/01131\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01962|https://stats.fao.org/classifications/ICC/v1.0/952|https://stats.fao.org/classifications/ICC/v1.1/9-05-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90\"}"
+        },
+        {
+            "code": "258",
+            "name": {
+                "en": "Rubber"
+            },
+            "children": [],
+            "order": 177,
+            "details": "{\"alternative_labels\": \"Hevea brasiliensis\", \"scientific_name\": \"Hevea brasiliensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01950-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01950-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/94|https://stats.fao.org/classifications/ICC/v1.1/9-04\"}"
+        },
+        {
+            "code": "259",
+            "name": {
+                "en": "Rutabaga (swede)"
+            },
+            "children": [],
+            "order": 178,
+            "details": "{\"alternative_labels\": \"Brassica napus var. napobrassica\", \"scientific_name\": \"Brassica napus var. napobrassica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01950-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01950-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/239|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "26",
+            "name": {
+                "en": "Beet, sugar for fodder"
+            },
+            "children": [],
+            "order": 179,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01950-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01950-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/81|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "260",
+            "name": {
+                "en": "Rye"
+            },
+            "children": [],
+            "order": 180,
+            "details": "{\"alternative_labels\": \"Secale cereale\", \"scientific_name\": \"Secale cereale\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01161|http://stats-class.fao.uniroma2.it/CPC/v2.1/01162\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/16|https://stats.fao.org/classifications/ICC/v1.1/1-06\"}"
+        },
+        {
+            "code": "261",
+            "name": {
+                "en": "Ryegrass seed"
+            },
+            "children": [],
+            "order": 181,
+            "details": "{\"alternative_labels\": \"Lolium spp. (about 20 sp.)\", \"scientific_name\": \"Lolium spp. (about 20 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/991|https://stats.fao.org/classifications/ICC/v1.1/9-90-01\"}"
+        },
+        {
+            "code": "262",
+            "name": {
+                "en": "Safflower"
+            },
+            "children": [],
+            "order": 182,
+            "details": "{\"alternative_labels\": \"Carthamus tinctorius\", \"scientific_name\": \"Carthamus tinctorius\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01446\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/436|https://stats.fao.org/classifications/ICC/v1.1/4-03-06\"}"
+        },
+        {
+            "code": "263",
+            "name": {
+                "en": "Saffron"
+            },
+            "children": [],
+            "order": 183,
+            "details": "{\"alternative_labels\": \"Crocus savitus\", \"scientific_name\": \"Crocus savitus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01446\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/6229|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-90\"}"
+        },
+        {
+            "code": "264",
+            "name": {
+                "en": "Sainfoin"
+            },
+            "children": [],
+            "order": 184,
+            "details": "{\"alternative_labels\": \"Onobrychis viciifolia\", \"scientific_name\": \"Onobrychis viciifolia\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01446\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/911|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/9-01-01\"}"
+        },
+        {
+            "code": "265",
+            "name": {
+                "en": "Salsify"
+            },
+            "children": [],
+            "order": 185,
+            "details": "{\"alternative_labels\": \"Tragopogon porrifolius\", \"scientific_name\": \"Tragopogon porrifolius\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01446\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/239|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "266",
+            "name": {
+                "en": "Sapodilla"
+            },
+            "children": [],
+            "order": 186,
+            "details": "{\"alternative_labels\": \"Achras sapota\", \"scientific_name\": \"Achras sapota\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01319\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/39|https://stats.fao.org/classifications/ICC/v1.1/3-9\"}"
+        },
+        {
+            "code": "267",
+            "name": {
+                "en": "Satsuma (mandarin/tangerine)"
+            },
+            "children": [],
+            "order": 187,
+            "details": "{\"alternative_labels\": \"Citrus reticulata\", \"scientific_name\": \"Citrus reticulata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01319\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/324|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01324-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01324-01|https://stats.fao.org/classifications/ICC/v1.1/3-02-04\"}"
+        },
+        {
+            "code": "268",
+            "name": {
+                "en": "Scorzonera (black salsify)"
+            },
+            "children": [],
+            "order": 188,
+            "details": "{\"alternative_labels\": \"Scorzonera hispanica\", \"scientific_name\": \"Scorzonera hispanica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01319\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/239|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "269",
+            "name": {
+                "en": "Sesame"
+            },
+            "children": [],
+            "order": 189,
+            "details": "{\"alternative_labels\": \"Sesamum indicum\", \"scientific_name\": \"Sesamum indicum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01444\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/437|https://stats.fao.org/classifications/ICC/v1.1/4-03-07\"}"
+        },
+        {
+            "code": "27",
+            "name": {
+                "en": "Beet, sugar for seeds"
+            },
+            "children": [],
+            "order": 190,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01803\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/81|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "270",
+            "name": {
+                "en": "Shea tree (shea butter or karite nut)"
+            },
+            "children": [],
+            "order": 191,
+            "details": "{\"alternative_labels\": \"Vitellaria paradoxa or Butyrospermum parkii\", \"scientific_name\": \"Vitellaria paradoxa or Butyrospermum parkii\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/449|https://stats.fao.org/classifications/ICC/v1.1/4-03-09\"}"
+        },
+        {
+            "code": "271",
+            "name": {
+                "en": "Sisal"
+            },
+            "children": [],
+            "order": 192,
+            "details": "{\"alternative_labels\": \"Agave sisalana\", \"scientific_name\": \"Agave sisalana\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-05\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/922|https://stats.fao.org/classifications/ICC/v1.1/9-02-02-02\"}"
+        },
+        {
+            "code": "272",
+            "name": {
+                "en": "Sorghum"
+            },
+            "children": [],
+            "order": 193,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-05\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/14|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-04\"}"
+        },
+        {
+            "code": "273",
+            "name": {
+                "en": "Sorghum, broom"
+            },
+            "children": [],
+            "order": 194,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-05\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/14|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-04\"}"
+        },
+        {
+            "code": "274",
+            "name": {
+                "en": "Sorghum, durra"
+            },
+            "children": [],
+            "order": 195,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-05\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/14|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-04\"}"
+        },
+        {
+            "code": "275",
+            "name": {
+                "en": "Sorghum, Guinea corn"
+            },
+            "children": [],
+            "order": 196,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-05\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/14|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-04\"}"
+        },
+        {
+            "code": "276",
+            "name": {
+                "en": "Sorghum, jowar"
+            },
+            "children": [],
+            "order": 197,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-05\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/14|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-04\"}"
+        },
+        {
+            "code": "277",
+            "name": {
+                "en": "Sorghum, sweet"
+            },
+            "children": [],
+            "order": 198,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01929-05\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.0/183|https://stats.fao.org/classifications/ICC/v1.1/8-03\"}"
+        },
+        {
+            "code": "278",
+            "name": {
+                "en": "Sour cherry"
+            },
+            "children": [],
+            "order": 199,
+            "details": "{\"alternative_labels\": \"Prunus cerasus, cerasus acida\", \"scientific_name\": \"Prunus cerasus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01344-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/353|https://stats.fao.org/classifications/ICC/v1.1/3-05-03\"}"
+        },
+        {
+            "code": "279",
+            "name": {
+                "en": "Soybean"
+            },
+            "children": [],
+            "order": 200,
+            "details": "{\"alternative_labels\": \"Glycine max\", \"scientific_name\": \"Glycine max\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01344-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01411|http://stats-class.fao.uniroma2.it/CPC/v2.1/01412|https://stats.fao.org/classifications/ICC/v1.0/41|https://stats.fao.org/classifications/ICC/v1.1/4-01\"}"
+        },
+        {
+            "code": "28",
+            "name": {
+                "en": "Bergamot"
+            },
+            "children": [],
+            "order": 201,
+            "details": "{\"alternative_labels\": \"Citrus bergamia\", \"scientific_name\": \"Citrus bergamia\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01329\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/329|https://stats.fao.org/classifications/ICC/v1.1/3-02-90\"}"
+        },
+        {
+            "code": "280",
+            "name": {
+                "en": "Soybean hay"
+            },
+            "children": [],
+            "order": 202,
+            "details": "{\"alternative_labels\": \"Glycine max\", \"scientific_name\": \"Glycine max\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01329\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01411|http://stats-class.fao.uniroma2.it/CPC/v2.1/01412|https://stats.fao.org/classifications/ICC/v1.0/41|https://stats.fao.org/classifications/ICC/v1.1/4-01\"}"
+        },
+        {
+            "code": "281",
+            "name": {
+                "en": "Spelt wheat"
+            },
+            "children": [],
+            "order": 203,
+            "details": "{\"alternative_labels\": \"Triticum spelta\", \"scientific_name\": \"Triticum spelta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01329\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01111|http://stats-class.fao.uniroma2.it/CPC/v2.1/01112|https://stats.fao.org/classifications/ICC/v1.0/192|https://stats.fao.org/classifications/ICC/v1.1/1-01\"}"
+        },
+        {
+            "code": "282",
+            "name": {
+                "en": "Spinach"
+            },
+            "children": [],
+            "order": 204,
+            "details": "{\"alternative_labels\": \"Spinacia oleracea\", \"scientific_name\": \"Spinacia oleracea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01215\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/216|https://stats.fao.org/classifications/ICC/v1.1/2-01-06\"}"
+        },
+        {
+            "code": "283",
+            "name": {
+                "en": "Squash"
+            },
+            "children": [],
+            "order": 205,
+            "details": "{\"alternative_labels\": \"Cucurbita spp. (over 25 sp.)\", \"scientific_name\": \"Cucurbita spp. (over 25 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01235\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/226|https://stats.fao.org/classifications/ICC/v1.1/2-02-04\"}"
+        },
+        {
+            "code": "284",
+            "name": {
+                "en": "Strawberry"
+            },
+            "children": [],
+            "order": 206,
+            "details": "{\"alternative_labels\": \"Fragaria spp. (over 30 sp.)\", \"scientific_name\": \"Fragaria spp. (over 30 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01354\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/345|https://stats.fao.org/classifications/ICC/v1.1/3-04-05\"}"
+        },
+        {
+            "code": "285",
+            "name": {
+                "en": "Sugar beet"
+            },
+            "children": [],
+            "order": 207,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01801\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/81|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "286",
+            "name": {
+                "en": "Sugar beet for fodder"
+            },
+            "children": [],
+            "order": 208,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01801\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/81|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "287",
+            "name": {
+                "en": "Sugar beet for seed"
+            },
+            "children": [],
+            "order": 209,
+            "details": "{\"alternative_labels\": \"Beta vulgaris\", \"scientific_name\": \"Beta vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01803\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/81|https://stats.fao.org/classifications/ICC/v1.1/8-01\"}"
+        },
+        {
+            "code": "288",
+            "name": {
+                "en": "Sugar cane for fodder"
+            },
+            "children": [],
+            "order": 210,
+            "details": "{\"alternative_labels\": \"Saccharum officinarum\", \"scientific_name\": \"Saccharum officinarum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01803\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/82|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/8-02\"}"
+        },
+        {
+            "code": "289",
+            "name": {
+                "en": "Sugar cane for sugar or alcohol"
+            },
+            "children": [],
+            "order": 211,
+            "details": "{\"alternative_labels\": \"Saccharum officinarum\", \"scientific_name\": \"Saccharum officinarum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01803\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01802|https://stats.fao.org/classifications/ICC/v1.0/82|https://stats.fao.org/classifications/ICC/v1.1/8-02\"}"
+        },
+        {
+            "code": "29",
+            "name": {
+                "en": "Betel nut"
+            },
+            "children": [],
+            "order": 212,
+            "details": "{\"alternative_labels\": \"Areca catechu\", \"scientific_name\": \"Areca catechu\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/369|https://stats.fao.org/classifications/ICC/v1.1/3-06-08\"}"
+        },
+        {
+            "code": "290",
+            "name": {
+                "en": "Sugar cane for thatching"
+            },
+            "children": [],
+            "order": 213,
+            "details": "{\"alternative_labels\": \"Saccharum officinarum\", \"scientific_name\": \"Saccharum officinarum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01802|https://stats.fao.org/classifications/ICC/v1.0/82|https://stats.fao.org/classifications/ICC/v1.1/8-02\"}"
+        },
+        {
+            "code": "291",
+            "name": {
+                "en": "Sunflower for fodder"
+            },
+            "children": [],
+            "order": 214,
+            "details": "{\"alternative_labels\": \"Helianthus annuus\", \"scientific_name\": \"Helianthus annuus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/438|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/4-03-08\"}"
+        },
+        {
+            "code": "292",
+            "name": {
+                "en": "Sunflower for oil seed"
+            },
+            "children": [],
+            "order": 215,
+            "details": "{\"alternative_labels\": \"Helianthus annuus\", \"scientific_name\": \"Helianthus annuus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01445\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/438|https://stats.fao.org/classifications/ICC/v1.1/4-03-08\"}"
+        },
+        {
+            "code": "293",
+            "name": {
+                "en": "Sunhemp"
+            },
+            "children": [],
+            "order": 216,
+            "details": "{\"alternative_labels\": \"Crotalaria juncea\", \"scientific_name\": \"Crotalaria juncea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01445\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9213|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-04|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01922-02\"}"
+        },
+        {
+            "code": "294",
+            "name": {
+                "en": "Swede"
+            },
+            "children": [],
+            "order": 217,
+            "details": "{\"alternative_labels\": \"Brassica napus var. napobrassica\", \"scientific_name\": \"Brassica napus var. napobrassica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01445\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/239|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "295",
+            "name": {
+                "en": "Swede for fodder"
+            },
+            "children": [],
+            "order": 218,
+            "details": "{\"alternative_labels\": \"Brassica napus var. napobrassica\", \"scientific_name\": \"Brassica napus var. napobrassica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01445\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/239|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "296",
+            "name": {
+                "en": "Sweet corn"
+            },
+            "children": [],
+            "order": 219,
+            "details": "{\"alternative_labels\": \"Zea mays\", \"scientific_name\": \"Zea mays\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01445\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/12|https://stats.fao.org/classifications/ICC/v1.1/1-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01290-01\"}"
+        },
+        {
+            "code": "297",
+            "name": {
+                "en": "Sweet lime"
+            },
+            "children": [],
+            "order": 220,
+            "details": "{\"alternative_labels\": \"Citrus limetta\", \"scientific_name\": \"Citrus limetta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01445\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01322|https://stats.fao.org/classifications/ICC/v1.0/322|https://stats.fao.org/classifications/ICC/v1.1/3-02-02\"}"
+        },
+        {
+            "code": "298",
+            "name": {
+                "en": "Sweet pepper"
+            },
+            "children": [],
+            "order": 221,
+            "details": "{\"alternative_labels\": \"Capsicum annuum\", \"scientific_name\": \"Capsicum annuum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01445\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01231|http://stats-class.fao.uniroma2.it/CPC/v2.1/01652|https://stats.fao.org/classifications/ICC/v1.0/6211|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-01\"}"
+        },
+        {
+            "code": "299",
+            "name": {
+                "en": "Sweet potato"
+            },
+            "children": [],
+            "order": 222,
+            "details": "{\"alternative_labels\": \"Lopmoea batatas\", \"scientific_name\": \"Lopmoea batatas\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01530\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/52|https://stats.fao.org/classifications/ICC/v1.1/5-02\"}"
+        },
+        {
+            "code": "3",
+            "name": {
+                "en": "Alfalfa for seed"
+            },
+            "children": [],
+            "order": 223,
+            "details": "{\"alternative_labels\": \"Medicago sativa\", \"scientific_name\": \"Medicago sativa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01530\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01912|https://stats.fao.org/classifications/ICC/v1.0/911|https://stats.fao.org/classifications/ICC/v1.1/9-01-01\"}"
+        },
+        {
+            "code": "30",
+            "name": {
+                "en": "Black pepper"
+            },
+            "children": [],
+            "order": 224,
+            "details": "{\"alternative_labels\": \"Piper nigrum\", \"scientific_name\": \"Piper nigrum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01651\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/6221|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-01\"}"
+        },
+        {
+            "code": "300",
+            "name": {
+                "en": "Sweet sorghum"
+            },
+            "children": [],
+            "order": 225,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01651\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.0/183|https://stats.fao.org/classifications/ICC/v1.1/8-03\"}"
+        },
+        {
+            "code": "301",
+            "name": {
+                "en": "Tallow tree"
+            },
+            "children": [],
+            "order": 226,
+            "details": "{\"alternative_labels\": \"Shorea aptera; S. stenocarpa; Sapium sebiferum; Stillingia sebifera\", \"scientific_name\": \"S. stenocarpa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-04\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/449|https://stats.fao.org/classifications/ICC/v1.1/4-03-13\"}"
+        },
+        {
+            "code": "302",
+            "name": {
+                "en": "Tangerine"
+            },
+            "children": [],
+            "order": 227,
+            "details": "{\"alternative_labels\": \"Citrus reticulata\", \"scientific_name\": \"Citrus reticulata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-04\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/324|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01324-01|https://stats.fao.org/classifications/ICC/v1.1/3-02-04\"}"
+        },
+        {
+            "code": "303",
+            "name": {
+                "en": "Tannia"
+            },
+            "children": [],
+            "order": 228,
+            "details": "{\"alternative_labels\": \"Xanthosoma sagittifolium\", \"scientific_name\": \"Xanthosoma sagittifolium\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-04\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01591|https://stats.fao.org/classifications/ICC/v1.0/59|https://stats.fao.org/classifications/ICC/v1.1/5-9\"}"
+        },
+        {
+            "code": "304",
+            "name": {
+                "en": "Tapioca (cassava)"
+            },
+            "children": [],
+            "order": 229,
+            "details": "{\"alternative_labels\": \"Manihot esculenta\", \"scientific_name\": \"Manihot esculenta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-04\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/53|https://stats.fao.org/classifications/ICC/v1.1/5-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01219-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01520-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01520-02\"}"
+        },
+        {
+            "code": "305",
+            "name": {
+                "en": "Taro"
+            },
+            "children": [],
+            "order": 230,
+            "details": "{\"alternative_labels\": \"Colocasia esculenta\", \"scientific_name\": \"Colocasia esculenta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01550\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/59|https://stats.fao.org/classifications/ICC/v1.1/5-05\"}"
+        },
+        {
+            "code": "306",
+            "name": {
+                "en": "Tea"
+            },
+            "children": [],
+            "order": 231,
+            "details": "{\"alternative_labels\": \"Camellia sinensis\", \"scientific_name\": \"Camellia sinensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01620-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01620-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-04\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/612|https://stats.fao.org/classifications/ICC/v1.1/6-01-02\"}"
+        },
+        {
+            "code": "307",
+            "name": {
+                "en": "Teff"
+            },
+            "children": [],
+            "order": 232,
+            "details": "{\"alternative_labels\": \"Eragrostis abyssinica\", \"scientific_name\": \"Eragrostis abyssinica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01199-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/192|https://stats.fao.org/classifications/ICC/v1.1/1-9\"}"
+        },
+        {
+            "code": "308",
+            "name": {
+                "en": "Thymus"
+            },
+            "children": [],
+            "order": 233,
+            "details": "{\"alternative_labels\": \"Thymus vulgaris\", \"scientific_name\": \"Thymus vulgaris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01199-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/6229|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-90\"}"
+        },
+        {
+            "code": "309",
+            "name": {
+                "en": "Timothy"
+            },
+            "children": [],
+            "order": 234,
+            "details": "{\"alternative_labels\": \"Phleum pratense\", \"scientific_name\": \"Phleum pratense\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01199-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/911|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/9-01-01\"}"
+        },
+        {
+            "code": "31",
+            "name": {
+                "en": "Blackberries of various species"
+            },
+            "children": [],
+            "order": 235,
+            "details": "{\"alternative_labels\": \"Rubus spp.\", \"scientific_name\": \"Rubus spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01199-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/349|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01353-02|https://stats.fao.org/classifications/ICC/v1.1/3-04-90\"}"
+        },
+        {
+            "code": "310",
+            "name": {
+                "en": "Tobacco"
+            },
+            "children": [],
+            "order": 236,
+            "details": "{\"alternative_labels\": \"Nicotiana tabacum\", \"scientific_name\": \"Nicotiana tabacum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01970\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/96|https://stats.fao.org/classifications/ICC/v1.1/9-06\"}"
+        },
+        {
+            "code": "311",
+            "name": {
+                "en": "Tomato"
+            },
+            "children": [],
+            "order": 237,
+            "details": "{\"alternative_labels\": \"Lycopersicon esculentum\", \"scientific_name\": \"Lycopersicon esculentum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01234\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/223|https://stats.fao.org/classifications/ICC/v1.1/2-02-03\"}"
+        },
+        {
+            "code": "312",
+            "name": {
+                "en": "Trefoil"
+            },
+            "children": [],
+            "order": 238,
+            "details": "{\"alternative_labels\": \"Lotus spp. (about 100 sp.)\", \"scientific_name\": \"Lotus spp. (about 100 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01234\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/991|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/9-90-01\"}"
+        },
+        {
+            "code": "313",
+            "name": {
+                "en": "Triticale"
+            },
+            "children": [],
+            "order": 239,
+            "details": "{\"alternative_labels\": \"Hybrid of Triticum aestivum and Secale cereale\", \"scientific_name\": \"Hybrid of Triticum aestivum and Secale cereale\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01191\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/17|https://stats.fao.org/classifications/ICC/v1.1/1-09\"}"
+        },
+        {
+            "code": "314",
+            "name": {
+                "en": "Tung tree"
+            },
+            "children": [],
+            "order": 240,
+            "details": "{\"alternative_labels\": \"Aleurites spp.; Fordii\", \"scientific_name\": \"Aleurites spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/449|https://stats.fao.org/classifications/ICC/v1.1/4-03-10\"}"
+        },
+        {
+            "code": "315",
+            "name": {
+                "en": "Turmeric"
+            },
+            "children": [],
+            "order": 241,
+            "details": "{\"alternative_labels\": \"Curcuma longa\", \"scientific_name\": \"Curcuma longa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-02\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/6229|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-90\"}"
+        },
+        {
+            "code": "316",
+            "name": {
+                "en": "Turnip, edible"
+            },
+            "children": [],
+            "order": 242,
+            "details": "{\"alternative_labels\": \"Brassica rapa\", \"scientific_name\": \"Brassica rapa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-02\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01251|https://stats.fao.org/classifications/ICC/v1.0/232|https://stats.fao.org/classifications/ICC/v1.1/2-03-02\"}"
+        },
+        {
+            "code": "317",
+            "name": {
+                "en": "Turnip, for fodder"
+            },
+            "children": [],
+            "order": 243,
+            "details": "{\"alternative_labels\": \"Brassica rapa\", \"scientific_name\": \"Brassica rapa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/232|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/2-03-02\"}"
+        },
+        {
+            "code": "318",
+            "name": {
+                "en": "Urena (Congo jute)"
+            },
+            "children": [],
+            "order": 244,
+            "details": "{\"alternative_labels\": \"Urena lobata\", \"scientific_name\": \"Urena lobata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01499-02\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01922-02|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-02|https://stats.fao.org/classifications/ICC/v1.0/9214\"}"
+        },
+        {
+            "code": "319",
+            "name": {
+                "en": "Vanilla"
+            },
+            "children": [],
+            "order": 245,
+            "details": "{\"alternative_labels\": \"Vanilla planifolia\", \"scientific_name\": \"Vanilla planifolia\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01658\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/6226|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-06\"}"
+        },
+        {
+            "code": "32",
+            "name": {
+                "en": "Blueberry"
+            },
+            "children": [],
+            "order": 246,
+            "details": "{\"alternative_labels\": \"Vaccinium myrtillus; V. corymbosum\", \"scientific_name\": \"V. corymbosum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01355-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/346|https://stats.fao.org/classifications/ICC/v1.1/3-04-06\"}"
+        },
+        {
+            "code": "320",
+            "name": {
+                "en": "Vetches"
+            },
+            "children": [],
+            "order": 247,
+            "details": "{\"alternative_labels\": \"Vicia sativa\", \"scientific_name\": \"Vicia sativa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01709-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/79|https://stats.fao.org/classifications/ICC/v1.1/7-1\"}"
+        },
+        {
+            "code": "321",
+            "name": {
+                "en": "Walnut"
+            },
+            "children": [],
+            "order": 248,
+            "details": "{\"alternative_labels\": \"Juglans spp. (over 20 sp.), ep. regia\", \"scientific_name\": \"Juglans spp. (over 20 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01376\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/366|https://stats.fao.org/classifications/ICC/v1.1/3-06-06\"}"
+        },
+        {
+            "code": "322",
+            "name": {
+                "en": "Watermelon"
+            },
+            "children": [],
+            "order": 249,
+            "details": "{\"alternative_labels\": \"Citrullus lanatus\", \"scientific_name\": \"Citrullus lanatus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01221\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/224|https://stats.fao.org/classifications/ICC/v1.1/2-05-01\"}"
+        },
+        {
+            "code": "323",
+            "name": {
+                "en": "Wheat"
+            },
+            "children": [],
+            "order": 250,
+            "details": "{\"alternative_labels\": \"Triticum aestivum\", \"scientific_name\": \"Triticum aestivum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01221\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01111|http://stats-class.fao.uniroma2.it/CPC/v2.1/01112|https://stats.fao.org/classifications/ICC/v1.0/11|https://stats.fao.org/classifications/ICC/v1.1/1-01\"}"
+        },
+        {
+            "code": "324",
+            "name": {
+                "en": "Yam"
+            },
+            "children": [],
+            "order": 251,
+            "details": "{\"alternative_labels\": \"Dioscorea spp. (over 120 sp.)\", \"scientific_name\": \"Dioscorea spp. (over 120 sp.)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01540\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/54|https://stats.fao.org/classifications/ICC/v1.1/5-04\"}"
+        },
+        {
+            "code": "325",
+            "name": {
+                "en": "Yautia"
+            },
+            "children": [],
+            "order": 252,
+            "details": "{\"alternative_labels\": \"Xanthosoma sagittifolium\", \"scientific_name\": \"Xanthosoma sagittifolium\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01540\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01591|https://stats.fao.org/classifications/ICC/v1.0/59|https://stats.fao.org/classifications/ICC/v1.1/5-06\"}"
+        },
+        {
+            "code": "326",
+            "name": {
+                "en": "Yerba mate"
+            },
+            "children": [],
+            "order": 253,
+            "details": "{\"alternative_labels\": \"Ilex paraguariensis\", \"scientific_name\": \"Ilex paraguariensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01630\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/613|https://stats.fao.org/classifications/ICC/v1.1/6-01-03\"}"
+        },
+        {
+            "code": "33",
+            "name": {
+                "en": "Brazil nut"
+            },
+            "children": [],
+            "order": 254,
+            "details": "{\"alternative_labels\": \"Bertholletia excelsa\", \"scientific_name\": \"Bertholletia excelsa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01377\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/369|https://stats.fao.org/classifications/ICC/v1.1/3-06-07\"}"
+        },
+        {
+            "code": "34",
+            "name": {
+                "en": "Breadfruit"
+            },
+            "children": [],
+            "order": 255,
+            "details": "{\"alternative_labels\": \"Artocarpus altilis\", \"scientific_name\": \"Artocarpus altilis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01377\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01319|https://stats.fao.org/classifications/ICC/v1.0/319|https://stats.fao.org/classifications/ICC/v1.1/3-01-90\"}"
+        },
+        {
+            "code": "35",
+            "name": {
+                "en": "Broad bean, dry"
+            },
+            "children": [],
+            "order": 256,
+            "details": "{\"alternative_labels\": \"Vicia faba\", \"scientific_name\": \"Vicia faba\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01377\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01243|http://stats-class.fao.uniroma2.it/CPC/v2.1/01702|https://stats.fao.org/classifications/ICC/v1.0/72|https://stats.fao.org/classifications/ICC/v1.1/7-02\"}"
+        },
+        {
+            "code": "36",
+            "name": {
+                "en": "Broad bean, harvested green"
+            },
+            "children": [],
+            "order": 257,
+            "details": "{\"alternative_labels\": \"Vicia faba\", \"scientific_name\": \"Vicia faba\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01377\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01243|http://stats-class.fao.uniroma2.it/CPC/v2.1/01702|https://stats.fao.org/classifications/ICC/v1.0/72|https://stats.fao.org/classifications/ICC/v1.1/7-02\"}"
+        },
+        {
+            "code": "37",
+            "name": {
+                "en": "Broccoli"
+            },
+            "children": [],
+            "order": 258,
+            "details": "{\"alternative_labels\": \"Brassica oleracea var. botrytis\", \"scientific_name\": \"Brassica oleracea var. botrytis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01377\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01213|https://stats.fao.org/classifications/ICC/v1.0/214|https://stats.fao.org/classifications/ICC/v1.1/2-01-04\"}"
+        },
+        {
+            "code": "38",
+            "name": {
+                "en": "Broom millet"
+            },
+            "children": [],
+            "order": 259,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01377\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/18|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-08\"}"
+        },
+        {
+            "code": "39",
+            "name": {
+                "en": "Broom sorghum"
+            },
+            "children": [],
+            "order": 260,
+            "details": "{\"alternative_labels\": \"Sorghum bicolor\", \"scientific_name\": \"Sorghum bicolor\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01377\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/14|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-04\"}"
+        },
+        {
+            "code": "4",
+            "name": {
+                "en": "Almond"
+            },
+            "children": [],
+            "order": 261,
+            "details": "{\"alternative_labels\": \"Prunus dulcis\", \"scientific_name\": \"Prunus dulcis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01371\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/361|https://stats.fao.org/classifications/ICC/v1.1/3-06-01\"}"
+        },
+        {
+            "code": "40",
+            "name": {
+                "en": "Brussels sprouts"
+            },
+            "children": [],
+            "order": 262,
+            "details": "{\"alternative_labels\": \"Brassica oleracea var. gemmifera\", \"scientific_name\": \"Brassica oleracea var. gemmifera\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01371\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01212|https://stats.fao.org/classifications/ICC/v1.0/219|https://stats.fao.org/classifications/ICC/v1.1/2-01-90\"}"
+        },
+        {
+            "code": "41",
+            "name": {
+                "en": "Buckwheat"
+            },
+            "children": [],
+            "order": 263,
+            "details": "{\"alternative_labels\": \"Fagopyrum esculentum\", \"scientific_name\": \"Fagopyrum esculentum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01192\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/192|https://stats.fao.org/classifications/ICC/v1.1/1-1\"}"
+        },
+        {
+            "code": "42",
+            "name": {
+                "en": "Cabbage (red, white, Savoy)"
+            },
+            "children": [],
+            "order": 264,
+            "details": "{\"alternative_labels\": \"Brassica oleracea var. capitata\", \"scientific_name\": \"Brassica oleracea var. capitata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01192\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01212|https://stats.fao.org/classifications/ICC/v1.0/213|https://stats.fao.org/classifications/ICC/v1.1/2-01-03\"}"
+        },
+        {
+            "code": "43",
+            "name": {
+                "en": "Cabbage, Chinese"
+            },
+            "children": [],
+            "order": 265,
+            "details": "{\"alternative_labels\": \"Brassica chinensis\", \"scientific_name\": \"Brassica chinensis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01192\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01212|https://stats.fao.org/classifications/ICC/v1.0/213|https://stats.fao.org/classifications/ICC/v1.1/2-01-03\"}"
+        },
+        {
+            "code": "44",
+            "name": {
+                "en": "Cabbage, for fodder"
+            },
+            "children": [],
+            "order": 266,
+            "details": "{\"alternative_labels\": \"Brassica spp.\", \"scientific_name\": \"Brassica spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01192\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/213|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/2-01-03\"}"
+        },
+        {
+            "code": "45",
+            "name": {
+                "en": "Cacao (cocoa)"
+            },
+            "children": [],
+            "order": 267,
+            "details": "{\"alternative_labels\": \"Theobroma cacao\", \"scientific_name\": \"Theobroma cacao\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01640\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/614|https://stats.fao.org/classifications/ICC/v1.1/6-01-04\"}"
+        },
+        {
+            "code": "46",
+            "name": {
+                "en": "Cantaloupe"
+            },
+            "children": [],
+            "order": 268,
+            "details": "{\"alternative_labels\": \"Cucumis melo\", \"scientific_name\": \"Cucumis melo\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/225|https://stats.fao.org/classifications/ICC/v1.1/2-05-02\"}"
+        },
+        {
+            "code": "47",
+            "name": {
+                "en": "Caraway seeds"
+            },
+            "children": [],
+            "order": 269,
+            "details": "{\"alternative_labels\": \"Carum carvi\", \"scientific_name\": \"Carum carvi\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01654|https://stats.fao.org/classifications/ICC/v1.0/6219|https://stats.fao.org/classifications/ICC/v1.1/6-02-01-90\"}"
+        },
+        {
+            "code": "48",
+            "name": {
+                "en": "Cardamom"
+            },
+            "children": [],
+            "order": 270,
+            "details": "{\"alternative_labels\": \"Elettaria cardamomum\", \"scientific_name\": \"Elettaria cardamomum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01653|https://stats.fao.org/classifications/ICC/v1.0/6222|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-02\"}"
+        },
+        {
+            "code": "49",
+            "name": {
+                "en": "Cardoon"
+            },
+            "children": [],
+            "order": 271,
+            "details": "{\"alternative_labels\": \"Cynara cardunculus\", \"scientific_name\": \"Cynara cardunculus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/219|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01219-90|https://stats.fao.org/classifications/ICC/v1.1/2-01-90\"}"
+        },
+        {
+            "code": "5",
+            "name": {
+                "en": "Angelica stems"
+            },
+            "children": [],
+            "order": 272,
+            "details": "{\"alternative_labels\": \"Angelica archangelica\", \"scientific_name\": \"Angelica archangelica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01229\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/6229|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-90\"}"
+        },
+        {
+            "code": "50",
+            "name": {
+                "en": "Carob"
+            },
+            "children": [],
+            "order": 273,
+            "details": "{\"alternative_labels\": \"Ceratonia siliqua\", \"scientific_name\": \"Ceratonia siliqua\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01356\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/39|https://stats.fao.org/classifications/ICC/v1.1/3-9\"}"
+        },
+        {
+            "code": "51",
+            "name": {
+                "en": "Carrot, edible"
+            },
+            "children": [],
+            "order": 274,
+            "details": "{\"alternative_labels\": \"Daucus carota ssp. sativa\", \"scientific_name\": \"Daucus carota ssp. sativa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01356\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01251|https://stats.fao.org/classifications/ICC/v1.0/231|https://stats.fao.org/classifications/ICC/v1.1/2-03-01\"}"
+        },
+        {
+            "code": "52",
+            "name": {
+                "en": "Carrot, for fodder"
+            },
+            "children": [],
+            "order": 275,
+            "details": "{\"alternative_labels\": \"Daucus carota ssp. sativa\", \"scientific_name\": \"Daucus carota ssp. sativa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01356\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/231|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-90|https://stats.fao.org/classifications/ICC/v1.1/2-03-01\"}"
+        },
+        {
+            "code": "53",
+            "name": {
+                "en": "Cashew nuts"
+            },
+            "children": [],
+            "order": 276,
+            "details": "{\"alternative_labels\": \"Anacardium occidentale\", \"scientific_name\": \"Anacardium occidentale\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01372\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/362|https://stats.fao.org/classifications/ICC/v1.1/3-06-02\"}"
+        },
+        {
+            "code": "54",
+            "name": {
+                "en": "Cassava (manioc)"
+            },
+            "children": [],
+            "order": 277,
+            "details": "{\"alternative_labels\": \"Manihot esculenta\", \"scientific_name\": \"Manihot esculenta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01372\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/53|https://stats.fao.org/classifications/ICC/v1.1/5-03|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01219-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01520-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01520-02\"}"
+        },
+        {
+            "code": "55",
+            "name": {
+                "en": "Castor bean"
+            },
+            "children": [],
+            "order": 278,
+            "details": "{\"alternative_labels\": \"Ricinus communis\", \"scientific_name\": \"Ricinus communis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01447\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/431|https://stats.fao.org/classifications/ICC/v1.1/4-03-01\"}"
+        },
+        {
+            "code": "56",
+            "name": {
+                "en": "Cauliflower"
+            },
+            "children": [],
+            "order": 279,
+            "details": "{\"alternative_labels\": \"Brassica oleracea var. botrytis\", \"scientific_name\": \"Brassica oleracea var. botrytis\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01213\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/214|https://stats.fao.org/classifications/ICC/v1.1/2-01-04\"}"
+        },
+        {
+            "code": "57",
+            "name": {
+                "en": "Celeriac"
+            },
+            "children": [],
+            "order": 280,
+            "details": "{\"alternative_labels\": \"Apium graveolens var. rapaceum\", \"scientific_name\": \"Apium graveolens var. rapaceum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01213\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01259|https://stats.fao.org/classifications/ICC/v1.0/239|https://stats.fao.org/classifications/ICC/v1.1/2-03-90\"}"
+        },
+        {
+            "code": "58",
+            "name": {
+                "en": "Celery"
+            },
+            "children": [],
+            "order": 281,
+            "details": "{\"alternative_labels\": \"Apium graveolens\", \"scientific_name\": \"Apium graveolens\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01213\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/219|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01290-90|https://stats.fao.org/classifications/ICC/v1.1/2-01-90\"}"
+        },
+        {
+            "code": "59",
+            "name": {
+                "en": "Chayote"
+            },
+            "children": [],
+            "order": 282,
+            "details": "{\"alternative_labels\": \"Sechium edule\", \"scientific_name\": \"Sechium edule\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01213\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/229|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01239-90|https://stats.fao.org/classifications/ICC/v1.1/2-02-90\"}"
+        },
+        {
+            "code": "6",
+            "name": {
+                "en": "Anise seeds"
+            },
+            "children": [],
+            "order": 283,
+            "details": "{\"alternative_labels\": \"Pimpinella anisum\", \"scientific_name\": \"Pimpinella anisum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01213\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01654|https://stats.fao.org/classifications/ICC/v1.0/6212|https://stats.fao.org/classifications/ICC/v1.1/6-02-01-02\"}"
+        },
+        {
+            "code": "60",
+            "name": {
+                "en": "Cherry"
+            },
+            "children": [],
+            "order": 284,
+            "details": "{\"alternative_labels\": \"Prunus avium, cerasus avium\", \"scientific_name\": \"Prunus avium\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01344-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/353|https://stats.fao.org/classifications/ICC/v1.1/3-05-03\"}"
+        },
+        {
+            "code": "61",
+            "name": {
+                "en": "Chestnut"
+            },
+            "children": [],
+            "order": 285,
+            "details": "{\"alternative_labels\": \"Castanea sativa\", \"scientific_name\": \"Castanea sativa\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01373\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/363|https://stats.fao.org/classifications/ICC/v1.1/3-06-03\"}"
+        },
+        {
+            "code": "62",
+            "name": {
+                "en": "Chickpea (gram pea)"
+            },
+            "children": [],
+            "order": 286,
+            "details": "{\"alternative_labels\": \"Cicer arietinum\", \"scientific_name\": \"Cicer arietinum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01703\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/73|https://stats.fao.org/classifications/ICC/v1.1/7-03\"}"
+        },
+        {
+            "code": "63",
+            "name": {
+                "en": "Chicory"
+            },
+            "children": [],
+            "order": 287,
+            "details": "{\"alternative_labels\": \"Cichorium intybus\", \"scientific_name\": \"Cichorium intybus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01703\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01214|http://stats-class.fao.uniroma2.it/CPC/v2.1/01691|https://stats.fao.org/classifications/ICC/v1.0/217|https://stats.fao.org/classifications/ICC/v1.1/2-01-07\"}"
+        },
+        {
+            "code": "64",
+            "name": {
+                "en": "Chili, dry (all varieties)"
+            },
+            "children": [],
+            "order": 288,
+            "details": "{\"alternative_labels\": \"Capsicum spp. (annuum)\", \"scientific_name\": \"Capsicum spp. (annuum)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01703\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01231|http://stats-class.fao.uniroma2.it/CPC/v2.1/01652|https://stats.fao.org/classifications/ICC/v1.0/6211|https://stats.fao.org/classifications/ICC/v1.1/6-02-01-01\"}"
+        },
+        {
+            "code": "65",
+            "name": {
+                "en": "Chili, fresh (all varieties)"
+            },
+            "children": [],
+            "order": 289,
+            "details": "{\"alternative_labels\": \"Capsicum spp. (annuum)\", \"scientific_name\": \"Capsicum spp. (annuum)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01703\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01231|http://stats-class.fao.uniroma2.it/CPC/v2.1/01652|https://stats.fao.org/classifications/ICC/v1.0/6211|https://stats.fao.org/classifications/ICC/v1.1/6-02-01-01\"}"
+        },
+        {
+            "code": "66",
+            "name": {
+                "en": "Cinnamon"
+            },
+            "children": [],
+            "order": 290,
+            "details": "{\"alternative_labels\": \"Cinnamomum  verum\", \"scientific_name\": \"Cinnamomum  verum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01655\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/6223|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-03\"}"
+        },
+        {
+            "code": "67",
+            "name": {
+                "en": "Citron"
+            },
+            "children": [],
+            "order": 291,
+            "details": "{\"alternative_labels\": \"Citrus medica\", \"scientific_name\": \"Citrus medica\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01329\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/329|https://stats.fao.org/classifications/ICC/v1.1/3-02-90\"}"
+        },
+        {
+            "code": "68",
+            "name": {
+                "en": "Citronella"
+            },
+            "children": [],
+            "order": 292,
+            "details": "{\"alternative_labels\": \"Cymbopogon citrates/ Cymbopogon nardus\", \"scientific_name\": \"Cymbopogon citrates/ Cymbopogon nardus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01329\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/992|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01930-90|https://stats.fao.org/classifications/ICC/v1.1/9-02-02-90\"}"
+        },
+        {
+            "code": "69",
+            "name": {
+                "en": "Clementine"
+            },
+            "children": [],
+            "order": 293,
+            "details": "{\"alternative_labels\": \"Citrus reticulata\", \"scientific_name\": \"Citrus reticulata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01329\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/324|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01324-02|https://stats.fao.org/classifications/ICC/v1.1/3-02-04\"}"
+        },
+        {
+            "code": "7",
+            "name": {
+                "en": "Apple"
+            },
+            "children": [],
+            "order": 294,
+            "details": "{\"alternative_labels\": \"Malus sylvestris\", \"scientific_name\": \"Malus sylvestris\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01341\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/351|https://stats.fao.org/classifications/ICC/v1.1/3-05-01\"}"
+        },
+        {
+            "code": "70",
+            "name": {
+                "en": "Clove"
+            },
+            "children": [],
+            "order": 295,
+            "details": "{\"alternative_labels\": \"Eugenia aromatica (Syzygium aromaticum)\", \"scientific_name\": \"Eugenia aromatica (Syzygium aromaticum)\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01656\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/6224|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-04\"}"
+        },
+        {
+            "code": "71",
+            "name": {
+                "en": "Clover for fodder (all varieties)"
+            },
+            "children": [],
+            "order": 296,
+            "details": "{\"alternative_labels\": \"Trifolium spp.\", \"scientific_name\": \"Trifolium spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01656\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/911|https://stats.fao.org/classifications/ICC/v1.1/9-01-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-03\"}"
+        },
+        {
+            "code": "72",
+            "name": {
+                "en": "Coca"
+            },
+            "children": [],
+            "order": 297,
+            "details": "{\"alternative_labels\": \"Erythroxypum novogranatense, E. coca\", \"scientific_name\": \"E. coca\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01656\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01990|https://stats.fao.org/classifications/ICC/v1.0/932|https://stats.fao.org/classifications/ICC/v1.1/9-03-02-02\"}"
+        },
+        {
+            "code": "73",
+            "name": {
+                "en": "Cocoa (cacao)"
+            },
+            "children": [],
+            "order": 298,
+            "details": "{\"alternative_labels\": \"Theobroma cacao\", \"scientific_name\": \"Theobroma cacao\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01640\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/614|https://stats.fao.org/classifications/ICC/v1.1/6-01-04\"}"
+        },
+        {
+            "code": "74",
+            "name": {
+                "en": "Coconut"
+            },
+            "children": [],
+            "order": 299,
+            "details": "{\"alternative_labels\": \"Cocos nucifera\", \"scientific_name\": \"Cocos nucifera\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01460\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/441|https://stats.fao.org/classifications/ICC/v1.1/4-04-01\"}"
+        },
+        {
+            "code": "75",
+            "name": {
+                "en": "Cocoyam"
+            },
+            "children": [],
+            "order": 300,
+            "details": "{\"alternative_labels\": \"Colocasia esculenta\", \"scientific_name\": \"Colocasia esculenta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01460\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01599|https://stats.fao.org/classifications/ICC/v1.0/59|https://stats.fao.org/classifications/ICC/v1.1/5-9\"}"
+        },
+        {
+            "code": "76",
+            "name": {
+                "en": "Coffee"
+            },
+            "children": [],
+            "order": 301,
+            "details": "{\"alternative_labels\": \"Coffea spp.\", \"scientific_name\": \"Coffea spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01610\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/611|https://stats.fao.org/classifications/ICC/v1.1/6-01-01\"}"
+        },
+        {
+            "code": "77",
+            "name": {
+                "en": "Cola nut (all varieties)"
+            },
+            "children": [],
+            "order": 302,
+            "details": "{\"alternative_labels\": \"Cola acuminata; C. nitida; C.vera\", \"scientific_name\": \"C. nitida\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/369|https://stats.fao.org/classifications/ICC/v1.1/3-06-09\"}"
+        },
+        {
+            "code": "78",
+            "name": {
+                "en": "Colza (rapeseed)"
+            },
+            "children": [],
+            "order": 303,
+            "details": "{\"alternative_labels\": \"Brassica napus\", \"scientific_name\": \"Brassica napus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01443\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/435|https://stats.fao.org/classifications/ICC/v1.1/4-03-05\"}"
+        },
+        {
+            "code": "79",
+            "name": {
+                "en": "Corn (maize) for cereals"
+            },
+            "children": [],
+            "order": 304,
+            "details": "{\"alternative_labels\": \"Zea mays\", \"scientific_name\": \"Zea mays\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01443\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01122|http://stats-class.fao.uniroma2.it/CPC/v2.1/01121|https://stats.fao.org/classifications/ICC/v1.0/12|https://stats.fao.org/classifications/ICC/v1.1/1-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01290-01\"}"
+        },
+        {
+            "code": "8",
+            "name": {
+                "en": "Apricot"
+            },
+            "children": [],
+            "order": 305,
+            "details": "{\"alternative_labels\": \"Prunus armeniaca\", \"scientific_name\": \"Prunus armeniaca\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01343\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/352|https://stats.fao.org/classifications/ICC/v1.1/3-05-02\"}"
+        },
+        {
+            "code": "80",
+            "name": {
+                "en": "Corn (maize) for silage"
+            },
+            "children": [],
+            "order": 306,
+            "details": "{\"alternative_labels\": \"Zea mays\", \"scientific_name\": \"Zea mays\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01343\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01911|https://stats.fao.org/classifications/ICC/v1.0/12|https://stats.fao.org/classifications/ICC/v1.1/1-02\"}"
+        },
+        {
+            "code": "81",
+            "name": {
+                "en": "Corn (sweet) for vegetable"
+            },
+            "children": [],
+            "order": 307,
+            "details": "{\"alternative_labels\": \"Zea mays\", \"scientific_name\": \"Zea mays\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01343\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/12|https://stats.fao.org/classifications/ICC/v1.1/1-02|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01290-01\"}"
+        },
+        {
+            "code": "82",
+            "name": {
+                "en": "Corn for salad"
+            },
+            "children": [],
+            "order": 308,
+            "details": "{\"alternative_labels\": \"Valerianella locusta\", \"scientific_name\": \"Valerianella locusta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01343\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/219|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01219-90|https://stats.fao.org/classifications/ICC/v1.1/2-01-90\"}"
+        },
+        {
+            "code": "83",
+            "name": {
+                "en": "Cotton (all varieties)"
+            },
+            "children": [],
+            "order": 309,
+            "details": "{\"alternative_labels\": \"Gossypium spp.\", \"scientific_name\": \"Gossypium spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01921-01|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01921-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9211|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-01\"}"
+        },
+        {
+            "code": "84",
+            "name": {
+                "en": "Cottonseed (all varieties)"
+            },
+            "children": [],
+            "order": 310,
+            "details": "{\"alternative_labels\": \"Gossypium spp.\", \"scientific_name\": \"Gossypium spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01432|http://stats-class.fao.uniroma2.it/CPC/v2.1/01431|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01921-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/9211|https://stats.fao.org/classifications/ICC/v1.1/9-02-01-01\"}"
+        },
+        {
+            "code": "85",
+            "name": {
+                "en": "Cowpea, for grain"
+            },
+            "children": [],
+            "order": 311,
+            "details": "{\"alternative_labels\": \"Vigna unguiculata\", \"scientific_name\": \"Vigna unguiculata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01432|http://stats-class.fao.uniroma2.it/CPC/v2.1/01431|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01921-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01706|https://stats.fao.org/classifications/ICC/v1.0/74|https://stats.fao.org/classifications/ICC/v1.1/7-04\"}"
+        },
+        {
+            "code": "86",
+            "name": {
+                "en": "Cowpea, harvested green"
+            },
+            "children": [],
+            "order": 312,
+            "details": "{\"alternative_labels\": \"Vigna unguiculata\", \"scientific_name\": \"Vigna unguiculata\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01432|http://stats-class.fao.uniroma2.it/CPC/v2.1/01431|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01921-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01706|https://stats.fao.org/classifications/ICC/v1.0/74|https://stats.fao.org/classifications/ICC/v1.1/7-04\"}"
+        },
+        {
+            "code": "87",
+            "name": {
+                "en": "Cranberry"
+            },
+            "children": [],
+            "order": 313,
+            "details": "{\"alternative_labels\": \"Vaccinium macrocarpon; V. oxycoccus\", \"scientific_name\": \"V. oxycoccus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01355-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/349|https://stats.fao.org/classifications/ICC/v1.1/3-04-07\"}"
+        },
+        {
+            "code": "88",
+            "name": {
+                "en": "Cress"
+            },
+            "children": [],
+            "order": 314,
+            "details": "{\"alternative_labels\": \"Lepidium sativum\", \"scientific_name\": \"Lepidium sativum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01355-02\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/219|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01219-90|https://stats.fao.org/classifications/ICC/v1.1/2-01-90\"}"
+        },
+        {
+            "code": "89",
+            "name": {
+                "en": "Cucumber"
+            },
+            "children": [],
+            "order": 315,
+            "details": "{\"alternative_labels\": \"Cucumis sativus\", \"scientific_name\": \"Cucumis sativus\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01232\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/221|https://stats.fao.org/classifications/ICC/v1.1/2-02-01\"}"
+        },
+        {
+            "code": "9",
+            "name": {
+                "en": "Areca (betel nut)"
+            },
+            "children": [],
+            "order": 316,
+            "details": "{\"alternative_labels\": \"Areca catechu\", \"scientific_name\": \"Areca catechu\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01379-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/369|https://stats.fao.org/classifications/ICC/v1.1/3-06-08\"}"
+        },
+        {
+            "code": "90",
+            "name": {
+                "en": "Currants (all varieties)"
+            },
+            "children": [],
+            "order": 317,
+            "details": "{\"alternative_labels\": \"Ribes spp.\", \"scientific_name\": \"Ribes spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01351-01\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/341|https://stats.fao.org/classifications/ICC/v1.1/3-04-01\"}"
+        },
+        {
+            "code": "91",
+            "name": {
+                "en": "Custard apple"
+            },
+            "children": [],
+            "order": 318,
+            "details": "{\"alternative_labels\": \"Annona reticulate\", \"scientific_name\": \"Annona reticulate\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01351-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01319|https://stats.fao.org/classifications/ICC/v1.0/319|https://stats.fao.org/classifications/ICC/v1.1/3-01-90\"}"
+        },
+        {
+            "code": "92",
+            "name": {
+                "en": "Dasheen"
+            },
+            "children": [],
+            "order": 319,
+            "details": "{\"alternative_labels\": \"Colocasia esculenta\", \"scientific_name\": \"Colocasia esculenta\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01351-01\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01599|https://stats.fao.org/classifications/ICC/v1.0/59|https://stats.fao.org/classifications/ICC/v1.1/5-9\"}"
+        },
+        {
+            "code": "93",
+            "name": {
+                "en": "Date"
+            },
+            "children": [],
+            "order": 320,
+            "details": "{\"alternative_labels\": \"Phoenix dactylifera\", \"scientific_name\": \"Phoenix dactylifera\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01314\", \"close_correspondences\": \"https://stats.fao.org/classifications/ICC/v1.0/313|https://stats.fao.org/classifications/ICC/v1.1/3-01-04\"}"
+        },
+        {
+            "code": "94",
+            "name": {
+                "en": "Dill and dill seed"
+            },
+            "children": [],
+            "order": 321,
+            "details": "{\"alternative_labels\": \"Anethum graveoles\", \"scientific_name\": \"Anethum graveoles\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01314\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/6229|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-90\"}"
+        },
+        {
+            "code": "95",
+            "name": {
+                "en": "Drumstick tree"
+            },
+            "children": [],
+            "order": 322,
+            "details": "{\"alternative_labels\": \"Moringa oleifera\", \"scientific_name\": \"Moringa oleifera\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01314\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01699|https://stats.fao.org/classifications/ICC/v1.0/6229|https://stats.fao.org/classifications/ICC/v1.1/6-02-02-90\"}"
+        },
+        {
+            "code": "96",
+            "name": {
+                "en": "Durra (sorghum)"
+            },
+            "children": [],
+            "order": 323,
+            "details": "{\"alternative_labels\": \"Sorghum bicolour\", \"scientific_name\": \"Sorghum bicolour\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01314\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01141|http://stats-class.fao.uniroma2.it/CPC/v2.1/01142|https://stats.fao.org/classifications/ICC/v1.0/14|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01919-01|https://stats.fao.org/classifications/ICC/v1.1/1-04\"}"
+        },
+        {
+            "code": "97",
+            "name": {
+                "en": "Durum wheat"
+            },
+            "children": [],
+            "order": 324,
+            "details": "{\"alternative_labels\": \"Triticum durum\", \"scientific_name\": \"Triticum durum\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01314\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01111|http://stats-class.fao.uniroma2.it/CPC/v2.1/01112|https://stats.fao.org/classifications/ICC/v1.0/11|https://stats.fao.org/classifications/ICC/v1.1/1-01\"}"
+        },
+        {
+            "code": "98",
+            "name": {
+                "en": "Earth pea"
+            },
+            "children": [],
+            "order": 325,
+            "details": "{\"alternative_labels\": \"Vigna subterranea\", \"scientific_name\": \"Vigna subterranea\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01314\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01249|https://stats.fao.org/classifications/ICC/v1.0/79|http://stats-class.fao.uniroma2.it/CPC/v2.1/ag/01709-90|https://stats.fao.org/classifications/ICC/v1.1/7-9\"}"
+        },
+        {
+            "code": "99",
+            "name": {
+                "en": "Edo (eddoe)"
+            },
+            "children": [],
+            "order": 326,
+            "details": "{\"alternative_labels\": \"Xanthosoma spp.; Colocasia spp.\", \"scientific_name\": \"Colocasia spp.\", \"exact_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01314\", \"close_correspondences\": \"http://stats-class.fao.uniroma2.it/CPC/v2.1/01599|https://stats.fao.org/classifications/ICC/v1.0/59|https://stats.fao.org/classifications/ICC/v1.1/5-9\"}"
+        }
+    ]
+}

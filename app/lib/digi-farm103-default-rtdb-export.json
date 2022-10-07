@@ -1,0 +1,383 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Fruits",
+      "items": [
+        {
+          "description": "A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called plantains, distinguishing them from dessert banana",
+          "id": 1,
+          "name": "Banana",
+          "price": 10,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "http://www.pngall.com/wp-content/uploads/2016/04/Banana-PNG.png"
+        },
+        {
+          "description": "An apple is a sweet, edible fruit produced by an apple tree. Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus.",
+          "id": 2,
+          "name": "Apple",
+          "price": 15,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://images.freshop.com/00852201002228/ad2f58915e3267700906f1025ef8917f_medium.png"
+        },
+        {
+          "description": "The pineapple is a tropical plant with an edible fruit; it is the most economically significant plant in the family Bromeliaceae. The pineapple is indigenous to South America, where it has been cultivated for many centuries.",
+          "id": 3,
+          "name": "Pineapple",
+          "price": 25,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://i.pinimg.com/564x/3a/b4/9b/3ab49b18718e543a952954395bd23bf2.jpg"
+        },
+        {
+          "description": "A mango is an edible stone fruit produced by the tropical tree Mangifera indica. It is believed to have originated in the region between northwestern Myanmar, Bangladesh, and northeastern India.",
+          "id": 4,
+          "name": "Mango",
+          "price": 3,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/58-589669_mango-png-transparent-png.png"
+        },
+        {
+          "description": "A grape is a fruit, botanically a berry, of the deciduous woody vines of the flowering plant genus Vitis. Grapes are a non-climacteric type of fruit, generally occurring in clusters. Grapes have played an important role in human nutrition, and have great cultural significance as well.",
+          "id": 5,
+          "name": "Grape",
+          "price": 6,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/42-426025_yummy-red-grape-red-grapes-free-png-transparent.png"
+        },
+        {
+          "description": "An orange is a fruit of various citrus species in the family Rutaceae; it primarily refers to Citrus × sinensis, which is also called sweet orange, to distinguish it from the related Citrus × aurantium, referred to as bitter orange.",
+          "id": 6,
+          "name": "Orange",
+          "price": 35,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/155-1555641_orange-png-image-free-download-oranges-png-transparent.png"
+        }
+      ],
+      "icon": "https://www.kindpng.com/picc/m/46-464054_vegetable-fruit-stock-photography-food-apple-fruits-and.png"
+    },
+    {
+      "id": 2,
+      "title": "Vegetables",
+      "items": [
+        {
+          "description": "The tomato is the edible berry of the plant Solanum lycopersicum, commonly known as the tomato plant. The species originated in western South America, Mexico, and Central America.",
+          "id": 7,
+          "name": "Tomato",
+          "price": 10,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/42-425444_tomato-clipart-svg-tomato-png-transparent-png.png"
+        },
+        {
+          "description": "Lettuce is an annual plant of the family Asteraceae. It is most often grown as a leaf vegetable, but sometimes for its stem and seeds. Lettuce is most often used for salads, although it is also seen in other kinds of food, such as soups, sandwiches and wraps; it can also be grilled.",
+          "id": 8,
+          "name": "Lettuce",
+          "price": 15,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/471-4712139_lettuce-clipart-lettuce-slice-head-of-lettuce-transparent.png"
+        },
+        {
+          "description": "The carrot is a root vegetable, typically orange in color, though purple, black, red, white, and yellow cultivars exist, all of which are domesticated forms of the wild carrot, Daucus carota, native to Europe and Southwestern Asia.",
+          "id": 9,
+          "name": "Carrot",
+          "price": 25,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/111-1115732_carrots-png-image-transparent-carrots-png-png-download.png"
+        },
+        {
+          "description": "Cucumber is a widely-cultivated creeping vine plant in the Cucurbitaceae family that bears usually cylindrical fruits, which are used as culinary vegetables. Considered an annual plant, there are three main varieties of cucumber—slicing, pickling, and seedless—within which several cultivars have been created.",
+          "id": 10,
+          "name": "Cucumber",
+          "price": 3,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/51-515541_pickled-cucumber-cucumber-sandwich-vegetable-vegetarian-cucumber-png.png"
+        },
+        {
+          "description": "The bell pepper is the fruit of plants in the Grossum Group of the species Capsicum annuum. Cultivars of the plant produce fruits in different colors, including red, yellow, orange, green, white, chocolate, candy cane striped, and purple.",
+          "id": 11,
+          "name": "Green Pepper",
+          "price": 6,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/202-2027782_green-bell-peppers-png-green-pepper-png-transparent.png"
+        },
+        {
+          "description": "Ginger is a flowering plant whose rhizome, ginger root or ginger, is widely used as a spice and a folk medicine. It is a herbaceous perennial which grows annual pseudostems about one meter tall bearing narrow leaf blades.",
+          "id": 12,
+          "name": "Ginger",
+          "price": 35,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/131-1311935_ginger-root-png-image-ginger-png-transparent-png.png"
+        }
+      ],
+      "icon": "https://www.kindpng.com/picc/m/115-1153469_vegetable-transparent-arts-clip-art-royalty-free-download.png"
+    },
+    {
+      "id": 3,
+      "title": "Meats",
+      "items": [
+        {
+          "description": "Chicken egg is a main component of the human diet serving as a dietary source of protein, fat, and other nutrients.",
+          "id": 13,
+          "name": "Chicken Eggs",
+          "price": 10,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/69-698144_organic-egg-half-dozen-half-dozen-eggs-png.png"
+        },
+        {
+          "description": "Beef is the culinary name for meat from cattle. Beef can be prepared in various ways; cuts are often used for steak.",
+          "id": 14,
+          "name": "Beef",
+          "price": 15,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/97-977177_castle-wood-reserve-sliced-roast-beef-png-download.png"
+        },
+        {
+          "description": "Pork is the culinary name for the meat of the domestic pig (Sus scrofa domesticus). It is the most commonly consumed meat worldwide",
+          "id": 15,
+          "name": "Pork",
+          "price": 25,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/339-3393561_pork-steak-hd-png-download.png"
+        },
+        {
+          "description": "Fish has been an important dietary source of protein and other nutrients throughout human history.",
+          "id": 16,
+          "name": "Fish",
+          "price": 3,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/274-2742343_king-fish-steak-png-transparent-png.png"
+        },
+        {
+          "description": "A sausage is a type of meat product usually made from ground meat—often pork, beef, or poultry—along with salt, spices and other flavourings.",
+          "id": 17,
+          "name": "Sausage",
+          "price": 6,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/71-714303_simon-howie-pork-sausages-hd-png-download.png"
+        },
+        {
+          "description": "A chicken nugget is a food product consisting of a small piece of deboned chicken meat that is breaded or battered, then deep-fried or baked. Invented in the 1950s, chicken nuggets have become a very popular fast food restaurant item, as well as widely sold frozen for home use.",
+          "id": 18,
+          "name": "Chicken Nuggets",
+          "price": 35,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/131-1319048_banquet-chicken-nuggets-and-mac-and-cheese-hd.png"
+        }
+      ],
+      "icon": "https://www.kindpng.com/picc/m/139-1392294_veal-raw-meats-hd-png-download.png"
+    },
+    {
+      "id": 4,
+      "title": "Processed Foods",
+      "items": [
+        {
+          "description": "Sardines 'Sardine' and 'pilchard' are common names for various small, oily forage fish in the herring family Clupeidae.",
+          "id": 19,
+          "name": "Sardine",
+          "price": 10,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/413-4135203_sardine-png-wawa-b-0163-layer-milo-sardines.png"
+        },
+        {
+          "description": "Tuna is a saltwater fish related to mackerel. There are around eight different commercial varieties that range in size from the small skipjack tuna to the large bluefin, and it is one of the most widely eaten fish in the world.",
+          "id": 20,
+          "name": "Tuna",
+          "price": 15,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/93-937593_tuna-chunks-in-tomato-sauce-canned-tuna-in.png"
+        },
+        {
+          "description": "Spaghetti is a long, thin, solid, cylindrical pasta. It is a staple food of traditional Italian cuisine. Like other pasta, spaghetti is made of milled wheat and water and sometimes enriched with vitamins and minerals. Italian spaghetti is typically made from durum wheat semolina.",
+          "id": 21,
+          "name": "Spaghetti",
+          "price": 25,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/114-1147147_reggia-pasta-spaghetti-500g-hd-png-download.png"
+        },
+        {
+          "description": "Ketchup or catsup is a table condiment with a sweet and tangy flavor. The unmodified term ('ketchup') now typically refers to tomato ketchup,[1] although early American recipes used egg whites, mushrooms, oysters, grapes, mussels, or walnuts, among other ingredients.",
+          "id": 22,
+          "name": "ketchup",
+          "price": 3,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/68-689619_download-ketchup-png-file-for-designing-projects-heinz.png"
+        },
+        {
+          "description": "Mayonnaise, colloquially referred to as 'mayo', is a thick, cold, and creamy sauce or dressing commonly used on sandwiches, hamburgers, composed salads, and French fries.",
+          "id": 23,
+          "name": "Mayonnaise",
+          "price": 6,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/374-3744177_honest-mayonnaise-powerlines-group-hd-png-download.png"
+        },
+        {
+          "description": "Cheese is a dairy product produced in wide ranges of flavors, textures, and forms by coagulation of the milk protein casein. It comprises proteins and fat from milk, usually the milk of cows, buffalo, goats, or sheep.",
+          "id": 24,
+          "name": "Cheese",
+          "price": 35,
+          "quantity": 100,
+          "seller": "3pBhzyvDFJctxoWYhln67O3oFrq1",
+          "photoUrl": "https://www.kindpng.com/picc/m/21-214331_cheese-png-file-cheese-png-transparent-png.png"
+        }
+      ],
+      "icon": "https://www.kindpng.com/picc/m/298-2983882_food-processing-industry-different-types-of-dairy-products.png"
+    }
+  ],
+  "cropInfo": [
+    {
+      "description": "Tomato plants are tender warm-season crops that love the sun and cannot bear frost. It’s important not to put plants in the ground too early. In most regions, the soil is not warm enough to plant tomatoes outdoors until late spring and early summer except in zone 10, where they are a fall and winter crop.",
+      "id": 1,
+      "name": "Tomato",
+      "plantType": "vegetable",
+      "flowerColor": "yellow",
+      "soilPH": "Acidic, Slightly Acidic to Neutral",
+      "soilTemperature": "22",
+      "germinationPeriod": "3-5",
+      "bloomTime": "Summer",
+      "sunExposure": "Full Sun",
+      "daysToHarvest": 90,
+      "varieties": [
+        "Determinate",
+        "Indeterminate"
+      ],
+      "pests": [
+        "Aphids",
+        "Tomatoes Hornworm",
+        "Spider Mites"
+      ],
+      "diseases": [
+        "Blossom-End Rot",
+        "Early Blight",
+        "Late Blight",
+        "Mosaic Virus",
+        "Fusarium Wilt",
+        "Powdery Mildew",
+        "Cracking"
+      ],
+      "learnMore": "https://www.almanac.com/plant/tomatoes",
+      "photoUrl": "https://www.kindpng.com/picc/m/42-425444_tomato-clipart-svg-tomato-png-transparent-png.png"
+    },
+    {
+      "description": "Carrots are a cool-season crop grown in spring. They are an excellent source of vitamin A and add color to a meal. They can be served cooked or raw.",
+      "id": 2,
+      "name": "Carrots",
+      "plantType": "vegetable",
+      "flowerColor": "white",
+      "soilPH": "Neutral",
+      "soilTemperature": "22",
+      "germinationPeriod": "14-21",
+      "bloomTime": "All Season",
+      "sunExposure": "Full Sun",
+      "daysToHarvest": 80,
+      "varieties": [
+        "Bolero",
+        "Danvers",
+        "Little Finger",
+        "Nantes",
+        "Thumberline"
+      ],
+      "pests": [
+        "Carrot rust flies",
+        "Flea beetles",
+        "Root-knot nematodes",
+        "Wireworms",
+        "Leafhoppers"
+      ],
+      "diseases": [
+        "Aster Yellow Disease",
+        "Black (Itersonilia) canker"
+      ],
+      "learnMore": "https://www.almanac.com/plant/carrots",
+      "photoUrl": "https://www.almanac.com/sites/default/files/styles/max_1300x1300/public/image_nodes/carrots-table_popidar-ss.jpg?itok=QNApt8uf"
+    },
+    {
+      "description": "Sweet corn is a tender, warm-season annual crop that produces ears of yellow, white, or bi-colored kernels. A long, frost-free growing season (60 to 100 frost-free days) is necessary to grow and harvest corn.",
+      "id": 3,
+      "name": "Corn",
+      "plantType": "vegetable",
+      "flowerColor": "white, yellow",
+      "soilPH": "Slightly Acidic to Neutral",
+      "soilTemperature": "22",
+      "germinationPeriod": "7-10",
+      "bloomTime": "Summer",
+      "sunExposure": "Full Sun",
+      "daysToHarvest": 90,
+      "varieties": [
+        "Argent",
+        "Luther Hill",
+        "Silver Queen",
+        "Sweet Sunshine",
+        "Iochief"
+      ],
+      "pests": [
+        "Corn earworms",
+        "Cucumber beetles",
+        "Deer",
+        "Flea beetles",
+        "Raccoons",
+        "Earwigs"
+      ],
+      "diseases": [
+        "Anthracnose",
+        "Downy mildew"
+      ],
+      "learnMore": "https://www.almanac.com/plant/corn",
+      "photoUrl": "https://www.almanac.com/sites/default/files/styles/max_1300x1300/public/image_nodes/corn-1605664_1920.jpg?itok=ofE7MirN"
+    },
+    {
+      "description": "The tomato is the edible berry of the plant Solanum lycopersicum, commonly known as the tomato plant. The species originated in western South America, Mexico, and Central America.",
+      "id": 4,
+      "name": "Okra",
+      "plantType": "vegetable",
+      "flowerColor": "white, yellow",
+      "soilPH": "Slightly Acidic to Neutral",
+      "soilTemperature": "22",
+      "germinationPeriod": "2-12",
+      "bloomTime": "Summer",
+      "sunExposure": "Full Sun",
+      "daysToHarvest": 65,
+      "varieties": [
+        "Blondy",
+        "Burgundy",
+        "Cajun Jewel",
+        "Clemson Spineless",
+        "Louisiana Green Velvet"
+      ],
+      "pests": [
+        "Aphids",
+        "Japanese beetles",
+        "Stinkbugs",
+        "Whiteflies"
+      ],
+      "diseases": [
+        "Fusarium wilt",
+        "Powdery mildew",
+        "Root-knot nematodes"
+      ],
+      "learnMore": "https://www.almanac.com/plant/okra",
+      "photoUrl": "https://www.almanac.com/sites/default/files/styles/max_2600x2600/public/images/okra.jpg?itok=QjF_8yZ2"
+    }
+  ]
+}
